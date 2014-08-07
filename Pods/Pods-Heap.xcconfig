@@ -1,0 +1,2 @@
+PODS_HEAP_LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Heap"
+PODS_HEAP_OTHER_LDFLAGS = -lHeap -framework SystemConfiguration -framework UIKit

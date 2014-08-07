@@ -1,0 +1,7 @@
+
+platform :ios, '7.0'
+pod 'BlurryModalSegue'
+pod 'PNChart', '~>0.5'
+pod 'MRoundedButton', '~>1.0'
+pod 'MMDrawerController','~>0.5.6'
+

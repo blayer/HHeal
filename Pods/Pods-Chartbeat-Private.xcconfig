@@ -1,0 +1,6 @@
+#include "Pods-Chartbeat.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/Chartbeat" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/ARAnalytics" "${PODS_ROOT}/Headers/Amplitude-iOS" "${PODS_ROOT}/Headers/BPXLUUIDHandler" "${PODS_ROOT}/Headers/BlurryModalSegue" "${PODS_ROOT}/Headers/Bolts" "${PODS_ROOT}/Headers/Bugsnag" "${PODS_ROOT}/Headers/Chartbeat" "${PODS_ROOT}/Headers/Countly" "${PODS_ROOT}/Headers/Facebook-iOS-SDK" "${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK" "${PODS_ROOT}/Headers/FlurrySDK" "${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/Heap" "${PODS_ROOT}/Headers/Helpshift" "${PODS_ROOT}/Headers/HockeySDK" "${PODS_ROOT}/Headers/KISSmetrics" "${PODS_ROOT}/Headers/Localytics-iOS-Client" "${PODS_ROOT}/Headers/MZAppearance" "${PODS_ROOT}/Headers/Mixpanel" "${PODS_ROOT}/Headers/NewRelicAgent" "${PODS_ROOT}/Headers/Parse-iOS-SDK" "${PODS_ROOT}/Headers/Tapstream" "${PODS_ROOT}/Headers/TestFlightSDK" "${PODS_ROOT}/Headers/UIImage+BlurredFrame" "${PODS_ROOT}/Headers/UMengAnalytics"
+LIBRARY_SEARCH_PATHS = ${PODS_CHARTBEAT_LIBRARY_SEARCH_PATHS}
+OTHER_LDFLAGS = -ObjC ${PODS_CHARTBEAT_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}

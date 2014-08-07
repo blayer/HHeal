@@ -20,6 +20,20 @@
                ReferencedContainer = "container:FluForecast.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8382C9EA197DAEFF008E125C"
+               BuildableName = "FluForecast.app"
+               BlueprintName = "FluForecast"
+               ReferencedContainer = "container:FluForecast.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
