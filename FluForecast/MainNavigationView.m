@@ -29,35 +29,34 @@
     
     switch (indexPath.row) {
         case 0:
-            identifier=@"firstSegue";
+            identifier=@"HomeSegue";
             break;
         case 1:
-            identifier=@"firstSegue";
+            identifier=@"HomeSegue";
             break;
         case 2:
-            identifier=@"thirdSegue";
+            identifier=@"RiskHistorySegue";
             break;
+            
         case 3:
-            identifier=@"fourthSegue";
+            identifier=@"TrainingLogSegue";
             break;
+            
         case 4:
-            identifier=@"fifthSegue";
+            identifier=@"CalculatorSegue";
             break;
             
         case 5:
-        identifier=@"sixthSegue";
-        break;
+           identifier=@"ProfileSegue";
+            break;
 
          case 6:
-        identifier=@"seventhSegue";
-        break;
+          identifier=@"FeedbackSegue";
+           break;
          case 7:
-        identifier=@"eighthSegue";
-       break;
+          identifier=@"AboutSegue";
+           break;
  
-       case 8:
-        identifier=@"ninthSegue";
-       break;
     }
 
 
