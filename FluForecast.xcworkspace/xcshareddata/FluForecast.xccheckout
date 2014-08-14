@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>21BB9634-D47E-41F0-BDE7-A0E0ACE753E7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FluForecast</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</key>
+		<string>https://github.com/blayer/HHeal.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FluForecast.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/blayer/HHeal.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FluForecast</string>
+		</dict>
+	</array>
+</dict>
+</plist>

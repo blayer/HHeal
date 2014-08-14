@@ -5,27 +5,26 @@
 //  Created by Changkun Zhao on 8/4/14.
 //  Copyright (c) 2014 Changkun Zhao. All rights reserved.
 //
-// This controller is to implement card selection and unselection
-#import "CardNoteViewController.h"
+// this controller is to implement reporting a complished training 
+
+#import "CardCompleteNoteViewController.h"
 #import "BlurryModalSegue/BlurryModalSegue.h"
 
-@interface CardNoteViewController ()
+@interface CardCompleteNoteViewController ()
 @property NSArray *cardName;
 @property NSArray *cardDirection;
 @property NSArray *cardNote;
 @property UILabel *name;
 @property UITextView *direction;
 @property UITextView *note;
-@property int cardIdentifier;
-@property UIAlertView *selectAlert;
-@property UIAlertView *unselectAlert;
+@property UIAlertView *completeAlert;
 @property UIButton *clickedButton;
-@property NSString *selectionStatus;
+@property int cardIdentifier;
 @end
 
-@implementation CardNoteViewController
+@implementation CardCompleteNoteViewController
 
-@synthesize receivedCardTitle; //received data in an array formated as [title, selection status]
+@synthesize receivedCardTitle;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,26 +39,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    //for testing
-    self.selectionStatus=@"unselected";
-    
-    
-    
-   // NSLog(@"received data is %@",self.receivedData);
-    self.selectAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Selected"
-                                                    message:@"Are you sure you want to select this training card?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Yes"
-                                          otherButtonTitles:@"No", nil];
-    
-    self.unselectAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Unselected"
-                                                  message:@"Are you sure you want to unselect this training card?"
-                                                 delegate:self
-                                        cancelButtonTitle:@"Yes"
-                                        otherButtonTitles:@"No", nil];
+    NSLog(@"received data is %@",self.receivedCardTitle);
     self.cardIdentifier=0;
+    
+    
+    
+   self.completeAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Completed"
+                                                      message:@"Are you sure you have completed this training today?"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Yes"
+                                            otherButtonTitles:@"No", nil];
+    
+    
+    
     // Do any additional setup after loading the view.
     self.cardName= [[NSArray alloc]initWithObjects:
                     @"Moderate exercise 40 mins",
@@ -98,7 +90,7 @@
     self.name.textAlignment =  NSTextAlignmentCenter;
     self.name.textColor=[UIColor lightGrayColor];
     
-  //  self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]]]
+    //  self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]]]
     
     [self.view addSubview:self.name];
     
@@ -118,14 +110,14 @@
     
     CGRect reportFrame =CGRectMake(250.0f, 20.0f, 50.0f, 50.0f);
     UIButton *reportButton =[[UIButton alloc]initWithFrame:reportFrame];
-//    [reportButton setTitle:@"Selected" forState:(UIControlStateNormal)];
- //   [reportButton setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
- //   reportButton.titleLabel.font =[UIFont boldSystemFontOfSize:20.0f];
-    [reportButton setImage:[UIImage imageNamed:@"checkmarkgrey-32.png"] forState:UIControlStateNormal];
-
-   [reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
-
-   // [reportButton addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
+    //    [reportButton setTitle:@"Selected" forState:(UIControlStateNormal)];
+    //   [reportButton setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
+    //   reportButton.titleLabel.font =[UIFont boldSystemFontOfSize:20.0f];
+    [reportButton setImage:[UIImage imageNamed:@"medal_grey-48.png"] forState:UIControlStateNormal];
+    
+    [reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    // [reportButton addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:reportButton];
 }
 
@@ -140,51 +132,35 @@
 
 
 -(void) ButtonClicked:(UIButton *) sender
-{  // [sender setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
-
+{  // [sender setImage:[UIImage imageNamed:@"medal_yellow-48.png"] forState:UIControlStateNormal];
     self.clickedButton=sender;
-    if ([self.selectionStatus isEqualToString:@"unselected"])
-    { [self.selectAlert show];}
-    else if([self.selectionStatus isEqualToString:@"selected"])
-    { [self.unselectAlert show];}
+    [self.completeAlert show];
 }
-
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if ([self.selectionStatus isEqualToString:@"unselected"]){
+    
     if([title isEqualToString:@"Yes"])
     {
-        [self.clickedButton setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
-        self.selectionStatus=@"selected";
+         [self.clickedButton setImage:[UIImage imageNamed:@"medal_yellow-48.png"] forState:UIControlStateNormal];
     }
-      else if([title isEqualToString:@"No"])
-      {
-      //  NSLog(@"Button 2 was selected.");
-      }}
-    
-   else if ([self.selectionStatus isEqualToString:@"selected"]){
-        if([title isEqualToString:@"Yes"])
-        {
-            [self.clickedButton setImage:[UIImage imageNamed:@"checkmarkgrey-32.png"] forState:UIControlStateNormal];
-            self.selectionStatus=@"unselected";
-        }
-        else if([title isEqualToString:@"No"])
-        {
-            //  NSLog(@"Button 2 was selected.");
-        }}
-    
+  //  else if([title isEqualToString:@"No"])
+  //  {
+ //       NSLog(@"Button 2 was selected.");
+  //  }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

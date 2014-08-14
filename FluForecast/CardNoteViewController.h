@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CardNoteViewController : UIViewController
-@property (nonatomic,strong)NSString *receivedCardTitle;
+@interface CardNoteViewController : UIViewController <UIAlertViewDelegate>
+@property (nonatomic,strong)NSArray *receivedCardTitle;
 @end

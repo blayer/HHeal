@@ -7,19 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83307190199010D5004CD49F /* echinacea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8330718D199010D5004CD49F /* echinacea.jpg */; };
-		83307191199010D5004CD49F /* exercise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8330718E199010D5004CD49F /* exercise.jpg */; };
-		83307192199010D5004CD49F /* vitamine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8330718F199010D5004CD49F /* vitamine.jpg */; };
+		8304DBC819957319006E7BD7 /* edit-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBC619957319006E7BD7 /* edit-50.png */; };
+		8304DBC919957319006E7BD7 /* menu-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBC719957319006E7BD7 /* menu-50.png */; };
+		8304DBCC199573A0006E7BD7 /* edit-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBCA199573A0006E7BD7 /* edit-32.png */; };
+		8304DBCD199573A0006E7BD7 /* menu-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBCB199573A0006E7BD7 /* menu-32.png */; };
+		8304DBD51995C64E006E7BD7 /* plus-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBD41995C64E006E7BD7 /* plus-25.png */; };
+		8304DBDB1996FB4E006E7BD7 /* CardSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DBDA1996FB4E006E7BD7 /* CardSelectViewController.m */; };
+		8304DBE11998062A006E7BD7 /* checkmarkgreen-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBDF1998062A006E7BD7 /* checkmarkgreen-32.png */; };
+		8304DBE21998062A006E7BD7 /* checkmarkgrey-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBE01998062A006E7BD7 /* checkmarkgrey-32.png */; };
+		8304DBE419980884006E7BD7 /* checkmarkgreen-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBE319980884006E7BD7 /* checkmarkgreen-25.png */; };
+		8304DBF61999C039006E7BD7 /* TrainingLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DBF51999C039006E7BD7 /* TrainingLogViewController.m */; };
+		8304DBF8199AB4EE006E7BD7 /* medal-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBF7199AB4EE006E7BD7 /* medal-26.png */; };
+		8304DBFF199AF97A006E7BD7 /* echinacea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBFA199AF97A006E7BD7 /* echinacea.jpg */; };
+		8304DC00199AF97A006E7BD7 /* exercise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBFB199AF97A006E7BD7 /* exercise.jpg */; };
+		8304DC01199AF97A006E7BD7 /* iphone-workout-app.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBFC199AF97A006E7BD7 /* iphone-workout-app.jpg */; };
+		8304DC02199AF97A006E7BD7 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBFD199AF97A006E7BD7 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg */; };
+		8304DC03199AF97A006E7BD7 /* vitamine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBFE199AF97A006E7BD7 /* vitamine.jpg */; };
+		8304DC05199AFA39006E7BD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DC04199AFA39006E7BD7 /* main.m */; };
+		8304DC08199AFA4E006E7BD7 /* FluForecast-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC06199AFA4E006E7BD7 /* FluForecast-Info.plist */; };
+		8304DC0A199AFC22006E7BD7 /* yoga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC09199AFC22006E7BD7 /* yoga.jpg */; };
+		8304DC11199AFF7A006E7BD7 /* about-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC0B199AFF7A006E7BD7 /* about-32.png */; };
+		8304DC12199AFF7A006E7BD7 /* calculator-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC0C199AFF7A006E7BD7 /* calculator-32.png */; };
+		8304DC13199AFF7A006E7BD7 /* history-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC0D199AFF7A006E7BD7 /* history-32.png */; };
+		8304DC14199AFF7A006E7BD7 /* home-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC0E199AFF7A006E7BD7 /* home-32.png */; };
+		8304DC15199AFF7A006E7BD7 /* line_chart-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC0F199AFF7A006E7BD7 /* line_chart-32.png */; };
+		8304DC16199AFF7A006E7BD7 /* settings-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC10199AFF7A006E7BD7 /* settings-32.png */; };
+		8304DC18199B01C2006E7BD7 /* feedback-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC17199B01C2006E7BD7 /* feedback-32.png */; };
+		8304DC1A199B0C2F006E7BD7 /* virus-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC19199B0C2F006E7BD7 /* virus-48.png */; };
+		8304DC26199B17B0006E7BD7 /* bed-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC1B199B17AF006E7BD7 /* bed-75.png */; };
+		8304DC27199B17B0006E7BD7 /* bed-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC1C199B17B0006E7BD7 /* bed-100.png */; };
+		8304DC28199B17B0006E7BD7 /* bunch_flowers-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC1D199B17B0006E7BD7 /* bunch_flowers-64.png */; };
+		8304DC29199B17B0006E7BD7 /* bunch_flowers-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC1E199B17B0006E7BD7 /* bunch_flowers-128.png */; };
+		8304DC2A199B17B0006E7BD7 /* fish-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC1F199B17B0006E7BD7 /* fish-75.png */; };
+		8304DC2B199B17B0006E7BD7 /* fish-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC20199B17B0006E7BD7 /* fish-100.png */; };
+		8304DC2C199B17B0006E7BD7 /* pill-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC21199B17B0006E7BD7 /* pill-64.png */; };
+		8304DC2D199B17B0006E7BD7 /* pill-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC22199B17B0006E7BD7 /* pill-128.png */; };
+		8304DC2E199B17B0006E7BD7 /* water-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC23199B17B0006E7BD7 /* water-75.png */; };
+		8304DC2F199B17B0006E7BD7 /* water-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC24199B17B0006E7BD7 /* water-100.png */; };
+		8304DC30199B17B0006E7BD7 /* yoga-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC25199B17B0006E7BD7 /* yoga-100.png */; };
+		8304DC32199B17ED006E7BD7 /* walking-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC31199B17ED006E7BD7 /* walking-100.png */; };
+		8304DC34199B1DFA006E7BD7 /* vegan_food-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC33199B1DFA006E7BD7 /* vegan_food-100.png */; };
+		8304DC37199B2753006E7BD7 /* medal_grey-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC35199B2753006E7BD7 /* medal_grey-48.png */; };
+		8304DC38199B2753006E7BD7 /* medal_yellow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC36199B2753006E7BD7 /* medal_yellow-48.png */; };
+		8304DC3B199BBE44006E7BD7 /* CardCompleteNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DC3A199BBE44006E7BD7 /* CardCompleteNoteViewController.m */; };
+		8304DC3D199C4A1F006E7BD7 /* location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC3C199C4A1F006E7BD7 /* location-50.png */; };
+		8304DC46199C751B006E7BD7 /* ReportFluViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DC45199C751B006E7BD7 /* ReportFluViewController.m */; };
 		8330719519901DF9004CD49F /* CardNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8330719419901DF9004CD49F /* CardNoteViewController.m */; };
 		835159A91982DCD20093E478 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835159A81982DCD20093E478 /* BarChartViewController.m */; };
 		835159AF1983004B0093E478 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835159AE1983004B0093E478 /* LineChartViewController.m */; };
 		83745EB4198C4D0400F44BE6 /* ScrollCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */; };
-		83745EC5198C50A400F44BE6 /* FluForecast-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83745EBB198C50A400F44BE6 /* FluForecast-Info.plist */; };
-		83745EC6198C50A400F44BE6 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 83745EBD198C50A400F44BE6 /* icon-menu.png */; };
-		83745EC7198C50A400F44BE6 /* icon-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83745EBE198C50A400F44BE6 /* icon-menu@2x.png */; };
-		83745ECB198C50A400F44BE6 /* iphone-workout-app.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83745EC2198C50A400F44BE6 /* iphone-workout-app.jpg */; };
-		83745ECC198C50A400F44BE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83745EC3198C50A400F44BE6 /* main.m */; };
-		83745ECD198C50A400F44BE6 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83745EC4198C50A400F44BE6 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg */; };
 		8382C9EF197DAEFF008E125C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9EE197DAEFF008E125C /* Foundation.framework */; };
 		8382C9F1197DAEFF008E125C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9F0197DAEFF008E125C /* CoreGraphics.framework */; };
 		8382C9F3197DAEFF008E125C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9F2197DAEFF008E125C /* UIKit.framework */; };
@@ -41,7 +77,6 @@
 		8382CA55197EA829008E125C /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA49197EA829008E125C /* XMLParser.m */; };
 		8382CA56197EA829008E125C /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA4B197EA829008E125C /* XMLParserDelegate.m */; };
 		8382CA57197EA829008E125C /* PlotChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA4D197EA829008E125C /* PlotChartView.m */; };
-		8382CA5F197F05C4008E125C /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA5D197F05C4008E125C /* RootController.m */; };
 		8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA78197F5F21008E125C /* AMSlideMenuContentSegue.m */; };
 		8382CA87197F5F21008E125C /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA7A197F5F21008E125C /* AMSlideMenuLeftMenuSegue.m */; };
 		8382CA88197F5F21008E125C /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA7C197F5F21008E125C /* AMSlideMenuLeftTableViewController.m */; };
@@ -69,9 +104,56 @@
 /* Begin PBXFileReference section */
 		0FB9FC1F324E46239829B642 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		2C18B23264AF4F0D95D09176 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8330718D199010D5004CD49F /* echinacea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = echinacea.jpg; path = ../echinacea.jpg; sourceTree = "<group>"; };
-		8330718E199010D5004CD49F /* exercise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = exercise.jpg; path = ../exercise.jpg; sourceTree = "<group>"; };
-		8330718F199010D5004CD49F /* vitamine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vitamine.jpg; path = ../vitamine.jpg; sourceTree = "<group>"; };
+		8304DBC619957319006E7BD7 /* edit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-50.png"; sourceTree = "<group>"; };
+		8304DBC719957319006E7BD7 /* menu-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-50.png"; sourceTree = "<group>"; };
+		8304DBCA199573A0006E7BD7 /* edit-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-32.png"; sourceTree = "<group>"; };
+		8304DBCB199573A0006E7BD7 /* menu-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-32.png"; sourceTree = "<group>"; };
+		8304DBD41995C64E006E7BD7 /* plus-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-25.png"; sourceTree = "<group>"; };
+		8304DBD91996FB4E006E7BD7 /* CardSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardSelectViewController.h; path = FluForecast/CardSelectViewController.h; sourceTree = SOURCE_ROOT; };
+		8304DBDA1996FB4E006E7BD7 /* CardSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardSelectViewController.m; path = FluForecast/CardSelectViewController.m; sourceTree = SOURCE_ROOT; };
+		8304DBDF1998062A006E7BD7 /* checkmarkgreen-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmarkgreen-32.png"; sourceTree = "<group>"; };
+		8304DBE01998062A006E7BD7 /* checkmarkgrey-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmarkgrey-32.png"; sourceTree = "<group>"; };
+		8304DBE319980884006E7BD7 /* checkmarkgreen-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmarkgreen-25.png"; sourceTree = "<group>"; };
+		8304DBF41999C039006E7BD7 /* TrainingLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingLogViewController.h; sourceTree = "<group>"; };
+		8304DBF51999C039006E7BD7 /* TrainingLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingLogViewController.m; sourceTree = "<group>"; };
+		8304DBF7199AB4EE006E7BD7 /* medal-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medal-26.png"; sourceTree = "<group>"; };
+		8304DBFA199AF97A006E7BD7 /* echinacea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = echinacea.jpg; sourceTree = "<group>"; };
+		8304DBFB199AF97A006E7BD7 /* exercise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercise.jpg; sourceTree = "<group>"; };
+		8304DBFC199AF97A006E7BD7 /* iphone-workout-app.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone-workout-app.jpg"; sourceTree = "<group>"; };
+		8304DBFD199AF97A006E7BD7 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg"; sourceTree = "<group>"; };
+		8304DBFE199AF97A006E7BD7 /* vitamine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vitamine.jpg; sourceTree = "<group>"; };
+		8304DC04199AFA39006E7BD7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FluForecast/main.m; sourceTree = SOURCE_ROOT; };
+		8304DC06199AFA4E006E7BD7 /* FluForecast-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FluForecast-Info.plist"; path = "FluForecast/FluForecast-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8304DC07199AFA4E006E7BD7 /* FluForecast-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FluForecast-Prefix.pch"; path = "FluForecast/FluForecast-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		8304DC09199AFC22006E7BD7 /* yoga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoga.jpg; sourceTree = "<group>"; };
+		8304DC0B199AFF7A006E7BD7 /* about-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-32.png"; sourceTree = "<group>"; };
+		8304DC0C199AFF7A006E7BD7 /* calculator-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calculator-32.png"; sourceTree = "<group>"; };
+		8304DC0D199AFF7A006E7BD7 /* history-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "history-32.png"; sourceTree = "<group>"; };
+		8304DC0E199AFF7A006E7BD7 /* home-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-32.png"; sourceTree = "<group>"; };
+		8304DC0F199AFF7A006E7BD7 /* line_chart-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line_chart-32.png"; sourceTree = "<group>"; };
+		8304DC10199AFF7A006E7BD7 /* settings-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-32.png"; sourceTree = "<group>"; };
+		8304DC17199B01C2006E7BD7 /* feedback-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feedback-32.png"; sourceTree = "<group>"; };
+		8304DC19199B0C2F006E7BD7 /* virus-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "virus-48.png"; sourceTree = "<group>"; };
+		8304DC1B199B17AF006E7BD7 /* bed-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bed-75.png"; sourceTree = "<group>"; };
+		8304DC1C199B17B0006E7BD7 /* bed-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bed-100.png"; sourceTree = "<group>"; };
+		8304DC1D199B17B0006E7BD7 /* bunch_flowers-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bunch_flowers-64.png"; sourceTree = "<group>"; };
+		8304DC1E199B17B0006E7BD7 /* bunch_flowers-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bunch_flowers-128.png"; sourceTree = "<group>"; };
+		8304DC1F199B17B0006E7BD7 /* fish-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fish-75.png"; sourceTree = "<group>"; };
+		8304DC20199B17B0006E7BD7 /* fish-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fish-100.png"; sourceTree = "<group>"; };
+		8304DC21199B17B0006E7BD7 /* pill-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pill-64.png"; sourceTree = "<group>"; };
+		8304DC22199B17B0006E7BD7 /* pill-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pill-128.png"; sourceTree = "<group>"; };
+		8304DC23199B17B0006E7BD7 /* water-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water-75.png"; sourceTree = "<group>"; };
+		8304DC24199B17B0006E7BD7 /* water-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water-100.png"; sourceTree = "<group>"; };
+		8304DC25199B17B0006E7BD7 /* yoga-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoga-100.png"; sourceTree = "<group>"; };
+		8304DC31199B17ED006E7BD7 /* walking-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walking-100.png"; sourceTree = "<group>"; };
+		8304DC33199B1DFA006E7BD7 /* vegan_food-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegan_food-100.png"; sourceTree = "<group>"; };
+		8304DC35199B2753006E7BD7 /* medal_grey-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medal_grey-48.png"; sourceTree = "<group>"; };
+		8304DC36199B2753006E7BD7 /* medal_yellow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medal_yellow-48.png"; sourceTree = "<group>"; };
+		8304DC39199BBE43006E7BD7 /* CardCompleteNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCompleteNoteViewController.h; sourceTree = "<group>"; };
+		8304DC3A199BBE44006E7BD7 /* CardCompleteNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCompleteNoteViewController.m; sourceTree = "<group>"; };
+		8304DC3C199C4A1F006E7BD7 /* location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-50.png"; sourceTree = "<group>"; };
+		8304DC44199C751B006E7BD7 /* ReportFluViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFluViewController.h; sourceTree = "<group>"; };
+		8304DC45199C751B006E7BD7 /* ReportFluViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFluViewController.m; sourceTree = "<group>"; };
 		8330719319901DF9004CD49F /* CardNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardNoteViewController.h; sourceTree = "<group>"; };
 		8330719419901DF9004CD49F /* CardNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardNoteViewController.m; sourceTree = "<group>"; };
 		835159A71982DCD20093E478 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
@@ -80,13 +162,6 @@
 		835159AE1983004B0093E478 /* LineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartViewController.m; sourceTree = "<group>"; };
 		83745EB2198C4D0400F44BE6 /* ScrollCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollCardViewController.h; sourceTree = "<group>"; };
 		83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollCardViewController.m; sourceTree = "<group>"; };
-		83745EBB198C50A400F44BE6 /* FluForecast-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FluForecast-Info.plist"; path = "../FluForecast-Info.plist"; sourceTree = "<group>"; };
-		83745EBC198C50A400F44BE6 /* FluForecast-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FluForecast-Prefix.pch"; path = "../FluForecast-Prefix.pch"; sourceTree = "<group>"; };
-		83745EBD198C50A400F44BE6 /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-menu.png"; path = "../icon-menu.png"; sourceTree = "<group>"; };
-		83745EBE198C50A400F44BE6 /* icon-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-menu@2x.png"; path = "../icon-menu@2x.png"; sourceTree = "<group>"; };
-		83745EC2198C50A400F44BE6 /* iphone-workout-app.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "iphone-workout-app.jpg"; path = "../iphone-workout-app.jpg"; sourceTree = "<group>"; };
-		83745EC3198C50A400F44BE6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
-		83745EC4198C50A400F44BE6 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg"; path = "../Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg"; sourceTree = "<group>"; };
 		8382C9EB197DAEFF008E125C /* FluForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FluForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8382C9EE197DAEFF008E125C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8382C9F0197DAEFF008E125C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,8 +196,6 @@
 		8382CA4B197EA829008E125C /* XMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParserDelegate.m; sourceTree = "<group>"; };
 		8382CA4C197EA829008E125C /* PlotChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotChartView.h; sourceTree = "<group>"; };
 		8382CA4D197EA829008E125C /* PlotChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotChartView.m; sourceTree = "<group>"; };
-		8382CA5C197F05C4008E125C /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
-		8382CA5D197F05C4008E125C /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
 		8382CA77197F5F21008E125C /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
 		8382CA78197F5F21008E125C /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
 		8382CA79197F5F21008E125C /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
@@ -173,19 +246,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8304DBC519957319006E7BD7 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				8304DC3C199C4A1F006E7BD7 /* location-50.png */,
+				8304DC33199B1DFA006E7BD7 /* vegan_food-100.png */,
+				8304DC31199B17ED006E7BD7 /* walking-100.png */,
+				8304DC1B199B17AF006E7BD7 /* bed-75.png */,
+				8304DC1C199B17B0006E7BD7 /* bed-100.png */,
+				8304DC1D199B17B0006E7BD7 /* bunch_flowers-64.png */,
+				8304DC1E199B17B0006E7BD7 /* bunch_flowers-128.png */,
+				8304DC1F199B17B0006E7BD7 /* fish-75.png */,
+				8304DC20199B17B0006E7BD7 /* fish-100.png */,
+				8304DC21199B17B0006E7BD7 /* pill-64.png */,
+				8304DC22199B17B0006E7BD7 /* pill-128.png */,
+				8304DC23199B17B0006E7BD7 /* water-75.png */,
+				8304DC24199B17B0006E7BD7 /* water-100.png */,
+				8304DC25199B17B0006E7BD7 /* yoga-100.png */,
+				8304DC19199B0C2F006E7BD7 /* virus-48.png */,
+				8304DC17199B01C2006E7BD7 /* feedback-32.png */,
+				8304DBF7199AB4EE006E7BD7 /* medal-26.png */,
+				8304DC35199B2753006E7BD7 /* medal_grey-48.png */,
+				8304DC36199B2753006E7BD7 /* medal_yellow-48.png */,
+				8304DBE319980884006E7BD7 /* checkmarkgreen-25.png */,
+				8304DBDF1998062A006E7BD7 /* checkmarkgreen-32.png */,
+				8304DBE01998062A006E7BD7 /* checkmarkgrey-32.png */,
+				8304DBD41995C64E006E7BD7 /* plus-25.png */,
+				8304DBCA199573A0006E7BD7 /* edit-32.png */,
+				8304DC0B199AFF7A006E7BD7 /* about-32.png */,
+				8304DC0C199AFF7A006E7BD7 /* calculator-32.png */,
+				8304DC0D199AFF7A006E7BD7 /* history-32.png */,
+				8304DC0E199AFF7A006E7BD7 /* home-32.png */,
+				8304DC0F199AFF7A006E7BD7 /* line_chart-32.png */,
+				8304DC10199AFF7A006E7BD7 /* settings-32.png */,
+				8304DBCB199573A0006E7BD7 /* menu-32.png */,
+				8304DBC619957319006E7BD7 /* edit-50.png */,
+				8304DBC719957319006E7BD7 /* menu-50.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		8304DBF9199AF97A006E7BD7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8304DC09199AFC22006E7BD7 /* yoga.jpg */,
+				8304DBFA199AF97A006E7BD7 /* echinacea.jpg */,
+				8304DBFB199AF97A006E7BD7 /* exercise.jpg */,
+				8304DBFC199AF97A006E7BD7 /* iphone-workout-app.jpg */,
+				8304DBFD199AF97A006E7BD7 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg */,
+				8304DBFE199AF97A006E7BD7 /* vitamine.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		83745ECE198C50E300F44BE6 /* Support FIles */ = {
 			isa = PBXGroup;
 			children = (
-				83745EBB198C50A400F44BE6 /* FluForecast-Info.plist */,
-				83745EBC198C50A400F44BE6 /* FluForecast-Prefix.pch */,
-				83745EBD198C50A400F44BE6 /* icon-menu.png */,
-				83745EBE198C50A400F44BE6 /* icon-menu@2x.png */,
-				8330718D199010D5004CD49F /* echinacea.jpg */,
-				8330718E199010D5004CD49F /* exercise.jpg */,
-				8330718F199010D5004CD49F /* vitamine.jpg */,
-				83745EC2198C50A400F44BE6 /* iphone-workout-app.jpg */,
-				83745EC3198C50A400F44BE6 /* main.m */,
-				83745EC4198C50A400F44BE6 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg */,
+				8304DC06199AFA4E006E7BD7 /* FluForecast-Info.plist */,
+				8304DC07199AFA4E006E7BD7 /* FluForecast-Prefix.pch */,
+				8304DC04199AFA39006E7BD7 /* main.m */,
 			);
 			name = "Support FIles";
 			path = "Suport FIles";
@@ -230,8 +349,13 @@
 		8382C9F4197DAEFF008E125C /* HHeal */ = {
 			isa = PBXGroup;
 			children = (
+				8304DBC519957319006E7BD7 /* Icons */,
 				83745ECE198C50E300F44BE6 /* Support FIles */,
+				8304DBF9199AF97A006E7BD7 /* Images */,
 				8382C9FD197DAEFF008E125C /* AppDelegate.h */,
+				8382C9FE197DAEFF008E125C /* AppDelegate.m */,
+				8304DBD91996FB4E006E7BD7 /* CardSelectViewController.h */,
+				8304DBDA1996FB4E006E7BD7 /* CardSelectViewController.m */,
 				8382CA8D197F5FDD008E125C /* MainNavigationView.h */,
 				8382CA8E197F5FDD008E125C /* MainNavigationView.m */,
 				835159A71982DCD20093E478 /* BarChartViewController.h */,
@@ -239,6 +363,12 @@
 				835159AD1983004B0093E478 /* LineChartViewController.h */,
 				835159AE1983004B0093E478 /* LineChartViewController.m */,
 				83C5624E1980C9A100AFD2A3 /* MainBoard.storyboard */,
+				8304DC44199C751B006E7BD7 /* ReportFluViewController.h */,
+				8304DC45199C751B006E7BD7 /* ReportFluViewController.m */,
+				8304DBF41999C039006E7BD7 /* TrainingLogViewController.h */,
+				8304DBF51999C039006E7BD7 /* TrainingLogViewController.m */,
+				8304DC39199BBE43006E7BD7 /* CardCompleteNoteViewController.h */,
+				8304DC3A199BBE44006E7BD7 /* CardCompleteNoteViewController.m */,
 				8330719319901DF9004CD49F /* CardNoteViewController.h */,
 				8330719419901DF9004CD49F /* CardNoteViewController.m */,
 				83C8C6BE1988359A00E34228 /* LoginViewController.h */,
@@ -247,9 +377,6 @@
 				83C8C6BA19869AAD00E34228 /* RegisterViewController.m */,
 				83745EB2198C4D0400F44BE6 /* ScrollCardViewController.h */,
 				83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */,
-				8382CA5D197F05C4008E125C /* RootController.m */,
-				8382CA5C197F05C4008E125C /* RootController.h */,
-				8382C9FE197DAEFF008E125C /* AppDelegate.m */,
 				8382CA00197DAF00008E125C /* Images.xcassets */,
 			);
 			name = HHeal;
@@ -435,16 +562,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83745EC5198C50A400F44BE6 /* FluForecast-Info.plist in Resources */,
-				83307191199010D5004CD49F /* exercise.jpg in Resources */,
-				83745ECD198C50A400F44BE6 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg in Resources */,
-				83745ECB198C50A400F44BE6 /* iphone-workout-app.jpg in Resources */,
-				83307192199010D5004CD49F /* vitamine.jpg in Resources */,
+				8304DC2D199B17B0006E7BD7 /* pill-128.png in Resources */,
+				8304DC3D199C4A1F006E7BD7 /* location-50.png in Resources */,
+				8304DC2F199B17B0006E7BD7 /* water-100.png in Resources */,
+				8304DBD51995C64E006E7BD7 /* plus-25.png in Resources */,
+				8304DC32199B17ED006E7BD7 /* walking-100.png in Resources */,
+				8304DC26199B17B0006E7BD7 /* bed-75.png in Resources */,
+				8304DC18199B01C2006E7BD7 /* feedback-32.png in Resources */,
+				8304DBE21998062A006E7BD7 /* checkmarkgrey-32.png in Resources */,
+				8304DC15199AFF7A006E7BD7 /* line_chart-32.png in Resources */,
+				8304DC29199B17B0006E7BD7 /* bunch_flowers-128.png in Resources */,
+				8304DC01199AF97A006E7BD7 /* iphone-workout-app.jpg in Resources */,
+				8304DC2B199B17B0006E7BD7 /* fish-100.png in Resources */,
+				8304DBE11998062A006E7BD7 /* checkmarkgreen-32.png in Resources */,
+				8304DC2A199B17B0006E7BD7 /* fish-75.png in Resources */,
+				8304DC38199B2753006E7BD7 /* medal_yellow-48.png in Resources */,
+				8304DC16199AFF7A006E7BD7 /* settings-32.png in Resources */,
+				8304DC03199AF97A006E7BD7 /* vitamine.jpg in Resources */,
+				8304DBCC199573A0006E7BD7 /* edit-32.png in Resources */,
+				8304DBC919957319006E7BD7 /* menu-50.png in Resources */,
+				8304DC14199AFF7A006E7BD7 /* home-32.png in Resources */,
+				8304DBCD199573A0006E7BD7 /* menu-32.png in Resources */,
+				8304DC28199B17B0006E7BD7 /* bunch_flowers-64.png in Resources */,
+				8304DC2E199B17B0006E7BD7 /* water-75.png in Resources */,
+				8304DC13199AFF7A006E7BD7 /* history-32.png in Resources */,
+				8304DC37199B2753006E7BD7 /* medal_grey-48.png in Resources */,
+				8304DC12199AFF7A006E7BD7 /* calculator-32.png in Resources */,
+				8304DC02199AF97A006E7BD7 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg in Resources */,
 				83C5624C1980C9A100AFD2A3 /* MainBoard.storyboard in Resources */,
-				83745EC7198C50A400F44BE6 /* icon-menu@2x.png in Resources */,
+				8304DC11199AFF7A006E7BD7 /* about-32.png in Resources */,
+				8304DBC819957319006E7BD7 /* edit-50.png in Resources */,
+				8304DC27199B17B0006E7BD7 /* bed-100.png in Resources */,
+				8304DBFF199AF97A006E7BD7 /* echinacea.jpg in Resources */,
+				8304DC34199B1DFA006E7BD7 /* vegan_food-100.png in Resources */,
+				8304DBF8199AB4EE006E7BD7 /* medal-26.png in Resources */,
+				8304DC30199B17B0006E7BD7 /* yoga-100.png in Resources */,
+				8304DC0A199AFC22006E7BD7 /* yoga.jpg in Resources */,
+				8304DBE419980884006E7BD7 /* checkmarkgreen-25.png in Resources */,
+				8304DC08199AFA4E006E7BD7 /* FluForecast-Info.plist in Resources */,
+				8304DC2C199B17B0006E7BD7 /* pill-64.png in Resources */,
+				8304DC00199AF97A006E7BD7 /* exercise.jpg in Resources */,
 				8382CA01197DAF00008E125C /* Images.xcassets in Resources */,
-				83307190199010D5004CD49F /* echinacea.jpg in Resources */,
-				83745EC6198C50A400F44BE6 /* icon-menu.png in Resources */,
+				8304DC1A199B0C2F006E7BD7 /* virus-48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,8 +658,9 @@
 				83C8C6C01988359A00E34228 /* LoginViewController.m in Sources */,
 				8382CA55197EA829008E125C /* XMLParser.m in Sources */,
 				8382CA8B197F5F21008E125C /* AMSlideMenuRightTableViewController.m in Sources */,
-				8382CA5F197F05C4008E125C /* RootController.m in Sources */,
 				8382C9FF197DAEFF008E125C /* AppDelegate.m in Sources */,
+				8304DC05199AFA39006E7BD7 /* main.m in Sources */,
+				8304DC3B199BBE44006E7BD7 /* CardCompleteNoteViewController.m in Sources */,
 				8382CA4F197EA829008E125C /* BarLabel.m in Sources */,
 				8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */,
 				8382CA53197EA829008E125C /* UIViewSizeShortcuts.m in Sources */,
@@ -513,15 +673,17 @@
 				8382CA4E197EA829008E125C /* BarChartView.m in Sources */,
 				8382CA8C197F5F21008E125C /* UIViewController+AMSlideMenu.m in Sources */,
 				8382CA54197EA829008E125C /* XMLElement.m in Sources */,
+				8304DC46199C751B006E7BD7 /* ReportFluViewController.m in Sources */,
 				83745EB4198C4D0400F44BE6 /* ScrollCardViewController.m in Sources */,
 				835159AF1983004B0093E478 /* LineChartViewController.m in Sources */,
 				8382CA8F197F5FDD008E125C /* MainNavigationView.m in Sources */,
 				8382CA89197F5F21008E125C /* AMSlideMenuMainViewController.m in Sources */,
 				8382CA88197F5F21008E125C /* AMSlideMenuLeftTableViewController.m in Sources */,
+				8304DBDB1996FB4E006E7BD7 /* CardSelectViewController.m in Sources */,
 				8382CA51197EA829008E125C /* CMPopTipView.m in Sources */,
+				8304DBF61999C039006E7BD7 /* TrainingLogViewController.m in Sources */,
 				8330719519901DF9004CD49F /* CardNoteViewController.m in Sources */,
 				8382CA56197EA829008E125C /* XMLParserDelegate.m in Sources */,
-				83745ECC198C50A400F44BE6 /* main.m in Sources */,
 				835159A91982DCD20093E478 /* BarChartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

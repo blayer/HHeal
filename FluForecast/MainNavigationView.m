@@ -29,10 +29,10 @@
     
     switch (indexPath.row) {
         case 0:
-             identifier=@"firstSegue";
+            identifier=@"firstSegue";
             break;
         case 1:
-            identifier=@"secondSegue";
+            identifier=@"firstSegue";
             break;
         case 2:
             identifier=@"thirdSegue";
@@ -89,26 +89,13 @@
     
     
     
-    [button setImage:[UIImage imageNamed:@"icon-menu"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"menu-32.png"] forState:UIControlStateNormal];
 
 }
 
 
 
-- (void) configureRightMenuButton:(UIButton *)button
-{
-    CGRect frame =button.frame;
-    frame.origin=(CGPoint){0,0};
-    
-    frame.size= (CGSize){40,40};
-    
-    button.frame=frame;
-    
-    
-    
-    [button setImage:[UIImage imageNamed:@"icon-menu"] forState:UIControlStateNormal];
-    
-}
+
 
 
 

@@ -7,7 +7,7 @@
 //
 
 #import "ScrollCardViewController.h"
-#import "CardNoteViewController.h"
+#import "CardCompleteNoteViewController.h"
 #import "PNColor.h"
 #import "BlurryModalSegue/BlurryModalSegue.h"
 
@@ -16,6 +16,7 @@
 @property NSArray *myDirections;
 @property NSArray *background;
 @property NSString *sendCardTitle;
+@property NSArray *icons;
 @property int numberOfCards;
 @end
 
@@ -41,15 +42,25 @@
     self.background=[[NSArray alloc]initWithObjects:@"exercise.jpg",
                      @"vitamine.jpg",
                      @"echinacea.jpg",
+                     @"pill-128.png",
+                     @"bed-100.png",
+                     @"water-100.png",
+                     nil];
+    self.icons=[[NSArray alloc]initWithObjects:@"walking-100.png",
+                     @"fish-100.png",
+                     @"bunch_flowers-128.png",
+                     @"vegan_food-100.png",
+                     @"bed-100.png",
+                     @"water-100.png",
                      nil];
     
     
     self.myCards= [[NSArray alloc]initWithObjects:@"Moderate exercise",
                    @"Take vitamin D",
                    @"Take echinacea",
-              //     @"Take probiotics",
-              //     @"Sleep 8 hrs",
-              //     @"Drink 8 8-ounce glasses of water",
+                   @"Take probiotics",
+                   @"Sleep 8 hrs",
+                   @"Drink 64 ounce water",
                    nil];
     self.myDirections= [[NSArray alloc] initWithObjects:
                         @"Walk for 40 minutes today at 70 to 80 pencent of your Maximum aerobic heart rate (also VO2max). Don't know your VO2max rate? Tap the list button at the top-left corner. Use the VO2max Calculator to calculate your VO2max rate.",
@@ -112,9 +123,10 @@
         
         
         UIButton *butt=[UIButton buttonWithType:UIButtonTypeCustom ];
-        [butt setFrame:CGRectMake(0, 0, 320, 120)];
-        [butt setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]] forState:UIControlStateNormal];
-        [butt setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0)];
+        [butt setFrame:CGRectMake(100, 0, 220, 120)];
+     //   [butt setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]] forState:UIControlStateNormal];
+        
+     //   [butt setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0)];
         [butt setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
         [butt setTitle:[NSString stringWithFormat:self.myCards[i], i] forState:UIControlStateNormal];
          butt.titleLabel.font =[UIFont boldSystemFontOfSize:25.0f];
@@ -123,10 +135,16 @@
         [butt addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
         [myView addSubview:butt];
         
+        UIImageView *icon=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 90.0, 90.0)];
+        icon.image=[UIImage imageNamed:[NSString stringWithFormat:self.icons[i], i] ];
+        [myView addSubview:icon];
         //set the scroll view delegate to self so that we can listen for changes
         self.scrollView.delegate = self;
         //add the subview to the scroll view
         [self.scrollView addSubview:myView];
+        
+        
+      
     }
     
     //set the content size of the scroll view, we keep the height same so it will only
@@ -182,7 +200,7 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
     NSLog(@"Button Clicked");
     
     self.sendCardTitle= sender.titleLabel.text;
-     [self performSegueWithIdentifier: @"card1" sender: self];
+     [self performSegueWithIdentifier: @"CompleteCard" sender: self];
     NSLog(self.sendCardTitle);
     
  //  CardNoteViewController  *cardview = [[CardNoteViewController alloc] initWithNibName:@"second" bundle:nil];
@@ -202,11 +220,11 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"card1"]) {
+    if ([segue.identifier isEqualToString:@"CompleteCard"]) {
       //  RecipeDetailViewController *destViewController = segue.destinationViewController;
       //  destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
         
-        CardNoteViewController *destViewController = segue.destinationViewController;
+        CardCompleteNoteViewController *destViewController = segue.destinationViewController;
         destViewController.receivedCardTitle=self.sendCardTitle;
     
     }
