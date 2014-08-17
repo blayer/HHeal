@@ -47,16 +47,16 @@
     
      NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
     
-     NSString *userID= [profile stringForKey:@"myID"];
+ //    NSString *userID= [profile stringForKey:@"myID"];
     
- /*
+ 
     
     // Do any additional setup after loading the view.
     //we need to get national data, personal data, and training cards
     
     NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324"];
    //
-   // NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324?username=nali&pass="];
+   //NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324?username=nali&pass="];
    //This shows another example of request with quaries. 
    //
    //
@@ -64,12 +64,12 @@
     
     [NSURLConnection connectionWithRequest:request delegate:self];
 
-    _nationalFluRate = [[self.dict valueForKey:@"standardrate"] floatValue];
-    _personalFluRate = [[self.dict valueForKey:@"personalrate"] floatValue];
+    self.nationalFluRate = [[self.dict valueForKey:@"standardrate"] floatValue];
+    self.personalFluRate = [[self.dict valueForKey:@"personalrate"] floatValue];
     
     
 
-    */
+    
     
     
     

@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MRoundedButton.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-MZAppearance.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05385FC237284229BEBF9225</key>
+		<key>385485CFF805461EB613FEDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>32640DE6DD104A99BE7F3B7E</key>
+		<key>55C5B1CF6DB142CC92E54DA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D89D275D5E4467889FD5CE7</key>
+		<key>7AC6814E020345078757475C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E463901E26643FC9F8B40A5</key>
+		<key>8432E413D7D144FBA5E6DE26</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E802290189B4A8BA65E29F5</key>
+		<key>C08204C9FAB9473B84A30D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>748BB237DB984CA2B33C7C1D</key>
+		<key>CA29EBF8C8C94867B028C4E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0C5040B36E942C285B5A079</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC937C88CE4B4A78A4C08ADD</key>
+		<key>D3434DAC6FF94E5C978BE6CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

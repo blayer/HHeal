@@ -53,6 +53,9 @@
 		8304DC3D199C4A1F006E7BD7 /* location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC3C199C4A1F006E7BD7 /* location-50.png */; };
 		8304DC46199C751B006E7BD7 /* ReportFluViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DC45199C751B006E7BD7 /* ReportFluViewController.m */; };
 		8330719519901DF9004CD49F /* CardNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8330719419901DF9004CD49F /* CardNoteViewController.m */; };
+		834A61A719A1530400FC8753 /* help-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A619A1530400FC8753 /* help-32.png */; };
+		834A61AA19A164EA00FC8753 /* password-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A819A164EA00FC8753 /* password-32.png */; };
+		834A61AB19A164EA00FC8753 /* user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A919A164EA00FC8753 /* user-32.png */; };
 		835159A91982DCD20093E478 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835159A81982DCD20093E478 /* BarChartViewController.m */; };
 		835159AF1983004B0093E478 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835159AE1983004B0093E478 /* LineChartViewController.m */; };
 		83745EB4198C4D0400F44BE6 /* ScrollCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */; };
@@ -88,6 +91,9 @@
 		83C5624C1980C9A100AFD2A3 /* MainBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C5624E1980C9A100AFD2A3 /* MainBoard.storyboard */; };
 		83C8C6BB19869AAD00E34228 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C8C6BA19869AAD00E34228 /* RegisterViewController.m */; };
 		83C8C6C01988359A00E34228 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C8C6BF1988359A00E34228 /* LoginViewController.m */; };
+		83D956CE19A130D300BA96EF /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D956CD19A130D300BA96EF /* CalculatorViewController.m */; };
+		83D956D019A13C2100BA96EF /* HHeal76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D956CF19A13C2100BA96EF /* HHeal76x76.png */; };
+		83D956D219A13D0C00BA96EF /* MetalBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D956D119A13D0C00BA96EF /* MetalBackground.png */; };
 		D4BF2503D78548218BAE9094 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C18B23264AF4F0D95D09176 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +162,9 @@
 		8304DC45199C751B006E7BD7 /* ReportFluViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFluViewController.m; sourceTree = "<group>"; };
 		8330719319901DF9004CD49F /* CardNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardNoteViewController.h; sourceTree = "<group>"; };
 		8330719419901DF9004CD49F /* CardNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardNoteViewController.m; sourceTree = "<group>"; };
+		834A61A619A1530400FC8753 /* help-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help-32.png"; sourceTree = "<group>"; };
+		834A61A819A164EA00FC8753 /* password-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password-32.png"; sourceTree = "<group>"; };
+		834A61A919A164EA00FC8753 /* user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-32.png"; sourceTree = "<group>"; };
 		835159A71982DCD20093E478 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
 		835159A81982DCD20093E478 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
 		835159AD1983004B0093E478 /* LineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartViewController.h; sourceTree = "<group>"; };
@@ -218,6 +227,10 @@
 		83C8C6BA19869AAD00E34228 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		83C8C6BE1988359A00E34228 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		83C8C6BF1988359A00E34228 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		83D956CC19A130D300BA96EF /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
+		83D956CD19A130D300BA96EF /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		83D956CF19A13C2100BA96EF /* HHeal76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HHeal76x76.png; sourceTree = "<group>"; };
+		83D956D119A13D0C00BA96EF /* MetalBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MetalBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +262,9 @@
 		8304DBC519957319006E7BD7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				834A61A819A164EA00FC8753 /* password-32.png */,
+				834A61A919A164EA00FC8753 /* user-32.png */,
+				834A61A619A1530400FC8753 /* help-32.png */,
 				8304DC3C199C4A1F006E7BD7 /* location-50.png */,
 				8304DC33199B1DFA006E7BD7 /* vegan_food-100.png */,
 				8304DC31199B17ED006E7BD7 /* walking-100.png */,
@@ -289,6 +305,8 @@
 		8304DBF9199AF97A006E7BD7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83D956D119A13D0C00BA96EF /* MetalBackground.png */,
+				83D956CF19A13C2100BA96EF /* HHeal76x76.png */,
 				8304DC09199AFC22006E7BD7 /* yoga.jpg */,
 				8304DBFA199AF97A006E7BD7 /* echinacea.jpg */,
 				8304DBFB199AF97A006E7BD7 /* exercise.jpg */,
@@ -377,6 +395,8 @@
 				83C8C6BA19869AAD00E34228 /* RegisterViewController.m */,
 				83745EB2198C4D0400F44BE6 /* ScrollCardViewController.h */,
 				83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */,
+				83D956CC19A130D300BA96EF /* CalculatorViewController.h */,
+				83D956CD19A130D300BA96EF /* CalculatorViewController.m */,
 				8382CA00197DAF00008E125C /* Images.xcassets */,
 			);
 			name = HHeal;
@@ -568,6 +588,8 @@
 				8304DBD51995C64E006E7BD7 /* plus-25.png in Resources */,
 				8304DC32199B17ED006E7BD7 /* walking-100.png in Resources */,
 				8304DC26199B17B0006E7BD7 /* bed-75.png in Resources */,
+				834A61A719A1530400FC8753 /* help-32.png in Resources */,
+				834A61AB19A164EA00FC8753 /* user-32.png in Resources */,
 				8304DC18199B01C2006E7BD7 /* feedback-32.png in Resources */,
 				8304DBE21998062A006E7BD7 /* checkmarkgrey-32.png in Resources */,
 				8304DC15199AFF7A006E7BD7 /* line_chart-32.png in Resources */,
@@ -587,6 +609,8 @@
 				8304DC2E199B17B0006E7BD7 /* water-75.png in Resources */,
 				8304DC13199AFF7A006E7BD7 /* history-32.png in Resources */,
 				8304DC37199B2753006E7BD7 /* medal_grey-48.png in Resources */,
+				83D956D219A13D0C00BA96EF /* MetalBackground.png in Resources */,
+				834A61AA19A164EA00FC8753 /* password-32.png in Resources */,
 				8304DC12199AFF7A006E7BD7 /* calculator-32.png in Resources */,
 				8304DC02199AF97A006E7BD7 /* Vitamin-A-Rich-Foods-You-Should-Be-Eating.jpg in Resources */,
 				83C5624C1980C9A100AFD2A3 /* MainBoard.storyboard in Resources */,
@@ -597,6 +621,7 @@
 				8304DC34199B1DFA006E7BD7 /* vegan_food-100.png in Resources */,
 				8304DBF8199AB4EE006E7BD7 /* medal-26.png in Resources */,
 				8304DC30199B17B0006E7BD7 /* yoga-100.png in Resources */,
+				83D956D019A13C2100BA96EF /* HHeal76x76.png in Resources */,
 				8304DC0A199AFC22006E7BD7 /* yoga.jpg in Resources */,
 				8304DBE419980884006E7BD7 /* checkmarkgreen-25.png in Resources */,
 				8304DC08199AFA4E006E7BD7 /* FluForecast-Info.plist in Resources */,
@@ -685,6 +710,7 @@
 				8330719519901DF9004CD49F /* CardNoteViewController.m in Sources */,
 				8382CA56197EA829008E125C /* XMLParserDelegate.m in Sources */,
 				835159A91982DCD20093E478 /* BarChartViewController.m in Sources */,
+				83D956CE19A130D300BA96EF /* CalculatorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

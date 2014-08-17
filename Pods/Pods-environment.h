@@ -42,12 +42,6 @@
 #define COCOAPODS_VERSION_MINOR_MMDrawerController_Subclass 5
 #define COCOAPODS_VERSION_PATCH_MMDrawerController_Subclass 6
 
-// MRoundedButton
-#define COCOAPODS_POD_AVAILABLE_MRoundedButton
-#define COCOAPODS_VERSION_MAJOR_MRoundedButton 1
-#define COCOAPODS_VERSION_MINOR_MRoundedButton 0
-#define COCOAPODS_VERSION_PATCH_MRoundedButton 0
-
 // MZAppearance
 #define COCOAPODS_POD_AVAILABLE_MZAppearance
 #define COCOAPODS_VERSION_MAJOR_MZAppearance 1
