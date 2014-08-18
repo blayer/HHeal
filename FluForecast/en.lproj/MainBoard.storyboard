@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MnY-jU-zU1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6x2-kw-8si">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -794,7 +794,7 @@
                                 <rect key="frame" x="0.0" y="114" width="320" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">VO2 (or oxygen consumption) is a measure of the volume of oxygen that is used by your body to convert the energy from the food you eat into the energy molecules, called adenosine triphosphate (ATP), that your body uses at the cellular level. VO2max (or maximal oxygen consumption) is simply the maximum possible VO2 that a given person can achieve. VO2 and VO2max are important in the context of exercise, because they are a measure of your body's ability to generate ATP, and ATP is the energy source that allows your muscles to continue working while you are exercising. Therefore, by definition, a VO2max measurement is ultimately a measure of your cardiorespiratory fitness level.</mutableString>
+                                <string key="text">VO2 (or oxygen consumption) is a measure of the volume of oxygen that is used by your body to convert the energy from the food you eat into the energy molecules, called adenosine triphosphate (ATP), that your body uses at the cellular level. VO2max (or maximal oxygen consumption) is simply the maximum possible VO2 that a given person can achieve. VO2 and VO2max are important in the context of exercise, because they are a measure of your body's ability to generate ATP, and ATP is the energy source that allows your muscles to continue working while you are exercising. Therefore, by definition, a VO2max measurement is ultimately a measure of your cardiorespiratory fitness level.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -810,7 +810,7 @@
                                 <rect key="frame" x="0.0" y="371" width="320" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">
+                                <string key="text">
 VO2max (mL•kg-1•min-1) Classifications for Women
 Age (years)	Poor	Fair	Good	Excellent	Superior
 20 - 29	≤ 35	36 - 39	40 - 43	44 - 49	50+
@@ -827,7 +827,7 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
 50 - 59	≤ 34	35 - 37	38 - 42	43 - 49	50+
 60 - 69	≤ 30	31 - 34	35 - 38	39 - 45	46+
 70 - 79	≤ 27	28 - 30	31 - 35	36 - 41	42+
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

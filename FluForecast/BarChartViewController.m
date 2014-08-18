@@ -13,8 +13,8 @@
 
 
 @interface BarChartViewController ()
-@property float nationalFluRate;
-@property float personalFluRate;
+@property NSNumber *nationalFluRate;
+@property NSNumber *personalFluRate;
 @property NSString *trainingCards;
 @property NSData *receivedData;
 @property NSDictionary *dict;
@@ -54,24 +54,27 @@
     // Do any additional setup after loading the view.
     //we need to get national data, personal data, and training cards
     
-    NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324"];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/user_profile/53f1439d3b240c55ba4bb2a7"];
    //
    //NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324?username=nali&pass="];
    //This shows another example of request with quaries. 
    //
    //
-    NSURLRequest *request=[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    //asynchronize loading
+  //  [NSURLConnection connectionWithRequest:request delegate:self];
+ 
+    //synchronized loading
+   self.receivedData=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+   
+    NSError* error;
     
-    [NSURLConnection connectionWithRequest:request delegate:self];
-
-    self.nationalFluRate = [[self.dict valueForKey:@"standardrate"] floatValue];
-    self.personalFluRate = [[self.dict valueForKey:@"personalrate"] floatValue];
+    self.dict = [NSJSONSerialization JSONObjectWithData:self.receivedData
+                                                options: NSJSONReadingMutableContainers
+                                                  error: &error];
     
-    
-
-    
-    
-    
+    self.nationalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"standardrate"] intValue]) ];
+    self.personalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"personalrate"] intValue]) ];
     
     
     // building up barchart visualization
@@ -91,8 +94,10 @@
     self.barChart.labelMarginTop = 5.0;
     [self.barChart setXLabels:@[@"National",@"Personal"]];
     
+
+    
     // two FluRates are given here
-    [self.barChart setYValues:@[@12.3456,@23.654]];
+    [self.barChart setYValues:@[self.nationalFluRate,self.personalFluRate]];
     [self.barChart setStrokeColors:@[PNBlue,PNGreen]];
     [self.barChart strokeChart];
     
@@ -104,11 +109,13 @@
     //Add CircleChart
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 
@@ -151,23 +158,34 @@
     
 
 
-
+/*
 -(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
     
     NSLog(@"Server responded");
     
-    self.receivedData = [NSMutableData dataWithCapacity:5000];
+    self.receivedData = [[NSMutableData alloc]init];
 }
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     NSLog(@"Receiving data");
-    
+    [self.receivedData appendData:data];
 }
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSLog(@"Connection finish loading");
     
-   NSDictionary *dict = [NSJSONSerialization JSONObjectWithStream:self.receivedData options:NSJSONReadingAllowFragments error:nil];
+    
+//    NSString *receiveStr = [[NSString alloc]initWithData:self.receivedData encoding:NSUTF8StringEncoding];
+  //  NSLog(receiveStr);
+   
+    NSError* error;
+    
+    self.dict = [NSJSONSerialization JSONObjectWithData:self.receivedData
+                                    options: NSJSONReadingMutableContainers
+                                      error: &error];
+    
+    
+ //  self.dict = [NSJSONSerialization JSONObjectWithStream:receiveStr options:NSJSONReadingAllowFragments error:nil];
     
     
 }
@@ -177,7 +195,7 @@
 }
 
 
-
+*/
 
 /*
  

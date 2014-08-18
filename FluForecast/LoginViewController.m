@@ -92,7 +92,7 @@
     
     
     
-    NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324"];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/user_profile/53f1439d3b240c55ba4bb2a7"];
     //
     // NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324?username=nali&pass="];
     //This shows another example of request with quaries.
@@ -126,6 +126,7 @@
     
     
 }
+
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"Connection failed：%@",[error localizedDescription]);
