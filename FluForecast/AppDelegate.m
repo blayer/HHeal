@@ -16,14 +16,6 @@
 {
     [[BlurryModalSegue appearance] setBackingImageBlurRadius:@(20)];
     [[BlurryModalSegue appearance] setBackingImageSaturationDeltaFactor:@(.45)];
-    
-    
-    
-    
-    
-    
-    
-    
     return YES;
 }
 

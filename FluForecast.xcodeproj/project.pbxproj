@@ -56,6 +56,7 @@
 		834A61A719A1530400FC8753 /* help-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A619A1530400FC8753 /* help-32.png */; };
 		834A61AA19A164EA00FC8753 /* password-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A819A164EA00FC8753 /* password-32.png */; };
 		834A61AB19A164EA00FC8753 /* user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A919A164EA00FC8753 /* user-32.png */; };
+		834A61AD19A185EC00FC8753 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834A61AC19A185EC00FC8753 /* CoreLocation.framework */; };
 		835159A91982DCD20093E478 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835159A81982DCD20093E478 /* BarChartViewController.m */; };
 		835159AF1983004B0093E478 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835159AE1983004B0093E478 /* LineChartViewController.m */; };
 		83745EB4198C4D0400F44BE6 /* ScrollCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */; };
@@ -70,16 +71,6 @@
 		8382CA12197DAF00008E125C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8382CA10197DAF00008E125C /* InfoPlist.strings */; };
 		8382CA14197DAF00008E125C /* FluForecastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA13197DAF00008E125C /* FluForecastTests.m */; };
 		8382CA33197EA72A008E125C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382CA32197EA72A008E125C /* QuartzCore.framework */; };
-		8382CA4E197EA829008E125C /* BarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA36197EA829008E125C /* BarChartView.m */; };
-		8382CA4F197EA829008E125C /* BarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA38197EA829008E125C /* BarLabel.m */; };
-		8382CA50197EA829008E125C /* BarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA3B197EA829008E125C /* BarView.m */; };
-		8382CA51197EA829008E125C /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA3F197EA829008E125C /* CMPopTipView.m */; };
-		8382CA52197EA829008E125C /* UIColor+i7HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA42197EA829008E125C /* UIColor+i7HexColor.m */; };
-		8382CA53197EA829008E125C /* UIViewSizeShortcuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA44197EA829008E125C /* UIViewSizeShortcuts.m */; };
-		8382CA54197EA829008E125C /* XMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA47197EA829008E125C /* XMLElement.m */; };
-		8382CA55197EA829008E125C /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA49197EA829008E125C /* XMLParser.m */; };
-		8382CA56197EA829008E125C /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA4B197EA829008E125C /* XMLParserDelegate.m */; };
-		8382CA57197EA829008E125C /* PlotChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA4D197EA829008E125C /* PlotChartView.m */; };
 		8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA78197F5F21008E125C /* AMSlideMenuContentSegue.m */; };
 		8382CA87197F5F21008E125C /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA7A197F5F21008E125C /* AMSlideMenuLeftMenuSegue.m */; };
 		8382CA88197F5F21008E125C /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382CA7C197F5F21008E125C /* AMSlideMenuLeftTableViewController.m */; };
@@ -165,6 +156,7 @@
 		834A61A619A1530400FC8753 /* help-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help-32.png"; sourceTree = "<group>"; };
 		834A61A819A164EA00FC8753 /* password-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password-32.png"; sourceTree = "<group>"; };
 		834A61A919A164EA00FC8753 /* user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-32.png"; sourceTree = "<group>"; };
+		834A61AC19A185EC00FC8753 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		835159A71982DCD20093E478 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
 		835159A81982DCD20093E478 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
 		835159AD1983004B0093E478 /* LineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartViewController.h; sourceTree = "<group>"; };
@@ -184,27 +176,6 @@
 		8382CA11197DAF00008E125C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8382CA13197DAF00008E125C /* FluForecastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluForecastTests.m; sourceTree = "<group>"; };
 		8382CA32197EA72A008E125C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8382CA35197EA829008E125C /* BarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartView.h; sourceTree = "<group>"; };
-		8382CA36197EA829008E125C /* BarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartView.m; sourceTree = "<group>"; };
-		8382CA37197EA829008E125C /* BarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarLabel.h; sourceTree = "<group>"; };
-		8382CA38197EA829008E125C /* BarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarLabel.m; sourceTree = "<group>"; };
-		8382CA39197EA829008E125C /* BarTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarTypes.h; sourceTree = "<group>"; };
-		8382CA3A197EA829008E125C /* BarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarView.h; sourceTree = "<group>"; };
-		8382CA3B197EA829008E125C /* BarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarView.m; sourceTree = "<group>"; };
-		8382CA3E197EA829008E125C /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
-		8382CA3F197EA829008E125C /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
-		8382CA41197EA829008E125C /* UIColor+i7HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+i7HexColor.h"; sourceTree = "<group>"; };
-		8382CA42197EA829008E125C /* UIColor+i7HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+i7HexColor.m"; sourceTree = "<group>"; };
-		8382CA43197EA829008E125C /* UIViewSizeShortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewSizeShortcuts.h; sourceTree = "<group>"; };
-		8382CA44197EA829008E125C /* UIViewSizeShortcuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewSizeShortcuts.m; sourceTree = "<group>"; };
-		8382CA46197EA829008E125C /* XMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLElement.h; sourceTree = "<group>"; };
-		8382CA47197EA829008E125C /* XMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLElement.m; sourceTree = "<group>"; };
-		8382CA48197EA829008E125C /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
-		8382CA49197EA829008E125C /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
-		8382CA4A197EA829008E125C /* XMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParserDelegate.h; sourceTree = "<group>"; };
-		8382CA4B197EA829008E125C /* XMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParserDelegate.m; sourceTree = "<group>"; };
-		8382CA4C197EA829008E125C /* PlotChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotChartView.h; sourceTree = "<group>"; };
-		8382CA4D197EA829008E125C /* PlotChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotChartView.m; sourceTree = "<group>"; };
 		8382CA77197F5F21008E125C /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
 		8382CA78197F5F21008E125C /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
 		8382CA79197F5F21008E125C /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
@@ -238,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834A61AD19A185EC00FC8753 /* CoreLocation.framework in Frameworks */,
 				8382CA33197EA72A008E125C /* QuartzCore.framework in Frameworks */,
 				8382C9F1197DAEFF008E125C /* CoreGraphics.framework in Frameworks */,
 				8382C9F3197DAEFF008E125C /* UIKit.framework in Frameworks */,
@@ -332,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				8382CA76197F5F21008E125C /* AMSlideMenu */,
-				8382CA34197EA829008E125C /* BarChart Library */,
 				8382C9F4197DAEFF008E125C /* HHeal */,
 				8382CA0D197DAF00008E125C /* FluForecastTests */,
 				8382C9ED197DAEFF008E125C /* Frameworks */,
@@ -354,6 +325,7 @@
 		8382C9ED197DAEFF008E125C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				834A61AC19A185EC00FC8753 /* CoreLocation.framework */,
 				8382CA32197EA72A008E125C /* QuartzCore.framework */,
 				8382C9EE197DAEFF008E125C /* Foundation.framework */,
 				8382C9F0197DAEFF008E125C /* CoreGraphics.framework */,
@@ -419,67 +391,6 @@
 				8382CA10197DAF00008E125C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8382CA34197EA829008E125C /* BarChart Library */ = {
-			isa = PBXGroup;
-			children = (
-				8382CA35197EA829008E125C /* BarChartView.h */,
-				8382CA36197EA829008E125C /* BarChartView.m */,
-				8382CA37197EA829008E125C /* BarLabel.h */,
-				8382CA38197EA829008E125C /* BarLabel.m */,
-				8382CA39197EA829008E125C /* BarTypes.h */,
-				8382CA3A197EA829008E125C /* BarView.h */,
-				8382CA3B197EA829008E125C /* BarView.m */,
-				8382CA3C197EA829008E125C /* External */,
-				8382CA4C197EA829008E125C /* PlotChartView.h */,
-				8382CA4D197EA829008E125C /* PlotChartView.m */,
-			);
-			name = "BarChart Library";
-			path = "FluForecast/BarChart Library";
-			sourceTree = "<group>";
-		};
-		8382CA3C197EA829008E125C /* External */ = {
-			isa = PBXGroup;
-			children = (
-				8382CA3D197EA829008E125C /* CMPopTipView */,
-				8382CA40197EA829008E125C /* Helpers */,
-				8382CA45197EA829008E125C /* XMLParser */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		8382CA3D197EA829008E125C /* CMPopTipView */ = {
-			isa = PBXGroup;
-			children = (
-				8382CA3E197EA829008E125C /* CMPopTipView.h */,
-				8382CA3F197EA829008E125C /* CMPopTipView.m */,
-			);
-			path = CMPopTipView;
-			sourceTree = "<group>";
-		};
-		8382CA40197EA829008E125C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				8382CA41197EA829008E125C /* UIColor+i7HexColor.h */,
-				8382CA42197EA829008E125C /* UIColor+i7HexColor.m */,
-				8382CA43197EA829008E125C /* UIViewSizeShortcuts.h */,
-				8382CA44197EA829008E125C /* UIViewSizeShortcuts.m */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		8382CA45197EA829008E125C /* XMLParser */ = {
-			isa = PBXGroup;
-			children = (
-				8382CA46197EA829008E125C /* XMLElement.h */,
-				8382CA47197EA829008E125C /* XMLElement.m */,
-				8382CA48197EA829008E125C /* XMLParser.h */,
-				8382CA49197EA829008E125C /* XMLParser.m */,
-				8382CA4A197EA829008E125C /* XMLParserDelegate.h */,
-				8382CA4B197EA829008E125C /* XMLParserDelegate.m */,
-			);
-			path = XMLParser;
 			sourceTree = "<group>";
 		};
 		8382CA76197F5F21008E125C /* AMSlideMenu */ = {
@@ -681,23 +592,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				83C8C6C01988359A00E34228 /* LoginViewController.m in Sources */,
-				8382CA55197EA829008E125C /* XMLParser.m in Sources */,
 				8382CA8B197F5F21008E125C /* AMSlideMenuRightTableViewController.m in Sources */,
 				8382C9FF197DAEFF008E125C /* AppDelegate.m in Sources */,
 				8304DC05199AFA39006E7BD7 /* main.m in Sources */,
 				8304DC3B199BBE44006E7BD7 /* CardCompleteNoteViewController.m in Sources */,
-				8382CA4F197EA829008E125C /* BarLabel.m in Sources */,
 				8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */,
-				8382CA53197EA829008E125C /* UIViewSizeShortcuts.m in Sources */,
-				8382CA52197EA829008E125C /* UIColor+i7HexColor.m in Sources */,
 				8382CA8A197F5F21008E125C /* AMSlideMenuRightMenuSegue.m in Sources */,
 				83C8C6BB19869AAD00E34228 /* RegisterViewController.m in Sources */,
 				8382CA87197F5F21008E125C /* AMSlideMenuLeftMenuSegue.m in Sources */,
-				8382CA57197EA829008E125C /* PlotChartView.m in Sources */,
-				8382CA50197EA829008E125C /* BarView.m in Sources */,
-				8382CA4E197EA829008E125C /* BarChartView.m in Sources */,
 				8382CA8C197F5F21008E125C /* UIViewController+AMSlideMenu.m in Sources */,
-				8382CA54197EA829008E125C /* XMLElement.m in Sources */,
 				8304DC46199C751B006E7BD7 /* ReportFluViewController.m in Sources */,
 				83745EB4198C4D0400F44BE6 /* ScrollCardViewController.m in Sources */,
 				835159AF1983004B0093E478 /* LineChartViewController.m in Sources */,
@@ -705,10 +608,8 @@
 				8382CA89197F5F21008E125C /* AMSlideMenuMainViewController.m in Sources */,
 				8382CA88197F5F21008E125C /* AMSlideMenuLeftTableViewController.m in Sources */,
 				8304DBDB1996FB4E006E7BD7 /* CardSelectViewController.m in Sources */,
-				8382CA51197EA829008E125C /* CMPopTipView.m in Sources */,
 				8304DBF61999C039006E7BD7 /* TrainingLogViewController.m in Sources */,
 				8330719519901DF9004CD49F /* CardNoteViewController.m in Sources */,
-				8382CA56197EA829008E125C /* XMLParserDelegate.m in Sources */,
 				835159A91982DCD20093E478 /* BarChartViewController.m in Sources */,
 				83D956CE19A130D300BA96EF /* CalculatorViewController.m in Sources */,
 			);

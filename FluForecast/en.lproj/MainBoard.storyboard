@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6x2-kw-8si">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MnY-jU-zU1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -392,6 +392,30 @@
                 <exit id="jRu-CX-4Ki" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="402" y="1682"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nd8-v9-ztx">
+            <objects>
+                <viewController id="MnY-jU-zU1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lLG-bU-kv4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MetalBackground.png" id="Eak-31-8fN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HHeal76x76.png" id="sUA-zz-NSR">
+                                <rect key="frame" x="85" y="150" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSz-T6-JPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="306"/>
         </scene>
         <!--Main Navigation View-->
         <scene sceneID="E5G-0C-oUk">
@@ -1281,6 +1305,7 @@ layer.masksToBoundsayer.masksToBounds</string>
     </scenes>
     <resources>
         <image name="HHeal76x76.png" width="1024" height="1024"/>
+        <image name="MetalBackground.png" width="1536" height="2048"/>
         <image name="about-32.png" width="32" height="32"/>
         <image name="calculator-32.png" width="32" height="32"/>
         <image name="feedback-32.png" width="32" height="32"/>
