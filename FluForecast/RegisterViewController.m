@@ -7,6 +7,11 @@
 //
 
 #import "RegisterViewController.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
+
+
+
 @interface RegisterViewController ()
 @property UIAlertView *PasswordNotMatch;
 @property UIAlertView *alertIncorretAge;
@@ -131,8 +136,58 @@ else
 - (IBAction)RegisterProfile:(id)sender {
 
     if(![self isBlankText]&&[self isCorrectAge]&&[self isPasswordLongEnough]&&[self isPasswordMatch])
-    {
-    //send registeration information 
+    {   int age=[self.Age.text intValue];
+        NSNumber *ageGroup=[[NSNumber alloc]init];
+        if (age<18)
+            ageGroup=@1;
+        else if (18<=age<25)
+            ageGroup=@2;
+        else if (25<=age<35)
+            ageGroup=@3;
+        else if(35<=age<60)
+            ageGroup=@4;
+        else if(60<age)
+            ageGroup=@5;
+        
+            
+       // NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text};
+        NSNumber *x= [NSNumber numberWithFloat:(40.33434f) ];
+        NSNumber *y= [NSNumber numberWithFloat:(77.33434f) ];
+        
+        
+        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"lng":x,@"lat":y};
+  //     NSDictionary *parameters =  [NSDictionary dictionaryWithObject: self.UserName.text forKey:@"username"],]
+        
+        NSString *url=HHealURL @"/user_profile";
+        NSLog(@"JSON: %@", parameters);
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+            UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:@"Registration Succeed!"
+                                                                message:@"Please return to login page"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+            [successAlert show];
+            
+            //after successful registration, go back to the Login page automatically
+            
+            [self performSegueWithIdentifier: @"BacktoLogin" sender: self];
+
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+            
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Registration Error!"
+                                                                message:[error localizedDescription]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+            
+            [ errorAlert show];
+            
+        }];
+    
     }
     
     else [self showAlertMessage];

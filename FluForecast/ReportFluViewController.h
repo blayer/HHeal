@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ReportFluViewController : UIViewController
+@interface ReportFluViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *feverSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *coughSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *sourSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *reportButton;
+@property (nonatomic) BOOL fluReported;
 - (IBAction)reportButtonClicked:(id)sender;
 
 @end

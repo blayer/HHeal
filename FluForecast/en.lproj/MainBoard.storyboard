@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6x2-kw-8si">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="0ED-It-kR3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7M6-Mk-iS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1715" y="451"/>
+            <point key="canvasLocation" x="1738" y="455"/>
         </scene>
         <!--Card Complete Note View Controller-->
         <scene sceneID="qlR-Tz-NSA">
@@ -138,7 +138,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SignIn:" destination="wjq-nc-yLe" eventType="touchUpInside" id="Plx-xf-IbX"/>
-                                    <segue destination="6x2-kw-8si" kind="push" id="NF2-I5-UtL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Uk1-I2-4Ix">
@@ -200,6 +199,7 @@
                     <connections>
                         <outlet property="passwordTF" destination="08c-Ad-AGJ" id="gNH-vN-nS4"/>
                         <outlet property="usernameTF" destination="Qm8-KE-S9t" id="o3i-ce-Fnx"/>
+                        <segue destination="6x2-kw-8si" kind="push" identifier="LoginSuccess" id="gct-fp-hQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9U3-WK-QqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,39 +234,45 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="x5U-lJ-yNn" kind="unwind" unwindAction="unwindToThisViewController:" id="Lur-TZ-GU8"/>
+                                    <segue destination="x5U-lJ-yNn" kind="unwind" identifier="BacktoLogin" unwindAction="unwindToThisViewController:" id="Lur-TZ-GU8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rHb-Va-HGl">
-                                <rect key="frame" x="56" y="476" width="209" height="30"/>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rHb-Va-HGl">
+                                <rect key="frame" x="20" y="454" width="280" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="backgroundColor" red="0.1090575759" green="1" blue="0.28774762500000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="RegisterProfile:" destination="Bqd-Bv-Ta1" eventType="touchUpInside" id="ebF-Dq-BII"/>
-                                    <segue destination="6x2-kw-8si" kind="push" id="eqn-Xz-OmA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="73N-8C-bKG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" id="73N-8C-bKG">
                                 <rect key="frame" x="59" y="117" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="MsY-7R-WEn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" id="MsY-7R-WEn">
                                 <rect key="frame" x="59" y="187" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="U9n-GE-V7V">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" id="U9n-GE-V7V">
                                 <rect key="frame" x="59" y="257" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -276,7 +282,6 @@
                                 <rect key="frame" x="121" y="88" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -284,7 +289,6 @@
                                 <rect key="frame" x="140" y="158" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -292,11 +296,10 @@
                                 <rect key="frame" x="77" y="228" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="7Mt-sB-PJ6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="retype password" minimumFontSize="17" id="7Mt-sB-PJ6">
                                 <rect key="frame" x="59" y="323" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -306,7 +309,6 @@
                                 <rect key="frame" x="71" y="294" width="179" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -317,7 +319,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="OKn-as-qw4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="age" minimumFontSize="17" id="OKn-as-qw4">
                                 <rect key="frame" x="59" y="390" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -335,6 +337,7 @@
                         <outlet property="Password" destination="U9n-GE-V7V" id="VaH-tL-kgQ"/>
                         <outlet property="ReEnterPassword" destination="7Mt-sB-PJ6" id="L9O-Gj-Rsb"/>
                         <outlet property="UserName" destination="73N-8C-bKG" id="Iyg-PX-Cnp"/>
+                        <segue destination="x5U-lJ-yNn" kind="unwind" unwindAction="unwindToThisViewController:" id="dMH-0F-PjJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7L8-1u-3Av" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -393,10 +396,10 @@
             </objects>
             <point key="canvasLocation" x="402" y="1682"/>
         </scene>
-        <!--View Controller-->
+        <!--Loading View Controller-->
         <scene sceneID="nd8-v9-ztx">
             <objects>
-                <viewController id="MnY-jU-zU1" sceneMemberID="viewController">
+                <viewController id="MnY-jU-zU1" customClass="LoadingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLG-bU-kv4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -406,7 +409,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HHeal76x76.png" id="sUA-zz-NSR">
-                                <rect key="frame" x="85" y="150" width="150" height="150"/>
+                                <rect key="frame" x="85" y="63" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -870,10 +873,10 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
             </objects>
             <point key="canvasLocation" x="1010" y="3449"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Us View Controller-->
         <scene sceneID="Mds-tF-AJi">
             <objects>
-                <viewController id="4eA-F7-bcb" sceneMemberID="viewController">
+                <viewController id="4eA-F7-bcb" customClass="ContactUsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5X-hf-pNK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1165,14 +1168,14 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fever" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a2G-dv-yXS">
-                                <rect key="frame" x="21" y="182" width="79" height="24"/>
+                                <rect key="frame" x="21" y="175" width="79" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cough" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x0R-Js-5Tn">
-                                <rect key="frame" x="21" y="245" width="89" height="21"/>
+                                <rect key="frame" x="21" y="239" width="89" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1231,7 +1234,9 @@ layer.masksToBoundsayer.masksToBounds</string>
                     <connections>
                         <outlet property="coughSwitch" destination="lBK-Hz-KWb" id="OQQ-Q2-QMj"/>
                         <outlet property="feverSwitch" destination="rIG-Wd-dr4" id="6Ie-8g-Mef"/>
+                        <outlet property="reportButton" destination="vJT-4E-D5O" id="kY4-7b-kjl"/>
                         <outlet property="sourSwitch" destination="fhC-dd-qpU" id="y94-kl-0Wk"/>
+                        <segue destination="U7J-Ji-MIz" kind="unwind" identifier="BacktoMainPage" unwindAction="unwindToThisViewController:" id="V2s-Mn-G5v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLT-HL-GvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1327,7 +1332,6 @@ layer.masksToBoundsayer.masksToBounds</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NF2-I5-UtL"/>
         <segue reference="7iU-6O-yxy"/>
     </inferredMetricsTieBreakers>
 </document>

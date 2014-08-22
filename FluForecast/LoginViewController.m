@@ -7,17 +7,20 @@
 //
 
 #import "LoginViewController.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
+
 
 @interface LoginViewController ()
 @property UIAlertView *alertWrongPassword;
 @property UIAlertView *alertBlankText;
-@property NSData *receivedData;
-@property NSDictionary *dict;
+@property NSDictionary *recievedData;
 @end
 
 @implementation LoginViewController
 
-- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue {}
+- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue {
+}
 
 
 
@@ -36,14 +39,7 @@
 {
     [super viewDidLoad];
     
-    NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
-    
-    
-    
-    
-   
-    
-    
+
     
  ///////////////////////////////////////////////////////////////////////////////////////
   self.alertWrongPassword=[[UIAlertView alloc] initWithTitle:@"Login Failed"
@@ -86,82 +82,78 @@
 }
 
 
-
--(BOOL)loginWithUsername:(NSString *)username Password:(NSString *)password {
-
-    
-    
-    
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/user_profile/53f1439d3b240c55ba4bb2a7"];
-    //
-    // NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324?username=nali&pass="];
-    //This shows another example of request with quaries.
-    //
-    //
-    NSURLRequest *request=[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
-    
-    [NSURLConnection connectionWithRequest:request delegate:self];
-    
-    return true;
-}
-
-
-
--(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    
-    NSLog(@"Server responded");
-    
-    self.receivedData = [NSMutableData dataWithCapacity:5000];
-}
--(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    NSLog(@"Receiving data");
-    
-}
--(void) connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"Connection finish loading");
-    
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithStream:self.receivedData options:NSJSONReadingAllowFragments error:nil];
-    
-    
-}
-
--(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    NSLog(@"Connection failed：%@",[error localizedDescription]);
-}
-
-
-
-
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
 
-}
 
 - (IBAction)SignIn:(id)sender {
+    
+    
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+    activityIndicator.center = self.view.center;
+    [self.view addSubview: activityIndicator];
+    
+    [activityIndicator startAnimating];
+    
+    [self.view setNeedsDisplay];
+    
+    
     if(self.passwordTF.text.length>0&&self.usernameTF.text.length>0)
     {
-        if ([self loginWithUsername:self.usernameTF.text Password:self.passwordTF.text])
-        {
-           
+      
+        NSDictionary *parameters= @{@"username":self.usernameTF.text,
+                                    @"password":self.passwordTF.text};
         
-        }
+        NSString *url=HHealURL @"/login";
         
-        else {
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        
+     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
+         
             
-            [self.alertWrongPassword show];
+            
+            NSLog(@"JSON: %@", responseObject);
+            self.recievedData=responseObject;
+         // store some data into userdefault
+     /*    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:self.usernameTF.text forKey:@"username"];
+            [defaults setObject:self.passwordTF.text forKey:@"password"];
+            [defaults setObject:[self.recievedData valueForKey:@"_id"] forKey:@"userid"];
+            [defaults setBool:YES forKey:@"autologin"];
+          
+            [defaults synchronize];
+        */
+            [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
+            
+            
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+            
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Login Error!"
+                                                                 message:[error localizedDescription]
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"Ok"
+                                                       otherButtonTitles:nil];
+            
+            [errorAlert show];
+            
+            [activityIndicator stopAnimating];
+            
+            [self.view setNeedsDisplay];
+            
+        }];
         
-        }
-    
     }
     
     else {
         [self.alertBlankText show];
+        [activityIndicator stopAnimating];
+        
+        [self.view setNeedsDisplay];
     }
     
 }

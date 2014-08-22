@@ -7,9 +7,17 @@
 //
 
 #import "ReportFluViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import "HHealParameter.h"
+#import "AFNetworking.h"
+
 
 @interface ReportFluViewController ()
 @property UIAlertView *reportAlert;
+@property CLLocationManager *mylocationManager;
+@property NSDictionary *dict;
+@property NSString *myid;
+
 
 @end
 
@@ -27,11 +35,49 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //start geolocation service
+    self.mylocationManager = [[CLLocationManager alloc] init];
+    self.mylocationManager.delegate = self;
+    self.mylocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.mylocationManager startUpdatingLocation];
+    
+   // Http reads in user profile
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:@"/user_profile/"];
+    if(self.myid!=nil)
+    {[url appendString:self.myid];}
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"JSON: %@", responseObject);
+        
+        self.dict=responseObject;
+      //  self.fluReported=NO;
+        
+        if(self.fluReported)
+        {self.reportButton.enabled=NO;}
+        
+        [self.view setNeedsDisplay];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Error: %@", error);
+    }];
+
+
     
     self.reportAlert=[[UIAlertView alloc]initWithTitle:@"Report Confirmation"
                                                message:@"Are you sure you want to confirm you flu symtom report? This report will change your risk score significantly"
-                                              delegate:nil
-                                     cancelButtonTitle:@"Yes,I confirm." otherButtonTitles:@"No,Do not confirm", nil];
+                                              delegate:self
+                                     cancelButtonTitle:@"Yes" otherButtonTitles:@"No", nil];
     // Do any additional setup after loading the view.
 }
 
@@ -55,4 +101,49 @@
 - (IBAction)reportButtonClicked:(id)sender {
     [self.reportAlert show];
 }
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Yes"])
+    {
+     //post geolocation here
+        NSDictionary *parameters = @{};
+        
+        NSString *url=HHealURL @"/flureport";
+        NSLog(@"JSON: %@", parameters);
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+            UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:@"Report Succeed!"
+                                                                   message:@"Please return to login page"
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"Ok"
+                                                         otherButtonTitles:nil];
+            [successAlert show];
+            
+            [self performSegueWithIdentifier: @"BacktoMainPage" sender: self];
+
+            
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+            
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Report Error!"
+                                                                 message:[error localizedDescription]
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"Ok"
+                                                       otherButtonTitles:nil];
+            
+            [ errorAlert show];
+            
+        }];
+        
+    }
+    
+}
+
+
 @end

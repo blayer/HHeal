@@ -8,6 +8,8 @@
 
 #import "BarChartViewController.h"
 #import "PNChart.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
 
 
 
@@ -19,6 +21,7 @@
 @property NSData *receivedData;
 @property NSDictionary *dict;
 @property NSArray *myCards;
+@property NSString *myid;
 @end
 
 @implementation BarChartViewController
@@ -38,48 +41,77 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.myid=[defaults objectForKey:@"_id"];
     //pre-load some testing data
     self.myCards= [[NSArray alloc]initWithObjects:@"Drinking water",@"Taking Vatamin D",@"Wash your hands",@"Eat more fruit",nil];
     
     
     
     
-     NSUserDefaults *profile = [NSUserDefaults standardUserDefaults];
     
  //    NSString *userID= [profile stringForKey:@"myID"];
     
  
     
-    // Do any additional setup after loading the view.
-    //we need to get national data, personal data, and training cards
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:@"/user_profile/"];
+    if(self.myid!=nil)
+    {[url appendString:self.myid];}
     
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/user_profile/53f1439d3b240c55ba4bb2a7"];
-   //
-   //NSURL *url = [NSURL URLWithString:@"http://where?/user_profile/1232324?username=nali&pass="];
-   //This shows another example of request with quaries. 
-   //
-   //
-    NSURLRequest *request=[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
-    //asynchronize loading
-  //  [NSURLConnection connectionWithRequest:request delegate:self];
- 
-    //synchronized loading
-   self.receivedData=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-   
-    NSError* error;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        NSLog(@"JSON: %@", responseObject);
     
-    self.dict = [NSJSONSerialization JSONObjectWithData:self.receivedData
-                                                options: NSJSONReadingMutableContainers
-                                                  error: &error];
+        self.dict=responseObject;
+        self.nationalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"standardrate"] intValue]) ];
+        self.personalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"personalrate"] intValue]) ];
+        
+        [self buildBarChart];
+        
+        [self.view setNeedsDisplay];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Error: %@", error);
+    }];
     
-    self.nationalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"standardrate"] intValue]) ];
-    self.personalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"personalrate"] intValue]) ];
+    
+    
     
     
     // building up barchart visualization
+ 
+
+    
+    //Add CircleChart
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+-(void)buildBarChart
+{
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setDateFormat:@"MMM dd, yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:date];
+    
     UILabel * barChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, 30)];
-    barChartLabel.text = @"Monday, August 4.";
+    barChartLabel.text = dateString;
     barChartLabel.textColor = PNFreshGreen;
     barChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:23.0];
     barChartLabel.textAlignment = NSTextAlignmentCenter;
@@ -94,29 +126,17 @@
     self.barChart.labelMarginTop = 5.0;
     [self.barChart setXLabels:@[@"National",@"Personal"]];
     
-
+    
     
     // two FluRates are given here
     [self.barChart setYValues:@[self.nationalFluRate,self.personalFluRate]];
     [self.barChart setStrokeColors:@[PNBlue,PNGreen]];
     [self.barChart strokeChart];
     
-     self.barChart.delegate = self;
+    self.barChart.delegate = self;
     [self.view addSubview:barChartLabel];
     [self.view addSubview:self.barChart];
-
-    
-    //Add CircleChart
 }
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 
 -(void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex{
@@ -155,59 +175,5 @@
     
  // [bar.layer addAnimation:animation forKey:@"Float"];
 }
-    
-
-
-/*
--(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    
-    NSLog(@"Server responded");
-    
-    self.receivedData = [[NSMutableData alloc]init];
-}
--(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    NSLog(@"Receiving data");
-    [self.receivedData appendData:data];
-}
--(void) connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"Connection finish loading");
-    
-    
-//    NSString *receiveStr = [[NSString alloc]initWithData:self.receivedData encoding:NSUTF8StringEncoding];
-  //  NSLog(receiveStr);
-   
-    NSError* error;
-    
-    self.dict = [NSJSONSerialization JSONObjectWithData:self.receivedData
-                                    options: NSJSONReadingMutableContainers
-                                      error: &error];
-    
-    
- //  self.dict = [NSJSONSerialization JSONObjectWithStream:receiveStr options:NSJSONReadingAllowFragments error:nil];
-    
-    
-}
--(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    NSLog(@"Connection failed：%@",[error localizedDescription]);
-}
-
-
-*/
-
-/*
- 
- 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

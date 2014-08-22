@@ -9,6 +9,8 @@
 
 #import "CardCompleteNoteViewController.h"
 #import "BlurryModalSegue/BlurryModalSegue.h"
+#import  "HHealParameter.h"
+#import "AFNetworking.h"
 
 @interface CardCompleteNoteViewController ()
 @property NSArray *cardName;
@@ -20,6 +22,7 @@
 @property UIAlertView *completeAlert;
 @property UIButton *clickedButton;
 @property int cardIdentifier;
+@property NSString *myCardID;
 @end
 
 @implementation CardCompleteNoteViewController
@@ -77,13 +80,43 @@
                     @"string",
                     @"string",
                     nil];
+    ///////////////////cominication////////////////
+    //Read in training card's info by post an _id
+    
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:@"/user_profile/"];
+    if(self.myCardID!=nil)
+    {[url appendString:self.myCardID];}
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"JSON: %@", responseObject);
+        
+  
+        
+        [self.view setNeedsDisplay];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Error: %@", error);
+    }];
+
+    
+    
     //set up title label
     CGRect nameFrame = CGRectMake(0.0f, 40.0f, 320.0f, 50.0f);
     self.name= [[UILabel alloc] initWithFrame:nameFrame];
     
     
     //title received from source view controller
-    
     
     self.name.text = [NSString stringWithFormat:self.receivedCardTitle];
     self.name.font = [UIFont boldSystemFontOfSize:25.0f];
@@ -143,12 +176,34 @@
     
     if([title isEqualToString:@"Yes"])
     {
-         [self.clickedButton setImage:[UIImage imageNamed:@"medal_yellow-48.png"] forState:UIControlStateNormal];
+        
+        NSMutableString *url=[NSMutableString new];
+        [url appendString:HHealURL];
+        [url appendString:@"/user_profile/"];
+  
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"JSON: %@", responseObject);
+            
+            [self.clickedButton setImage:[UIImage imageNamed:@"medal_yellow-48.png"] forState:UIControlStateNormal];
+            
+            [self.view setNeedsDisplay];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                                message:[error localizedDescription]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+            NSLog(@"Error: %@", error);
+        }];
+
     }
-  //  else if([title isEqualToString:@"No"])
-  //  {
- //       NSLog(@"Button 2 was selected.");
-  //  }
+
 }
 
 

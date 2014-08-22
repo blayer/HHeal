@@ -10,6 +10,7 @@
 #import "CardCompleteNoteViewController.h"
 #import "PNColor.h"
 #import "BlurryModalSegue/BlurryModalSegue.h"
+#import "AFNetworking.h"
 
 @interface ScrollCardViewController ()
 @property NSArray *myCards;
@@ -17,6 +18,8 @@
 @property NSArray *background;
 @property NSString *sendCardTitle;
 @property NSArray *icons;
+@property NSDictionary *receivedData;
+@property NSDictionary *icon;
 @property int numberOfCards;
 @end
 
@@ -39,13 +42,7 @@
     [super viewDidLoad];
     
     //initial my cards for testing
-    self.background=[[NSArray alloc]initWithObjects:@"exercise.jpg",
-                     @"vitamine.jpg",
-                     @"echinacea.jpg",
-                     @"pill-128.png",
-                     @"bed-100.png",
-                     @"water-100.png",
-                     nil];
+
     self.icons=[[NSArray alloc]initWithObjects:@"walking-100.png",
                      @"fish-100.png",
                      @"bunch_flowers-128.png",
@@ -68,6 +65,23 @@
                         @"Take 800 mg of echinacea liquid extract or equivalent three times today. \\n\\n* Children and pregnant or breastfeeding women should not take echinacea unless doctors have approved it.",
                         nil];
     
+      
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://localhost:3000/user_profile/53f1439d3b240c55ba4bb2a7" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"JSON: %@", responseObject);
+        self.receivedData=responseObject;
+        
+        
+        [self.view setNeedsDisplay];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     //initialize and allocate your scroll view
@@ -89,44 +103,11 @@
         UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(myOrigin, 0, self.view.frame.size.width, self.view.frame.size.height)];
         //set the background to white color
         myView.backgroundColor = [UIColor whiteColor];
-        
-        //create a label and add to the sub view
-   /*     CGRect cardFrame = CGRectMake(0.0f, 0.0f, 320.0f, 120.0f);
-        UILabel *myLabel = [[UILabel alloc] initWithFrame:cardFrame ];
-        
-        myLabel.text = [NSString stringWithFormat:self.myCards[i], i];
-        myLabel.font = [UIFont boldSystemFontOfSize:25.0f];
-        myLabel.textAlignment =  NSTextAlignmentCenter;
-        myLabel.textColor=[UIColor lightGrayColor];
-        
-        myLabel.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]]];*/
-        
-    /*    UIButton *cardButton=[[UIButton alloc]initWithFrame:cardFrame];
-         cardButton.titleLabel.text=[NSString stringWithFormat:self.myCards[i], i];
-         cardButton.titleLabel.font = [UIFont boldSystemFontOfSize:22.0f];
-         cardButton.titleLabel.textAlignment =  NSTextAlignmentCenter;
-        cardButton.titleLabel.textColor=[UIColor whiteColor];
-        cardButton.titleLabel.backgroundColor=[UIColor lightGrayColor];*/
-
-        
-       // [myView addSubview:myLabel];
-        
-        //create a ui textview to contain direction for each card
-  /*      CGRect directionFrame =CGRectMake(0.0f, 80.0f, self.view.frame.size.width, 130.0f);
-        UITextView *direction =[[UITextView alloc] initWithFrame:directionFrame];
-        direction.text = [NSString stringWithFormat:self.myDirections[i], i];
-        direction.textAlignment=NSTextAlignmentLeft;
-        [direction setFont:[UIFont fontWithName:@"arial" size:18]];
-        [direction setEditable:NO];
-        [myView addSubview:direction];
-        */
-        
+   
         
         UIButton *butt=[UIButton buttonWithType:UIButtonTypeCustom ];
         [butt setFrame:CGRectMake(100, 0, 220, 120)];
-     //   [butt setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]] forState:UIControlStateNormal];
-        
-     //   [butt setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0)];
+
         [butt setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
         [butt setTitle:[NSString stringWithFormat:self.myCards[i], i] forState:UIControlStateNormal];
          butt.titleLabel.font =[UIFont boldSystemFontOfSize:25.0f];
@@ -207,16 +188,7 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
   //  [self presentViewController:cardview animated:YES completion:^{}];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
