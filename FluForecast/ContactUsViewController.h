@@ -10,4 +10,6 @@
 #import <MessageUI/MessageUI.h>
 @interface ContactUsViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
+- (IBAction)showEmail:(id)sender;
+
 @end

@@ -1,19 +1,18 @@
 //
-//  ContactUsViewController.m
+//  TrainingHistoryViewController.m
 //  FluForecast
 //
-//  Created by Changkun Zhao on 8/22/14.
+//  Created by Changkun Zhao on 8/23/14.
 //  Copyright (c) 2014 Changkun Zhao. All rights reserved.
 //
 
-#import "ContactUsViewController.h"
-#import <MessageUI/MessageUI.h>
+#import "TrainingHistoryViewController.h"
 
-@interface ContactUsViewController ()
+@interface TrainingHistoryViewController ()
 
 @end
 
-@implementation ContactUsViewController
+@implementation TrainingHistoryViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,23 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-    
-    [mailController setSubject:@"my subject"];
-    [mailController setMessageBody:@"my message" isHTML:NO];
-    
-    mailController.mailComposeDelegate =self;
-    
-    UINavigationController *myNavController = [self navigationController];
-    
-    if ( mailController != nil ) {
-        if ([MFMailComposeViewController canSendMail]){
-            [myNavController presentModalViewController:mailController animated:YES];
-        }
-    }
-    
 }
 
 - (void)didReceiveMemoryWarning
