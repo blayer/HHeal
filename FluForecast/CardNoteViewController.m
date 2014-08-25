@@ -8,24 +8,23 @@
 // This controller is to implement card selection and unselection
 #import "CardNoteViewController.h"
 #import "BlurryModalSegue/BlurryModalSegue.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
 
 @interface CardNoteViewController ()
-@property NSArray *cardName;
-@property NSArray *cardDirection;
 @property NSArray *cardNote;
 @property UILabel *name;
-@property UITextView *direction;
 @property UITextView *note;
-@property int cardIdentifier;
 @property UIAlertView *selectAlert;
 @property UIAlertView *unselectAlert;
 @property UIButton *clickedButton;
-@property NSString *selectionStatus;
+@property NSDictionary *myCard;
+@property NSString  *progress;
 @end
 
 @implementation CardNoteViewController
 
-@synthesize receivedCardTitle; //received data in an array formated as [title, selection status]
+@synthesize receivedCard; //received data as a trainingcard id
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,7 +42,6 @@
     
     
     //for testing
-    self.selectionStatus=@"unselected";
     
     
     
@@ -59,74 +57,46 @@
                                                  delegate:self
                                         cancelButtonTitle:@"Yes"
                                         otherButtonTitles:@"No", nil];
-    self.cardIdentifier=0;
+
     // Do any additional setup after loading the view.
-    self.cardName= [[NSArray alloc]initWithObjects:
-                    @"Moderate exercise 40 mins",
-                    @"Take vitamin D supplements 5000 IU",
-                    @"Take echinacea extract 2400 mg",
-                    @"string",
-                    @"string",
-                    @"string",
-                    nil];
-    self.cardDirection= [[NSArray alloc]initWithObjects:
-                         @"Walk for 40 minutes today at 70 to 80 pencent of your Maximum aerobic heart rate (also VO2max). Don't know your VO2max rate? Tap the list button at the top-left corner. Use the VO2max Calculator to calculate your VO2max rate.",
-                         @"For adults (age > 18): take 5000 IU today.For kids (age between 5 - 18):\n take 2500 IU today.For babies and toddlers (age < 5):\n take 35 IU per pound today.",
-                         @"Take 800 mg of echinacea liquid extract or equivalent three times today. \\n\\n* Children and pregnant or breastfeeding women should not take echinacea unless doctors have approved it.",
-                         @"string",
-                         @"string",
-                         @"string",
-                         nil];
-    self.cardNote= [[NSArray alloc]initWithObjects:
-                    @"Research on exercise and immunology has shown that regular, moderate exercise enhances the immune system. Researchers from the University of South Carolina and the University of Massachusetts examined rates of infections in the upper respiratory tract among 641 healthy inactive and moderately active adults ages 20 to 70 for one year. They found that those who participated in moderate physical activity reduced their cold risk by about 30 percent. Another study showed that people who walked at 70 to 75 percent of their VO2max for 40 minutes per day reported half as many sick days because of colds or sore throats compared to people who didn't exercise. The study was done by Dr. David Nieman, one of the country's most respected authorities in exercise immunology. \\n\\nExercise has been shown to increase the production of macrophages, which are cells that attack the kinds of bacteria that can trigger upper respiratory diseases. More recent studies show that there are actually physiological changes in the immune system that happen when a person exercises. Cells that promote immunity circulate through the system more rapidly, and they're capable of killing both viruses and bacteria. After exercising, the body returns to normal within a few hours, but a regular exercise routine appears to extend periods of immunity. \\n\\n* This complementary health approach has not been approved by the National Institutes of Health. \\n\\n** Please use your own discretion when using this training approach.",
-                    @"Vitamin D has been shown to be a highly effective way to avoid flu. In a study conducted among 430 children, those who took as low as 1200 IU Vitamin D were shown to be 42 percent less likely to come down with the flu. Another study conducted among adults showed similar results, those who maintained adequate vitamin D levels were 50% less likely to get flu. \\n\\nAn ideal way to optimize your vitamin D levels is to get regular sun exposure. However, during winter seasons and especially in some northern countries, the levels of sun are so weak that your body makes no vitamin D at all. The GrassrootsHealth - an organization that has greatly contributed to the current knowledge on vitamin D through their D Action Study made a recommendation on vitamin D dosage: for children under age of 5, take 35 units per pound per day. For children between 5 and 18, take 2500 units per day. For adults (including pregnant women), take 5000 units per day. \\n\\n* This complementary health approach has not been approved by the National Institutes of Health. \\n\\n** Please use your own discretion when using this training approach. \\n\\n*** These statements have not been evaluated by the Food and Drug Administration. This supplement is not intended to diagnose, treat, cure, or prevent any disease.",
-                    @"Echinacea is a flowering plant that grows throughout the U.S. and Canada. Studies have shown that it increases the number of white blood cells and boosts the activity of other immune cells. In a recent study, 755 healthy people took echinacea or a placebo for four months. Those who took echinacea had 20 percent fewer colds. \\n\\n* This complementary health approach has not been approved by the National Institutes of Health. \\n\\n** Please use your own discretion when using this training approach. \\n\\n*** These statements have not been evaluated by the Food and Drug Administration. This supplement is not intended to diagnose, treat, cure, or prevent any disease.",
-                    @"string",
-                    @"string",
-                    @"string",
-                    nil];
-    //set up title label
-    CGRect nameFrame = CGRectMake(0.0f, 40.0f, 320.0f, 50.0f);
-    self.name= [[UILabel alloc] initWithFrame:nameFrame];
-    
-    
-    //title received from source view controller
-    
-    
-    self.name.text = [NSString stringWithFormat:self.receivedCardTitle];
-    self.name.font = [UIFont boldSystemFontOfSize:25.0f];
-    self.name.textAlignment =  NSTextAlignmentCenter;
-    self.name.textColor=[UIColor lightGrayColor];
-    
-  //  self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]]]
-    
-    [self.view addSubview:self.name];
-    
-    
-    
-    CGRect directionFrame =CGRectMake(0.0f, 90.0f, self.view.frame.size.width,self.view.frame.size.height-90.0f);
-    UITextView *direction =[[UITextView alloc] initWithFrame:directionFrame];
-    direction.text = [NSString stringWithFormat:self.cardNote[self.cardIdentifier], self.cardIdentifier];
-    direction.textAlignment=NSTextAlignmentLeft;
-    [direction setFont:[UIFont fontWithName:@"arial" size:20.0f]];
-    [direction setEditable:NO];
-    [direction setBackgroundColor:[UIColor clearColor]];
-    [self.view addSubview:direction];
-    
-    
-    // create a button to report training completion
-    
-    CGRect reportFrame =CGRectMake(250.0f, 20.0f, 50.0f, 50.0f);
-    UIButton *reportButton =[[UIButton alloc]initWithFrame:reportFrame];
-//    [reportButton setTitle:@"Selected" forState:(UIControlStateNormal)];
- //   [reportButton setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
- //   reportButton.titleLabel.font =[UIFont boldSystemFontOfSize:20.0f];
-    [reportButton setImage:[UIImage imageNamed:@"checkmarkgrey-32.png"] forState:UIControlStateNormal];
 
-   [reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    
+    
+    
+    
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:GetTrainingCard];
+    if(self.receivedCard!=nil)
+    {[url appendString:self.receivedCard];}
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSLog(@"JSON: %@", responseObject);
+        self.myCard=responseObject;
+        //set self.mycard before adding views
+        
+        [self addTraingCardView];
+        [self.view setNeedsDisplay];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Error: %@", error);
+    }];
 
-   // [reportButton addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
-    [self.view addSubview:reportButton];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,13 +109,66 @@
 }
 
 
+-(void) addTraingCardView
+{
+    
+    //set up title label
+    CGRect nameFrame = CGRectMake(0.0f, 40.0f, 320.0f, 50.0f);
+    self.name= [[UILabel alloc] initWithFrame:nameFrame];
+    
+    
+    //title received from source view controller
+    NSString *title=[self.myCard objectForKey:@"title"];
+    self.progress=[self.myCard objectForKey:@"progress"];
+    self.note=[self.myCard objectForKey:@"note"];
+    
+    
+    
+    self.name.text = title;
+    self.name.font = [UIFont boldSystemFontOfSize:25.0f];
+    self.name.textAlignment =  NSTextAlignmentCenter;
+    self.name.textColor=[UIColor lightGrayColor];
+    
+    //  self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]]]
+    
+    [self.view addSubview:self.name];
+    
+    
+    
+    CGRect noteFrame =CGRectMake(0.0f, 90.0f, self.view.frame.size.width,self.view.frame.size.height-90.0f);
+    UITextView *note =[[UITextView alloc] initWithFrame:noteFrame];
+    note.text = self.note;
+    note.textAlignment=NSTextAlignmentLeft;
+    [note setFont:[UIFont fontWithName:@"arial" size:20.0f]];
+    [note setEditable:NO];
+    [note setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:note];
+    
+    
+    // create a button to report training completion
+    
+    CGRect reportFrame =CGRectMake(250.0f, 20.0f, 50.0f, 50.0f);
+    UIButton *reportButton =[[UIButton alloc]initWithFrame:reportFrame];
+    
+    if([self.progress isEqualToString:@"unselected"] )
+        [reportButton setImage:[UIImage imageNamed:@"checkmarkgrey-32.png"] forState:UIControlStateNormal];
+    
+    else
+    {  [self.clickedButton setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
+    }
+    [reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    // [reportButton addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:reportButton];
+}
+
 -(void) ButtonClicked:(UIButton *) sender
 {  // [sender setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
 
     self.clickedButton=sender;
-    if ([self.selectionStatus isEqualToString:@"unselected"])
+    if ([self.progress isEqualToString:@"unselected"])
     { [self.selectAlert show];}
-    else if([self.selectionStatus isEqualToString:@"selected"])
+    else if([self.progress isEqualToString:@"selected"])
     { [self.unselectAlert show];}
 }
 
@@ -153,22 +176,89 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if ([self.selectionStatus isEqualToString:@"unselected"]){
+    if ([self.progress isEqualToString:@"unselected"]){
     if([title isEqualToString:@"Yes"])
     {
-        [self.clickedButton setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
-        self.selectionStatus=@"selected";
+        
+        NSMutableString *url=[NSMutableString new];
+        [url appendString:HHealURL];
+        [url appendString:@"/trainingcard"];
+        
+     //   NSDictionary *parameter
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"JSON: %@", responseObject);
+            
+            
+            
+            UIAlertView *completeAlert = [[UIAlertView alloc] initWithTitle:@"Successful!"
+                                                                    message:@"Training Card Selected."
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"Ok"
+                                                          otherButtonTitles:nil];
+            [completeAlert show];
+            
+            [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
+            
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                                 message:[error localizedDescription]
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"Ok"
+                                                       otherButtonTitles:nil];
+            [errorAlert show];
+            NSLog(@"Error: %@", error);
+        }];
+
+        
+        
     }
       else if([title isEqualToString:@"No"])
       {
       //  NSLog(@"Button 2 was selected.");
       }}
     
-   else if ([self.selectionStatus isEqualToString:@"selected"]){
+   else if ([self.progress isEqualToString:@"selected"]){
         if([title isEqualToString:@"Yes"])
         {
-            [self.clickedButton setImage:[UIImage imageNamed:@"checkmarkgrey-32.png"] forState:UIControlStateNormal];
-            self.selectionStatus=@"unselected";
+            NSMutableString *url=[NSMutableString new];
+            [url appendString:HHealURL];
+            [url appendString:@"/trainingcard"];
+            
+            //   NSDictionary *parameter
+            // use different post to delete a card?
+            
+            AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+            [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                
+                NSLog(@"JSON: %@", responseObject);
+            
+                
+                UIAlertView *completeAlert = [[UIAlertView alloc] initWithTitle:@"Successful!"
+                                                                        message:@"Training Card Unselected."
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"Ok"
+                                                              otherButtonTitles:nil];
+                [completeAlert show];
+                
+                [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
+                
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+                UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                                     message:[error localizedDescription]
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"Ok"
+                                                           otherButtonTitles:nil];
+                [errorAlert show];
+                NSLog(@"Error: %@", error);
+            }];
+            
+            
         }
         else if([title isEqualToString:@"No"])
         {

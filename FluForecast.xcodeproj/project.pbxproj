@@ -52,8 +52,9 @@
 		8304DC3B199BBE44006E7BD7 /* CardCompleteNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DC3A199BBE44006E7BD7 /* CardCompleteNoteViewController.m */; };
 		8304DC3D199C4A1F006E7BD7 /* location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC3C199C4A1F006E7BD7 /* location-50.png */; };
 		8304DC46199C751B006E7BD7 /* ReportFluViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DC45199C751B006E7BD7 /* ReportFluViewController.m */; };
-		83134B0C19A7E6DC00DE72B5 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83134B0B19A7E6DC00DE72B5 /* ContactUsViewController.m */; };
 		83134B0E19A7E8FE00DE72B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83134B0D19A7E8FE00DE72B5 /* MessageUI.framework */; };
+		83134B1819A9457500DE72B5 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83134B1719A9457500DE72B5 /* ContactUsViewController.m */; };
+		83134B1E19A96C3500DE72B5 /* TrainingHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83134B1D19A96C3500DE72B5 /* TrainingHistoryViewController.m */; };
 		8330719519901DF9004CD49F /* CardNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8330719419901DF9004CD49F /* CardNoteViewController.m */; };
 		834A61A719A1530400FC8753 /* help-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A619A1530400FC8753 /* help-32.png */; };
 		834A61AA19A164EA00FC8753 /* password-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A819A164EA00FC8753 /* password-32.png */; };
@@ -155,11 +156,13 @@
 		8304DC44199C751B006E7BD7 /* ReportFluViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportFluViewController.h; path = ../ReportFluViewController.h; sourceTree = "<group>"; };
 		8304DC45199C751B006E7BD7 /* ReportFluViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportFluViewController.m; path = ../ReportFluViewController.m; sourceTree = "<group>"; };
 		83134B0619A68C2800DE72B5 /* HHealParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHealParameter.h; sourceTree = "<group>"; };
-		83134B0A19A7E6DC00DE72B5 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
-		83134B0B19A7E6DC00DE72B5 /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
 		83134B0D19A7E8FE00DE72B5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		8330719319901DF9004CD49F /* CardNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardNoteViewController.h; sourceTree = "<group>"; };
-		8330719419901DF9004CD49F /* CardNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardNoteViewController.m; sourceTree = "<group>"; };
+		83134B1619A9457500DE72B5 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactUsViewController.h; path = FluForecast/ContactUsViewController.h; sourceTree = SOURCE_ROOT; };
+		83134B1719A9457500DE72B5 /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactUsViewController.m; path = FluForecast/ContactUsViewController.m; sourceTree = SOURCE_ROOT; };
+		83134B1C19A96C3500DE72B5 /* TrainingHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainingHistoryViewController.h; path = FluForecast/TrainingHistoryViewController.h; sourceTree = SOURCE_ROOT; };
+		83134B1D19A96C3500DE72B5 /* TrainingHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingHistoryViewController.m; path = FluForecast/TrainingHistoryViewController.m; sourceTree = SOURCE_ROOT; };
+		8330719319901DF9004CD49F /* CardNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardNoteViewController.h; path = ../CardNoteViewController.h; sourceTree = "<group>"; };
+		8330719419901DF9004CD49F /* CardNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardNoteViewController.m; path = ../CardNoteViewController.m; sourceTree = "<group>"; };
 		834A61A619A1530400FC8753 /* help-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help-32.png"; sourceTree = "<group>"; };
 		834A61A819A164EA00FC8753 /* password-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password-32.png"; sourceTree = "<group>"; };
 		834A61A919A164EA00FC8753 /* user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-32.png"; sourceTree = "<group>"; };
@@ -302,14 +305,16 @@
 		83134B0819A7E51400DE72B5 /* SideElements */ = {
 			isa = PBXGroup;
 			children = (
+				83134B1619A9457500DE72B5 /* ContactUsViewController.h */,
+				83134B1719A9457500DE72B5 /* ContactUsViewController.m */,
 				835159AD1983004B0093E478 /* LineChartViewController.h */,
 				835159AE1983004B0093E478 /* LineChartViewController.m */,
 				8304DBF41999C039006E7BD7 /* TrainingLogViewController.h */,
 				8304DBF51999C039006E7BD7 /* TrainingLogViewController.m */,
 				83D956CC19A130D300BA96EF /* CalculatorViewController.h */,
 				83D956CD19A130D300BA96EF /* CalculatorViewController.m */,
-				83134B0A19A7E6DC00DE72B5 /* ContactUsViewController.h */,
-				83134B0B19A7E6DC00DE72B5 /* ContactUsViewController.m */,
+				83134B1C19A96C3500DE72B5 /* TrainingHistoryViewController.h */,
+				83134B1D19A96C3500DE72B5 /* TrainingHistoryViewController.m */,
 			);
 			path = SideElements;
 			sourceTree = "<group>";
@@ -319,6 +324,8 @@
 			children = (
 				8304DBD91996FB4E006E7BD7 /* CardSelectViewController.h */,
 				8304DBDA1996FB4E006E7BD7 /* CardSelectViewController.m */,
+				8330719319901DF9004CD49F /* CardNoteViewController.h */,
+				8330719419901DF9004CD49F /* CardNoteViewController.m */,
 				8304DC44199C751B006E7BD7 /* ReportFluViewController.h */,
 				8304DC45199C751B006E7BD7 /* ReportFluViewController.m */,
 				8304DC39199BBE43006E7BD7 /* CardCompleteNoteViewController.h */,
@@ -393,8 +400,6 @@
 				834A61AE19A27BCE00FC8753 /* LoadingViewController.h */,
 				834A61AF19A27BCE00FC8753 /* LoadingViewController.m */,
 				83C5624E1980C9A100AFD2A3 /* MainBoard.storyboard */,
-				8330719319901DF9004CD49F /* CardNoteViewController.h */,
-				8330719419901DF9004CD49F /* CardNoteViewController.m */,
 				83C8C6BE1988359A00E34228 /* LoginViewController.h */,
 				83C8C6BF1988359A00E34228 /* LoginViewController.m */,
 				83C8C6B919869AAD00E34228 /* RegisterViewController.h */,
@@ -630,6 +635,7 @@
 				8304DC3B199BBE44006E7BD7 /* CardCompleteNoteViewController.m in Sources */,
 				8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */,
 				8382CA8A197F5F21008E125C /* AMSlideMenuRightMenuSegue.m in Sources */,
+				83134B1E19A96C3500DE72B5 /* TrainingHistoryViewController.m in Sources */,
 				83C8C6BB19869AAD00E34228 /* RegisterViewController.m in Sources */,
 				8382CA87197F5F21008E125C /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				8382CA8C197F5F21008E125C /* UIViewController+AMSlideMenu.m in Sources */,
@@ -637,7 +643,7 @@
 				83745EB4198C4D0400F44BE6 /* ScrollCardViewController.m in Sources */,
 				835159AF1983004B0093E478 /* LineChartViewController.m in Sources */,
 				8382CA8F197F5FDD008E125C /* MainNavigationView.m in Sources */,
-				83134B0C19A7E6DC00DE72B5 /* ContactUsViewController.m in Sources */,
+				83134B1819A9457500DE72B5 /* ContactUsViewController.m in Sources */,
 				8382CA89197F5F21008E125C /* AMSlideMenuMainViewController.m in Sources */,
 				8382CA88197F5F21008E125C /* AMSlideMenuLeftTableViewController.m in Sources */,
 				8304DBDB1996FB4E006E7BD7 /* CardSelectViewController.m in Sources */,

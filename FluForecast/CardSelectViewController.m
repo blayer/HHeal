@@ -8,11 +8,14 @@
 
 #import "CardSelectViewController.h"
 #import "CardNoteViewController.h"
+#import "HHealParameter.h"
+#import "AFNetworking.h"
 
 @interface CardSelectViewController ()
 @property NSArray *cardName;
-@property NSString *sendCardTitle;
-@property NSString *cardData;
+@property NSString *sendCard;
+@property NSDictionary *cardData;
+@property NSMutableDictionary *cardId;
 @end
 
 @implementation CardSelectViewController
@@ -34,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.cardName= [[NSArray alloc]initWithObjects:
+   /* self.cardName= [[NSArray alloc]initWithObjects:
                     @"Moderate exercise 40 mins@selected",
                     @"Take vitamin D supplements 5000 IU@unselected",
                     @"Take echinacea extract 2400 mg@selected",
@@ -42,8 +45,37 @@
                     @"string@unselected",
                     @"string@unselected",
                     nil];
+*/
     
-   // self.view.layer.cornerRadius=5;
+    
+    ///////////////////cominication////////////////
+    //Read in training card's info by query id, server should response an array with JSON elements
+    self.cardId=[NSMutableDictionary new];
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:GetTrainingCard];
+    [url appendString:@"53f1439d3b240c55ba4bb2a7"];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"JSON: %@", responseObject);
+        
+        self.cardName=responseObject;
+        [self.view setNeedsDisplay];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Error: %@", error);
+    }];
+    
+
 
 }
 
@@ -69,17 +101,18 @@
     }
     
     self.cardData=[self.cardName objectAtIndex:indexPath.row];
-    NSArray *array=[self.cardData componentsSeparatedByString:@"@"];
- 
-    cell.textLabel.text =[array objectAtIndex:0];
+    NSString *title= [self.cardData objectForKey:@"titile"];
+    NSString *progress=[self.cardData objectForKey:@"progress"];
+    NSString *trainingId=[self.cardData objectForKey:@"trainingcard_id"];
+    [self.cardId setObject:trainingId forKey:title];
     
-    if([[array objectAtIndex:1] isEqualToString:@"selected"])
+    cell.textLabel.text =title;
+    
+    if([progress isEqualToString:@"selected"])
     {
          cell.imageView.image = [UIImage imageNamed:@"checkmarkgreen-32.png"];
         [cell.accessoryView setFrame:CGRectMake(0, 0, 25, 25)];
     }
-    
-    
     
  //if([[array objectAtIndex:1] isEqualToString:@"unselected"])
    else
@@ -87,7 +120,6 @@
     cell.imageView.image = [UIImage imageNamed:@"checkmarkgrey-32.png"];
         [cell.imageView setFrame:CGRectMake(0.0f, 0.0f,25.0f, 25.0f)];
     cell.detailTextLabel.text=@"unselected";
-    
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -99,10 +131,11 @@
 {
     
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-    self.sendCardTitle=selectedCell.textLabel.text;
+
+    
+    self.sendCard=[self.cardId objectForKey:selectedCell.textLabel.text];
     [self performSegueWithIdentifier: @"SelectedCard" sender: self];
-    NSString *test =selectedCell.detailTextLabel.text;
-    NSLog(self.sendCardTitle);
+    NSLog(self.sendCard);
    // NSLog(selectedCell.detailTextLabel.text);
     
 }
@@ -122,7 +155,7 @@
         //  destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
         
         CardNoteViewController *destViewController = segue.destinationViewController;
-        destViewController.receivedCardTitle=self.sendCardTitle;
+        destViewController.receivedCard=self.sendCard;
         
     }
 }

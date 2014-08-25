@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrainingHistoryViewController : UIViewController
+@interface TrainingHistoryViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end

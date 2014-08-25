@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="0ED-It-kR3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="00K-va-Dkk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -95,6 +95,9 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fVq-Dk-U2n"/>
+                    <connections>
+                        <segue destination="kLm-fY-BWs" kind="unwind" identifier="CompleteBacktoMainPage" unwindAction="unwindToThisViewController:" id="0kX-Cc-Ufx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbI-vi-A5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kLm-fY-BWs" userLabel="Exit" sceneMemberID="exit"/>
@@ -902,6 +905,9 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showEmail:" destination="4eA-F7-bcb" eventType="touchUpInside" id="Hej-tG-L8b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kaF-09-83Z">
                                 <rect key="frame" x="60" y="424" width="200" height="50"/>
@@ -971,6 +977,56 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
                     <view key="view" contentMode="scaleToFill" id="Fl1-wL-ifF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e9I-gK-VRz">
+                                <rect key="frame" x="0.0" y="64" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.070860350629999999" green="0.72250318499999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="1 month">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button1Clicked:" destination="ups-0P-GLA" eventType="touchUpInside" id="OjA-YU-I8z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ANl-7h-fbu">
+                                <rect key="frame" x="80" y="64" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.070860350629999999" green="0.72250318499999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="3 month">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button2Clicked:" destination="ups-0P-GLA" eventType="touchUpInside" id="dA8-O0-SrR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a97-Cg-ciW">
+                                <rect key="frame" x="160" y="64" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.070860350629999999" green="0.72250318499999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="6 month">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button3Clicked:" destination="ups-0P-GLA" eventType="touchUpInside" id="Y5c-qm-AZ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GJJ-Vc-cdz">
+                                <rect key="frame" x="240" y="64" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.070860350629999999" green="0.72250318499999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="12 month">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button4Clicked:" destination="ups-0P-GLA" eventType="touchUpInside" id="Znd-Iz-23T"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="CZy-OV-jzE"/>
@@ -1105,41 +1161,41 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="WAi-dv-ixX" kind="relationship" relationship="rootViewController" id="I2j-JS-Vsj"/>
+                        <segue destination="Ju8-1Y-u7a" kind="relationship" relationship="rootViewController" id="ZyQ-zp-Sri"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Up-w6-WSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1278" y="-982"/>
         </scene>
-        <!--Training Log View Controller - HHeal-->
-        <scene sceneID="zty-8y-FMN">
+        <!--Training History View Controller-->
+        <scene sceneID="hlr-we-cg4">
             <objects>
-                <viewController id="WAi-dv-ixX" customClass="TrainingLogViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iwh-0i-QSi">
+                <viewController id="Ju8-1Y-u7a" customClass="TrainingHistoryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Iy-7D-kkz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8hc-An-xbl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hog-Zv-Apm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="WAi-dv-ixX" id="Eeh-kl-gmA"/>
-                                    <outlet property="delegate" destination="WAi-dv-ixX" id="DmV-RR-rV2"/>
+                                    <outlet property="dataSource" destination="Ju8-1Y-u7a" id="gcJ-NC-lx6"/>
+                                    <outlet property="delegate" destination="Ju8-1Y-u7a" id="Qpt-lJ-QAf"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="HHeal" id="C8L-CQ-VI1"/>
+                    <navigationItem key="navigationItem" id="nOU-qS-2nd"/>
                     <connections>
-                        <outlet property="myTableView" destination="8hc-An-xbl" id="y3Q-k2-IQr"/>
+                        <outlet property="tableView" destination="Hog-Zv-Apm" id="dn1-io-Zqw"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rsd-rN-O5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ZY-8E-W5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720" y="-981"/>
+            <point key="canvasLocation" x="1693" y="-982"/>
         </scene>
         <!--Report Flu View Controller - Title-->
         <scene sceneID="B0S-YY-7Ea">
@@ -1236,7 +1292,7 @@ layer.masksToBoundsayer.masksToBounds</string>
                         <outlet property="feverSwitch" destination="rIG-Wd-dr4" id="6Ie-8g-Mef"/>
                         <outlet property="reportButton" destination="vJT-4E-D5O" id="kY4-7b-kjl"/>
                         <outlet property="sourSwitch" destination="fhC-dd-qpU" id="y94-kl-0Wk"/>
-                        <segue destination="U7J-Ji-MIz" kind="unwind" identifier="BacktoMainPage" unwindAction="unwindToThisViewController:" id="V2s-Mn-G5v"/>
+                        <segue destination="U7J-Ji-MIz" kind="unwind" identifier="ReportBacktoMainPage" unwindAction="unwindToThisViewController:" id="dsB-EZ-aA9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLT-HL-GvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1301,6 +1357,9 @@ layer.masksToBoundsayer.masksToBounds</string>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="7c5-hK-GO1"/>
+                    <connections>
+                        <segue destination="jQc-vI-Rpi" kind="unwind" identifier="BacktoSelectPage" unwindAction="unwindToThisViewController:" id="GD6-XW-KIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JjH-aT-n7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jQc-vI-Rpi" userLabel="Exit" sceneMemberID="exit"/>

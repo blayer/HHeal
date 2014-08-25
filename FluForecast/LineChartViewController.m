@@ -43,13 +43,13 @@
 -(void) buildLineChart
 {
     //Add LineChart
-    UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, SCREEN_WIDTH, 30)];
+    UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, SCREEN_WIDTH, 30)];
     lineChartLabel.text = @"Risk History";
     lineChartLabel.textColor = PNFreshGreen;
     lineChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:23.0];
     lineChartLabel.textAlignment = NSTextAlignmentCenter;
     
-    PNLineChart * lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
+    PNLineChart * lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 190.0, SCREEN_WIDTH, 200.0)];
     // lineChart.yLabelFormat = @"%1.1f";
     lineChart.backgroundColor = [UIColor clearColor];
     [lineChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5",@"SEP 6",@"SEP 7"]];
@@ -140,4 +140,15 @@
 }
 */
 
+- (IBAction)Button1Clicked:(id)sender {
+}
+
+- (IBAction)Button2Clicked:(id)sender {
+}
+
+- (IBAction)Button3Clicked:(id)sender {
+}
+
+- (IBAction)Button4Clicked:(id)sender {
+}
 @end

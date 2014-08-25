@@ -151,16 +151,20 @@ else
         
             
        // NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text};
-        NSNumber *x= [NSNumber numberWithFloat:(40.33434f) ];
-        NSNumber *y= [NSNumber numberWithFloat:(77.33434f) ];
+        NSNumber *lat= [NSNumber numberWithFloat:(40.33434f)];
+        NSNumber *lng= [NSNumber numberWithFloat:(-77.33434f)];
         
         
-        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"lng":x,@"lat":y};
+        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"lng":lng,@"lat":lat};
   //     NSDictionary *parameters =  [NSDictionary dictionaryWithObject: self.UserName.text forKey:@"username"],]
         
         NSString *url=HHealURL @"/user_profile";
         NSLog(@"JSON: %@", parameters);
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        //by default, AF manager uses HTTP request, we have to change it to JSON request when we want to post a JSON
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+
         [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", responseObject);
             UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:@"Registration Succeed!"

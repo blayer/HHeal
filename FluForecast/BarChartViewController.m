@@ -43,7 +43,7 @@
     [super viewDidLoad];
 
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.myid=[defaults objectForKey:@"_id"];
+    self.myid=@"53f1439d3b240c55ba4bb2a7";
     //pre-load some testing data
     self.myCards= [[NSArray alloc]initWithObjects:@"Drinking water",@"Taking Vatamin D",@"Wash your hands",@"Eat more fruit",nil];
     

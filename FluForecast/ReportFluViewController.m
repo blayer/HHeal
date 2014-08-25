@@ -124,7 +124,7 @@
                                                          otherButtonTitles:nil];
             [successAlert show];
             
-            [self performSegueWithIdentifier: @"BacktoMainPage" sender: self];
+            [self performSegueWithIdentifier: @"ReportBacktoMainPage" sender: self];
 
             
             

@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 #define HHealURL        @"http://localhost:3000"
-#define GetTrainingCard @"/trainingcard"
-#define UserProfile     @"/user_profile"
-#define Login           @"/login"
-#define GetUserAllCards @"/user_trainingcard"
-#define ReportFlu       @"/flureport"
+#define GetTrainingCard @"/trainingcard/"
+#define UserProfile     @"/user_profile/"
+#define Login           @"/login/"
+#define GetUserAllCards @"/user_trainingcard/"
+#define ReportFlu       @"/flureport/"
 
 @interface NSObject ()
 

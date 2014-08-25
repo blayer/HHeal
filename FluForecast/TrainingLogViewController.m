@@ -18,32 +18,7 @@
 @synthesize myTableView;
 
 
-#pragma mark - Data generators
 
-//
-
-/*- (NSArray *)topLevelItems {
-    NSMutableArray *items = [NSMutableArray array];
-    
-    for (int i = 0; i < NUM_TOP_ITEMS; i++) {
-        [items addObject:[NSString stringWithFormat:@"Item %d", i + 1]];
-    }
-    
-    return items;
-}
-
-- (NSArray *)subLevelItems {
-    NSMutableArray *items = [NSMutableArray array];
-    int numItems = arc4random() % NUM_SUBITEMS + 2;
-    
-    for (int i = 0; i < numItems; i++) {
-        [items addObject:[NSString stringWithFormat:@"SubItem %d", i + 1]];
-    }
-    
-    return items;
-}*/
-
-#pragma mark - View management
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -70,10 +45,13 @@
 
     self.title= [[NSString alloc]init];
     
-   self.topItems= [[NSMutableArray alloc] initWithObjects:@"Today", @"Yesterday",@"August,10th,2014",nil];
+   self.topItems= [[NSMutableArray alloc] initWithObjects:@"Today", @"Yesterday",@"August,10th,2014",@"Today",@"Today",@"Today",nil];
     NSMutableArray *training =[NSMutableArray new];
     [training addObject:[[NSArray alloc] initWithObjects:@"Drink@completed",@"Vitamin@selected",@"Eat@selected",nil]];
     [training addObject:[[NSArray alloc] initWithObjects:@"Vitamin@selected", nil]];
+    [training addObject:[[NSArray alloc] initWithObjects:@"Eat@completed", nil]];
+    [training addObject:[[NSArray alloc] initWithObjects:@"Eat@completed", nil]];
+    [training addObject:[[NSArray alloc] initWithObjects:@"Eat@completed", nil]];
     [training addObject:[[NSArray alloc] initWithObjects:@"Eat@completed", nil]];
     
     self.subItems=training;
@@ -105,7 +83,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-     return [self.topItems count] + ((self.currentExpandedIndex > -1) ? [[self.subItems objectAtIndex:self.currentExpandedIndex] count] : 0);
+    return [self.topItems count] + ((self.currentExpandedIndex > -1) ? [[self.subItems objectAtIndex:self.currentExpandedIndex] count] : 0);
     //return 10;
 }
 
@@ -221,15 +199,7 @@
     //  [indexPaths release];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

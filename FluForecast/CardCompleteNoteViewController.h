@@ -10,6 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CardCompleteNoteViewController : UIViewController <UIAlertViewDelegate>
-@property (nonatomic,strong)NSString *receivedCardTitle;
+@property (nonatomic,strong)NSString *receivedCard;
 @end
 

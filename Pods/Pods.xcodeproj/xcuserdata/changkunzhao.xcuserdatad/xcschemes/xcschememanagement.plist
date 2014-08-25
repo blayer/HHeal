@@ -14,17 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MMDrawerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-MZAppearance.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-PNChart.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SVPullToRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10FB275D0E7840E4A4EE2011</key>
+		<key>0FA5BE16A2A049B1BD22E851</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>637FB8A191D84793B944C9E6</key>
+		<key>1909AA5C6C4E448A99741380</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70B869E4D43340BA9F7A6BDE</key>
+		<key>2A5CD47F38AA4D29A4ADAFEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79763EF006AE4488B07BF0DD</key>
+		<key>36B3AFC8E2744285B09A7DF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7111A5F2F204181AFFC8181</key>
+		<key>8635178E2A0449468C49345A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D752EC0BC9C14B1F80B78161</key>
+		<key>B9CFEBACBFE34F2193023D71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE9AB53DCA01435C8BD0A129</key>
+		<key>C4347343DAFA4508B818E69A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E04EAF7A77F14613849A5EC3</key>
+		<key>D4711E5C430A49609B009512</key>
 		<dict>
 			<key>primary</key>
 			<true/>
