@@ -64,7 +64,7 @@
     
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:nil parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"JSON: %@", responseObject);
         self.myCards=responseObject;

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SideTitleViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *streakDays;
+@property (weak, nonatomic) IBOutlet UILabel *finishedCards;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
 
 @end

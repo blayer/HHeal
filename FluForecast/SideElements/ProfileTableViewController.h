@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileTableViewController : UITableViewController
+@interface ProfileTableViewController : UITableViewController<UIAlertViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UIButton *gender;
+@property (weak, nonatomic) IBOutlet UIButton *age;
+@property (weak, nonatomic) IBOutlet UIButton *state;
+@property (weak, nonatomic) IBOutlet UIButton *email;
+
+- (IBAction)SelectGender:(id)sender;
+- (IBAction)SelectAge:(id)sender;
+- (IBAction)SelectState:(id)sender;
+- (IBAction)ChangeEmail:(id)sender;
+
 
 @end

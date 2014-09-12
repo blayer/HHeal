@@ -49,11 +49,13 @@
         case 5:
            identifier=@"ProfileSegue";
             break;
-
          case 6:
           identifier=@"FeedbackSegue";
            break;
          case 7:
+            identifier=@"SettingSegue";
+            break;
+        case 8:
           identifier=@"AboutSegue";
            break;
  

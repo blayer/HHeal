@@ -11,9 +11,7 @@
 #import "PNChart.h"
 
 @interface LineChartViewController : UIViewController <PNChartDelegate>
-- (IBAction)Button1Clicked:(id)sender;
-- (IBAction)Button2Clicked:(id)sender;
-- (IBAction)Button3Clicked:(id)sender;
-- (IBAction)Button4Clicked:(id)sender;
+
+@property int retriveDays;
 
 @end

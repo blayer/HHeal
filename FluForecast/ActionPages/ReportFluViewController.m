@@ -77,7 +77,7 @@
     self.reportAlert=[[UIAlertView alloc]initWithTitle:@"Report Confirmation"
                                                message:@"Are you sure you want to confirm you flu symtom report? This report will change your risk score significantly"
                                               delegate:self
-                                     cancelButtonTitle:@"Yes" otherButtonTitles:@"No", nil];
+                                     cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     // Do any additional setup after loading the view.
 }
 

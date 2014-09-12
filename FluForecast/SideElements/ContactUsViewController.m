@@ -9,6 +9,8 @@
 #import "ContactUsViewController.h"
 #import <MessageUI/MessageUI.h>
 
+#define YOUR_APP_STORE_ID 545174222 //Change this one to your ID
+
 @interface ContactUsViewController ()
 
 @end
@@ -58,6 +60,16 @@
     
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
+}
+
+
+- (IBAction)rateApp:(id)sender {
+    
+    
+    static NSString *const iOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/app/id%d";
+    static NSString *const iOSAppStoreURLFormat = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d";
+    
+    [NSURL URLWithString:[NSString stringWithFormat:([[UIDevice currentDevice].systemVersion floatValue] >= 7.0f)? iOS7AppStoreURLFormat: iOSAppStoreURLFormat, YOUR_APP_STORE_ID]]; // Would contain the right link
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

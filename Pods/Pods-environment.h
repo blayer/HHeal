@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// ActionSheetPicker-3.0
+#define COCOAPODS_POD_AVAILABLE_ActionSheetPicker_3_0
+#define COCOAPODS_VERSION_MAJOR_ActionSheetPicker_3_0 1
+#define COCOAPODS_VERSION_MINOR_ActionSheetPicker_3_0 1
+#define COCOAPODS_VERSION_PATCH_ActionSheetPicker_3_0 10
+
 // BlurryModalSegue
 #define COCOAPODS_POD_AVAILABLE_BlurryModalSegue
 #define COCOAPODS_VERSION_MAJOR_BlurryModalSegue 1

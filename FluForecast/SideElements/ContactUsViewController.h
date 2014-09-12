@@ -11,5 +11,7 @@
 @interface ContactUsViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 - (IBAction)showEmail:(id)sender;
+- (IBAction)rateApp:(id)sender;
+
 
 @end

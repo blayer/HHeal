@@ -9,6 +9,8 @@
 #import "RegisterViewController.h"
 #import "AFNetworking.h"
 #import "HHealParameter.h"
+#import "ActionSheetStringPicker.h"
+
 
 
 
@@ -53,12 +55,20 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+ //   [self.Age setDelegate:self];
+ //   [self.Gender setDelegate:self];
 }
 
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return NO;
+    
+}
 -(void)dismissKeyboard {
     [self.view endEditing:YES];
-    [self.UserName resignFirstResponder];
+   // [self.UserName resignFirstResponder];
 }
+
 
 
 - (void)didReceiveMemoryWarning
@@ -133,20 +143,71 @@ else
     }
 }
 
+
+
+- (IBAction)SelectAge:(id)sender {
+    
+    
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    NSArray *colors = @[@"0~18", @"18~25",@"23~35",@"35~60",@"60 and up"];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Your Age" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+}
+
+- (IBAction)SelectGender:(id)sender {
+    
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    NSArray *colors = @[@"Male", @"Female"];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Your Gender" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+    
+    
+}
+
+- (IBAction)SelectState:(id)sender {
+    
+    
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        if ([sender respondsToSelector:@selector(setText:)]) {
+            [sender performSelector:@selector(setText:) withObject:selectedValue];
+        }
+    };
+    
+    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+        NSLog(@"Block Picker Canceled");
+    };
+    NSArray *states = @[@"Alabama", @"Alaska", @"Arizona", @"Arkansas", @"California", @"Colorado", @"Connecticut", @"Delaware", @"District of Columbia", @"Florida", @"Georgia", @"Guam", @"Hawaii", @"Idaho", @"Illinois", @"Indiana", @"Iowa", @"Kansas", @"Kentucky", @"Louisiana", @"Maine", @"Maryland", @"Massachusetts", @"Michigan", @"Minnesota", @"Mississippi", @"Missouri", @"Montana", @"Nebraska", @"Nevada", @"New Hampshire", @"New Jersey", @"New Mexico", @"New York", @"North Carolina", @"North Dakota", @"Ohio", @"Oklahoma", @"Oregon", @"Pennsylvania", @"Puerto Rico", @"Rhode Island", @"South Carolina", @"South Dakota", @"Tennessee", @"Texas", @"Utah", @"Vermont", @"Virginia", @"Virgin Islands", @"Washington", @"West Virginia", @"Wisconsin", @"Wyoming"];
+    [ActionSheetStringPicker showPickerWithTitle:@"Select Your State" rows:states initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
+}
+
 - (IBAction)RegisterProfile:(id)sender {
 
     if(![self isBlankText]&&[self isCorrectAge]&&[self isPasswordLongEnough]&&[self isPasswordMatch])
-    {   int age=[self.Age.text intValue];
+    {   
         NSNumber *ageGroup=[[NSNumber alloc]init];
-        if (age<18)
+        if ([self.Age.text isEqualToString:@"0~18"])
             ageGroup=@1;
-        else if (18<=age<25)
+        else if ([self.Age.text isEqualToString:@"18~25"])
             ageGroup=@2;
-        else if (25<=age<35)
+        else if ([self.Age.text isEqualToString:@"25~35"])
             ageGroup=@3;
-        else if(35<=age<60)
+        else if([self.Age.text isEqualToString:@"35~60"])
             ageGroup=@4;
-        else if(60<age)
+        else if([self.Age.text isEqualToString:@"60 and up"])
             ageGroup=@5;
         
             
@@ -189,15 +250,13 @@ else
                                                       otherButtonTitles:nil];
             
             [ errorAlert show];
+
             
         }];
     
     }
     
     else [self showAlertMessage];
-
-
-    
 }
 
 

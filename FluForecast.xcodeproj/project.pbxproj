@@ -49,6 +49,9 @@
 		8304DC38199B2753006E7BD7 /* medal_yellow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC36199B2753006E7BD7 /* medal_yellow-48.png */; };
 		8304DC3D199C4A1F006E7BD7 /* location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC3C199C4A1F006E7BD7 /* location-50.png */; };
 		83134B0E19A7E8FE00DE72B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83134B0D19A7E8FE00DE72B5 /* MessageUI.framework */; };
+		8337BC0919C0DC340066C625 /* RiskHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */; };
+		8337BC0F19C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
+		8337BC1019C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
 		834A61A719A1530400FC8753 /* help-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A619A1530400FC8753 /* help-32.png */; };
 		834A61AA19A164EA00FC8753 /* password-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A819A164EA00FC8753 /* password-32.png */; };
 		834A61AB19A164EA00FC8753 /* user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A919A164EA00FC8753 /* user-32.png */; };
@@ -84,11 +87,17 @@
 		83A2A94219AC1F920047E8D6 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A93B19AC1F920047E8D6 /* LineChartViewController.m */; };
 		83A2A94319AC1F920047E8D6 /* TrainingHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A93D19AC1F920047E8D6 /* TrainingHistoryViewController.m */; };
 		83A2A94419AC1F920047E8D6 /* TrainingLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A93F19AC1F920047E8D6 /* TrainingLogViewController.m */; };
+		83B72E9319BE142400584BA1 /* logout-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B72E9219BE142400584BA1 /* logout-32.png */; };
 		83C5624C1980C9A100AFD2A3 /* MainBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C5624E1980C9A100AFD2A3 /* MainBoard.storyboard */; };
 		83C8C6BB19869AAD00E34228 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C8C6BA19869AAD00E34228 /* RegisterViewController.m */; };
 		83C8C6C01988359A00E34228 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C8C6BF1988359A00E34228 /* LoginViewController.m */; };
 		83D956D019A13C2100BA96EF /* HHeal76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D956CF19A13C2100BA96EF /* HHeal76x76.png */; };
 		83D956D219A13D0C00BA96EF /* MetalBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D956D119A13D0C00BA96EF /* MetalBackground.png */; };
+		83F23EF819BA598800F94DFD /* SideTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F23EF719BA598800F94DFD /* SideTitleViewController.m */; };
+		83F23EFA19BA955D00F94DFD /* Na Li.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83F23EF919BA955C00F94DFD /* Na Li.jpeg */; };
+		83F23EFC19BAA20700F94DFD /* profile-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F23EFB19BAA20700F94DFD /* profile-32.png */; };
+		83F23F0519BD362A00F94DFD /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F23F0419BD362A00F94DFD /* ProfileTableViewController.m */; };
+		83F23F0819BD587400F94DFD /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F23F0719BD587400F94DFD /* SettingTableViewController.m */; };
 		D4BF2503D78548218BAE9094 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C18B23264AF4F0D95D09176 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +158,9 @@
 		8304DC3C199C4A1F006E7BD7 /* location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-50.png"; sourceTree = "<group>"; };
 		83134B0619A68C2800DE72B5 /* HHealParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHealParameter.h; sourceTree = "<group>"; };
 		83134B0D19A7E8FE00DE72B5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		8337BC0719C0DC340066C625 /* RiskHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskHistoryTableViewController.h; sourceTree = "<group>"; };
+		8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskHistoryTableViewController.m; sourceTree = "<group>"; };
+		8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		834A61A619A1530400FC8753 /* help-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help-32.png"; sourceTree = "<group>"; };
 		834A61A819A164EA00FC8753 /* password-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password-32.png"; sourceTree = "<group>"; };
 		834A61A919A164EA00FC8753 /* user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-32.png"; sourceTree = "<group>"; };
@@ -207,6 +219,7 @@
 		83A2A93D19AC1F920047E8D6 /* TrainingHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingHistoryViewController.m; sourceTree = "<group>"; };
 		83A2A93E19AC1F920047E8D6 /* TrainingLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingLogViewController.h; sourceTree = "<group>"; };
 		83A2A93F19AC1F920047E8D6 /* TrainingLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingLogViewController.m; sourceTree = "<group>"; };
+		83B72E9219BE142400584BA1 /* logout-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-32.png"; sourceTree = "<group>"; };
 		83C5624D1980C9A100AFD2A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainBoard.storyboard; sourceTree = "<group>"; };
 		83C8C6B919869AAD00E34228 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		83C8C6BA19869AAD00E34228 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -214,6 +227,14 @@
 		83C8C6BF1988359A00E34228 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		83D956CF19A13C2100BA96EF /* HHeal76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HHeal76x76.png; sourceTree = "<group>"; };
 		83D956D119A13D0C00BA96EF /* MetalBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MetalBackground.png; sourceTree = "<group>"; };
+		83F23EF619BA598800F94DFD /* SideTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideTitleViewController.h; sourceTree = "<group>"; };
+		83F23EF719BA598800F94DFD /* SideTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideTitleViewController.m; sourceTree = "<group>"; };
+		83F23EF919BA955C00F94DFD /* Na Li.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Na Li.jpeg"; sourceTree = "<group>"; };
+		83F23EFB19BAA20700F94DFD /* profile-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-32.png"; sourceTree = "<group>"; };
+		83F23F0319BD362A00F94DFD /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		83F23F0419BD362A00F94DFD /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
+		83F23F0619BD587400F94DFD /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		83F23F0719BD587400F94DFD /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +247,7 @@
 				8382CA33197EA72A008E125C /* QuartzCore.framework in Frameworks */,
 				8382C9F1197DAEFF008E125C /* CoreGraphics.framework in Frameworks */,
 				8382C9F3197DAEFF008E125C /* UIKit.framework in Frameworks */,
+				8337BC0F19C2A1D00066C625 /* FacebookSDK.framework in Frameworks */,
 				8382C9EF197DAEFF008E125C /* Foundation.framework in Frameworks */,
 				D4BF2503D78548218BAE9094 /* libPods.a in Frameworks */,
 			);
@@ -236,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8382CA08197DAF00008E125C /* XCTest.framework in Frameworks */,
+				8337BC1019C2A1D00066C625 /* FacebookSDK.framework in Frameworks */,
 				8382CA0A197DAF00008E125C /* UIKit.framework in Frameworks */,
 				8382CA09197DAF00008E125C /* Foundation.framework in Frameworks */,
 			);
@@ -247,6 +270,8 @@
 		8304DBC519957319006E7BD7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				83B72E9219BE142400584BA1 /* logout-32.png */,
+				83F23EFB19BAA20700F94DFD /* profile-32.png */,
 				834A61A819A164EA00FC8753 /* password-32.png */,
 				834A61A919A164EA00FC8753 /* user-32.png */,
 				834A61A619A1530400FC8753 /* help-32.png */,
@@ -290,6 +315,7 @@
 		8304DBF9199AF97A006E7BD7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83F23EF919BA955C00F94DFD /* Na Li.jpeg */,
 				83D956D119A13D0C00BA96EF /* MetalBackground.png */,
 				83D956CF19A13C2100BA96EF /* HHeal76x76.png */,
 				8304DC09199AFC22006E7BD7 /* yoga.jpg */,
@@ -353,6 +379,7 @@
 		8382C9ED197DAEFF008E125C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */,
 				83134B0D19A7E8FE00DE72B5 /* MessageUI.framework */,
 				834A61AC19A185EC00FC8753 /* CoreLocation.framework */,
 				8382CA32197EA72A008E125C /* QuartzCore.framework */,
@@ -449,6 +476,14 @@
 				83A2A93D19AC1F920047E8D6 /* TrainingHistoryViewController.m */,
 				83A2A93E19AC1F920047E8D6 /* TrainingLogViewController.h */,
 				83A2A93F19AC1F920047E8D6 /* TrainingLogViewController.m */,
+				83F23EF619BA598800F94DFD /* SideTitleViewController.h */,
+				83F23EF719BA598800F94DFD /* SideTitleViewController.m */,
+				83F23F0319BD362A00F94DFD /* ProfileTableViewController.h */,
+				83F23F0419BD362A00F94DFD /* ProfileTableViewController.m */,
+				83F23F0619BD587400F94DFD /* SettingTableViewController.h */,
+				83F23F0719BD587400F94DFD /* SettingTableViewController.m */,
+				8337BC0719C0DC340066C625 /* RiskHistoryTableViewController.h */,
+				8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */,
 			);
 			path = SideElements;
 			sourceTree = "<group>";
@@ -537,8 +572,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B72E9319BE142400584BA1 /* logout-32.png in Resources */,
 				8304DC2D199B17B0006E7BD7 /* pill-128.png in Resources */,
 				8304DC3D199C4A1F006E7BD7 /* location-50.png in Resources */,
+				83F23EFA19BA955D00F94DFD /* Na Li.jpeg in Resources */,
 				8304DC2F199B17B0006E7BD7 /* water-100.png in Resources */,
 				8304DBD51995C64E006E7BD7 /* plus-25.png in Resources */,
 				8304DC32199B17ED006E7BD7 /* walking-100.png in Resources */,
@@ -557,6 +594,7 @@
 				8304DC16199AFF7A006E7BD7 /* settings-32.png in Resources */,
 				8304DC03199AF97A006E7BD7 /* vitamine.jpg in Resources */,
 				8304DBCC199573A0006E7BD7 /* edit-32.png in Resources */,
+				83F23EFC19BAA20700F94DFD /* profile-32.png in Resources */,
 				8304DBC919957319006E7BD7 /* menu-50.png in Resources */,
 				8304DC14199AFF7A006E7BD7 /* home-32.png in Resources */,
 				8304DBCD199573A0006E7BD7 /* menu-32.png in Resources */,
@@ -637,8 +675,10 @@
 			files = (
 				83A2A94119AC1F920047E8D6 /* ContactUsViewController.m in Sources */,
 				83C8C6C01988359A00E34228 /* LoginViewController.m in Sources */,
+				8337BC0919C0DC340066C625 /* RiskHistoryTableViewController.m in Sources */,
 				8382CA8B197F5F21008E125C /* AMSlideMenuRightTableViewController.m in Sources */,
 				83A2A94019AC1F920047E8D6 /* CalculatorViewController.m in Sources */,
+				83F23F0819BD587400F94DFD /* SettingTableViewController.m in Sources */,
 				8382C9FF197DAEFF008E125C /* AppDelegate.m in Sources */,
 				8304DC05199AFA39006E7BD7 /* main.m in Sources */,
 				8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */,
@@ -655,8 +695,10 @@
 				83A2A93319AC1F830047E8D6 /* CardSelectViewController.m in Sources */,
 				8382CA8F197F5FDD008E125C /* MainNavigationView.m in Sources */,
 				83A2A94419AC1F920047E8D6 /* TrainingLogViewController.m in Sources */,
+				83F23EF819BA598800F94DFD /* SideTitleViewController.m in Sources */,
 				8382CA89197F5F21008E125C /* AMSlideMenuMainViewController.m in Sources */,
 				8382CA88197F5F21008E125C /* AMSlideMenuLeftTableViewController.m in Sources */,
+				83F23F0519BD362A00F94DFD /* ProfileTableViewController.m in Sources */,
 				835159A91982DCD20093E478 /* BarChartViewController.m in Sources */,
 				834A61B019A27BCE00FC8753 /* LoadingViewController.m in Sources */,
 			);
@@ -777,9 +819,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/changkunzhao/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,
+				);
 				PRODUCT_NAME = FluForecast;
 				WRAPPER_EXTENSION = app;
 			};
@@ -792,9 +842,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/changkunzhao/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,
+				);
 				PRODUCT_NAME = FluForecast;
 				WRAPPER_EXTENSION = app;
 			};
@@ -808,6 +866,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/changkunzhao/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
@@ -830,6 +889,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/changkunzhao/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";

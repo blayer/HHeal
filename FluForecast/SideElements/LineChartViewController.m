@@ -144,24 +144,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)Button1Clicked:(id)sender {
-    
-    
-    
-    
-}
-
-- (IBAction)Button2Clicked:(id)sender {
-    
-    NSArray * data01Array = @[@30.1, @60.1, @526.4, @662.2, @186.2, @127.2, @176.2,@213.2,@113.2,@213.2,@113.2];
-    [self buildLineChart:data01Array];
-    [self.view setNeedsDisplay];
-}
-
-- (IBAction)Button3Clicked:(id)sender {
-}
-
-- (IBAction)Button4Clicked:(id)sender {
-}
 @end

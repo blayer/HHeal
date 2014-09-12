@@ -7,8 +7,12 @@
 //
 
 #import "SideTitleViewController.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
 
 @interface SideTitleViewController ()
+
+@property UIImageView *photo;
 
 @end
 
@@ -26,6 +30,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //
+    // Here send query to server and get users data like name
+    self.userName.text=@"Linazhao128";
+    self.streakDays.text=@"15 days";
+    self.finishedCards.text=@"3 cards";
+    
+    self.photo=[[UIImageView alloc]initWithFrame:CGRectMake(10, 30, 60.0, 60.0)];
+    [self.photo.layer setBorderColor:[[UIColor whiteColor] CGColor] ];
+    [self.photo.layer setBorderWidth:2.0f];
+    
+
+   self.photo.image=[UIImage imageNamed:@"Na Li.jpeg"];
+    [self.view addSubview:self.photo];
     // Do any additional setup after loading the view.
 }
 
@@ -35,15 +53,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

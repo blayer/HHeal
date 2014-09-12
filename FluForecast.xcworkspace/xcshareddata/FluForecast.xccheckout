@@ -10,29 +10,29 @@
 	<string>FluForecast</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</key>
+		<key>83B6C5EC1C34F8763FC72565EB1C12ED47EFB9B4</key>
 		<string>https://github.com/blayer/HHeal.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FluForecast.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</key>
+		<key>83B6C5EC1C34F8763FC72565EB1C12ED47EFB9B4</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/blayer/HHeal.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</string>
+	<string>83B6C5EC1C34F8763FC72565EB1C12ED47EFB9B4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FD3F824D-AC7E-4BAF-8D74-437C20C53D71</string>
+			<string>83B6C5EC1C34F8763FC72565EB1C12ED47EFB9B4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>FluForecast</string>
 		</dict>
