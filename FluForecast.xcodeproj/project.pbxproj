@@ -826,6 +826,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,
@@ -849,6 +850,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,

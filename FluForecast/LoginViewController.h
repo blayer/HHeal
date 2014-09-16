@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate>
+
+
+@interface LoginViewController : UIViewController <UITextFieldDelegate,FBLoginViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameTF;
 

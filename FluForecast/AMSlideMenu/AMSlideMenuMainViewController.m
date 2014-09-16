@@ -968,7 +968,7 @@ static NSMutableArray *allInstances;
                 }
                 else
                 {
-                    [self openLeftMenu];
+                   // [self openLeftMenu];
                 }
             }
             else if (self.menuState == AMSlidePanningStateRight)
@@ -993,7 +993,7 @@ static NSMutableArray *allInstances;
                 }
                 else
                 {
-                    [self openLeftMenu];
+                 //   [self openLeftMenu];
                 }
 
             }
@@ -1097,7 +1097,7 @@ static NSMutableArray *allInstances;
         {
             if (panningState == AMSlidePanningStateRight && self.leftMenu)
             {
-                if (abs(translation.x) > kPanMinTranslationX && translation.x > 0)
+           /*     if (abs(translation.x) > kPanMinTranslationX && translation.x > 0)
                 {
                     [self openLeftMenu];
                 }
@@ -1106,7 +1106,7 @@ static NSMutableArray *allInstances;
                     [panningView setCenter:CGPointMake([panningView center].x + translation.x, [panningView center].y)];
                     
                     [self configure3DTransformForMenu:AMSlideMenuLeft panningView:panningView];
-                }
+                } */
             }
             else if (panningState == AMSlidePanningStateLeft  && self.rightMenu)
             {

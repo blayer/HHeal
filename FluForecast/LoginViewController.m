@@ -43,9 +43,15 @@
 {
     [super viewDidLoad];
     
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.center = self.view.center;
+    CGRect frame=CGRectMake(36.0, 420.0, 256.0, 42.0);
+
+    FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile", @"email"]];
+    loginView.frame=frame;
+    
+    loginView.delegate = self;
+
     [self.view addSubview:loginView];
+    
     
     //check if autologin, if yes, login automatically
     
@@ -163,7 +169,6 @@
             [defaults setObject:self.passwordTF.text forKey:@"password"];
             [defaults setObject:[self.recievedData valueForKey:@"_id"] forKey:@"userid"];
             [defaults setBool:YES forKey:@"autologin"];
-
             [defaults synchronize];
          // delay 2 seconds at login
          double delayInSeconds = 2.0;
@@ -202,6 +207,17 @@
     
 }
 
+
+- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
+    
+    
+   
+    [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
+    
+    
+    
+
+}
 
 
 
