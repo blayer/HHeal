@@ -403,7 +403,7 @@ MYFITNESSPAL RESERVES THE RIGHT TO CHANGE THIS AGREEMENT AT ANY TIME UPON NOTICE
                         <outlet property="ReEnterPassword" destination="7Mt-sB-PJ6" id="L9O-Gj-Rsb"/>
                         <outlet property="State" destination="joO-n1-kwp" id="JFT-G2-d1B"/>
                         <outlet property="UserName" destination="73N-8C-bKG" id="Iyg-PX-Cnp"/>
-                        <segue destination="x5U-lJ-yNn" kind="unwind" unwindAction="unwindToThisViewController:" id="dMH-0F-PjJ"/>
+                        <segue destination="x5U-lJ-yNn" kind="unwind" identifier="BacktoLogin" unwindAction="unwindToThisViewController:" id="dMH-0F-PjJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7L8-1u-3Av" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1643,22 +1643,6 @@ MYFITNESSPAL RESERVES THE RIGHT TO CHANGE THIS AGREEMENT AT ANY TIME UPON NOTICE
             </objects>
             <point key="canvasLocation" x="1706" y="1259"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gS6-aH-3ce">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="5Sm-Gn-qaI" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="YJZ-gw-IEN"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iAm-cw-lQN">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="JU6-y2-z9N" kind="relationship" relationship="rootViewController" id="8Ab-SH-row"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eir-Nq-gmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1278" y="-274"/>
-        </scene>
         <!--Card Select View Controller-->
         <scene sceneID="0lU-RQ-kvU">
             <objects>
@@ -1667,13 +1651,13 @@ MYFITNESSPAL RESERVES THE RIGHT TO CHANGE THIS AGREEMENT AT ANY TIME UPON NOTICE
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CU5-ui-31M" customClass="cards">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CU5-ui-31M">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="JU6-y2-z9N" id="faZ-go-PKT"/>
-                                    <outlet property="delegate" destination="JU6-y2-z9N" id="3B0-hQ-ifP"/>
+                                    <outlet property="dataSource" destination="JU6-y2-z9N" id="5UE-xz-Kmr"/>
+                                    <outlet property="delegate" destination="JU6-y2-z9N" id="0cf-cC-GZ9"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1681,6 +1665,7 @@ MYFITNESSPAL RESERVES THE RIGHT TO CHANGE THIS AGREEMENT AT ANY TIME UPON NOTICE
                     </view>
                     <navigationItem key="navigationItem" id="cW4-X3-Mer"/>
                     <connections>
+                        <outlet property="view" destination="ErU-gC-DRr" id="Rkg-fo-nxh"/>
                         <segue destination="LaO-94-C9l" kind="custom" identifier="SelectedCard" customClass="BlurryModalSegue" id="07q-jp-yAb"/>
                     </connections>
                 </viewController>
@@ -1716,8 +1701,8 @@ MYFITNESSPAL RESERVES THE RIGHT TO CHANGE THIS AGREEMENT AT ANY TIME UPON NOTICE
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="Ju8-1Y-u7a" id="gcJ-NC-lx6"/>
-                                    <outlet property="delegate" destination="Ju8-1Y-u7a" id="Qpt-lJ-QAf"/>
+                                    <outlet property="dataSource" destination="Ju8-1Y-u7a" id="oyH-kq-GUK"/>
+                                    <outlet property="delegate" destination="Ju8-1Y-u7a" id="hfM-VD-e5k"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1853,10 +1838,10 @@ layer.masksToBoundsayer.masksToBounds</string>
             </objects>
             <point key="canvasLocation" x="2268" y="1127"/>
         </scene>
-        <!--View Controller-->
+        <!--Scroll Card View Controller-->
         <scene sceneID="aGP-29-5SO">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1nU-wO-STF" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1nU-wO-STF" customClass="ScrollCardViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JKl-He-UaE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1991,7 +1976,4 @@ layer.masksToBoundsayer.masksToBounds</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="8Ab-SH-row"/>
-    </inferredMetricsTieBreakers>
 </document>

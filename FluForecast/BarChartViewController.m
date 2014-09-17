@@ -43,17 +43,15 @@
     [super viewDidLoad];
 
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token =[defaults valueForKey:@"token"];
   //  self.myid=[defaults objectForKey:@"_id"];
-    self.myid=@"53f1439d3b240c55ba4bb2a7";
-    //pre-load some testing data
-    self.myCards= [[NSArray alloc]initWithObjects:@"Drinking water",@"Taking Vatamin D",@"Wash your hands",@"Eat more fruit",nil];
-    
- //    NSString *userID= [profile stringForKey:@"myID"];
+  //  self.myid=@"53f1439d3b240c55ba4bb2a7";
+    //    NSString *userID= [profile stringForKey:@"myID"];
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
     [url appendString:@"/user_profile/"];
-    if(self.myid!=nil)
-    {[url appendString:self.myid];}
+    if(token!=nil)
+    {[url appendString:token];}
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

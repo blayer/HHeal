@@ -53,22 +53,45 @@
     [self.view addSubview:loginView];
     
     
+    // adding activity Indicator
+   
+    
+    
     //check if autologin, if yes, login automatically
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL autolog =[defaults objectForKey:@"autologin"];
     
-    if([defaults objectForKey:@"autologin"])
+    if(NO)
     {
-     /*   NSString *usrname=[defaults objectForKey:@"username"];
-        NSString *psw=[defaults objectForKey:@"password"];
-        NSDictionary *parameters= @{@"username":usrname,
-                                    @"password":psw};
+        
+        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+        activityIndicator.center = self.view.center;
+        [self.view addSubview: activityIndicator];
+        
+        [activityIndicator startAnimating];
+        
+        [self.view setNeedsDisplay];
+        
+       // self.usernameTF.placeholder=usrname;
+      //  self.passwordTF.placeholder=psw;
+        NSString *token=[defaults objectForKey:@"toekn"];
+        NSDictionary *query= @{@"token":token};
+        
+        NSDictionary *parameters=@{@"query":query};
         NSString *url=HHealURL @"/login";
+        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             NSLog(@"JSON: %@", responseObject);
             self.recievedData=responseObject;
-            [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
+         //delay for two seconds
+            double delayInSeconds = 2.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
+            });
             
             
             
@@ -80,10 +103,13 @@
                                                                 delegate:nil
                                                        cancelButtonTitle:@"Ok"
                                                        otherButtonTitles:nil];
+            [activityIndicator stopAnimating];
+            [self.view setNeedsDisplay];
             [errorAlert show];
         }];
-    */
+    
     }
+ 
  ///////////////////////////////////////////////////////////////////////////////////////
   self.alertWrongPassword=[[UIAlertView alloc] initWithTitle:@"Login Failed"
                       message:@"Incorrect user name or incorrect password"
@@ -144,10 +170,11 @@
     
     if(self.passwordTF.text.length>0&&self.usernameTF.text.length>0)
     {
-      
-        NSDictionary *parameters= @{@"username":self.usernameTF.text,
-                                    @"password":self.passwordTF.text};
+        NSDictionary *query= @{@"username":self.usernameTF.text,
+                               @"password":self.passwordTF.text};
         
+        
+        NSDictionary *parameters=@{@"query":query};
         NSString *url=HHealURL @"/login";
         
         
@@ -160,14 +187,28 @@
             
             NSLog(@"JSON: %@", responseObject);
             self.recievedData=responseObject;
+         NSString *error =[responseObject objectForKey:@"error"];
          
+         if (error.length!=0){
+             UIAlertView *LoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Error!"
+                                                                  message:error
+                                                                 delegate:nil
+                                                        cancelButtonTitle:@"Ok"
+                                                        otherButtonTitles:nil];
+             
+             [LoginAlert show];
+             [activityIndicator stopAnimating];
+             [self.view setNeedsDisplay];
          
-         
+         }
          // store some data into userdefault
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+         
+         else{
+         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+         
             [defaults setObject:self.usernameTF.text forKey:@"username"];
             [defaults setObject:self.passwordTF.text forKey:@"password"];
-            [defaults setObject:[self.recievedData valueForKey:@"_id"] forKey:@"userid"];
+            [defaults setObject:[self.recievedData valueForKey:@"token"] forKey:@"token"];
             [defaults setBool:YES forKey:@"autologin"];
             [defaults synchronize];
          // delay 2 seconds at login
@@ -176,10 +217,8 @@
          dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
          [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
          });
+         }
          
-            
-            
-            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
             

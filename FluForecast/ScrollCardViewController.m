@@ -42,8 +42,10 @@
     
    NSDate *date= [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"MMM dd, yyyy"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
     NSString *dateString = [dateFormat stringFromDate:date];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token=[defaults objectForKey:@"token"];
     //initial my cards for testing
 
     self.icons=@{@"walking":@"walking-100.png",
@@ -53,18 +55,16 @@
                  @"sleep":@"bed-100.png",
                  @"water":@"water-100.png"};
     
-    
-    
-    
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
-    [url appendString:@"/user_profile/"];
-    [url appendString:@"53f1439d3b240c55ba4bb2a7"];// or myid
+    [url appendString:@"/user_trainingcard/"];
+    [url appendString:token];
+    [url appendString:@"/"];
     [url appendString:dateString];
     
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:nil parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"JSON: %@", responseObject);
         self.myCards=responseObject;

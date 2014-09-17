@@ -16,6 +16,7 @@
 @property NSString *sendCard;
 @property NSDictionary *cardData;
 @property NSMutableDictionary *cardId;
+@property NSArray *selectedCards;
 @end
 
 @implementation CardSelectViewController
@@ -50,16 +51,18 @@
     
     ///////////////////cominication////////////////
     //Read in training card's info by query id, server should response an array with JSON elements
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.selectedCards=[defaults objectForKey:@"selectedCards"];
+    
     self.cardId=[NSMutableDictionary new];
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
     [url appendString:GetTrainingCard];
-    [url appendString:@"53f1439d3b240c55ba4bb2a7"];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"JSON: %@", responseObject);
-        
         self.cardName=responseObject;
         [self.view setNeedsDisplay];
         
@@ -101,9 +104,18 @@
     }
     
     self.cardData=[self.cardName objectAtIndex:indexPath.row];
+    
     NSString *title= [self.cardData objectForKey:@"titile"];
-    NSString *progress=[self.cardData objectForKey:@"progress"];
-    NSString *trainingId=[self.cardData objectForKey:@"trainingcard_id"];
+    NSString *progress=nil;
+    if ([self.selectedCards containsObject:title])
+    {
+        progress=@"unselected";
+    }
+    else
+    {
+        progress=@"selected";
+    }
+    NSString *trainingId=[self.cardData objectForKey:@"_id"];
     [self.cardId setObject:trainingId forKey:title];
     
     cell.textLabel.text =title;
