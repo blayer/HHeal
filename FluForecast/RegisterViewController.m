@@ -213,19 +213,20 @@ else
         NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"state":self.State.text};
         
         NSString *url=HHealURL @"/user_profile";
+        
         NSLog(@"JSON: %@", parameters);
+        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         
         //by default, AF manager uses HTTP request, we have to change it to JSON request when we want to post a JSON
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
-
         [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", responseObject);
             
             NSString *errorMessage=[responseObject valueForKey:@"error"];
             
             
-            if(![errorMessage isEqual:[NSNull null]])
+            if(!(errorMessage==nil))
             {
                 UIAlertView *exitAlert = [[UIAlertView alloc] initWithTitle:@"Registration Error!"
                                                                      message:errorMessage
@@ -255,7 +256,7 @@ else
             NSLog(@"Error: %@", error);
             
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Registration Error!"
-                                                                message:@"Please try again!"
+                                                                message:[error localizedDescription]
                                                                delegate:nil
                                                       cancelButtonTitle:@"Ok"
                                                       otherButtonTitles:nil];

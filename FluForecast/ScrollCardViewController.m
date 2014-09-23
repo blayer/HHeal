@@ -48,7 +48,8 @@
     NSString *token=[defaults objectForKey:@"token"];
     //initial my cards for testing
 
-    self.icons=@{@"walking":@"walking-100.png",
+    self.icons=@{@"welcome":@"user-32.png",
+                 @"walking":@"walking-100.png",
                  @"vataminD":@"fish-100.png",
                  @"flower":@"bunch_flowers-128.png",
                  @"food":@"vegan_food-100.png",
@@ -68,6 +69,9 @@
         
         NSLog(@"JSON: %@", responseObject);
         self.myCards=responseObject;
+        if([self.myCards count]!=0)
+        {  NSDictionary *card=[self.myCards objectAtIndex:0];}
+    //    [defaults setObject:self.myCards forKey:@"selectedCards"];
         [self addScrollview];
         //adding scrolls
         [self.view setNeedsDisplay];
@@ -96,6 +100,7 @@
     
     
     NSInteger numberOfViews = [self.myCards count];
+    
     for (int i = 0; i < numberOfViews; i++) {
         
         NSDictionary *card=self.myCards[i];
@@ -186,11 +191,9 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
 {  
     NSLog(@"Button Clicked");
     self.sendCard=[self.cardId objectForKey:sender.titleLabel.text];
+    if(![self.sendCard isEqualToString:@"nil"])
      [self performSegueWithIdentifier: @"CompleteCard" sender: self];
-    NSLog(self.sendCard);
     
- //  CardNoteViewController  *cardview = [[CardNoteViewController alloc] initWithNibName:@"second" bundle:nil];
-  //  [self presentViewController:cardview animated:YES completion:^{}];
 }
 
 
@@ -198,8 +201,6 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"CompleteCard"]) {
-      //  RecipeDetailViewController *destViewController = segue.destinationViewController;
-      //  destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
         
         CardCompleteNoteViewController *destViewController = segue.destinationViewController;
         destViewController.receivedCard=self.sendCard;

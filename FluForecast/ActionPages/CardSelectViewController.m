@@ -16,7 +16,7 @@
 @property NSString *sendCard;
 @property NSDictionary *cardData;
 @property NSMutableDictionary *cardId;
-@property NSArray *selectedCards;
+@property NSMutableArray *selectedCards; // a array of all selected cards' titles
 @end
 
 @implementation CardSelectViewController
@@ -36,24 +36,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+      //Read in training card's info by query id, server should response an array with JSON elements
+  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-   /* self.cardName= [[NSArray alloc]initWithObjects:
-                    @"Moderate exercise 40 mins@selected",
-                    @"Take vitamin D supplements 5000 IU@unselected",
-                    @"Take echinacea extract 2400 mg@selected",
-                    @"string@unselected",
-                    @"string@unselected",
-                    @"string@unselected",
-                    nil];
-*/
-    
-    
-    ///////////////////cominication////////////////
-    //Read in training card's info by query id, server should response an array with JSON elements
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.selectedCards=[defaults objectForKey:@"selectedCards"];
-    
+ /*   NSArray *selectedCardsJson=[defaults objectForKey:@"selectedCards"]; //this is a array of Json of all selected cards
+     for (int i=0;i<[selectedCardsJson count]; i++)
+     {     NSDictionary *item = [selectedCardsJson objectAtIndex:i];
+         [self.selectedCards addObject:[item objectForKey:@"title"]];
+     }
+  
+  */
     self.cardId=[NSMutableDictionary new];
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
@@ -64,8 +56,41 @@
         
         NSLog(@"JSON: %@", responseObject);
         self.cardName=responseObject;
-        [self.view setNeedsDisplay];
         
+        NSDate *date= [NSDate date];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        NSString *dateString = [dateFormat stringFromDate:date];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *token=[defaults objectForKey:@"token"];
+        NSMutableString *url=[NSMutableString new];
+        [url appendString:HHealURL];
+        [url appendString:@"/user_trainingcard/"];
+        [url appendString:token];
+        [url appendString:@"/"];
+        [url appendString:dateString];
+        
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            
+            NSLog(@"JSON: %@", responseObject);
+            self.selectedCards=responseObject;
+            
+            
+        }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                                message:[error localizedDescription]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+            NSLog(@"Error: %@", error);
+        }];
+        
+        [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -97,27 +122,28 @@
 {
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
-    
     self.cardData=[self.cardName objectAtIndex:indexPath.row];
     
-    NSString *title= [self.cardData objectForKey:@"titile"];
+    NSString *title= [self.cardData objectForKey:@"title"];
     NSString *progress=nil;
-    if ([self.selectedCards containsObject:title])
-    {
-        progress=@"unselected";
-    }
-    else
+    if ([self checkCardsIn:self.selectedCards from:self.cardData])
     {
         progress=@"selected";
     }
+    else
+    {
+        progress=@"unselected";
+    }
     NSString *trainingId=[self.cardData objectForKey:@"_id"];
+    if([self.cardName count]!=0)
+    {
     [self.cardId setObject:trainingId forKey:title];
-    
+    }
     cell.textLabel.text =title;
     
     if([progress isEqualToString:@"selected"])
@@ -147,7 +173,6 @@
     
     self.sendCard=[self.cardId objectForKey:selectedCell.textLabel.text];
     [self performSegueWithIdentifier: @"SelectedCard" sender: self];
-    NSLog(self.sendCard);
    // NSLog(selectedCell.detailTextLabel.text);
     
 }
@@ -163,14 +188,30 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"SelectedCard"]) {
-        //  RecipeDetailViewController *destViewController = segue.destinationViewController;
-        //  destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
-        
+
         CardNoteViewController *destViewController = segue.destinationViewController;
         destViewController.receivedCard=self.sendCard;
         
     }
 }
+
+
+
+-(BOOL) checkCardsIn: (NSMutableArray *) selectedCards from:(NSDictionary*) currentCard
+{
+    NSString *title= [currentCard objectForKey:@"title"];
+    for(int i=0; i<[selectedCards count];i++)
+    { NSDictionary *card=[selectedCards objectAtIndex:i];
+        
+        if([title isEqualToString:[card objectForKey:@"title"]])
+        {  return YES;
+        }
+        
+    }
+    
+    return NO;
+}
+
 /*
 #pragma mark - Navigation
 

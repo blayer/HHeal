@@ -40,9 +40,10 @@
     self.photo=[[UIImageView alloc]initWithFrame:CGRectMake(10, 30, 60.0, 60.0)];
     [self.photo.layer setBorderColor:[[UIColor whiteColor] CGColor] ];
     [self.photo.layer setBorderWidth:2.0f];
+ //   [self.photo setBackgroundColor:uic]
     
 
-   self.photo.image=[UIImage imageNamed:@"Na Li.jpeg"];
+   self.photo.image=[UIImage imageNamed:@"user-48.png"];
     [self.view addSubview:self.photo];
     // Do any additional setup after loading the view.
 }

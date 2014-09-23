@@ -52,6 +52,7 @@
 		8337BC0919C0DC340066C625 /* RiskHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */; };
 		8337BC0F19C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
 		8337BC1019C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
+		8337BC1219CA2C120066C625 /* user-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8337BC1119CA2C120066C625 /* user-48.png */; };
 		834A61A719A1530400FC8753 /* help-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A619A1530400FC8753 /* help-32.png */; };
 		834A61AA19A164EA00FC8753 /* password-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A819A164EA00FC8753 /* password-32.png */; };
 		834A61AB19A164EA00FC8753 /* user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A61A919A164EA00FC8753 /* user-32.png */; };
@@ -161,6 +162,7 @@
 		8337BC0719C0DC340066C625 /* RiskHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskHistoryTableViewController.h; sourceTree = "<group>"; };
 		8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskHistoryTableViewController.m; sourceTree = "<group>"; };
 		8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		8337BC1119CA2C120066C625 /* user-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-48.png"; sourceTree = "<group>"; };
 		834A61A619A1530400FC8753 /* help-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help-32.png"; sourceTree = "<group>"; };
 		834A61A819A164EA00FC8753 /* password-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password-32.png"; sourceTree = "<group>"; };
 		834A61A919A164EA00FC8753 /* user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-32.png"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		8304DBC519957319006E7BD7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8337BC1119CA2C120066C625 /* user-48.png */,
 				83B72E9219BE142400584BA1 /* logout-32.png */,
 				83F23EFB19BAA20700F94DFD /* profile-32.png */,
 				834A61A819A164EA00FC8753 /* password-32.png */,
@@ -579,6 +582,7 @@
 				8304DC2F199B17B0006E7BD7 /* water-100.png in Resources */,
 				8304DBD51995C64E006E7BD7 /* plus-25.png in Resources */,
 				8304DC32199B17ED006E7BD7 /* walking-100.png in Resources */,
+				8337BC1219CA2C120066C625 /* user-48.png in Resources */,
 				8304DC26199B17B0006E7BD7 /* bed-75.png in Resources */,
 				834A61A719A1530400FC8753 /* help-32.png in Resources */,
 				834A61AB19A164EA00FC8753 /* user-32.png in Resources */,

@@ -43,22 +43,27 @@
     [super viewDidLoad];
 
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *token =[defaults valueForKey:@"token"];
-  //  self.myid=[defaults objectForKey:@"_id"];
-  //  self.myid=@"53f1439d3b240c55ba4bb2a7";
-    //    NSString *userID= [profile stringForKey:@"myID"];
+     NSString *token =[defaults valueForKey:@"token"];
+    NSDate *date= [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [dateFormat stringFromDate:date];
+
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
     [url appendString:@"/user_profile/"];
     if(token!=nil)
     {[url appendString:token];}
-    
+    [url appendString:@"/"];
+   
+    NSDictionary *parameter=@{@"date":dateString};
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:url parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
         NSLog(@"JSON: %@", responseObject);
     
         self.dict=responseObject;
+        [defaults setObject:[self.dict objectForKey:@"agegroup"] forKey:@"agegroup"];
         self.nationalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"standardrate"] intValue]) ];
         self.personalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"personalrate"] intValue]) ];
         

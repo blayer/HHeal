@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CardSelectViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
-
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @end

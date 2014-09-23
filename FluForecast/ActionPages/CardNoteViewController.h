@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CardNoteViewController : UIViewController <UIAlertViewDelegate>
-@property (nonatomic,strong)NSArray *receivedCard;
+@property (nonatomic,strong)NSString *receivedCard;
 @end

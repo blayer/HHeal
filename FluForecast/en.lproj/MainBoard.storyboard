@@ -1656,8 +1656,8 @@ MYFITNESSPAL RESERVES THE RIGHT TO CHANGE THIS AGREEMENT AT ANY TIME UPON NOTICE
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="JU6-y2-z9N" id="5UE-xz-Kmr"/>
-                                    <outlet property="delegate" destination="JU6-y2-z9N" id="0cf-cC-GZ9"/>
+                                    <outlet property="dataSource" destination="JU6-y2-z9N" id="GyF-lH-Tuq"/>
+                                    <outlet property="delegate" destination="JU6-y2-z9N" id="bT3-04-OTY"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1665,7 +1665,7 @@ MYFITNESSPAL RESERVES THE RIGHT TO CHANGE THIS AGREEMENT AT ANY TIME UPON NOTICE
                     </view>
                     <navigationItem key="navigationItem" id="cW4-X3-Mer"/>
                     <connections>
-                        <outlet property="view" destination="ErU-gC-DRr" id="Rkg-fo-nxh"/>
+                        <outlet property="tableView" destination="CU5-ui-31M" id="K73-6n-Ron"/>
                         <segue destination="LaO-94-C9l" kind="custom" identifier="SelectedCard" customClass="BlurryModalSegue" id="07q-jp-yAb"/>
                     </connections>
                 </viewController>

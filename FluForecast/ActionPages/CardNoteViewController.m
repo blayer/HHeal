@@ -20,6 +20,7 @@
 @property UIButton *clickedButton;
 @property NSDictionary *myCard;
 @property NSString  *progress;
+@property NSMutableArray *selectedCards;
 @end
 
 @implementation CardNoteViewController
@@ -41,9 +42,12 @@
     [super viewDidLoad];
     
     
-    //for testing
+    //reading profile cards
     
+  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
     
+  //  self.selectedCards=[NSMutableArray arrayWithArray:[defaults objectForKey:@"selectedCards"]];
     
    // NSLog(@"received data is %@",self.receivedData);
     self.selectAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Selected"
@@ -59,11 +63,6 @@
                                         otherButtonTitles:@"No", nil];
 
     // Do any additional setup after loading the view.
-
-    
-    
-    
-    
     
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
@@ -119,10 +118,12 @@
     
     //title received from source view controller
     NSString *title=[self.myCard objectForKey:@"title"];
-    self.progress=[self.myCard objectForKey:@"progress"];
     self.note=[self.myCard objectForKey:@"note"];
-    
-    
+    if([self checkCardsIn:self.selectedCards from:self.myCard])
+    { self.progress=@"selected";
+    }
+    else {
+    self.progress=@"unselected";}
     
     self.name.text = title;
     self.name.font = [UIFont boldSystemFontOfSize:25.0f];
@@ -176,17 +177,34 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
     if ([self.progress isEqualToString:@"unselected"]){
     if([title isEqualToString:@"Yes"])
     {
+        NSString *trainingCardId=[self.myCard objectForKey:@"_id"];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *token =[defaults objectForKey:@"token"];
+        NSString *agegroup=[defaults objectForKey:@"agegroup"];
+        NSDate *date= [NSDate date];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        NSString *dateString = [dateFormat stringFromDate:date];
         
         NSMutableString *url=[NSMutableString new];
         [url appendString:HHealURL];
-        [url appendString:@"/trainingcard"];
+        [url appendString:@"/user_trainingcard/"];
+        [url appendString:token];
+        [url appendString:@"/"];
+        [url appendString:dateString];
+        [url appendString:@"/"];
+        [url appendString:trainingCardId];
         
+        NSDictionary *parameters=@{@"agegroup":agegroup};
+        
+        NSLog(@"JSON: %@", agegroup);
      //   NSDictionary *parameter
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
             NSLog(@"JSON: %@", responseObject);
             
@@ -198,6 +216,12 @@
                                                           cancelButtonTitle:@"Ok"
                                                           otherButtonTitles:nil];
             [completeAlert show];
+            
+            NSDictionary *addedCard=responseObject;
+            [self.selectedCards addObject:addedCard];
+            
+      //      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+       //     [defaults setObject:self.selectedCards forKey:@"selectedCards"];
             
             [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
             
@@ -228,11 +252,8 @@
             [url appendString:HHealURL];
             [url appendString:@"/trainingcard"];
             
-            //   NSDictionary *parameter
-            // use different post to delete a card?
-            
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-            [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [manager DELETE :url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 
                 NSLog(@"JSON: %@", responseObject);
             
@@ -244,6 +265,9 @@
                                                               otherButtonTitles:nil];
                 [completeAlert show];
                 
+           //     [self removeFromArray:self.myCard];
+           //     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+           //     [defaults setObject:self.selectedCards forKey:@"selectedCards"];
                 [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
                 
                 
@@ -265,6 +289,34 @@
             //  NSLog(@"Button 2 was selected.");
         }}
     
+}
+
+/*-(void) removeFromArray: (NSDictionary*) removedItem
+{
+    for (int i=0;i<[self.selectedCards count]; i++) {
+    NSDictionary *item = [self.selectedCards objectAtIndex:i];
+        
+        if([[item objectForKey:@"title"] isEqualToString:[removedItem objectForKey:@"title"] ])
+        {
+            [self.selectedCards removeObjectAtIndex:i];
+            i--;
+        }
+        }}
+*/
+
+-(BOOL) checkCardsIn: (NSMutableArray *) selectedCards from:(NSDictionary*) currentCard
+{
+    NSString *title= [currentCard objectForKey:@"title"];
+    for(int i=0; i<[selectedCards count];i++)
+    { NSDictionary *card=[selectedCards objectAtIndex:i];
+        
+    if([title isEqualToString:[card objectForKey:@"title"]])
+    {  return YES;
+    }
+
+    }
+
+    return NO;
 }
 /*
 #pragma mark - Navigation
