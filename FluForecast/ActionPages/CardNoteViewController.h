@@ -10,4 +10,6 @@
 
 @interface CardNoteViewController : UIViewController <UIAlertViewDelegate>
 @property (nonatomic,strong)NSString *receivedCard;
+@property (nonatomic,strong)NSString *receivedProgress;
+
 @end

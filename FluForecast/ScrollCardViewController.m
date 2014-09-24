@@ -16,7 +16,7 @@
 @interface ScrollCardViewController ()
 @property NSArray *myCards;
 @property NSArray *background;
-@property NSString *sendCard;
+@property NSDictionary *sendCard;
 @property NSDictionary *icons;
 @property int numberOfCards;
 @property NSMutableDictionary *cardId;
@@ -39,22 +39,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.cardId=[NSMutableDictionary new];
    NSDate *date= [NSDate date];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateString = [dateFormat stringFromDate:date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token=[defaults objectForKey:@"token"];
     //initial my cards for testing
 
     self.icons=@{@"welcome":@"user-32.png",
-                 @"walking":@"walking-100.png",
-                 @"vataminD":@"fish-100.png",
-                 @"flower":@"bunch_flowers-128.png",
-                 @"food":@"vegan_food-100.png",
-                 @"sleep":@"bed-100.png",
-                 @"water":@"water-100.png"};
+                 @"Moderate exercise 40 mins.":@"walking-100.png",
+                 @"Take vitamin D supplements 5000 IU":@"fish-100.png",
+                 @"Take echinacea extract 2400 mg":@"bunch_flowers-128.png",
+                 @"Take probiotics":@"vegan_food-100.png",
+                 @"Sleep 8 hrs.":@"bed-100.png",
+                 @"Drink 8 8-ounce glasses of water":@"water-100.png"};
+    
     
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
@@ -67,8 +71,9 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"JSON: %@", responseObject);
+        NSLog(@"ScrollView JSON: %@", responseObject);
         self.myCards=responseObject;
+        
         if([self.myCards count]!=0)
         {  NSDictionary *card=[self.myCards objectAtIndex:0];}
     //    [defaults setObject:self.myCards forKey:@"selectedCards"];
@@ -96,6 +101,7 @@
 }
 
 
+
 -(void) addScrollview {
     
     
@@ -105,9 +111,13 @@
         
         NSDictionary *card=self.myCards[i];
         NSString *title=[card objectForKey:@"title"];
-        NSString *idnumber=[card objectForKey:@"_id"];
-        
-        [self.cardId setObject:idnumber forKey:title];
+        NSString *cardId=[card objectForKey:@"_id"];
+        NSString *trainingCardID=[card objectForKey:@"trainingcard_id"];
+        NSString *progress=[card objectForKey:@"progress"];
+        NSDictionary *cardInfo=@{@"_id":cardId,
+                                 @"trainingcard_id":trainingCardID,
+                                 @"progress":progress};
+        [self.cardId setObject:cardInfo forKey:title];
         
         //set the origin of the sub view
         CGFloat myOrigin = i * self.view.frame.size.width;
@@ -121,8 +131,8 @@
         [butt setFrame:CGRectMake(100, 0, 220, 120)];
         
         [butt setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
-        [butt setTitle:[NSString stringWithFormat:title, i] forState:UIControlStateNormal];
-        butt.titleLabel.font =[UIFont boldSystemFontOfSize:25.0f];
+        [butt setTitle:title forState:UIControlStateNormal];
+         butt.titleLabel.font =[UIFont boldSystemFontOfSize:25.0f];
         [butt setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         
         [butt addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
@@ -131,9 +141,17 @@
         NSString *iconName=[self.icons objectForKey:title];
         
         
-        UIImageView *icon=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 90.0, 90.0)];
+        UIImageView *icon=[[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 70.0, 70.0)];
         icon.image=[UIImage imageNamed:[NSString stringWithFormat:iconName, i] ];
+        
+        UIImageView *ribbon=[[UIImageView alloc]initWithFrame:CGRectMake(50, 50, 40.0, 40.0)];
+        ribbon.image=[UIImage imageNamed:@"ribbon_yellow-48.png"];
+        
+        
         [myView addSubview:icon];
+        
+        if([progress isEqualToString:@"completed"] )
+        {[myView addSubview:ribbon];}
         //set the scroll view delegate to self so that we can listen for changes
         self.scrollView.delegate = self;
         //add the subview to the scroll view
@@ -145,8 +163,8 @@
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * numberOfViews,
                                              self.view.frame.size.height);
     
-    //we set the origin to the 3rd page
-    CGPoint scrollPoint = CGPointMake(self.view.frame.size.width * 2, 0);
+    //we set the origin to the first page
+    CGPoint scrollPoint = CGPointMake(0, 0);
     //change the scroll view offset the the 3rd page so it will start from there
     [self.scrollView setContentOffset:scrollPoint animated:YES];
     
@@ -175,9 +193,6 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
         NSLog(@"Dragging - You are now on page %i",page);
         
     }
-    
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -190,8 +205,9 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
 - (IBAction)cardButton:(UIButton*)sender
 {  
     NSLog(@"Button Clicked");
-    self.sendCard=[self.cardId objectForKey:sender.titleLabel.text];
-    if(![self.sendCard isEqualToString:@"nil"])
+   self.sendCard=[self.cardId objectForKey:sender.titleLabel.text];
+    
+    if(!(self.sendCard==nil))
      [self performSegueWithIdentifier: @"CompleteCard" sender: self];
     
 }
@@ -203,7 +219,10 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
     if ([segue.identifier isEqualToString:@"CompleteCard"]) {
         
         CardCompleteNoteViewController *destViewController = segue.destinationViewController;
-        destViewController.receivedCard=self.sendCard;
+        destViewController.receivedCardId=[self.sendCard objectForKey:@"_id"];
+        destViewController.receivedTrainingCardId=[self.sendCard objectForKey:@"trainingcard_id"];
+        destViewController.progress=[self.sendCard objectForKey:@"progress"];
+
     
     }
 }

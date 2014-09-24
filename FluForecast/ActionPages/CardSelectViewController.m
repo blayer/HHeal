@@ -16,6 +16,7 @@
 @property NSString *sendCard;
 @property NSDictionary *cardData;
 @property NSMutableDictionary *cardId;
+@property NSString *progress;
 @property NSMutableArray *selectedCards; // a array of all selected cards' titles
 @end
 
@@ -54,13 +55,16 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"JSON: %@", responseObject);
+        NSLog(@"ALl Cards=JSON: %@", responseObject);
         self.cardName=responseObject;
         
         NSDate *date= [NSDate date];
-        NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-        [dateFormat setDateFormat:@"yyyy-MM-dd"];
-        NSString *dateString = [dateFormat stringFromDate:date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+        NSString *dateString = [dateFormatter stringFromDate:date];
+        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *token=[defaults objectForKey:@"token"];
         NSMutableString *url=[NSMutableString new];
@@ -75,9 +79,10 @@
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
             
-            NSLog(@"JSON: %@", responseObject);
+            NSLog(@"Selected Cards=JSON: %@", responseObject);
             self.selectedCards=responseObject;
-            
+            [self.tableView reloadData];
+
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
@@ -90,7 +95,7 @@
             NSLog(@"Error: %@", error);
         }];
         
-        [self.tableView reloadData];
+       // [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -150,6 +155,8 @@
     {
          cell.imageView.image = [UIImage imageNamed:@"checkmarkgreen-32.png"];
         [cell.accessoryView setFrame:CGRectMake(0, 0, 25, 25)];
+        cell.detailTextLabel.text=@"selected";
+
     }
     
  //if([[array objectAtIndex:1] isEqualToString:@"unselected"])
@@ -172,18 +179,16 @@
 
     
     self.sendCard=[self.cardId objectForKey:selectedCell.textLabel.text];
+    self.progress=selectedCell.detailTextLabel.text;
     [self performSegueWithIdentifier: @"SelectedCard" sender: self];
    // NSLog(selectedCell.detailTextLabel.text);
     
 }
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return (self.view.frame.size.height/8);// set the row number as 8
 }
-
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -191,11 +196,8 @@
 
         CardNoteViewController *destViewController = segue.destinationViewController;
         destViewController.receivedCard=self.sendCard;
-        
-    }
-}
-
-
+        destViewController.receivedProgress=self.progress;
+}}
 
 -(BOOL) checkCardsIn: (NSMutableArray *) selectedCards from:(NSDictionary*) currentCard
 {
@@ -205,22 +207,8 @@
         
         if([title isEqualToString:[card objectForKey:@"title"]])
         {  return YES;
-        }
-        
-    }
-    
+        } }
     return NO;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

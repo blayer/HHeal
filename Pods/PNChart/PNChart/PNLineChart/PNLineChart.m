@@ -284,8 +284,8 @@
         }
 
         // Min value for Y label
-        if (yMax < 5) {
-            yMax = 5.0f;
+        if (yMax < 1.5f) {
+            yMax = 1.5f;
         }
 
         if (yMin < 0) {

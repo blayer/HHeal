@@ -49,14 +49,13 @@
     loginView.frame=frame;
     
     loginView.delegate = self;
+    self.usernameTF.delegate=self;
+    self.passwordTF.delegate=self;
 
     [self.view addSubview:loginView];
     
     
     // adding activity Indicator
-   
-    
-    
     //check if autologin, if yes, login automatically
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -64,7 +63,6 @@
     
     if(NO)
     {
-        
         UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
         activityIndicator.center = self.view.center;
@@ -73,15 +71,13 @@
         [activityIndicator startAnimating];
         
         [self.view setNeedsDisplay];
-        
-       // self.usernameTF.placeholder=usrname;
-      //  self.passwordTF.placeholder=psw;
+        // self.usernameTF.placeholder=usrname;
+        //  self.passwordTF.placeholder=psw;
         NSString *token=[defaults objectForKey:@"toekn"];
         NSDictionary *query= @{@"token":token};
         
         NSDictionary *parameters=@{@"query":query};
         NSString *url=HHealURL @"/login";
-        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             NSLog(@"JSON: %@", responseObject);
@@ -92,9 +88,6 @@
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
             });
-            
-            
-            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
             
@@ -109,30 +102,22 @@
         }];
     
     }
- 
  ///////////////////////////////////////////////////////////////////////////////////////
   self.alertWrongPassword=[[UIAlertView alloc] initWithTitle:@"Login Failed"
                       message:@"Incorrect user name or incorrect password"
                      delegate:nil
             cancelButtonTitle:@"OK"
             otherButtonTitles:nil];
-    
-    
   self.alertBlankText=[[UIAlertView alloc] initWithTitle:@"Login Failed"
                                                        message:@"Please type in your username and password"
                                                       delegate:nil
                                              cancelButtonTitle:@"OK"
                                              otherButtonTitles:nil];
-    
-    
-    
     // tap for dismissing keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    
-    
     
   //  [self.alertBlankText show];
     // Do any additional setup after loading the view.
@@ -156,6 +141,11 @@
 
 
 - (IBAction)SignIn:(id)sender {
+    [self sendSignIn];
+ }
+
+
+-(void) sendSignIn {
     
     
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -181,44 +171,44 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         
         
-     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
-         
+        [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
+            
             
             
             NSLog(@"JSON: %@", responseObject);
             self.recievedData=responseObject;
-         NSString *error =[responseObject objectForKey:@"error"];
-         
-         if (error.length!=0){
-             UIAlertView *LoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Error!"
-                                                                  message:error
-                                                                 delegate:nil
-                                                        cancelButtonTitle:@"Ok"
-                                                        otherButtonTitles:nil];
-             
-             [LoginAlert show];
-             [activityIndicator stopAnimating];
-             [self.view setNeedsDisplay];
-         
-         }
-         // store some data into userdefault
-         
-         else{
-         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-         
-            [defaults setObject:self.usernameTF.text forKey:@"username"];
-            [defaults setObject:self.passwordTF.text forKey:@"password"];
-            [defaults setObject:[self.recievedData valueForKey:@"token"] forKey:@"token"];
-            [defaults setBool:YES forKey:@"autologin"];
-            [defaults synchronize];
-         // delay 2 seconds at login
-         double delayInSeconds = 2.0;
-         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-         [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
-         });
-         }
-         
+            NSString *error =[responseObject objectForKey:@"error"];
+            
+            if (error.length!=0){
+                UIAlertView *LoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Error!"
+                                                                     message:error
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"Ok"
+                                                           otherButtonTitles:nil];
+                
+                [LoginAlert show];
+                [activityIndicator stopAnimating];
+                [self.view setNeedsDisplay];
+                
+            }
+            // store some data into userdefault
+            
+            else{
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                
+                [defaults setObject:self.usernameTF.text forKey:@"username"];
+                [defaults setObject:self.passwordTF.text forKey:@"password"];
+                [defaults setObject:[self.recievedData valueForKey:@"token"] forKey:@"token"];
+                [defaults setBool:YES forKey:@"autologin"];
+                [defaults synchronize];
+                // delay 2 seconds at login
+                double delayInSeconds = 2.0;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
+                });
+            }
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
             
@@ -244,21 +234,33 @@
         [self.view setNeedsDisplay];
     }
     
-}
 
+}
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+    activityIndicator.center = self.view.center;
+    [self.view addSubview: activityIndicator];
     
-   
-    [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
-    
-    
-    
+    [activityIndicator startAnimating];
 
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [activityIndicator stopAnimating];
+        [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
+    });
+    
 }
 
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self sendSignIn];
+    return YES;
+}
 
 
 

@@ -7,6 +7,8 @@
 //
 
 #import "TrainingLogViewController.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
 
 @interface TrainingLogViewController ()
 @property (nonatomic) int currentExpandedIndex;
@@ -41,6 +43,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token=[defaults objectForKey:@"token"];
+    NSDate *date= [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [dateFormat stringFromDate:date];
+    
+    
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:GetTrainingLogs];
+    [url appendString:token];
+
+    NSDictionary *parameters=@{@"date":dateString};
+    
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"ScrollView JSON: %@", responseObject);
+        
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+    
     [ self.myTableView setTintColor:[UIColor greenColor]]; //change tint color including checkmark color
 
     self.title= [[NSString alloc]init];
@@ -63,14 +93,6 @@
        
 }
 
-/*-(BOOL) MatchTitle:(NSArray *) titleAarry withName:(NSString *)name
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains [cd] %@", "2"];
-    
-    NSArray *filterdArray = [array filterdArrayUsingPredicate:predicate];
-    
-    
-}*/
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

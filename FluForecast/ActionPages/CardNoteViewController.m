@@ -17,7 +17,6 @@
 @property UITextView *note;
 @property UIAlertView *selectAlert;
 @property UIAlertView *unselectAlert;
-@property UIButton *clickedButton;
 @property NSDictionary *myCard;
 @property NSString  *progress;
 @property NSMutableArray *selectedCards;
@@ -41,15 +40,8 @@
 {
     [super viewDidLoad];
     
+    self.progress=self.receivedProgress;
     
-    //reading profile cards
-    
-  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    
-  //  self.selectedCards=[NSMutableArray arrayWithArray:[defaults objectForKey:@"selectedCards"]];
-    
-   // NSLog(@"received data is %@",self.receivedData);
     self.selectAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Selected"
                                                     message:@"Are you sure you want to select this training card?"
                                                    delegate:self
@@ -67,13 +59,12 @@
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
     [url appendString:GetTrainingCard];
+    
     if(self.receivedCard!=nil)
     {[url appendString:self.receivedCard];}
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        
         
         NSLog(@"JSON: %@", responseObject);
         self.myCard=responseObject;
@@ -119,12 +110,6 @@
     //title received from source view controller
     NSString *title=[self.myCard objectForKey:@"title"];
     self.note=[self.myCard objectForKey:@"note"];
-    if([self checkCardsIn:self.selectedCards from:self.myCard])
-    { self.progress=@"selected";
-    }
-    else {
-    self.progress=@"unselected";}
-    
     self.name.text = title;
     self.name.font = [UIFont boldSystemFontOfSize:25.0f];
     self.name.textAlignment =  NSTextAlignmentCenter;
@@ -155,8 +140,10 @@
         [reportButton setImage:[UIImage imageNamed:@"checkmarkgrey-32.png"] forState:UIControlStateNormal];
     
     else
-    {  [self.clickedButton setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
+    {
+        [reportButton setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
     }
+    
     [reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];
     
     // [reportButton addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
@@ -165,8 +152,6 @@
 
 -(void) ButtonClicked:(UIButton *) sender
 {  // [sender setImage:[UIImage imageNamed:@"checkmarkgreen-32.png"] forState:UIControlStateNormal];
-
-    self.clickedButton=sender;
     if ([self.progress isEqualToString:@"unselected"])
     { [self.selectAlert show];}
     else if([self.progress isEqualToString:@"selected"])
@@ -186,9 +171,12 @@
         NSString *token =[defaults objectForKey:@"token"];
         NSString *agegroup=[defaults objectForKey:@"agegroup"];
         NSDate *date= [NSDate date];
-        NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-        [dateFormat setDateFormat:@"yyyy-MM-dd"];
-        NSString *dateString = [dateFormat stringFromDate:date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+        NSString *dateString = [dateFormatter stringFromDate:date];
+     
         
         NSMutableString *url=[NSMutableString new];
         [url appendString:HHealURL];
@@ -248,9 +236,25 @@
    else if ([self.progress isEqualToString:@"selected"]){
         if([title isEqualToString:@"Yes"])
         {
+            NSString *trainingCardId=[self.myCard objectForKey:@"_id"];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSString *token =[defaults objectForKey:@"token"];
+            NSDate *date= [NSDate date];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+            [dateFormatter setLocale:enUSPOSIXLocale];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+            NSString *dateString = [dateFormatter stringFromDate:date];
+          
+            
             NSMutableString *url=[NSMutableString new];
             [url appendString:HHealURL];
-            [url appendString:@"/trainingcard"];
+            [url appendString:@"/user_trainingcard/"];
+            [url appendString:token];
+            [url appendString:@"/"];
+            [url appendString:dateString];
+            [url appendString:@"/"];
+            [url appendString:trainingCardId];
             
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             [manager DELETE :url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -291,18 +295,6 @@
     
 }
 
-/*-(void) removeFromArray: (NSDictionary*) removedItem
-{
-    for (int i=0;i<[self.selectedCards count]; i++) {
-    NSDictionary *item = [self.selectedCards objectAtIndex:i];
-        
-        if([[item objectForKey:@"title"] isEqualToString:[removedItem objectForKey:@"title"] ])
-        {
-            [self.selectedCards removeObjectAtIndex:i];
-            i--;
-        }
-        }}
-*/
 
 -(BOOL) checkCardsIn: (NSMutableArray *) selectedCards from:(NSDictionary*) currentCard
 {
@@ -318,15 +310,6 @@
 
     return NO;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

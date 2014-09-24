@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-#define HHealURL        @"http://localhost:3000"
+//#define HHealURL      @"http://localhost:3000"
+#define HHealURL        @"http://ec2-54-68-139-241.us-west-2.compute.amazonaws.com"
 #define GetTrainingCard @"/trainingcard/"
 #define UserProfile     @"/user_profile/"
 #define Login           @"/login/"
 #define GetUserAllCards @"/user_trainingcard/"
 #define ReportFlu       @"/flureport/"
+#define GetTrainingLogs @"/trainingcardhistory/"
+#define GetRiskLogs     @"/user_fluforecast/"
+
+
+
 
 @interface NSObject ()
 

@@ -60,6 +60,8 @@
 		834A61B019A27BCE00FC8753 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834A61AF19A27BCE00FC8753 /* LoadingViewController.m */; };
 		835159A91982DCD20093E478 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835159A81982DCD20093E478 /* BarChartViewController.m */; };
 		83745EB4198C4D0400F44BE6 /* ScrollCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */; };
+		8377CF6619D0B90500F8BA9B /* ribbon_yellow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8377CF6519D0B90500F8BA9B /* ribbon_yellow-48.png */; };
+		8377CF6819D0C44500F8BA9B /* ribbon_grey-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8377CF6719D0C44500F8BA9B /* ribbon_grey-48.png */; };
 		8382C9EF197DAEFF008E125C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9EE197DAEFF008E125C /* Foundation.framework */; };
 		8382C9F1197DAEFF008E125C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9F0197DAEFF008E125C /* CoreGraphics.framework */; };
 		8382C9F3197DAEFF008E125C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9F2197DAEFF008E125C /* UIKit.framework */; };
@@ -87,7 +89,6 @@
 		83A2A94119AC1F920047E8D6 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A93919AC1F920047E8D6 /* ContactUsViewController.m */; };
 		83A2A94219AC1F920047E8D6 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A93B19AC1F920047E8D6 /* LineChartViewController.m */; };
 		83A2A94319AC1F920047E8D6 /* TrainingHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A93D19AC1F920047E8D6 /* TrainingHistoryViewController.m */; };
-		83A2A94419AC1F920047E8D6 /* TrainingLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2A93F19AC1F920047E8D6 /* TrainingLogViewController.m */; };
 		83B72E9319BE142400584BA1 /* logout-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B72E9219BE142400584BA1 /* logout-32.png */; };
 		83C5624C1980C9A100AFD2A3 /* MainBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C5624E1980C9A100AFD2A3 /* MainBoard.storyboard */; };
 		83C8C6BB19869AAD00E34228 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C8C6BA19869AAD00E34228 /* RegisterViewController.m */; };
@@ -173,6 +174,8 @@
 		835159A81982DCD20093E478 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
 		83745EB2198C4D0400F44BE6 /* ScrollCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollCardViewController.h; sourceTree = "<group>"; };
 		83745EB3198C4D0400F44BE6 /* ScrollCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollCardViewController.m; sourceTree = "<group>"; };
+		8377CF6519D0B90500F8BA9B /* ribbon_yellow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_yellow-48.png"; sourceTree = "<group>"; };
+		8377CF6719D0C44500F8BA9B /* ribbon_grey-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_grey-48.png"; sourceTree = "<group>"; };
 		8382C9EB197DAEFF008E125C /* FluForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FluForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8382C9EE197DAEFF008E125C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8382C9F0197DAEFF008E125C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -219,8 +222,6 @@
 		83A2A93B19AC1F920047E8D6 /* LineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartViewController.m; sourceTree = "<group>"; };
 		83A2A93C19AC1F920047E8D6 /* TrainingHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingHistoryViewController.h; sourceTree = "<group>"; };
 		83A2A93D19AC1F920047E8D6 /* TrainingHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingHistoryViewController.m; sourceTree = "<group>"; };
-		83A2A93E19AC1F920047E8D6 /* TrainingLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingLogViewController.h; sourceTree = "<group>"; };
-		83A2A93F19AC1F920047E8D6 /* TrainingLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingLogViewController.m; sourceTree = "<group>"; };
 		83B72E9219BE142400584BA1 /* logout-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-32.png"; sourceTree = "<group>"; };
 		83C5624D1980C9A100AFD2A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainBoard.storyboard; sourceTree = "<group>"; };
 		83C8C6B919869AAD00E34228 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -272,6 +273,7 @@
 		8304DBC519957319006E7BD7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8377CF6719D0C44500F8BA9B /* ribbon_grey-48.png */,
 				8337BC1119CA2C120066C625 /* user-48.png */,
 				83B72E9219BE142400584BA1 /* logout-32.png */,
 				83F23EFB19BAA20700F94DFD /* profile-32.png */,
@@ -297,6 +299,7 @@
 				8304DBF7199AB4EE006E7BD7 /* medal-26.png */,
 				8304DC35199B2753006E7BD7 /* medal_grey-48.png */,
 				8304DC36199B2753006E7BD7 /* medal_yellow-48.png */,
+				8377CF6519D0B90500F8BA9B /* ribbon_yellow-48.png */,
 				8304DBE319980884006E7BD7 /* checkmarkgreen-25.png */,
 				8304DBDF1998062A006E7BD7 /* checkmarkgreen-32.png */,
 				8304DBE01998062A006E7BD7 /* checkmarkgrey-32.png */,
@@ -477,8 +480,6 @@
 				83A2A93B19AC1F920047E8D6 /* LineChartViewController.m */,
 				83A2A93C19AC1F920047E8D6 /* TrainingHistoryViewController.h */,
 				83A2A93D19AC1F920047E8D6 /* TrainingHistoryViewController.m */,
-				83A2A93E19AC1F920047E8D6 /* TrainingLogViewController.h */,
-				83A2A93F19AC1F920047E8D6 /* TrainingLogViewController.m */,
 				83F23EF619BA598800F94DFD /* SideTitleViewController.h */,
 				83F23EF719BA598800F94DFD /* SideTitleViewController.m */,
 				83F23F0319BD362A00F94DFD /* ProfileTableViewController.h */,
@@ -586,6 +587,7 @@
 				8304DC26199B17B0006E7BD7 /* bed-75.png in Resources */,
 				834A61A719A1530400FC8753 /* help-32.png in Resources */,
 				834A61AB19A164EA00FC8753 /* user-32.png in Resources */,
+				8377CF6619D0B90500F8BA9B /* ribbon_yellow-48.png in Resources */,
 				8304DC18199B01C2006E7BD7 /* feedback-32.png in Resources */,
 				8304DBE21998062A006E7BD7 /* checkmarkgrey-32.png in Resources */,
 				8304DC15199AFF7A006E7BD7 /* line_chart-32.png in Resources */,
@@ -602,6 +604,7 @@
 				8304DBC919957319006E7BD7 /* menu-50.png in Resources */,
 				8304DC14199AFF7A006E7BD7 /* home-32.png in Resources */,
 				8304DBCD199573A0006E7BD7 /* menu-32.png in Resources */,
+				8377CF6819D0C44500F8BA9B /* ribbon_grey-48.png in Resources */,
 				8304DC28199B17B0006E7BD7 /* bunch_flowers-64.png in Resources */,
 				8304DC2E199B17B0006E7BD7 /* water-75.png in Resources */,
 				8304DC13199AFF7A006E7BD7 /* history-32.png in Resources */,
@@ -698,7 +701,6 @@
 				83A2A94219AC1F920047E8D6 /* LineChartViewController.m in Sources */,
 				83A2A93319AC1F830047E8D6 /* CardSelectViewController.m in Sources */,
 				8382CA8F197F5FDD008E125C /* MainNavigationView.m in Sources */,
-				83A2A94419AC1F920047E8D6 /* TrainingLogViewController.m in Sources */,
 				83F23EF819BA598800F94DFD /* SideTitleViewController.m in Sources */,
 				8382CA89197F5F21008E125C /* AMSlideMenuMainViewController.m in Sources */,
 				8382CA88197F5F21008E125C /* AMSlideMenuLeftTableViewController.m in Sources */,
@@ -830,7 +832,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,
@@ -854,7 +856,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,

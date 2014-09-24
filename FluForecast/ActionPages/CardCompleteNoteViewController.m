@@ -17,13 +17,11 @@
 @property UITextView *direction;
 @property UITextView *note;
 @property UIAlertView *completeAlert;
-@property UIButton *clickedButton;
 @property NSDictionary *mycard;
 @end
 
 @implementation CardCompleteNoteViewController
 
-@synthesize receivedCard;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,7 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"received data is %@",self.receivedCard);
     
     
     
@@ -55,8 +52,9 @@
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
     [url appendString:GetTrainingCard];
-    if(self.receivedCard!=nil)
-    {[url appendString:self.receivedCard];}
+
+    if(self.receivedTrainingCardId!=nil)
+    {[url appendString:self.receivedTrainingCardId];}
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -77,24 +75,16 @@
         [alertView show];
         NSLog(@"Error: %@", error);
     }];
-
-    
-    
-  
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    
-    
-    
     // Dispose of any resources that can be recreated.
 }
 -(void) addTrainingCardView
 {
     NSString *title= [self.mycard objectForKey:@"title"];
-    NSString *progress=[self.mycard objectForKey:@"progress"];
     self.direction=[self.mycard objectForKey:@"direction"];
     self.note=[self.mycard objectForKey:@"note"];
     //set up title label
@@ -104,7 +94,7 @@
     
     //title received from source view controller
     
-    self.name.text = [NSString stringWithFormat:title];
+    self.name.text = title;
     self.name.font = [UIFont boldSystemFontOfSize:25.0f];
     self.name.textAlignment =  NSTextAlignmentCenter;
     self.name.textColor=[UIColor lightGrayColor];
@@ -117,7 +107,7 @@
     
     CGRect directionFrame =CGRectMake(0.0f, 90.0f, self.view.frame.size.width,self.view.frame.size.height-90.0f);
     UITextView *direction =[[UITextView alloc] initWithFrame:directionFrame];
-    direction.text =self.direction;
+    direction.text =self.note;
     direction.textAlignment=NSTextAlignmentLeft;
     [direction setFont:[UIFont fontWithName:@"arial" size:20.0f]];
     [direction setEditable:NO];
@@ -129,22 +119,21 @@
     
     CGRect reportFrame =CGRectMake(250.0f, 20.0f, 50.0f, 50.0f);
     UIButton *reportButton =[[UIButton alloc]initWithFrame:reportFrame];
-    if (progress==nil)
+    if (self.progress==nil)
         NSLog(@"progress is nil");
-    if([progress isEqualToString:@"selected"]){
-        [reportButton setImage:[UIImage imageNamed:@"medal_grey-48.png"] forState:UIControlStateNormal];
+    if([self.progress isEqualToString:@"selected"]){
+        [reportButton setImage:[UIImage imageNamed:@"ribbon_grey-48.png"] forState:UIControlStateNormal];
         [reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];}
-    if([progress isEqualToString:@"completed"])
+    if([self.progress isEqualToString:@"completed"])
     {
-        [self.clickedButton setImage:[UIImage imageNamed:@"medal_yellow-48.png"] forState:UIControlStateNormal];
+        [reportButton setImage:[UIImage imageNamed:@"ribbon_yellow-48.png"] forState:UIControlStateNormal];
     }
     
     [self.view addSubview:reportButton];
 }
 
 -(void) ButtonClicked:(UIButton *) sender
-{  // [sender setImage:[UIImage imageNamed:@"medal_yellow-48.png"] forState:UIControlStateNormal];
-    self.clickedButton=sender;
+{
     [self.completeAlert show];
 }
 
@@ -156,17 +145,20 @@
     {
         
         NSMutableString *url=[NSMutableString new];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *token =[defaults objectForKey:@"token"];
+
         [url appendString:HHealURL];
-        [url appendString:@"/user_profile/"];
-        [url appendString:self.receivedCard];
-        
-        
+        [url appendString:GetUserAllCards];
+        [url appendString:token];
+        [url appendString:@"/"];
+        [url appendString:self.receivedCardId];
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager PUT:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
             NSLog(@"JSON: %@", responseObject);
             
-            [self.clickedButton setImage:[UIImage imageNamed:@"medal_yellow-48.png"] forState:UIControlStateNormal];
+         //   [self.clickedButton setImage:[UIImage imageNamed:@"ribbon_yellow-48.png"] forState:UIControlStateNormal];
             
             [self.view setNeedsDisplay];
             

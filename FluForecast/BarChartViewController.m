@@ -45,9 +45,11 @@
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
      NSString *token =[defaults valueForKey:@"token"];
     NSDate *date= [NSDate date];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateString = [dateFormat stringFromDate:date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
 
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
@@ -64,8 +66,10 @@
     
         self.dict=responseObject;
         [defaults setObject:[self.dict objectForKey:@"agegroup"] forKey:@"agegroup"];
-        self.nationalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"standardrate"] intValue]) ];
-        self.personalFluRate = [NSNumber numberWithInt:([[self.dict valueForKey:@"personalrate"] intValue]) ];
+        [defaults setObject:[self.dict objectForKey:@"username"] forKey:@"username"];
+
+        self.nationalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"standardrate"] floatValue])*100 ];
+        self.personalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"personalrate"] floatValue])*100 ];
         
         [self buildBarChart];
         
@@ -144,7 +148,7 @@
     
     CABasicAnimation *animation= [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     
-    animation.fromValue= @1.0;
+    animation.fromValue= @0.1;
     
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     

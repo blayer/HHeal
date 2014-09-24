@@ -8,11 +8,20 @@
 
 #import "LineChartViewController.h"
 #import "PNChart.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
 
+#define NumberOfXLabel ((int) 5)
 
 @interface LineChartViewController ()
 @property NSString *button;
 @property PNLineChart *lineChart;
+@property NSArray *riskHistory;
+@property NSMutableArray *personalHistory;
+@property NSMutableArray *nationalHistory;
+@property NSMutableArray *dateHistory;
+
+
 @end
 
 @implementation LineChartViewController
@@ -30,12 +39,49 @@
 {
     [super viewDidLoad];
     
-    
-    NSArray * data01Array = @[@60.1, @160.1, @126.4, @262.2, @186.2, @127.2, @176.2,@213.2,@113.2,@213.2,@113.2];
-    self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 190.0, SCREEN_WIDTH, 300.0)];
+    self.personalHistory=[NSMutableArray new];
+    self.nationalHistory=[NSMutableArray new];
 
-    // Do any additional setup after loading the view.
-    [self buildLineChart:data01Array];
+    self.dateHistory=[NSMutableArray new];
+
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token=[defaults objectForKey:@"token"];
+    
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:GetRiskLogs];
+    [url appendString:token];
+    
+    NSDictionary *parameters=@{@"limit":[NSString stringWithFormat:@"%d",self.retriveDays]};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"RiskLogs: %@", responseObject);
+        
+        self.riskHistory=responseObject;
+        
+        for(int i=0;i<[self.riskHistory count];i++)
+        {
+            NSDictionary *log=[self.riskHistory objectAtIndex:i];
+            NSString *date=[log objectForKeyedSubscript:@"date"];
+            NSString *personal=[log objectForKeyedSubscript:@"personalrate"];
+            NSString *national=[log objectForKeyedSubscript:@"standardrate"];
+            if(i%(self.retriveDays/NumberOfXLabel)!=0)
+            {[self.dateHistory addObject:@""];} //add empty string
+            else {[self.dateHistory addObject:date];}
+            
+            [self.personalHistory addObject:personal];
+            [self.nationalHistory addObject:national];
+        }
+        self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 190.0, SCREEN_WIDTH, 300.0)];
+        
+        [self buildLineChart];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
     
     
 }
@@ -47,7 +93,7 @@
 }
 
 
--(void) buildLineChart:(NSArray*) array
+-(void) buildLineChart
 {
     //Add LineChart
     UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, SCREEN_WIDTH, 30)];
@@ -55,30 +101,27 @@
     lineChartLabel.textColor = PNFreshGreen;
     lineChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:23.0];
     lineChartLabel.textAlignment = NSTextAlignmentCenter;
-    // lineChart.yLabelFormat = @"%1.1f";
     self.lineChart.backgroundColor = [UIColor clearColor];
-    [self.lineChart setXLabels:@[@"",@"SEP 2",@"",@"",@"SEP 5",@"",@"",@"",@"SEP 6"]];
-    //   lineChart.showCoordinateAxis = YES;
+    [self.lineChart setXLabels:self.dateHistory];
+    // lineChart.showCoordinateAxis = YES;
     // Line Chart Nr.1
-    NSArray * data01Array = array;
 
     PNLineChartData *data01 = [PNLineChartData new];
     data01.color = PNFreshGreen;
     data01.itemCount = self.lineChart.xLabels.count;
     //    data01.inflexionPointStyle = PNLineChartPointStyleCycle;
     data01.getData = ^(NSUInteger index) {
-        CGFloat yValue = [data01Array[index] floatValue];
+        CGFloat yValue = [self.nationalHistory[index] floatValue];
         return [PNLineChartDataItem dataItemWithY:yValue];
     };
     
     // Line Chart Nr.2
-    NSArray * data02Array = @[@20.1, @180.1, @26.4, @202.2, @126.2, @167.2, @276.2,@113.2,@113.2,@113.2,@113.2];
     PNLineChartData *data02 = [PNLineChartData new];
     data02.color = PNTwitterColor;
     data02.itemCount = self.lineChart.xLabels.count;
     //   data02.inflexionPointStyle = PNLineChartPointStyleSquare;
     data02.getData = ^(NSUInteger index) {
-        CGFloat yValue = [data02Array[index] floatValue];
+        CGFloat yValue = [self.personalHistory[index] floatValue];
         return [PNLineChartDataItem dataItemWithY:yValue];
     };
     
@@ -133,15 +176,4 @@
 }
 
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 @end

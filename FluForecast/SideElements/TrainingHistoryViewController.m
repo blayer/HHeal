@@ -8,10 +8,15 @@
 
 #import "TrainingHistoryViewController.h"
 #import "SVPullToRefresh.h"
+#import "AFNetworking.h"
+#import "HHealParameter.h"
+
+//#define      CellNumberofPage  ((int)2)
 
 @interface TrainingHistoryViewController ()
-@property (nonatomic, strong) NSMutableArray *dataSource;
-
+@property (nonatomic, strong) NSMutableArray *mylogs;
+@property int CellNumberofPage;
+@property BOOL loadingLock;
 @end
 
 @implementation TrainingHistoryViewController
@@ -29,33 +34,74 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSDictionary *data1 =@{@"title":@"eat vitamin",@"progress":@"completed",@"date":@"today"};
-    NSDictionary *data2= @{@"title":@"drink water",@"progress":@"selected",@"date":@"today"};
-    // setup infinite scrolling
-    self.dataSource = [NSMutableArray array];
-    for(int i=0; i<5; i++)
-    {
-        [self.dataSource addObject:data1];
-        [self.dataSource addObject:data2];
-    }
+    __weak TrainingHistoryViewController *weakSelf = self;
+    self.loadingLock=YES;
+    self.mylogs=[NSMutableArray new];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token=[defaults objectForKey:@"token"];
+    NSDate *date= [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:GetTrainingLogs];
+    [url appendString:token];
+    
+    NSDictionary *parameters=@{@"date":dateString};
+    
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"TrainingLogs: %@", responseObject);
+        self.CellNumberofPage=(int)[responseObject count];
+        [self.mylogs addObjectsFromArray:responseObject];
+        [self.tableView reloadData];
+        if([responseObject count]!=0)
+        {self.loadingLock=NO;}
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
     
     [self.tableView addInfiniteScrollingWithActionHandler:^{
-        [self insertRowAtBottom];
+        if(!(self.loadingLock)){
+            [weakSelf loadMoreLogs];}
     }];
 }
 
--(void) addmoredata
+-(void) loadMoreLogs
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token=[defaults objectForKey:@"token"];
+    NSString *lastId=[[self.mylogs objectAtIndex:([self.mylogs count]-1)] objectForKey:@"_id"];
+    
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:GetTrainingLogs];
+    [url appendString:token];
+    
+    NSDictionary *parameters=@{@"_id":lastId};
     
     
-    NSDictionary *data1 =@{@"title":@"eat vitamin",@"progress":@"completed",@"date":@"today"};
-    NSDictionary *data2= @{@"title":@"drink water",@"progress":@"selected",@"date":@"today"};
-    for(int i=0; i<3; i++)
-    {
-        [self.dataSource addObject:data1];
-        [self.dataSource addObject:data2];
-    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"TrainingLogs: %@", responseObject);
+        self.CellNumberofPage=(int)[responseObject count];
+        [self.mylogs addObjectsFromArray:responseObject];
+        
+        [self insertRowAtBottom];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,22 +112,22 @@
 
 - (void)insertRowAtBottom {
     
-    int64_t delayInSeconds =1.0;
+    __weak TrainingHistoryViewController *weakSelf = self;
+
+    int64_t delayInSeconds =1.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
         NSMutableArray *indexPaths = [NSMutableArray array];
 
-        for (int i = 0; i < 6; i++) {
-            [indexPaths addObject:[NSIndexPath indexPathForRow:self.dataSource.count+i inSection:0]];
+        for (int i = 0; i < self.CellNumberofPage; i++) {
+            [indexPaths addObject:[NSIndexPath indexPathForRow:self.mylogs.count+i-self.CellNumberofPage inSection:0]];
         }
-       [self addmoredata];
-        [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
-       
-        [self.tableView endUpdates];
+        [weakSelf.tableView beginUpdates];
+        [weakSelf.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+        [weakSelf.tableView endUpdates];
         
-        [self.tableView.infiniteScrollingView stopAnimating];
+        [weakSelf.tableView.infiniteScrollingView stopAnimating];
     });
 }
 #pragma mark -
@@ -92,7 +138,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    return self.mylogs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -102,16 +148,20 @@
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     
-    NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
+    NSDictionary *dict = [self.mylogs objectAtIndex:indexPath.row];
     cell.textLabel.text = [dict objectForKey:@"title"];
     cell.detailTextLabel.text =[dict objectForKey:@"date"];
     if([[dict objectForKey:@"progress"] isEqualToString:@"completed"])
-    { cell.accessoryView = [[ UIImageView alloc ] initWithImage:[UIImage imageNamed:@"medal-26.png"]];
+    { cell.accessoryView = [[ UIImageView alloc ] initWithImage:[UIImage imageNamed:@"ribbon_yellow-48.png"]];
     [cell.accessoryView setFrame:CGRectMake(0, 0, 25, 25)];}
     if([[dict objectForKey:@"progress"] isEqualToString:@"selected"])
     {cell.accessoryView = [[ UIImageView alloc ] initWithImage:[UIImage imageNamed:@"checkmarkgreen-25.png"]];
         [cell.accessoryView setFrame:CGRectMake(0, 0, 25, 25)];}
     return cell;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView triggerPullToRefresh];
 }
 
 
