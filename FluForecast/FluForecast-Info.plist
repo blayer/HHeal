@@ -37,6 +37,11 @@
 	<string>HHeal</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainBoard</string>
 	<key>UIRequiredDeviceCapabilities</key>

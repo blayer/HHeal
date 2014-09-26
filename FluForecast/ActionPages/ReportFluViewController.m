@@ -15,9 +15,6 @@
 @interface ReportFluViewController ()
 @property UIAlertView *reportAlert;
 @property CLLocationManager *mylocationManager;
-@property NSDictionary *dict;
-@property NSString *myid;
-
 
 @end
 
@@ -41,39 +38,6 @@
     self.mylocationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.mylocationManager startUpdatingLocation];
     
-   // Http reads in user profile
-    NSMutableString *url=[NSMutableString new];
-    [url appendString:HHealURL];
-    [url appendString:@"/user_profile/"];
-    if(self.myid!=nil)
-    {[url appendString:self.myid];}
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"JSON: %@", responseObject);
-        
-        self.dict=responseObject;
-      //  self.fluReported=NO;
-        
-        if(self.fluReported)
-        {self.reportButton.enabled=NO;}
-        
-        [self.view setNeedsDisplay];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
-                                                            message:[error localizedDescription]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-        NSLog(@"Error: %@", error);
-    }];
-
-
-    
     self.reportAlert=[[UIAlertView alloc]initWithTitle:@"Report Confirmation"
                                                message:@"Are you sure you want to confirm you flu symtom report? This report will change your risk score significantly"
                                               delegate:self
@@ -87,16 +51,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)reportButtonClicked:(id)sender {
     [self.reportAlert show];
@@ -109,13 +63,19 @@
     
     if([title isEqualToString:@"Yes"])
     {
-     //post geolocation here
-        NSDictionary *parameters = @{};
+           
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *token =[defaults valueForKey:@"token"];
+
+        NSMutableString *url=[NSMutableString new];
+        [url appendString:HHealURL];
+        [url appendString:ReportFlu];
+        if(token!=nil)
+        {[url appendString:token];}
         
-        NSString *url=HHealURL @"/flureport";
-        NSLog(@"JSON: %@", parameters);
+        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", responseObject);
             UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:@"Report Succeed!"
                                                                    message:@"Please return to login page"

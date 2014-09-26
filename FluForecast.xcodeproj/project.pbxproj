@@ -406,8 +406,8 @@
 				8304DBF9199AF97A006E7BD7 /* Images */,
 				83134B0919A7E5B200DE72B5 /* ActionPages */,
 				83A2A93519AC1F920047E8D6 /* SideElements */,
-				8382C9FE197DAEFF008E125C /* AppDelegate.m */,
 				8382C9FD197DAEFF008E125C /* AppDelegate.h */,
+				8382C9FE197DAEFF008E125C /* AppDelegate.m */,
 				83134B0619A68C2800DE72B5 /* HHealParameter.h */,
 				8382CA8D197F5FDD008E125C /* MainNavigationView.h */,
 				8382CA8E197F5FDD008E125C /* MainNavigationView.m */,
@@ -542,8 +542,12 @@
 				ORGANIZATIONNAME = "Changkun Zhao";
 				TargetAttributes = {
 					8382C9EA197DAEFF008E125C = {
+						DevelopmentTeam = XFC2M37K3K;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
 								enabled = 0;
 							};
 						};
@@ -780,9 +784,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos7.1;
 			};
 			name = Debug;
 		};
@@ -812,8 +816,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos7.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -832,7 +836,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,
@@ -856,7 +860,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FluForecast/FluForecast-Prefix.pch";
 				INFOPLIST_FILE = "FluForecast/FluForecast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/changkunzhao/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,

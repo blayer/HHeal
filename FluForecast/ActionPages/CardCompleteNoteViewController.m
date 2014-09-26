@@ -37,7 +37,16 @@
 {
     [super viewDidLoad];
     
+    //=====================================//
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+    activityIndicator.center = self.view.center;
+    [self.view addSubview: activityIndicator];
     
+    [activityIndicator startAnimating];
+    
+    
+    //========================================//
     
    self.completeAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Completed"
                                                       message:@"Are you sure you have completed this training today?"
@@ -58,7 +67,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+        [activityIndicator stopAnimating];
         NSLog(@"JSON: %@", responseObject);
         self.mycard=responseObject;
        //set self.mycard before adding views
@@ -66,7 +75,7 @@
         [self.view setNeedsDisplay];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [activityIndicator stopAnimating];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
                                                             message:[error localizedDescription]
                                                            delegate:nil

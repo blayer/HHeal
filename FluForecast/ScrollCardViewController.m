@@ -39,6 +39,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+    activityIndicator.center = self.view.center;
+    [self.view addSubview: activityIndicator];
+    
+    [activityIndicator startAnimating];
+
     self.cardId=[NSMutableDictionary new];
    NSDate *date= [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -72,6 +80,7 @@
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"ScrollView JSON: %@", responseObject);
+        [activityIndicator stopAnimating];
         self.myCards=responseObject;
         
         if([self.myCards count]!=0)
@@ -84,6 +93,8 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [activityIndicator stopAnimating];
+
     }];
     
     

@@ -74,6 +74,8 @@
     
     if([title isEqualToString:@"Yes"])
     {
+        NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
         [self performSegueWithIdentifier: @"LogoutSegue" sender: self];
 
     }

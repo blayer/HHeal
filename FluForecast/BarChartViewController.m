@@ -41,7 +41,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+    activityIndicator.center = self.view.center;
+    [self.view addSubview: activityIndicator];
+    
+    [activityIndicator startAnimating];
 
+    
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
      NSString *token =[defaults valueForKey:@"token"];
     NSDate *date= [NSDate date];
@@ -57,11 +65,12 @@
     if(token!=nil)
     {[url appendString:token];}
     [url appendString:@"/"];
+    
    
     NSDictionary *parameter=@{@"date":dateString};
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
+        [activityIndicator stopAnimating];
         NSLog(@"JSON: %@", responseObject);
     
         self.dict=responseObject;
@@ -76,7 +85,9 @@
         [self.view setNeedsDisplay];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [activityIndicator stopAnimating];
+        [self.view setNeedsDisplay];
+
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
                                                             message:[error localizedDescription]
                                                            delegate:nil

@@ -38,15 +38,12 @@
 {
     [super viewDidLoad];
       //Read in training card's info by query id, server should response an array with JSON elements
-  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+    activityIndicator.center = self.view.center;
+    [self.view addSubview: activityIndicator];
     
- /*   NSArray *selectedCardsJson=[defaults objectForKey:@"selectedCards"]; //this is a array of Json of all selected cards
-     for (int i=0;i<[selectedCardsJson count]; i++)
-     {     NSDictionary *item = [selectedCardsJson objectAtIndex:i];
-         [self.selectedCards addObject:[item objectForKey:@"title"]];
-     }
-  
-  */
+    [activityIndicator startAnimating];
     self.cardId=[NSMutableDictionary new];
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
@@ -54,7 +51,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+        [activityIndicator stopAnimating];
         NSLog(@"ALl Cards=JSON: %@", responseObject);
         self.cardName=responseObject;
         
@@ -85,7 +82,7 @@
 
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
+            [activityIndicator stopAnimating];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
                                                                 message:[error localizedDescription]
                                                                delegate:nil

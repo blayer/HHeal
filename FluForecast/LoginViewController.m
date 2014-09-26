@@ -146,8 +146,8 @@
 
 
 -(void) sendSignIn {
-    
-    
+    //clean textfield
+
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
     activityIndicator.center = self.view.center;
@@ -167,10 +167,7 @@
         NSDictionary *parameters=@{@"query":query};
         NSString *url=HHealURL @"/login";
         
-        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        
-        
         [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             
             
@@ -205,8 +202,15 @@
                 double delayInSeconds = 2.0;
                 dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
                 dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    
+                    self.usernameTF.text=@"";
+                    self.passwordTF.text=@"";
+                    [activityIndicator stopAnimating];
+                    [self.view setNeedsDisplay];
                     [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
                 });
+             
+                
             }
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -245,12 +249,11 @@
     [self.view addSubview: activityIndicator];
     
     [activityIndicator startAnimating];
-
-    
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [activityIndicator stopAnimating];
+        [self.view setNeedsDisplay];
         [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
     });
     

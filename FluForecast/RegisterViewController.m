@@ -210,7 +210,14 @@ else
         else if([self.Age.text isEqualToString:@"60 and up"])
             ageGroup=@5;
         
-        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"state":self.State.text};
+        NSDate *date= [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+        NSString *dateString = [dateFormatter stringFromDate:date];
+        
+        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"state":self.State.text,@"date":dateString};
         
         NSString *url=HHealURL @"/user_profile";
         
@@ -246,9 +253,12 @@ else
                                                       cancelButtonTitle:@"Ok"
                                                       otherButtonTitles:nil];
             [successAlert show];
-            
+               
+               NSString *token=[responseObject objectForKey:@"token"];
             //after successful registration, go back to the Login page automatically
-            
+               NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+               [defaults setObject:token forKey:@"token"];
+               
                [self performSegueWithIdentifier: @"BacktoLogin" sender: self];}
 
             

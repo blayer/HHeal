@@ -107,7 +107,7 @@
     // Line Chart Nr.1
 
     PNLineChartData *data01 = [PNLineChartData new];
-    data01.color = PNFreshGreen;
+    data01.color = PNBlue;
     data01.itemCount = self.lineChart.xLabels.count;
     //    data01.inflexionPointStyle = PNLineChartPointStyleCycle;
     data01.getData = ^(NSUInteger index) {
@@ -117,7 +117,7 @@
     
     // Line Chart Nr.2
     PNLineChartData *data02 = [PNLineChartData new];
-    data02.color = PNTwitterColor;
+    data02.color = PNGreen;
     data02.itemCount = self.lineChart.xLabels.count;
     //   data02.inflexionPointStyle = PNLineChartPointStyleSquare;
     data02.getData = ^(NSUInteger index) {

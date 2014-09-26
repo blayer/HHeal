@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "HHealParameter.h"
 #import <FacebookSDK/FacebookSDK.h>
-
+#import "AFNetworking.h"
 
 
 @implementation AppDelegate
@@ -22,6 +22,10 @@
 {
     [[BlurryModalSegue appearance] setBackingImageBlurRadius:@(20)];
     [[BlurryModalSegue appearance] setBackingImageSaturationDeltaFactor:@(.45)];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+
     return YES;
 }
 
@@ -35,12 +39,14 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    
-    //self.locationManager.delegate = self;
-    //self.locationManager.activityType = CLActivityTypeAutomotiveNavigation;
-    //self.locationManager.pausesLocationUpdatesAutomatically = YES;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token =[defaults valueForKey:@"token"];
+
+    self.locationManager.delegate = self;
     [self.locationManager stopUpdatingLocation];
-    [self.locationManager startMonitoringSignificantLocationChanges];
+    if(![token length]==0)
+    { [self.locationManager startMonitoringSignificantLocationChanges];}
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -51,9 +57,15 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token =[defaults valueForKey:@"token"];
     
-    self.lastSentUpdateAt = [NSDate date];
-    [self.locationManager startUpdatingLocation];
+    self.locationManager.delegate=self;
+    [self.locationManager stopMonitoringSignificantLocationChanges];
+    self.locationManager.desiredAccuracy=kCLLocationAccuracyBestForNavigation;
+    self.locationManager.distanceFilter=50;
+    if(![token length]==0)
+    {[self.locationManager startUpdatingLocation];}
     
 }
 
@@ -66,40 +78,33 @@
 }
 
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     NSString *token =[defaults valueForKey:@"token"];
+     NSMutableString *url=[NSMutableString new];
+     [url appendString:HHealURL];
+     [url appendString:@"/user_location/"];
+     if(token!=nil)
+     {[url appendString:token];}
+     CLLocation *location =[manager location];
+     
+     NSString *lat =[NSString stringWithFormat:@"%f", location.coordinate.latitude];
+     NSString *lng =[NSString stringWithFormat:@"%f", location.coordinate.longitude];
+     NSDictionary *parameters=@{@"lng":lng,@"lat":lat};
     
-    
-    BOOL isInBackground = NO;
-    if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground)
-    {
-        isInBackground = YES;
-    }
-    
-    // Handle location updates as normal, code omitted for brevity.
-    // The omitted code should determine whether to reject the location update for being too
-    // old, too close to the previous one, too inaccurate and so forth according to your own
-    // application design.
-    
-    if (isInBackground)
-    {
-        //send to server
+    NSLog(@"Coordinate: %@", parameters);
+
+    AFHTTPRequestOperationManager *AFmanager = [AFHTTPRequestOperationManager manager];
+    [AFmanager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
         
-    }
-    else
-    {
-        if (newLocation.horizontalAccuracy <= 100.0f && [self.lastSentUpdateAt timeIntervalSinceNow] < -10 * 60) {
-            // Set date to now
-            self.lastSentUpdateAt = [NSDate date];
-            
-            // Use json and send data to server
-            
-        }
-    }
-    
-    //this function should handle location changes in two cases.
-    // Accuracy is good & 5 minutes have passed.
-    
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+
 }
 
 
