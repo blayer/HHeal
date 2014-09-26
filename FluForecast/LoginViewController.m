@@ -162,11 +162,8 @@
     {
         NSDictionary *query= @{@"username":self.usernameTF.text,
                                @"password":self.passwordTF.text};
-        
-        
         NSDictionary *parameters=@{@"query":query};
         NSString *url=HHealURL @"/login";
-        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             
