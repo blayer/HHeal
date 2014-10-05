@@ -14,5 +14,6 @@
 @interface BarChartViewController : UIViewController <PNChartDelegate>
 
 @property (nonatomic) PNBarChart *barChart;
+- (IBAction)sendLocation:(id)sender;
 
 @end

@@ -113,7 +113,7 @@
 {
     
     //set up title label
-    CGRect nameFrame = CGRectMake(0.0f, 40.0f, 320.0f, 50.0f);
+    CGRect nameFrame = CGRectMake(0.0f, 60.0f, 320.0f, 50.0f);
     self.name= [[UILabel alloc] initWithFrame:nameFrame];
     
     
@@ -123,15 +123,12 @@
     self.name.text = title;
     self.name.font = [UIFont boldSystemFontOfSize:25.0f];
     self.name.textAlignment =  NSTextAlignmentCenter;
-    self.name.textColor=[UIColor lightGrayColor];
-    
-    //  self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]]]
-    
+    self.name.textColor=[UIColor blackColor];
     [self.view addSubview:self.name];
     
     
     
-    CGRect noteFrame =CGRectMake(0.0f, 90.0f, self.view.frame.size.width,self.view.frame.size.height-90.0f);
+    CGRect noteFrame =CGRectMake(0.0f, 120.0f, self.view.frame.size.width,self.view.frame.size.height-90.0f);
     UITextView *note =[[UITextView alloc] initWithFrame:noteFrame];
     note.text = self.note;
     note.textAlignment=NSTextAlignmentLeft;
@@ -143,7 +140,7 @@
     
     // create a button to report training completion
     
-    CGRect reportFrame =CGRectMake(250.0f, 20.0f, 50.0f, 50.0f);
+    CGRect reportFrame =CGRectMake(250.0f, 30.0f, 50.0f, 50.0f);
     UIButton *reportButton =[[UIButton alloc]initWithFrame:reportFrame];
     
     if([self.progress isEqualToString:@"unselected"] )

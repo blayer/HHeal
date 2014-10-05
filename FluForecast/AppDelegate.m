@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "BlurryModalSegue/BlurryModalSegue.h"
 #import <CoreLocation/CoreLocation.h>
 #import "HHealParameter.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "AFNetworking.h"
+#import "BlurryModalSegue/BlurryModalSegue.h"
 
 
 @implementation AppDelegate
@@ -22,6 +22,7 @@
 {
     [[BlurryModalSegue appearance] setBackingImageBlurRadius:@(20)];
     [[BlurryModalSegue appearance] setBackingImageSaturationDeltaFactor:@(.45)];
+
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;

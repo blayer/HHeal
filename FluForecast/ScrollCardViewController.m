@@ -9,7 +9,6 @@
 #import "ScrollCardViewController.h"
 #import "CardCompleteNoteViewController.h"
 #import "PNColor.h"
-#import "BlurryModalSegue/BlurryModalSegue.h"
 #import "AFNetworking.h"
 #import "HHealParameter.h"
 
@@ -27,6 +26,10 @@
 
 @synthesize scrollView;
 
+- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue {
+    [self buildView];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,6 +42,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
+}
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self buildView];
+    [self.view setNeedsDisplay];}
+
+-(void) buildView
+{
     
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
@@ -46,9 +58,9 @@
     [self.view addSubview: activityIndicator];
     
     [activityIndicator startAnimating];
-
+    
     self.cardId=[NSMutableDictionary new];
-   NSDate *date= [NSDate date];
+    NSDate *date= [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
     [dateFormatter setLocale:enUSPOSIXLocale];
@@ -58,7 +70,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token=[defaults objectForKey:@"token"];
     //initial my cards for testing
-
+    
     self.icons=@{@"welcome":@"user-32.png",
                  @"Moderate exercise 40 mins.":@"walking-100.png",
                  @"Take vitamin D supplements 5000 IU":@"fish-100.png",
@@ -85,7 +97,7 @@
         
         if([self.myCards count]!=0)
         {  NSDictionary *card=[self.myCards objectAtIndex:0];}
-    //    [defaults setObject:self.myCards forKey:@"selectedCards"];
+        //    [defaults setObject:self.myCards forKey:@"selectedCards"];
         [self addScrollview];
         //adding scrolls
         [self.view setNeedsDisplay];
@@ -94,7 +106,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         [activityIndicator stopAnimating];
-
+        
     }];
     
     
@@ -102,19 +114,15 @@
     
     //initialize and allocate your scroll view
     self.scrollView = [[UIScrollView alloc]
-                         initWithFrame:CGRectMake(0, 0,
-                                                  self.view.frame.size.width,
-                                                  self.view.frame.size.height)];
+                       initWithFrame:CGRectMake(0, 0,
+                                                self.view.frame.size.width,
+                                                self.view.frame.size.height)];
     //set the paging to yes
     self.scrollView.pagingEnabled = YES;
     
- 
 }
 
-
-
 -(void) addScrollview {
-    
     
     NSInteger numberOfViews = [self.myCards count];
     
@@ -139,12 +147,13 @@
         myView.backgroundColor = [UIColor whiteColor];
         
         UIButton *butt=[UIButton buttonWithType:UIButtonTypeCustom ];
-        [butt setFrame:CGRectMake(100, 0, 220, 120)];
+        [butt setFrame:CGRectMake(100, 30, 220, 50)];
         
         [butt setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
         [butt setTitle:title forState:UIControlStateNormal];
-         butt.titleLabel.font =[UIFont boldSystemFontOfSize:25.0f];
+         butt.titleLabel.font =[UIFont boldSystemFontOfSize:18.0f];
         [butt setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [butt setBackgroundColor:[UIColor blackColor]];
         
         [butt addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
         [myView addSubview:butt];
@@ -191,6 +200,9 @@
         int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
         NSLog(@"Scrolling - You are now on page %i",page);
     }
+
+
+
     
     //dragging ends, please switch off paging to listen for this event
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
@@ -212,17 +224,14 @@ targetContentOffset:(inout CGPoint *) targetContentOffset
 }
 
 
-
 - (IBAction)cardButton:(UIButton*)sender
 {  
     NSLog(@"Button Clicked");
    self.sendCard=[self.cardId objectForKey:sender.titleLabel.text];
-    
     if(!(self.sendCard==nil))
      [self performSegueWithIdentifier: @"CompleteCard" sender: self];
     
 }
-
 
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

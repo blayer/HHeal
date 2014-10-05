@@ -22,7 +22,9 @@
 
 @implementation CardSelectViewController
 
-- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue {}
+- (IBAction)unwindToThisViewController:(UIStoryboardSegue *)unwindSegue {
+    [self buildView];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,6 +40,14 @@
 {
     [super viewDidLoad];
       //Read in training card's info by query id, server should response an array with JSON elements
+    
+    [self buildView];
+
+}
+
+-(void) buildView
+{
+    
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
     activityIndicator.center = self.view.center;
@@ -79,7 +89,7 @@
             NSLog(@"Selected Cards=JSON: %@", responseObject);
             self.selectedCards=responseObject;
             [self.tableView reloadData];
-
+            
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [activityIndicator stopAnimating];
@@ -92,7 +102,7 @@
             NSLog(@"Error: %@", error);
         }];
         
-       // [self.tableView reloadData];
+        // [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -105,8 +115,6 @@
         NSLog(@"Error: %@", error);
     }];
     
-
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -178,7 +186,6 @@
     self.sendCard=[self.cardId objectForKey:selectedCell.textLabel.text];
     self.progress=selectedCell.detailTextLabel.text;
     [self performSegueWithIdentifier: @"SelectedCard" sender: self];
-   // NSLog(selectedCell.detailTextLabel.text);
     
 }
 

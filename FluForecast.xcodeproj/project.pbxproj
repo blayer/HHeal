@@ -48,7 +48,10 @@
 		8304DC37199B2753006E7BD7 /* medal_grey-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC35199B2753006E7BD7 /* medal_grey-48.png */; };
 		8304DC38199B2753006E7BD7 /* medal_yellow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC36199B2753006E7BD7 /* medal_yellow-48.png */; };
 		8304DC3D199C4A1F006E7BD7 /* location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC3C199C4A1F006E7BD7 /* location-50.png */; };
+		8306637A19DF55090073291F /* geo_fence-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8306637919DF55090073291F /* geo_fence-50.png */; };
+		8306637C19DF77140073291F /* checked_checkbox-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8306637B19DF77140073291F /* checked_checkbox-48.png */; };
 		83134B0E19A7E8FE00DE72B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83134B0D19A7E8FE00DE72B5 /* MessageUI.framework */; };
+		831EF98619DF450F009F5FCA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831EF98519DF450F009F5FCA /* MainViewController.m */; };
 		8337BC0919C0DC340066C625 /* RiskHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */; };
 		8337BC0F19C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
 		8337BC1019C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
@@ -158,8 +161,12 @@
 		8304DC35199B2753006E7BD7 /* medal_grey-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medal_grey-48.png"; sourceTree = "<group>"; };
 		8304DC36199B2753006E7BD7 /* medal_yellow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medal_yellow-48.png"; sourceTree = "<group>"; };
 		8304DC3C199C4A1F006E7BD7 /* location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location-50.png"; sourceTree = "<group>"; };
+		8306637919DF55090073291F /* geo_fence-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "geo_fence-50.png"; sourceTree = "<group>"; };
+		8306637B19DF77140073291F /* checked_checkbox-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked_checkbox-48.png"; sourceTree = "<group>"; };
 		83134B0619A68C2800DE72B5 /* HHealParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHealParameter.h; sourceTree = "<group>"; };
 		83134B0D19A7E8FE00DE72B5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		831EF98419DF450F009F5FCA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		831EF98519DF450F009F5FCA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		8337BC0719C0DC340066C625 /* RiskHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskHistoryTableViewController.h; sourceTree = "<group>"; };
 		8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskHistoryTableViewController.m; sourceTree = "<group>"; };
 		8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -273,6 +280,8 @@
 		8304DBC519957319006E7BD7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8306637B19DF77140073291F /* checked_checkbox-48.png */,
+				8306637919DF55090073291F /* geo_fence-50.png */,
 				8377CF6719D0C44500F8BA9B /* ribbon_grey-48.png */,
 				8337BC1119CA2C120066C625 /* user-48.png */,
 				83B72E9219BE142400584BA1 /* logout-32.png */,
@@ -411,6 +420,8 @@
 				83134B0619A68C2800DE72B5 /* HHealParameter.h */,
 				8382CA8D197F5FDD008E125C /* MainNavigationView.h */,
 				8382CA8E197F5FDD008E125C /* MainNavigationView.m */,
+				831EF98419DF450F009F5FCA /* MainViewController.h */,
+				831EF98519DF450F009F5FCA /* MainViewController.m */,
 				835159A71982DCD20093E478 /* BarChartViewController.h */,
 				835159A81982DCD20093E478 /* BarChartViewController.m */,
 				834A61AE19A27BCE00FC8753 /* LoadingViewController.h */,
@@ -596,6 +607,7 @@
 				8304DBE21998062A006E7BD7 /* checkmarkgrey-32.png in Resources */,
 				8304DC15199AFF7A006E7BD7 /* line_chart-32.png in Resources */,
 				8304DC29199B17B0006E7BD7 /* bunch_flowers-128.png in Resources */,
+				8306637A19DF55090073291F /* geo_fence-50.png in Resources */,
 				8304DC01199AF97A006E7BD7 /* iphone-workout-app.jpg in Resources */,
 				8304DC2B199B17B0006E7BD7 /* fish-100.png in Resources */,
 				8304DBE11998062A006E7BD7 /* checkmarkgreen-32.png in Resources */,
@@ -633,6 +645,7 @@
 				8304DC00199AF97A006E7BD7 /* exercise.jpg in Resources */,
 				8382CA01197DAF00008E125C /* Images.xcassets in Resources */,
 				8304DC1A199B0C2F006E7BD7 /* virus-48.png in Resources */,
+				8306637C19DF77140073291F /* checked_checkbox-48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +708,7 @@
 				8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */,
 				83A2A93419AC1F830047E8D6 /* ReportFluViewController.m in Sources */,
 				8382CA8A197F5F21008E125C /* AMSlideMenuRightMenuSegue.m in Sources */,
+				831EF98619DF450F009F5FCA /* MainViewController.m in Sources */,
 				83A2A93119AC1F830047E8D6 /* CardCompleteNoteViewController.m in Sources */,
 				83C8C6BB19869AAD00E34228 /* RegisterViewController.m in Sources */,
 				83A2A94319AC1F920047E8D6 /* TrainingHistoryViewController.m in Sources */,
@@ -786,7 +800,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos8.0;
 			};
 			name = Debug;
 		};
@@ -817,7 +831,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos8.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

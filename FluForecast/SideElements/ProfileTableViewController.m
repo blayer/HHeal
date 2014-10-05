@@ -27,10 +27,24 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    self.gender.titleLabel.text=[defaults objectForKey:@"gener"];
+    self.state.titleLabel.text=[defaults objectForKey:@"state"];
+    self.email.titleLabel.text=[defaults objectForKey:@"email"];
+    NSString *ageGroup= [defaults objectForKey:@"agegroup"];
+    if ([ageGroup isEqualToString:@"1"])
+        self.age.titleLabel.text=@"0~18";
+    else if ([ageGroup isEqualToString:@"2"])
+        self.age.titleLabel.text=@"18~25";
+    else if ([ageGroup isEqualToString:@"3"])
+        self.age.titleLabel.text=@"25~35";
+    else if ([ageGroup isEqualToString:@"4"])
+        self.age.titleLabel.text=@"35~60";
+    else if ([ageGroup isEqualToString:@"5"])
+        self.age.titleLabel.text=@"60 and up";
     
     [self.state.titleLabel sizeToFit];
 
@@ -40,6 +54,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) viewDidDisappear:(BOOL)animated
+{ //sending back changes here, when view disappeared.
 }
 
 #pragma mark - Table view data source

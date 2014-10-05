@@ -80,10 +80,8 @@
     
     [destination.view addSubview:backgroundImageView];
     [destination.view sendSubviewToBack:backgroundImageView];
-    
     [self.sourceViewController presentModalViewController:self.destinationViewController animated:YES];
-    
-    [destination.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        [destination.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         [UIView animateWithDuration:[context transitionDuration] animations:^{
             backgroundImageView.frame = CGRectMake(0, 0, windowSize.width, windowSize.height);
         }];

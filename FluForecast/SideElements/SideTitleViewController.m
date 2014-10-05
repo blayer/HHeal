@@ -34,6 +34,20 @@
 {
     [super viewDidLoad];
     
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{  [self buildView];
+}
+-(void) buildView
+{
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token=[defaults objectForKey:@"token"];
     NSDate *date= [NSDate date];
@@ -42,8 +56,8 @@
     [dateFormatter setLocale:enUSPOSIXLocale];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
     NSString *dateString = [dateFormatter stringFromDate:date];
-
-
+    
+    
     
     NSMutableString *url=[NSMutableString new];
     [url appendString:HHealURL];
@@ -60,9 +74,9 @@
         
         self.myCards=responseObject;
         
-           self.selected=[NSString stringWithFormat:@"%li",  [self.myCards count]];
+        self.selected=[NSString stringWithFormat:@"%li",  [self.myCards count]];
         
-          self.completed=[NSString stringWithFormat:@"%d",[self countCompletedCardsNumber]];
+        self.completed=[NSString stringWithFormat:@"%d",[self countCompletedCardsNumber]];
         
         [self buildSideTitle];
         [self.view setNeedsDisplay];
@@ -70,12 +84,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void) buildSideTitle

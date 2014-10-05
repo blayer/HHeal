@@ -232,7 +232,6 @@ else
             
             NSString *errorMessage=[responseObject valueForKey:@"error"];
             
-            
             if(!(errorMessage==nil))
             {
                 UIAlertView *exitAlert = [[UIAlertView alloc] initWithTitle:@"Registration Error!"
