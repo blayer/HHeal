@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.days=30; //default retrieve days
+  //  self.days=30; //default retrieve days
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -52,23 +52,23 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return 4;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
  
     if(indexPath.row==0)
     {
-        self.days=30;
+        self.days=7;
     }
     else if(indexPath.row==1)
     {
-        self.days=90;
+        self.days=30;
     }
     
     else if(indexPath.row==2)
     {
-        self.days=180;
+        self.days=90;
 
     }
     
@@ -77,10 +77,7 @@
         self.days=360;
 
     }
-    else if(indexPath.row==4)
-    {
-        self.days=720;
-    }
+
     [self performSegueWithIdentifier: @"ShowLineChart" sender: self];
 }
 

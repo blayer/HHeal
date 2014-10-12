@@ -147,13 +147,15 @@
         myView.backgroundColor = [UIColor whiteColor];
         
         UIButton *butt=[UIButton buttonWithType:UIButtonTypeCustom ];
-        [butt setFrame:CGRectMake(100, 30, 220, 50)];
+        [butt setFrame:CGRectMake(100, 25, 220,60 )];
         
         [butt setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
         [butt setTitle:title forState:UIControlStateNormal];
          butt.titleLabel.font =[UIFont boldSystemFontOfSize:18.0f];
         [butt setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        [butt setBackgroundColor:[UIColor blackColor]];
+        butt.titleLabel.adjustsFontSizeToFitWidth = TRUE;
+
+        [butt setBackgroundColor:[UIColor whiteColor]];
         
         [butt addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
         [myView addSubview:butt];

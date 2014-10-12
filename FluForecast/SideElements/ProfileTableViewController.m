@@ -12,7 +12,6 @@
 #import "HHealParameter.h"
 
 @interface ProfileTableViewController ()
-
 @end
 
 @implementation ProfileTableViewController
@@ -30,23 +29,94 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    self.gender.titleLabel.text=[defaults objectForKey:@"gener"];
-    self.state.titleLabel.text=[defaults objectForKey:@"state"];
-    self.email.titleLabel.text=[defaults objectForKey:@"email"];
-    NSString *ageGroup= [defaults objectForKey:@"agegroup"];
+   
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
+    activityIndicator.center = self.view.center;
+    [self.view addSubview: activityIndicator];
+    
+    [activityIndicator startAnimating];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token =[defaults valueForKey:@"token"];
+    NSDate *date= [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:@"/user_profile/"];
+    if(token!=nil)
+    {[url appendString:token];}
+    [url appendString:@"/"];
+    
+    
+    NSDictionary *parameter=@{@"date":dateString};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [activityIndicator stopAnimating];
+        NSLog(@"JSON: %@", responseObject);
+    
+        [self.gender setTitle:[responseObject objectForKey:@"gender"] forState:UIControlStateNormal];
+        [self.state setTitle:[responseObject objectForKey:@"state"] forState:UIControlStateNormal];
+        [self.email setTitle:[responseObject objectForKey:@"email"] forState:UIControlStateNormal];
+        
+        
+        NSString *ageGroup=[NSString stringWithFormat:@"%@",
+                            [responseObject objectForKey:@"agegroup"]];
+        
+        if ([ageGroup isEqualToString:@"1"])
+            [self.age setTitle:@"0~4" forState:UIControlStateNormal];
+        else if ([ageGroup isEqualToString:@"2"])
+            [self.age setTitle:@"5~24" forState:UIControlStateNormal];
+        else if ([ageGroup isEqualToString:@"3"])
+            [self.age setTitle:@"25~49" forState:UIControlStateNormal];
+        else if ([ageGroup isEqualToString:@"4"])
+            [self.age setTitle:@"50~64" forState:UIControlStateNormal];
+        else if ([ageGroup isEqualToString:@"5"])
+            [self.age setTitle:@"65 and up" forState:UIControlStateNormal];
+        
+        [self.state.titleLabel sizeToFit];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [activityIndicator stopAnimating];
+        [self.view setNeedsDisplay];
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+    
+    
+    [self.gender setTitle:[defaults objectForKey:@"gender"] forState:UIControlStateNormal];
+    [self.state setTitle:[defaults objectForKey:@"state"] forState:UIControlStateNormal];
+    [self.email setTitle:[defaults objectForKey:@"email"] forState:UIControlStateNormal];
+
+    
+    NSString *ageGroup=[NSString stringWithFormat:@"%@",
+                        [defaults objectForKey:@"agegroup"]];
+    
     if ([ageGroup isEqualToString:@"1"])
-        self.age.titleLabel.text=@"0~18";
+        [self.age setTitle:@"0~4" forState:UIControlStateNormal];
     else if ([ageGroup isEqualToString:@"2"])
-        self.age.titleLabel.text=@"18~25";
+        [self.age setTitle:@"5~24" forState:UIControlStateNormal];
     else if ([ageGroup isEqualToString:@"3"])
-        self.age.titleLabel.text=@"25~35";
+        [self.age setTitle:@"25~49" forState:UIControlStateNormal];
     else if ([ageGroup isEqualToString:@"4"])
-        self.age.titleLabel.text=@"35~60";
+        [self.age setTitle:@"50~64" forState:UIControlStateNormal];
     else if ([ageGroup isEqualToString:@"5"])
-        self.age.titleLabel.text=@"60 and up";
+        [self.age setTitle:@"65 and up" forState:UIControlStateNormal];
     
     [self.state.titleLabel sizeToFit];
+    
 
 }
 
@@ -57,7 +127,8 @@
 }
 
 -(void) viewDidDisappear:(BOOL)animated
-{ //sending back changes here, when view disappeared.
+{
+
 }
 
 #pragma mark - Table view data source
@@ -81,7 +152,8 @@
     
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         [self.gender setTitle:selectedValue forState:UIControlStateNormal];
-        
+        [self updateProfile:@"gender" contentedofProfile:selectedValue];
+
 
     };
     
@@ -97,21 +169,23 @@
     
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         [self.age setTitle:selectedValue forState:UIControlStateNormal];
+        NSString *ageString= [NSString stringWithFormat:@"%d", selectedIndex+1];
+        [self updateProfile:@"agegroup" contentedofProfile:ageString];
+        NSLog(@"age",selectedValue);
     };
     
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     };
-    NSArray *colors = @[@"0~18", @"18~25",@"23~35",@"35~60",@"60 and up"];
+    NSArray *colors = @[@"0~4", @"5~24",@"25~49",@"50~64",@"65 and up"];
     [ActionSheetStringPicker showPickerWithTitle:@"Select Your Age" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
 }
 
 - (IBAction)SelectState:(id)sender {
-    
-    
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         
         [self.state setTitle:selectedValue forState:UIControlStateNormal];
+        [self updateProfile:@"state" contentedofProfile:selectedValue];
     };
     
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
@@ -139,13 +213,42 @@
     if([title isEqualToString:@"Confirm"])
     {
         [ self.email setTitle:([[alertView textFieldAtIndex:0] text]) forState:UIControlStateNormal];
+        [self updateProfile:@"email" contentedofProfile:([[alertView textFieldAtIndex:0] text])];
     }
 
         }
 
+-(void) updateProfile: (NSString*) profileTitle contentedofProfile:(NSString*)content
+{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSString *token=[defaults objectForKey:@"token"];
+    NSMutableString *url=[NSMutableString new];
+    [url appendString:HHealURL];
+    [url appendString:@"/user_profile/"];
+    if(token!=nil)
+    {[url appendString:token];}
+    NSDictionary *parameter=@{profileTitle:content};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager PUT:url parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"profile updated");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Profile updated."
+                                                            message:@"Your profile updates will be reflected on your flu risk in 24 hours."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alert show];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
 
-
-
-
-
+}
 @end

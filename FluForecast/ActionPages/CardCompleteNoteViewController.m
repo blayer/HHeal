@@ -11,13 +11,21 @@
 #import "BlurryModalSegue/BlurryModalSegue.h"
 #import  "HHealParameter.h"
 #import "AFNetworking.h"
+#import "ActivityHub.h"
+
+
+
+#define startPositionY  ((float) 40.0)
+
 
 @interface CardCompleteNoteViewController ()
 @property UILabel *name;
 @property UITextView *direction;
-@property UITextView *note;
+@property NSString *note;
 @property UIAlertView *completeAlert;
 @property NSDictionary *mycard;
+@property UIButton *reportButton;
+@property ActivityHub *completeView;
 @end
 
 @implementation CardCompleteNoteViewController
@@ -36,7 +44,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.completeView=[[ActivityHub alloc]initWithFrame:CGRectMake(75, 155, 170, 170)];
+    [self.completeView setLabelText:@"Training Completed"];
+    [self.completeView setImage:[UIImage imageNamed:@"checked_checkbox-48.png"]];
     //=====================================//
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
@@ -44,8 +54,7 @@
     [self.view addSubview: activityIndicator];
     
     [activityIndicator startAnimating];
-    
-    
+    [self.view setUserInteractionEnabled:NO];
     //========================================//
     
    self.completeAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Completed"
@@ -72,6 +81,7 @@
         self.mycard=responseObject;
        //set self.mycard before adding views
         [self addTrainingCardView];
+        [self.view setUserInteractionEnabled:YES];
         [self.view setNeedsDisplay];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -83,6 +93,8 @@
                                                   otherButtonTitles:nil];
         [alertView show];
         NSLog(@"Error: %@", error);
+        [self.view setUserInteractionEnabled:YES];
+
     }];
 }
 
@@ -91,13 +103,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 -(void) addTrainingCardView
 {
     NSString *title= [self.mycard objectForKey:@"title"];
     self.direction=[self.mycard objectForKey:@"direction"];
-    self.note=[self.mycard objectForKey:@"note"];
+    NSString *extraNote=[self.mycard objectForKey:@"note"];
+    self.note=[NSString stringWithFormat:@"Direction:\n\n%@\n\n\nMore details:\n\n%@",self.direction,extraNote];
     //set up title label
-    CGRect nameFrame = CGRectMake(0.0f, 40.0f, 320.0f, 50.0f);
+    CGRect nameFrame = CGRectMake(20.0f, startPositionY, 280.0f, 50.0f);
     self.name= [[UILabel alloc] initWithFrame:nameFrame];
     
     
@@ -107,6 +123,7 @@
     self.name.font = [UIFont boldSystemFontOfSize:25.0f];
     self.name.textAlignment =  NSTextAlignmentCenter;
     self.name.textColor=[UIColor lightGrayColor];
+    [self.name setAdjustsFontSizeToFitWidth:YES];
     
     //  self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:self.background[i], i]]]
     
@@ -114,31 +131,29 @@
     
     
     
-    CGRect directionFrame =CGRectMake(0.0f, 90.0f, self.view.frame.size.width,self.view.frame.size.height-90.0f);
+    CGRect directionFrame =CGRectMake(10.0f, startPositionY+50.0, self.view.frame.size.width-20.0f,self.view.frame.size.height-90.0f);
     UITextView *direction =[[UITextView alloc] initWithFrame:directionFrame];
     direction.text =self.note;
     direction.textAlignment=NSTextAlignmentLeft;
-    [direction setFont:[UIFont fontWithName:@"arial" size:20.0f]];
+    [direction setFont:[UIFont fontWithName:@"arial" size:16.0f]];
     [direction setEditable:NO];
     [direction setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:direction];
-    
-    
     // create a button to report training completion
     
-    CGRect reportFrame =CGRectMake(250.0f, 20.0f, 50.0f, 50.0f);
-    UIButton *reportButton =[[UIButton alloc]initWithFrame:reportFrame];
+    CGRect reportFrame =CGRectMake(250.0f, startPositionY-30.0, 50.0f, 50.0f);
+    self.reportButton =[[UIButton alloc]initWithFrame:reportFrame];
     if (self.progress==nil)
         NSLog(@"progress is nil");
     if([self.progress isEqualToString:@"selected"]){
-        [reportButton setImage:[UIImage imageNamed:@"ribbon_grey-48.png"] forState:UIControlStateNormal];
-        [reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];}
+        [self.reportButton setImage:[UIImage imageNamed:@"ribbon_grey-48.png"] forState:UIControlStateNormal];
+        [self.reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];}
     if([self.progress isEqualToString:@"completed"])
     {
-        [reportButton setImage:[UIImage imageNamed:@"ribbon_yellow-48.png"] forState:UIControlStateNormal];
+        [self.reportButton setImage:[UIImage imageNamed:@"ribbon_yellow-48.png"] forState:UIControlStateNormal];
     }
     
-    [self.view addSubview:reportButton];
+    [self.view addSubview:self.reportButton];
 }
 
 -(void) ButtonClicked:(UIButton *) sender
@@ -168,19 +183,16 @@
             NSLog(@"JSON: %@", responseObject);
             
          //   [self.clickedButton setImage:[UIImage imageNamed:@"ribbon_yellow-48.png"] forState:UIControlStateNormal];
-            
+            [self.reportButton setImage:[UIImage imageNamed:@"ribbon_yellow-48.png"] forState:UIControlStateNormal];
             [self.view setNeedsDisplay];
-            
-            UIAlertView *completeAlert = [[UIAlertView alloc] initWithTitle:@"Successful!"
-                                                                    message:@"Training Card Completed."
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"Ok"
-                                                          otherButtonTitles:nil];
-            [completeAlert show];
-            
-            [self performSegueWithIdentifier: @"CompleteBacktoMainPage" sender: self];
+            [self.view addSubview:self.completeView];
+            double delayInSeconds = 1.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self.completeView removeFromSuperview];                
+            });
+          //  [self performSegueWithIdentifier: @"CompleteBacktoMainPage" sender: self];
 
-            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data, Please check your connection."

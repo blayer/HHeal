@@ -11,7 +11,7 @@
 #import "AFNetworking.h"
 #import "HHealParameter.h"
 #import <CoreLocation/CoreLocation.h>
-
+#import "ActivityHub.h"
 
 @interface BarChartViewController ()
 @property NSNumber *nationalFluRate;
@@ -21,12 +21,8 @@
 @property NSDictionary *dict;
 @property NSArray *myCards;
 @property NSString *myid;
-
-@property (nonatomic, retain) UIView *loadingView;
-@property (nonatomic, retain) UIView *CompleteView;
-@property (nonatomic, retain) UIActivityIndicatorView *activityView;
-
-
+@property ActivityHub *reportView;
+@property ActivityHub *completeView;
 @end
 
 @implementation BarChartViewController
@@ -44,12 +40,14 @@
 {
     [super viewDidLoad];
  //   [self buildView];
-    [self addSendingView];
-    [self addCompleteView];
+    self.reportView=[[ActivityHub alloc]initWithFrame:CGRectMake(75, 155, 170, 170)];
+    [self.reportView setLabelText:@"Reporting current location..."];
+    [self.reportView setImage:[UIImage imageNamed:@"geo_fence-50.png"]];
     
-    
+    self.completeView=[[ActivityHub alloc]initWithFrame:CGRectMake(75, 155, 170, 170)];
+    [self.completeView setLabelText:@"Reporting Completed"];
+    [self.completeView setImage:[UIImage imageNamed:@"checked_checkbox-48.png"]];
 }
-
 
 
 -(void) viewWillAppear:(BOOL)animated
@@ -57,48 +55,6 @@
 }
 
 
--(void) addSendingView
-{   self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
-    self.loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    self.loadingView.clipsToBounds = YES;
-    self.loadingView.layer.cornerRadius = 10.0;
-    
-   self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    self.activityView.frame = CGRectMake(80, 100,10,10);
-    [self.loadingView addSubview:self.activityView];
-    
-   UILabel *loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
-    loadingLabel.backgroundColor = [UIColor clearColor];
-    loadingLabel.textColor = [UIColor whiteColor];
-    loadingLabel.adjustsFontSizeToFitWidth = YES;
-    // self.loadingLabel.textAlignment =
-    loadingLabel.text = @"Reporting Location...";
-    [self.loadingView addSubview:loadingLabel];
-    UIImageView *figure=[[UIImageView alloc]initWithFrame:CGRectMake(55, 30, 60.0, 60.0)];
-    figure.image=[UIImage imageNamed:@"geo_fence-50.png"];
-    [self.loadingView addSubview:figure];
-    
-}
-
--(void) addCompleteView
-{
-    self.CompleteView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
-    self.CompleteView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    self.CompleteView.clipsToBounds = YES;
-    self.CompleteView.layer.cornerRadius = 10.0;
-    
-    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
-    loadingLabel.backgroundColor = [UIColor clearColor];
-    loadingLabel.textColor = [UIColor whiteColor];
-    loadingLabel.adjustsFontSizeToFitWidth = YES;
-    // self.loadingLabel.textAlignment =
-    loadingLabel.text = @"Report Compeleted.";
-    [self.CompleteView addSubview:loadingLabel];
-    UIImageView *figure=[[UIImageView alloc]initWithFrame:CGRectMake(55, 30, 60.0, 60.0)];
-    figure.image=[UIImage imageNamed:@"checked_checkbox-48.png"];
-    [self.CompleteView addSubview:figure];
-
-}
 -(void) buildView
 {
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -136,6 +92,11 @@
         [defaults setObject:[self.dict objectForKey:@"gender"] forKey:@"gender"];
         [defaults setObject:[self.dict objectForKey:@"state"] forKey:@"state"];
         [defaults setObject:[self.dict objectForKey:@"email"] forKey:@"email"];
+        [defaults setObject:[self.dict objectForKey:@"personalrate"] forKey:@"personalrate"];
+        [defaults setObject:[self.dict objectForKey:@"standardrate"] forKey:@"standardrate"];
+        
+
+        
         
         self.nationalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"standardrate"] floatValue])*100 ];
         self.personalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"personalrate"] floatValue])*100 ];
@@ -171,13 +132,13 @@
     [dateFormat setDateFormat:@"MMM dd, yyyy"];
     NSString *dateString = [dateFormat stringFromDate:date];
     
-    UILabel * barChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, 30)];
+    UILabel * barChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, 30)];
     barChartLabel.text = dateString;
     barChartLabel.textColor = PNFreshGreen;
     barChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:23.0];
     barChartLabel.textAlignment = NSTextAlignmentCenter;
     
-    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 50.0, SCREEN_WIDTH, 240.0)];
+    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 80.0, SCREEN_WIDTH, 240.0)];
     self.barChart.backgroundColor = [UIColor clearColor];
     self.barChart.yLabelFormatter = ^(CGFloat yValue){
         CGFloat yValueParsed = yValue;
@@ -185,7 +146,7 @@
         return labelText;
     };
     self.barChart.labelMarginTop = 5.0;
-    [self.barChart setXLabels:@[@"CDC local risk",@"Your risk"]];
+    [self.barChart setXLabels:@[@"CDC local risk(‱)",@"Your risk(‱)"]];
     
     
     
@@ -238,9 +199,22 @@
 }
 
 - (IBAction)sendLocation:(id)sender {
+
     
-   [self.activityView startAnimating];
-   [self.view addSubview:self.loadingView];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasReportOnce"])
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasReportOnce"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks for your first location report."
+                                                            message:@"Frequently report your current location can help us to better estimate your potential flu risk."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    [self.reportView showActivityView];
+    [self.view addSubview:self.reportView];
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
 
@@ -268,22 +242,21 @@
     [AFmanager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
-        [self.activityView stopAnimating];
-        [self.loadingView removeFromSuperview];
-        [self.view addSubview:self.CompleteView];
+        [self.reportView dismissActivityView];
+        [self.reportView removeFromSuperview];
+        [self.view addSubview:self.completeView];
         double delayInSeconds = 1.5;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self.CompleteView removeFromSuperview];
+            [self.completeView removeFromSuperview];
         });
 
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-        [self.activityView stopAnimating];
-        [self.loadingView removeFromSuperview];
-        
+        [self.reportView dismissActivityView];
+        [self.reportView removeFromSuperview];
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Report Error!"
                                                              message:[error localizedDescription]
                                                             delegate:nil

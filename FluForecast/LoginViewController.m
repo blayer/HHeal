@@ -17,11 +17,14 @@
 #import "AFNetworking.h"
 #import "HHealParameter.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "ActivityHub.h"
 
 @interface LoginViewController ()
 @property UIAlertView *alertWrongPassword;
 @property UIAlertView *alertBlankText;
 @property NSDictionary *recievedData;
+@property ActivityHub *loadingView;
+
 @end
 
 @implementation LoginViewController
@@ -43,10 +46,28 @@
 {
     [super viewDidLoad];
     
-    CGRect frame=CGRectMake(36.0, 420.0, 256.0, 42.0);
-
+    self.loadingView=[[ActivityHub alloc]initWithFrame:CGRectMake(75, 155, 170, 170)];
+    [self.loadingView setLabelText:@"Signing In..."];
+    
+    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+    
     FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile", @"email"]];
-    loginView.frame=frame;
+    
+    if (iOSDeviceScreenSize.height == 480)
+    {
+        CGRect frame=CGRectMake(36.0, 380.0, 256.0, 42.0);
+        loginView.frame=frame;
+
+       
+    }
+    
+    if (iOSDeviceScreenSize.height == 568)
+    {
+        CGRect frame=CGRectMake(36.0, 420.0, 256.0, 42.0);
+        loginView.frame=frame;
+
+
+    }
     
     loginView.delegate = self;
     self.usernameTF.delegate=self;
@@ -59,21 +80,14 @@
     //check if autologin, if yes, login automatically
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL autolog =[defaults objectForKey:@"autologin"];
+    BOOL autolog =[defaults boolForKey:@"autologin"];
     
-    if(NO)
+    if(autolog)
     {
-        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
-        activityIndicator.center = self.view.center;
-        [self.view addSubview: activityIndicator];
         
-        [activityIndicator startAnimating];
-        
-        [self.view setNeedsDisplay];
-        // self.usernameTF.placeholder=usrname;
-        //  self.passwordTF.placeholder=psw;
-        NSString *token=[defaults objectForKey:@"toekn"];
+        [self.loadingView showActivityView];
+        [self.view addSubview:self.loadingView];
+        NSString *token=[defaults objectForKey:@"token"];
         NSDictionary *query= @{@"token":token};
         
         NSDictionary *parameters=@{@"query":query};
@@ -81,23 +95,27 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)  {
             NSLog(@"JSON: %@", responseObject);
+           
             self.recievedData=responseObject;
          //delay for two seconds
             double delayInSeconds = 2.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self.loadingView dismissActivityView];
+                [self.loadingView removeFromSuperview];
                 [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
             });
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
             
+            [self.loadingView dismissActivityView];
+            [self.loadingView removeFromSuperview];
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Login Error!"
                                                                  message:[error localizedDescription]
                                                                 delegate:nil
                                                        cancelButtonTitle:@"Ok"
                                                        otherButtonTitles:nil];
-            [activityIndicator stopAnimating];
-            [self.view setNeedsDisplay];
+        
             [errorAlert show];
         }];
     
@@ -130,6 +148,9 @@
 }
 
 
+
+
+
 -(void)dismissKeyboard {
     [self.view endEditing:YES];
     [self.passwordTF resignFirstResponder];
@@ -148,15 +169,9 @@
 -(void) sendSignIn {
     //clean textfield
 
-    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
-    activityIndicator.center = self.view.center;
-    [self.view addSubview: activityIndicator];
     
-    [activityIndicator startAnimating];
-    
-    [self.view setNeedsDisplay];
-    
+    [self.loadingView showActivityView];
+    [self.view addSubview:self.loadingView];
     
     if(self.passwordTF.text.length>0&&self.usernameTF.text.length>0)
     {
@@ -181,8 +196,8 @@
                                                            otherButtonTitles:nil];
                 
                 [LoginAlert show];
-                [activityIndicator stopAnimating];
-                [self.view setNeedsDisplay];
+                [self.loadingView dismissActivityView];
+                [self.loadingView removeFromSuperview];
                 
             }
             // store some data into userdefault
@@ -202,8 +217,9 @@
                     
                     self.usernameTF.text=@"";
                     self.passwordTF.text=@"";
-                    [activityIndicator stopAnimating];
-                    [self.view setNeedsDisplay];
+                    
+                    [self.loadingView dismissActivityView];
+                    [self.loadingView removeFromSuperview];
                     [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
                 });
              
@@ -221,9 +237,8 @@
             
             [errorAlert show];
             
-            [activityIndicator stopAnimating];
-            
-            [self.view setNeedsDisplay];
+            [self.loadingView dismissActivityView];
+            [self.loadingView removeFromSuperview];
             
         }];
         
@@ -231,27 +246,39 @@
     
     else {
         [self.alertBlankText show];
-        [activityIndicator stopAnimating];
-        [self.view setNeedsDisplay];
-    }
+        [self.loadingView dismissActivityView];
+        [self.loadingView removeFromSuperview];
+            }
     
 
 }
 
+
+
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    
-    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
-    activityIndicator.center = self.view.center;
-    [self.view addSubview: activityIndicator];
-    
-    [activityIndicator startAnimating];
+    [self.loadingView showActivityView];
+    [self.view addSubview:self.loadingView];
+ 
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [activityIndicator stopAnimating];
-        [self.view setNeedsDisplay];
-        [self performSegueWithIdentifier: @"LoginSuccess" sender: self];
+        [self.loadingView dismissActivityView];
+        [self.loadingView removeFromSuperview];
+        NSString *token=[[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+        if([token length]==0)
+        {
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Your information was not recorded."
+                                                                 message:@"Please register an account first. If you have an account, please sign in once."
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"Ok"
+                                                       otherButtonTitles:nil];
+            
+            [errorAlert show];
+            
+            [FBSession.activeSession closeAndClearTokenInformation];
+        }
+        else
+        {[self performSegueWithIdentifier: @"LoginSuccess" sender: self];}
     });
     
 }

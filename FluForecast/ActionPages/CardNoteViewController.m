@@ -10,16 +10,19 @@
 #import "BlurryModalSegue/BlurryModalSegue.h"
 #import "AFNetworking.h"
 #import "HHealParameter.h"
+#import "ActivityHub.h"
 
 @interface CardNoteViewController ()
 @property NSArray *cardNote;
 @property UILabel *name;
-@property UITextView *note;
+@property NSString *note;
 @property UIAlertView *selectAlert;
 @property UIAlertView *unselectAlert;
 @property NSDictionary *myCard;
 @property NSString  *progress;
 @property NSMutableArray *selectedCards;
+@property ActivityHub *completeView;
+
 @end
 
 @implementation CardNoteViewController
@@ -40,12 +43,15 @@
 {
     [super viewDidLoad];
     
+    self.completeView=[[ActivityHub alloc]initWithFrame:CGRectMake(75, 155, 170, 170)];
+    [self.completeView setLabelText:@"Training scheduled."];
+    [self.completeView setImage:[UIImage imageNamed:@"checked_checkbox-48.png"]];
     //===================================
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
     activityIndicator.center = self.view.center;
     [self.view addSubview: activityIndicator];
-    
+    [self.view setUserInteractionEnabled:NO];
     [activityIndicator startAnimating];
     //====================================
     
@@ -81,6 +87,8 @@
         
         [self addTraingCardView];
         [self.view setNeedsDisplay];
+        [self.view setUserInteractionEnabled:YES];
+
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -92,12 +100,12 @@
                                                   otherButtonTitles:nil];
         [alertView show];
         NSLog(@"Error: %@", error);
+        [self.view setUserInteractionEnabled:YES];
     }];
-
-    
-    
-    
 }
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -113,26 +121,30 @@
 {
     
     //set up title label
-    CGRect nameFrame = CGRectMake(0.0f, 60.0f, 320.0f, 50.0f);
+    CGRect nameFrame = CGRectMake(20.0f, 60.0f, 280.0f, 50.0f);
     self.name= [[UILabel alloc] initWithFrame:nameFrame];
     
     
     //title received from source view controller
     NSString *title=[self.myCard objectForKey:@"title"];
-    self.note=[self.myCard objectForKey:@"note"];
+    NSString *direction=[self.myCard objectForKey:@"direction"];
+    NSString *extraNote=[self.myCard objectForKey:@"note"];
+    self.note=[NSString stringWithFormat:@"Direction:\n\n%@\n\n\nMore details:\n\n%@",direction,extraNote];
     self.name.text = title;
     self.name.font = [UIFont boldSystemFontOfSize:25.0f];
     self.name.textAlignment =  NSTextAlignmentCenter;
     self.name.textColor=[UIColor blackColor];
+    [self.name setAdjustsFontSizeToFitWidth:YES];
+
     [self.view addSubview:self.name];
     
     
     
-    CGRect noteFrame =CGRectMake(0.0f, 120.0f, self.view.frame.size.width,self.view.frame.size.height-90.0f);
+    CGRect noteFrame =CGRectMake(10.0f, 120.0f, self.view.frame.size.width-20.0f,self.view.frame.size.height-120.0f);
     UITextView *note =[[UITextView alloc] initWithFrame:noteFrame];
-    note.text = self.note;
+    note.text =self.note;
     note.textAlignment=NSTextAlignmentLeft;
-    [note setFont:[UIFont fontWithName:@"arial" size:20.0f]];
+    [note setFont:[UIFont fontWithName:@"arial" size:16.0f]];
     [note setEditable:NO];
     [note setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:note];
@@ -203,23 +215,17 @@
             
             NSLog(@"JSON: %@", responseObject);
             
-            
-            
-            UIAlertView *completeAlert = [[UIAlertView alloc] initWithTitle:@"Successful!"
-                                                                    message:@"Training Card Selected."
-                                                                   delegate:nil
-                                                          cancelButtonTitle:@"Ok"
-                                                          otherButtonTitles:nil];
-            [completeAlert show];
-            
+            [self.view addSubview:self.completeView];
+            double delayInSeconds = 1.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self.completeView removeFromSuperview];
+                [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
+
+            });
+    
             NSDictionary *addedCard=responseObject;
             [self.selectedCards addObject:addedCard];
-            
-      //      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-       //     [defaults setObject:self.selectedCards forKey:@"selectedCards"];
-            
-            [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
-            
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
@@ -237,7 +243,6 @@
     }
       else if([title isEqualToString:@"No"])
       {
-      //  NSLog(@"Button 2 was selected.");
       }}
     
    else if ([self.progress isEqualToString:@"selected"]){
@@ -267,20 +272,25 @@
             [manager DELETE :url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 
                 NSLog(@"JSON: %@", responseObject);
-            
-                
-                UIAlertView *completeAlert = [[UIAlertView alloc] initWithTitle:@"Successful!"
-                                                                        message:@"Training Card Unselected."
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"Ok"
-                                                              otherButtonTitles:nil];
-                [completeAlert show];
-                
-           //     [self removeFromArray:self.myCard];
-           //     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-           //     [defaults setObject:self.selectedCards forKey:@"selectedCards"];
-                [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
-                
+               
+                if ([[responseObject objectForKey:@"error"] length]!=0) {
+                    
+                    UIAlertView *Alert = [[UIAlertView alloc] initWithTitle:@"You can not unselect this schedule."
+                                                                         message:@"As you already completed this training schedule today, you can not unselect it right now."
+                                                                        delegate:nil
+                                                               cancelButtonTitle:@"Ok"
+                                                               otherButtonTitles:nil];
+                    [Alert show];
+                    
+                }
+                else {
+                [self.view addSubview:self.completeView];
+                double delayInSeconds = 1.5;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [self.completeView removeFromSuperview];
+                    [self performSegueWithIdentifier: @"BacktoSelectPage" sender: self];
+                });}
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 

@@ -66,23 +66,11 @@
 #define COCOAPODS_VERSION_MINOR_MZAppearance 1
 #define COCOAPODS_VERSION_PATCH_MZAppearance 3
 
-// PNChart
-#define COCOAPODS_POD_AVAILABLE_PNChart
-#define COCOAPODS_VERSION_MAJOR_PNChart 0
-#define COCOAPODS_VERSION_MINOR_PNChart 5
-#define COCOAPODS_VERSION_PATCH_PNChart 0
-
 // SVPullToRefresh
 #define COCOAPODS_POD_AVAILABLE_SVPullToRefresh
 #define COCOAPODS_VERSION_MAJOR_SVPullToRefresh 0
 #define COCOAPODS_VERSION_MINOR_SVPullToRefresh 4
 #define COCOAPODS_VERSION_PATCH_SVPullToRefresh 1
-
-// UICountingLabel
-#define COCOAPODS_POD_AVAILABLE_UICountingLabel
-#define COCOAPODS_VERSION_MAJOR_UICountingLabel 1
-#define COCOAPODS_VERSION_MINOR_UICountingLabel 0
-#define COCOAPODS_VERSION_PATCH_UICountingLabel 0
 
 // UIImage+BlurredFrame
 #define COCOAPODS_POD_AVAILABLE_UIImage_BlurredFrame

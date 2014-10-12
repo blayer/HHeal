@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self buildView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +43,7 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated
-{  [self buildView];
+{
 }
 -(void) buildView
 {
@@ -75,8 +75,10 @@
         self.myCards=responseObject;
         
         self.selected=[NSString stringWithFormat:@"%li",  [self.myCards count]];
+        [[NSUserDefaults standardUserDefaults] setInteger:[self.myCards count] forKey:@"numberofselected"];
         
         self.completed=[NSString stringWithFormat:@"%d",[self countCompletedCardsNumber]];
+        [[NSUserDefaults standardUserDefaults] setInteger:[self countCompletedCardsNumber]forKey:@"numberofcompleted"];
         
         [self buildSideTitle];
         [self.view setNeedsDisplay];

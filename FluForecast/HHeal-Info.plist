@@ -30,13 +30,17 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.0.2</string>
 	<key>FacebookAppID</key>
 	<string>1525212131043604</string>
 	<key>FacebookDisplayName </key>
 	<string>HHeal</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Acessing your location service can help us to privide more accurate flu-risk prediction for you.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Acessing your location service can help us to privide more accurate flu-risk prediction for you.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

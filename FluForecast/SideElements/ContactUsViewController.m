@@ -9,7 +9,7 @@
 #import "ContactUsViewController.h"
 #import <MessageUI/MessageUI.h>
 
-#define YOUR_APP_STORE_ID 545174222 //Change this one to your ID
+#define YOUR_APP_STORE_ID 928120616 //Change this one to your ID
 
 @interface ContactUsViewController ()
 
@@ -52,47 +52,51 @@
 - (IBAction)showEmail:(id)sender {
     
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"support@HHealapps.com"];
-    
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setToRecipients:toRecipents];
-    
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"hhealfeedback@gmail.com"];
+ 
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
+        mail.mailComposeDelegate = self;
+
+        [mail setToRecipients:toRecipents];
+        
+        [self presentViewController:mail animated:YES completion:NULL];
+    }
+    else
+    {
+        NSLog(@"This device cannot send email");
+    }
 }
 
 
 - (IBAction)rateApp:(id)sender {
     
-    
-    static NSString *const iOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/app/id%d";
-    static NSString *const iOSAppStoreURLFormat = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d";
-    
-    [NSURL URLWithString:[NSString stringWithFormat:([[UIDevice currentDevice].systemVersion floatValue] >= 7.0f)? iOS7AppStoreURLFormat: iOSAppStoreURLFormat, YOUR_APP_STORE_ID]]; // Would contain the right link
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.com/apps/Self-flu-risk-tracker-&-Immune-system-training-by-HHeal"]];
+
+   
 }
 
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
+    switch (result) {
+        case MFMailComposeResultSent:
+            NSLog(@"You sent the email.");
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
+            NSLog(@"You saved a draft of this email");
             break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail sent");
+        case MFMailComposeResultCancelled:
+            NSLog(@"You cancelled sending this email.");
             break;
         case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            NSLog(@"Mail failed:  An error occurred when trying to compose this email");
             break;
         default:
+            NSLog(@"An error occurred when trying to compose this email");
             break;
     }
     
-    // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 @end

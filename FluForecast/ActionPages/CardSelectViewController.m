@@ -52,6 +52,7 @@
     activityIndicator.frame = CGRectMake(10.0, 0.0, 40.0, 40.0);
     activityIndicator.center = self.view.center;
     [self.view addSubview: activityIndicator];
+    [self.view setUserInteractionEnabled:NO];
     
     [activityIndicator startAnimating];
     self.cardId=[NSMutableDictionary new];
@@ -85,11 +86,12 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
-            
+
             NSLog(@"Selected Cards=JSON: %@", responseObject);
             self.selectedCards=responseObject;
             [self.tableView reloadData];
-            
+            [self.view setUserInteractionEnabled:YES];
+
             
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [activityIndicator stopAnimating];
@@ -100,6 +102,8 @@
                                                       otherButtonTitles:nil];
             [alertView show];
             NSLog(@"Error: %@", error);
+            [self.view setUserInteractionEnabled:YES];
+
         }];
         
         // [self.tableView reloadData];
@@ -155,11 +159,12 @@
     [self.cardId setObject:trainingId forKey:title];
     }
     cell.textLabel.text =title;
+    cell.textLabel.font=[UIFont boldSystemFontOfSize:13.0f];
     
     if([progress isEqualToString:@"selected"])
     {
          cell.imageView.image = [UIImage imageNamed:@"checkmarkgreen-32.png"];
-        [cell.accessoryView setFrame:CGRectMake(0, 0, 25, 25)];
+        [cell.accessoryView setFrame:CGRectMake(0, 0, 20, 20)];
         cell.detailTextLabel.text=@"selected";
 
     }

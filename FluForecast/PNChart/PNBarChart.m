@@ -32,7 +32,7 @@
         _showLabel           = YES;
         _barBackgroundColor  = PNLightGrey;
         _labelTextColor      = [UIColor grayColor];
-        _labelFont           = [UIFont systemFontOfSize:11.0f];
+        _labelFont           = [UIFont systemFontOfSize:15.0f];
         _labels              = [NSMutableArray array];
         _bars                = [NSMutableArray array];
         _xLabelSkip          = 1;
@@ -51,14 +51,7 @@
 - (void)setYValues:(NSArray *)yValues
 {
     _yValues = yValues;
-    
-    if (_yMaxValue) {
-        _yValueMax = _yMaxValue;
-    }else{
         [self getYValueMax:yValues];
-    }
-    
-
     _xLabelWidth = (self.frame.size.width - _chartMargin * 2) / [_yValues count];
 }
 
@@ -66,7 +59,7 @@
 {
     int max = [[yLabels valueForKeyPath:@"@max.intValue"] intValue];
     
-    _yValueMax = (int)max;
+    _yValueMax = (int)max+2;
     
     if (_yValueMax == 0) {
         _yValueMax = _yMinValue;

@@ -1,6 +1,5 @@
 platform :ios, '7.0'
 pod 'AFNetworking', '~> 2.0'
 pod 'BlurryModalSegue'
-pod 'PNChart', '~>0.5'
 pod 'SVPullToRefresh'
 pod 'ActionSheetPicker-3.0', '~>1.1.10'

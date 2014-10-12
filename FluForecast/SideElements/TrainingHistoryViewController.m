@@ -150,6 +150,7 @@
     
     NSDictionary *dict = [self.mylogs objectAtIndex:indexPath.row];
     cell.textLabel.text = [dict objectForKey:@"title"];
+    cell.textLabel.font=[UIFont systemFontOfSize:16.0f];
     cell.detailTextLabel.text =[dict objectForKey:@"date"];
     if([[dict objectForKey:@"progress"] isEqualToString:@"completed"])
     { cell.accessoryView = [[ UIImageView alloc ] initWithImage:[UIImage imageNamed:@"ribbon_yellow-48.png"]];

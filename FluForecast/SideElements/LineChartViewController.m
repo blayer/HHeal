@@ -11,15 +11,15 @@
 #import "AFNetworking.h"
 #import "HHealParameter.h"
 
-#define NumberOfXLabel ((int) 5)
+#define DifferenceOfLines ((float) 0.05)
 
 @interface LineChartViewController ()
 @property NSString *button;
 @property PNLineChart *lineChart;
-@property NSArray *riskHistory;
-@property NSMutableArray *personalHistory;
-@property NSMutableArray *nationalHistory;
-@property NSMutableArray *dateHistory;
+@property (nonatomic,strong)NSArray *riskHistory;
+@property (nonatomic,strong)NSMutableArray *personalHistory;
+@property (nonatomic,strong)NSMutableArray *nationalHistory;
+@property (nonatomic,strong)NSMutableArray *dateHistory;
 
 
 @end
@@ -39,10 +39,10 @@
 {
     [super viewDidLoad];
     
-    self.personalHistory=[NSMutableArray new];
-    self.nationalHistory=[NSMutableArray new];
+    self.personalHistory=[NSMutableArray array];
+    self.nationalHistory=[NSMutableArray array];
 
-    self.dateHistory=[NSMutableArray new];
+    self.dateHistory=[NSMutableArray array];
 
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -60,20 +60,7 @@
         NSLog(@"RiskLogs: %@", responseObject);
         
         self.riskHistory=responseObject;
-        
-        for(int i=0;i<[self.riskHistory count];i++)
-        {
-            NSDictionary *log=[self.riskHistory objectAtIndex:i];
-            NSString *date=[log objectForKeyedSubscript:@"date"];
-            NSString *personal=[log objectForKeyedSubscript:@"personalrate"];
-            NSString *national=[log objectForKeyedSubscript:@"standardrate"];
-            if(i%(self.retriveDays/NumberOfXLabel)!=0)
-            {[self.dateHistory addObject:@""];} //add empty string
-            else {[self.dateHistory addObject:date];}
-            
-            [self.personalHistory addObject:personal];
-            [self.nationalHistory addObject:national];
-        }
+        [self setXLabels];
         self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 190.0, SCREEN_WIDTH, 300.0)];
         
         [self buildLineChart];
@@ -92,13 +79,67 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setXLabels{
+    int count=1;
+    for(int i=0;i<[self.riskHistory count];i++)
+    {
+      NSDictionary  *log=[self.riskHistory objectAtIndex:i];
+        NSString *fulldate=[log objectForKeyedSubscript:@"date"];
+        NSArray *substring=[fulldate componentsSeparatedByString:@","];
+        NSString *date=[substring objectAtIndex:1];
+        NSString *personal=[log objectForKeyedSubscript:@"personalrate"];
+        NSString *national=[log objectForKeyedSubscript:@"standardrate"];
+        NSNumber *nationalFluRate = [NSNumber numberWithFloat:([national floatValue])*100-DifferenceOfLines ];
+        NSNumber *personalFluRate = [NSNumber numberWithFloat:([personal floatValue])*100 ];
+        
+        
+        if (self.retriveDays==7){
+            [self.dateHistory addObject:date];
+        }
+        
+        if (self.retriveDays==30)
+        {
+            if(i%7!=0)
+            {[self.dateHistory addObject:@""];}
+            else
+            { NSString *week=[NSString stringWithFormat:@"week %d",count];
+                [self.dateHistory addObject:week];
+                count++;}
+         
+        }
+        if (self.retriveDays==90)
+        {  NSArray *subdate=[date componentsSeparatedByString:@" "];
+            NSString *month=[subdate objectAtIndex:0];
+            int day= [[subdate objectAtIndex:1] intValue];
+            if(day==1)
+            {[self.dateHistory addObject:month];}
+            else
+            {[self.dateHistory addObject:@""];}
+            
+        }
+        
+        if (self.retriveDays==360)
+        {
+            NSArray *subdate=[date componentsSeparatedByString:@" "];
+            NSString *month=[subdate objectAtIndex:0];
+            int day= [[subdate objectAtIndex:1] intValue];
+            if(day==1)
+            {[self.dateHistory addObject:month];}
+            else
+            {[self.dateHistory addObject:@""];}
+        }
+            [self.nationalHistory addObject:nationalFluRate];
+            [self.personalHistory addObject:personalFluRate];
+    }
+    
+}
 
 -(void) buildLineChart
 {
     //Add LineChart
     UILabel * lineChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, SCREEN_WIDTH, 30)];
     lineChartLabel.text = @"Risk History";
-    lineChartLabel.textColor = PNFreshGreen;
+    lineChartLabel.textColor = PNBlack;
     lineChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:23.0];
     lineChartLabel.textAlignment = NSTextAlignmentCenter;
     self.lineChart.backgroundColor = [UIColor clearColor];

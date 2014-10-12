@@ -157,7 +157,7 @@ else
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     };
-    NSArray *colors = @[@"0~18", @"18~25",@"23~35",@"35~60",@"60 and up"];
+    NSArray *colors = @[@"0~4", @"5~24",@"25~49",@"50~64",@"65 and up"];
     [ActionSheetStringPicker showPickerWithTitle:@"Select Your Age" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
 }
 
@@ -199,15 +199,15 @@ else
     if(![self isBlankText]&&[self isCorrectAge]&&[self isPasswordLongEnough]&&[self isPasswordMatch])
     {   
         NSNumber *ageGroup=[[NSNumber alloc]init];
-        if ([self.Age.text isEqualToString:@"0~18"])
+        if ([self.Age.text isEqualToString:@"0~4"])
             ageGroup=@1;
-        else if ([self.Age.text isEqualToString:@"18~25"])
+        else if ([self.Age.text isEqualToString:@"5~24"])
             ageGroup=@2;
-        else if ([self.Age.text isEqualToString:@"25~35"])
+        else if ([self.Age.text isEqualToString:@"25~49"])
             ageGroup=@3;
-        else if([self.Age.text isEqualToString:@"35~60"])
+        else if([self.Age.text isEqualToString:@"50~64"])
             ageGroup=@4;
-        else if([self.Age.text isEqualToString:@"60 and up"])
+        else if([self.Age.text isEqualToString:@"65 and up"])
             ageGroup=@5;
         
         NSDate *date= [NSDate date];
@@ -217,7 +217,7 @@ else
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
         NSString *dateString = [dateFormatter stringFromDate:date];
         
-        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"state":self.State.text,@"date":dateString};
+        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"state":self.State.text,@"date":dateString,@"gender":self.Gender.text,@"email":self.Email.text};
         
         NSString *url=HHealURL @"/user_profile";
         
