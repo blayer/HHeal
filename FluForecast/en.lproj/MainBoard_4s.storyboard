@@ -10,11 +10,11 @@
             <objects>
                 <viewController id="2RL-Hj-jNK" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0MO-HR-ZgW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" id="gng-Pp-HYB">
-                                <rect key="frame" x="0.0" y="30" width="320" height="335"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="339"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15615186130567871" green="0.67452401956985608" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -22,35 +22,13 @@
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" id="bRj-Ib-L9k">
-                                <rect key="frame" x="0.0" y="388" width="320" height="92"/>
+                                <rect key="frame" x="0.0" y="448" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.10439738485560535" green="0.4509619230700983" blue="0.66856317934782616" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="1nU-wO-STF" kind="embed" id="0h9-vv-v17"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My training cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DTA-8h-y9Z">
-                                <rect key="frame" x="0.0" y="362" width="320" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62465543045175398" green="0.78212887155142152" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="report_card-48.png" id="7rF-Lb-u7e">
-                                <rect key="frame" x="66" y="368" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j4l-p5-I26">
-                                <rect key="frame" x="290" y="362" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="plus-50.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="JU6-y2-z9N" kind="push" id="7iU-6O-yxy"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ejf-dD-RIs">
                                 <rect key="frame" x="270" y="65" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,6 +39,28 @@
                                 </state>
                                 <connections>
                                     <segue destination="mAU-PJ-YNf" kind="push" identifier="CompletedCard" id="dK8-8i-6UC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My training cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DTA-8h-y9Z">
+                                <rect key="frame" x="0.0" y="404" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62465543045175398" green="0.78212887155142152" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="report_card-48.png" id="7rF-Lb-u7e">
+                                <rect key="frame" x="49" y="409" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j4l-p5-I26">
+                                <rect key="frame" x="282" y="409" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plus-50.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="JU6-y2-z9N" kind="push" id="7iU-6O-yxy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,7 +77,7 @@
             <objects>
                 <viewController id="Huc-mM-0au" customClass="CardCompleteNoteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pnn-Sx-FGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -97,25 +97,25 @@
             <objects>
                 <viewController id="wjq-nc-yLe" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ktW-aa-9BS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" minimumFontSize="17" id="Qm8-KE-S9t">
-                                <rect key="frame" x="36" y="223" width="256" height="30"/>
+                                <rect key="frame" x="36" y="269" width="256" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="17" id="08c-Ad-AGJ">
-                                <rect key="frame" x="36" y="252" width="256" height="30"/>
+                                <rect key="frame" x="36" y="298" width="256" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="goZ-mR-Zgr">
-                                <rect key="frame" x="36" y="319" width="256" height="40"/>
+                                <rect key="frame" x="36" y="366" width="256" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1090575759" green="1" blue="0.28774762500000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -133,8 +133,20 @@
                                     <action selector="SignIn:" destination="wjq-nc-yLe" eventType="touchUpInside" id="Plx-xf-IbX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Uk1-I2-4Ix">
+                                <rect key="frame" x="152" y="508" width="187" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Forget Password?">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="HgT-wp-MnV" kind="custom" customClass="BlurryModalSegue" id="yrW-hg-2Wv"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xMZ-nn-81K">
-                                <rect key="frame" x="-14" y="447" width="115" height="30"/>
+                                <rect key="frame" x="-14" y="514" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
@@ -146,21 +158,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_effect.png" id="tXZ-jk-gvt">
-                                <rect key="frame" x="-1" y="21" width="330" height="176"/>
+                                <rect key="frame" x="-1" y="42" width="330" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Uk1-I2-4Ix">
-                                <rect key="frame" x="157" y="442" width="187" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Forget Password?">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="HgT-wp-MnV" kind="custom" customClass="BlurryModalSegue" id="yrW-hg-2Wv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -180,44 +180,41 @@
             <objects>
                 <viewController id="xcO-Jg-DXT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9y-Lt-TSD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="Sdv-xR-vom">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="368"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">HHeal TERMS OF USE
 
 AGREEMENT
-These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal's Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
+These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
 
 PRIVACY POLICY
 By using the Services, You consent to the collection and use of certain information about You, as specified in the Privacy Policy. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.
 
-THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP IS PROVIDED OR ASSUMED
-HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and MyFitnessPal does not provide medical services or render medical advice.
+THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP
+HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and HHeal does not provide medical services or render medical advice.
 
 
 RISK ASSUMPTION
-YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, THAT MAY RESULT FROM YOUR USE OF THE SERVICES.</string>
+YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, WHICH MAY RESULT FROM YOUR USE OF THE SERVICES.
+
+DISCLAIMER
+
+You should consult a licensed physician prior to beginning or modifying your diet, nutrition intake, or sleep patterns. And you acknowledge that HHeal has advised you of the necessity for obtaining such consultation. HHeal is a source of imformation, but it does not provide any medical advices. In no event shall HHeal and its developers be liable for any death or bodily injury that you suffer, or that you cause to ay third party, in connection with your use of the app or any activity you undertake in connection with your use of the app. 
+Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
+
+SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
+
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gGW-Fn-6j9">
-                                <rect key="frame" x="21" y="419" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.8292905746" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="oM7-En-Jro" kind="unwind" unwindAction="unwindToThisViewController:" id="uqJ-k0-T4I"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q05-0M-rX7">
-                                <rect key="frame" x="210" y="419" width="80" height="30"/>
+                                <rect key="frame" x="192" y="494" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.8292905746" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -226,6 +223,18 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 </state>
                                 <connections>
                                     <segue destination="Bqd-Bv-Ta1" kind="push" id="zVO-bt-Xjn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gGW-Fn-6j9">
+                                <rect key="frame" x="30" y="494" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.8292905746" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oM7-En-Jro" kind="unwind" unwindAction="unwindToThisViewController:" id="uqJ-k0-T4I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -243,77 +252,96 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="Bqd-Bv-Ta1" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2K0-X3-Xcf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rHb-Va-HGl">
+                                <rect key="frame" x="20" y="483" width="280" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1090575759" green="1" blue="0.28774762500000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="RegisterProfile:" destination="Bqd-Bv-Ta1" eventType="touchUpInside" id="ebF-Dq-BII"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" minimumFontSize="17" id="73N-8C-bKG">
-                                <rect key="frame" x="120" y="69" width="150" height="30"/>
+                                <rect key="frame" x="120" y="100" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="email" minimumFontSize="17" id="MsY-7R-WEn">
-                                <rect key="frame" x="120" y="109" width="150" height="30"/>
+                                <rect key="frame" x="120" y="150" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="17" id="U9n-GE-V7V">
-                                <rect key="frame" x="120" y="153" width="150" height="30"/>
+                                <rect key="frame" x="120" y="200" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nlx-oe-m5b">
-                                <rect key="frame" x="25" y="73" width="79" height="21"/>
+                                <rect key="frame" x="25" y="104" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6c-jg-OBm">
-                                <rect key="frame" x="25" y="112" width="42" height="22"/>
+                                <rect key="frame" x="25" y="154" width="42" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xd0-bD-aqd">
-                                <rect key="frame" x="25" y="156" width="173" height="22"/>
+                                <rect key="frame" x="25" y="204" width="173" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="re-type password" minimumFontSize="17" id="7Mt-sB-PJ6">
-                                <rect key="frame" x="120" y="196" width="150" height="30"/>
+                                <rect key="frame" x="120" y="250" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kco-uL-DMs">
-                                <rect key="frame" x="25" y="196" width="179" height="22"/>
+                                <rect key="frame" x="25" y="254" width="179" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6u-tH-JDi">
-                                <rect key="frame" x="25" y="239" width="31" height="21"/>
+                                <rect key="frame" x="25" y="303" width="31" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cer-s5-Udv">
-                                <rect key="frame" x="20" y="278" width="57" height="21"/>
+                                <rect key="frame" x="25" y="354" width="57" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="selected your age group" minimumFontSize="17" id="OKn-as-qw4">
-                                <rect key="frame" x="120" y="235" width="150" height="30"/>
+                                <rect key="frame" x="120" y="300" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -326,7 +354,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="select your gender" minimumFontSize="17" id="pRa-nt-3ed">
-                                <rect key="frame" x="120" y="274" width="150" height="30"/>
+                                <rect key="frame" x="120" y="350" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -339,7 +367,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="select your state" minimumFontSize="17" id="joO-n1-kwp">
-                                <rect key="frame" x="120" y="312" width="150" height="30"/>
+                                <rect key="frame" x="120" y="400" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -352,7 +380,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPd-O8-0dV">
-                                <rect key="frame" x="25" y="316" width="41" height="21"/>
+                                <rect key="frame" x="25" y="404" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -369,25 +397,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 </state>
                                 <connections>
                                     <segue destination="x5U-lJ-yNn" kind="unwind" unwindAction="unwindToThisViewController:" id="LsC-Jb-p0p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rHb-Va-HGl">
-                                <rect key="frame" x="20" y="375" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1090575759" green="1" blue="0.28774762500000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="RegisterProfile:" destination="Bqd-Bv-Ta1" eventType="touchUpInside" id="ebF-Dq-BII"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -414,7 +423,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
         <scene sceneID="hUt-HV-FGT">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="tK6-Mp-VMH" customClass="RootViewController" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5v3-Ng-xxb">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -431,7 +439,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="HgT-wp-MnV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r1F-yW-9AO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yPK-2H-Ado">
@@ -478,7 +486,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBS-z7-jvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jRu-CX-4Ki" userLabel="Exit" sceneMemberID="exit"/>
@@ -490,7 +497,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="6x2-kw-8si" customClass="MainNavigationView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6f-L4-MOa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -508,7 +515,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <tableViewController id="Dg7-c9-uRl" customClass="AMSlideMenuLeftTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7U9-NH-Sdf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -599,6 +606,26 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i0J-2z-e3Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i0J-2z-e3Z" id="sV9-40-aiw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ebola-48.png" id="f65-cE-UPE">
+                                                    <rect key="frame" x="10" y="5" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ebola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y6y-Tx-hBV">
+                                                    <rect key="frame" x="60" y="4" width="150" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="72F-Zm-MrS">
@@ -709,7 +736,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                             <outlet property="delegate" destination="Dg7-c9-uRl" id="gUb-Pu-onR"/>
                         </connections>
                     </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="cjr-yR-drU" kind="custom" identifier="HomeSegue" customClass="AMSlideMenuContentSegue" id="BAX-Z4-eyF"/>
                         <segue destination="00K-va-Dkk" kind="custom" identifier="RiskHistorySegue" customClass="AMSlideMenuContentSegue" id="rFE-Re-K9M"/>
@@ -719,6 +745,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                         <segue destination="kz0-fW-hKC" kind="custom" identifier="FeedbackSegue" customClass="AMSlideMenuContentSegue" id="D9i-H6-chf"/>
                         <segue destination="Ch9-Ym-GTK" kind="custom" identifier="AboutSegue" customClass="AMSlideMenuContentSegue" id="3X8-c3-03n"/>
                         <segue destination="Iwi-BY-WWA" kind="custom" identifier="SettingSegue" customClass="AMSlideMenuContentSegue" id="wtU-JC-5xs"/>
+                        <segue destination="Q6g-9C-8yu" kind="custom" identifier="EbolaSegue" customClass="AMSlideMenuContentSegue" id="4TA-ze-s9f"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCO-Oh-Vzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -729,7 +756,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
         <scene sceneID="VWB-hv-69u">
             <objects>
                 <navigationController definesPresentationContext="YES" id="cjr-yR-drU" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hPJ-t1-VLQ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -745,7 +771,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
         <scene sceneID="oeY-ir-BdZ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="00K-va-Dkk" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EpP-T6-s0H">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -761,7 +786,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
         <scene sceneID="89i-az-wyk">
             <objects>
                 <navigationController definesPresentationContext="YES" id="PHu-pj-G8O" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fs0-V7-3vb">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -778,7 +802,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="gC2-Wy-OT8" customClass="CalculatorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S1c-9P-OxY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yiN-JE-b2z">
@@ -790,7 +814,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aUv-tT-kRX">
-                                <rect key="frame" x="0.0" y="402" width="320" height="78"/>
+                                <rect key="frame" x="0.0" y="457" width="320" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
@@ -834,14 +858,8 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Seconds Resting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eC3-bV-EVf">
-                                <rect key="frame" x="5" y="319" width="155" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="diI-3X-laR">
-                                <rect key="frame" x="281" y="362" width="32" height="32"/>
+                                <rect key="frame" x="281" y="397" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="help-32.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -850,6 +868,12 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                     <segue destination="n8h-Bi-5Yb" kind="push" id="u4t-QC-vRO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Seconds Resting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eC3-bV-EVf">
+                                <rect key="frame" x="5" y="319" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.91583625637755106" green="0.88717568910394629" blue="0.55259110236820286" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -869,7 +893,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="n8h-Bi-5Yb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUc-2y-zlJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are VO2 and VO2max?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xoD-J3-h2t">
@@ -933,7 +957,6 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
         <scene sceneID="ZeL-rt-eon">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Ch9-Ym-GTK" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wJC-Vk-9C9">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -950,7 +973,7 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
             <objects>
                 <tableViewController id="Y0s-uc-jLL" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IGD-hw-tHE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1050,7 +1073,6 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
         <scene sceneID="PPI-u8-2e6">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Iwi-BY-WWA" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4b6-ql-p4b">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1067,7 +1089,7 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
             <objects>
                 <tableViewController id="h1q-KE-3wJ" customClass="SettingTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bIs-Kh-yS4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1081,7 +1103,7 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mL5-Ww-Wej">
-                                                    <rect key="frame" x="18" y="11" width="130" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="130" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
@@ -1214,12 +1236,371 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
             </objects>
             <point key="canvasLocation" x="1503" y="4991"/>
         </scene>
+        <!--Ebola-->
+        <scene sceneID="yu2-k5-PvL">
+            <objects>
+                <tableViewController id="AeF-p7-g4J" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sRg-6c-wPs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="nL4-o6-XqR">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="2n9-j5-5eD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2n9-j5-5eD" id="WLm-B0-LbZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Ebola risk" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G15-bH-tsZ">
+                                                    <rect key="frame" x="20" y="11" width="122" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gNu-9e-5Ea" kind="push" id="MFA-Nc-CXJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="hHd-6Z-Isf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hHd-6Z-Isf" id="5Z9-Ds-Y3r">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Ebola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xnK-Ij-gt1">
+                                                    <rect key="frame" x="20" y="11" width="95" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="odk-La-SVR" kind="push" id="Wdz-NB-VhA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="PC9-GQ-oAk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PC9-GQ-oAk" id="g7Y-4e-l0M">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ebola and influenza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v1H-D0-qUV">
+                                                    <rect key="frame" x="20" y="14" width="150" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="apC-O7-UFb" kind="push" id="Dpe-y0-vh6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="N78-Cq-LkS">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N78-Cq-LkS" id="zcF-74-pVy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can HHeal help you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XN3-UQ-I5S">
+                                                    <rect key="frame" x="20" y="11" width="200" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uc5-SN-eso" kind="push" id="YNc-gN-hLu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="AeF-p7-g4J" id="ig8-iK-QCE"/>
+                            <outlet property="delegate" destination="AeF-p7-g4J" id="fkw-RF-mqD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ebola" id="2qW-9P-cbW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8K3-ES-oF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1234" y="5746"/>
+        </scene>
+        <!--Ebola Risk View Controller-->
+        <scene sceneID="HnB-e7-gua">
+            <objects>
+                <viewController id="gNu-9e-5Ea" customClass="EbolaRiskViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D4f-TH-iyu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Score against transmissible diseases" textAlignment="center" selectable="NO" id="uUR-ZH-CMc">
+                                <rect key="frame" x="20" y="0.0" width="280" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N8W-DR-bRd">
+                                <rect key="frame" x="284" y="12" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="help-32.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YXB-2p-HTq" kind="push" id="sTA-pt-cWY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OWJ-TK-wVw">
+                                <rect key="frame" x="0.0" y="390" width="320" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.8292905746" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regional  Ebola cases:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Im-Gm-ygg">
+                                <rect key="frame" x="11" y="408" width="175" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="National Ebola cases:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BGa-6g-6hG">
+                                <rect key="frame" x="20" y="463" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ljk-Ac-NsK">
+                                <rect key="frame" x="200" y="396" width="131" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="unl-HG-rmC">
+                                <rect key="frame" x="200" y="451" width="131" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="u7g-Y5-VRr"/>
+                    <connections>
+                        <outlet property="nationalCase" destination="unl-HG-rmC" id="EUK-Jh-7Lm"/>
+                        <outlet property="regionalCase" destination="ljk-Ac-NsK" id="jCC-Xm-Bef"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9g-ph-Rvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1935" y="6455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="s6N-CU-dKp">
+            <objects>
+                <viewController id="YXB-2p-HTq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Slt-lt-Zpu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0Se-ev-FNp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">The score against transmissible diseases is based on the strength of immune system  and the your exposure frequency to transmissible diseases. The algorithm that we calculate this score is the same as the algorithm we calculate your flu risk. 
+
+We assume an average person with no daily immune system improvement and no exposure to high risk transmissible diseases has a score of 100. Clearly, you can keep track of your personal score against transmissible diseases  that visualized on the right bar, and compare it with an average person's score that visualized on the left bar.
+
+*All score are presented as a resource of information, it is not intended to be a medical advice on your personal health condition. </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WiF-OA-Wg5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wR3-8Q-iSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="6450"/>
+        </scene>
+        <!--About Ebola-->
+        <scene sceneID="wwJ-t5-pr5">
+            <objects>
+                <viewController id="odk-La-SVR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UPd-rw-wHa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5HM-o7-OE0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Ebola virus disease (EVD), Ebola hemorrhagic fever (EHF) or simply Ebola is a disease of humans and other mammals caused by an ebolavirus. Symptoms start two days to three weeks after contracting the virus, with a fever, sore throat, muscle pain and headaches. Typically, vomiting, diarrhea and rash follow, along with decreased function of the liver and kidneys. Around this time, affected people may begin to bleed both within the body and externally.
+
+
+Symptoms of Ebola include
+
+Fever (greater than 38.6°C or 101.5°F)
+Severe headache
+Muscle pain
+Weakness
+Diarrhea
+Vomiting
+Abdominal (stomach) pain
+Unexplained hemorrhage (bleeding or bruising)
+Symptoms may appear anywhere from 2 to 21 days after exposure to Ebola, but the average is 8 to 10 days.
+
+Recovery from Ebola depends on good supportive clinical care and the patient’s immune response. People who recover from Ebola infection develop antibodies that last for at least 10 years.
+
+
+Transmission
+
+Because the natural reservoir host of Ebola viruses has not yet been identified, the manner in which the virus first appears in a human at the start of an outbreak is unknown. However, researchers believe that the first patient becomes infected through contact with an infected animal.
+
+When an infection does occur in humans, the virus can be spread in several ways to others. Ebola is spread through direct contact (through broken skin or mucous membranes in, for example, the eyes, nose, or mouth) with
+
+blood or body fluids (including but not limited to urine, saliva, sweat, feces, vomit, breast milk, and semen) of a person who is sick with Ebola
+objects (like needles and syringes) that have been contaminated with the virus
+infected animals
+Ebola is not spread through the air or by water, or in general, by food. However, in Africa, Ebola may be spread as a result of handling bushmeat (wild animals hunted for food) and contact with infected bats. There is no evidence that mosquitos or other insects can transmit Ebola virus. Only mammals (for example, humans, bats, monkeys, and apes) have shown the ability to become infected with and spread Ebola virus.
+
+*note: all information above is provided by WHO and CDC. Please only take them as a source of information. They are not intended to be any medical purposes. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About Ebola" id="o93-yS-LqY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rND-YZ-5MD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="6455"/>
+        </scene>
+        <!--Ebola and influenza-->
+        <scene sceneID="ywK-1Q-1ey">
+            <objects>
+                <viewController id="apC-O7-UFb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DIt-ET-GOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hTO-Gz-dpY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Basically, Ebola and influenza are two different type of viruses, but they do share 
+some early symptoms: 
+
+Fever (greater than 38.6°C or 101.5°F)
+Muscle pain
+Headache
+Vomiting
+Malaise  
+
+But, Ebola may cause some further symptoms that are much severer. Such as:
+
+Weakness
+Internal bleeding 
+External bleeding (out of every orifice) 
+Very high fever (100º-106º) 
+Body aches 
+Blood red eyes 
+Lesions on the skin 
+"The Black Vomit" 
+Severe Pain 
+Liquifying of the organs 
+Blindingly painful headache behind the eyes 
+Seizures 
+and others. 
+
+In addition, there transmission method is different. Ebola is spread through direct contact (through broken skin or mucous membranes in, for example, the eyes, nose, or mouth) with
+blood or body fluids (including but not limited to urine, saliva, sweat, feces, vomit, breast milk, and semen) of a person who is sick with Ebola
+objects (like needles and syringes) that have been contaminated with the virus
+infected animals
+Ebola is not spread through the air or by water, or in general, by food. However, in Africa, Ebola may be spread as a result of handling bushmeat (wild animals hunted for food) and contact with infected bats. There is no evidence that mosquitos or other insects can transmit Ebola virus. Only mammals (for example, humans, bats, monkeys, and apes) have shown the ability to become infected with and spread Ebola virus.
+
+ * This information is provided by CDC and WHO, it can only be used for advisor information for your knowledge. It can not be used as a diagnose  advice. If you have any questions or concerns about your symptoms, call your doctor or local medical service directly. </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ebola and influenza" id="236-mj-k4F"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwd-32-2ba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224" y="6455"/>
+        </scene>
+        <!--How can HHeal help?-->
+        <scene sceneID="uXq-Io-inf">
+            <objects>
+                <viewController id="uc5-SN-eso" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HWK-0m-mai">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1RT-E6-tsx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">So far, there is no FDA-approved vaccine available for Ebola. Two of important advices to prevent your self from Ebola are:
+
+1. As there is no approved vaccine for Ebola, and no clearly known medicine can effectively treat Ebola. The strength of your immune system will play a very critical role to prevent and fight again Ebola. HHeal provides six recommendations that boost your immune system and decrease your flu risk. Following these recommendations might help you to prevent Ebola. 
+
+2. HHeal uses a crowdsourcing database to estimate the risk of your exposure to influenza virus. Because Ebola has almost same symptoms as influenza at the very early stage, your estimated flu risk might indicate the risk of your exposure to Ebola as a side effect. This assumption is based on the outbreak of Ebola in US. Please do not worry about your exposure risk too much at this moment, because there are only a limited number of Ebola cases reported in US, and they are all carefully under control. 
+
+*All hypothesis above have not been proven by any researches or reports. Please only take them as a source of information. They are not intended to be any medical purposes. </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="How can HHeal help?" id="g5g-st-YCz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNz-kK-wmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592" y="6455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5OK-mc-eD2">
+            <objects>
+                <navigationController id="Q6g-9C-8yu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fal-Ec-auO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AeF-p7-g4J" kind="relationship" relationship="rootViewController" id="Mu7-Pp-eGw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AAA-Yx-yil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="5760"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="80K-8z-ric">
             <objects>
                 <viewController id="jvK-pa-Clw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4VW-eT-6RZ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" id="1yI-Gw-KiC">
@@ -1240,34 +1621,43 @@ You can change your location service settings: Settings--&gt;HHeal--&gt; Privacy
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuk-Bi-y7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="5827"/>
+            <point key="canvasLocation" x="1870" y="5199"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Eab-U1-xXK">
             <objects>
                 <viewController id="tw3-e0-rRw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2rl-J9-iUd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="Ril-eg-1ta">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="902"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gJR-af-VWy">
+                                <rect key="frame" x="6" y="0.0" width="320" height="1720"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">HHeal TERMS OF USE
 
 AGREEMENT
-These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal's Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
+These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
 
 PRIVACY POLICY
 By using the Services, You consent to the collection and use of certain information about You, as specified in the Privacy Policy. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.
 
-THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP IS PROVIDED OR ASSUMED
-HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and MyFitnessPal does not provide medical services or render medical advice.
+THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP
+HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and HHeal does not provide medical services or render medical advice.
 
 
 RISK ASSUMPTION
-YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, THAT MAY RESULT FROM YOUR USE OF THE SERVICES.</string>
+YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, WHICH MAY RESULT FROM YOUR USE OF THE SERVICES.
+
+DISCLAIMER
+
+You should consult a licensed physician prior to beginning or modifying your diet, nutrition intake, or sleep patterns. And you acknowledge that HHeal has advised you of the necessity for obtaining such consultation. HHeal is a source of imformation, but it does not provide any medical advices. In no event shall HHeal and its developers be liable for any death or bodily injury that you suffer, or that you cause to ay third party, in connection with your use of the app or any activity you undertake in connection with your use of the app. 
+Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
+
+SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
+
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1285,7 +1675,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="xtA-m6-Mkc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNq-yB-UqA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="f7F-L0-DW9">
@@ -1309,7 +1699,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
         <scene sceneID="Nvp-x2-93y">
             <objects>
                 <navigationController definesPresentationContext="YES" id="kz0-fW-hKC" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u2v-JV-DEJ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1326,7 +1715,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="4eA-F7-bcb" customClass="ContactUsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5X-hf-pNK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yaq-rw-zPo">
@@ -1389,7 +1778,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="drm-In-5sG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wa1-Kg-CoT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="DEM-Mw-LjM">
@@ -1397,14 +1786,12 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">How does this app work?
-
-1.	Your local flu risk is provided by CDC weekly flu activity reports http://www.cdc.gov/flu/weekly/fluactivitysurv.htm. 
-2.	Initially, your personal flu risk is equal to your local flu risk but it will be altered by potential flu risk that is close to you and your personal immune system health. 
-3.	If you have been exposed to a high flu risk environment, such as a theater, or a class with flu symptom reporters, your potential flu risk will be increased. 
-4.	If you follow the six recommended daily trainings that have been believed to be effective to reduce your flu risk, you flu risk will be decrease significantly. 
-5.	If you report a flu-like symptom, your flu risk will remain 100% for 7 days.
-6.	The flu risk is calculated by an equation that developed by Na Li (Ph.D) and Changkun Zhao (ABD) based on existing medical and epidemiological literatures. If you are interested in the details of our app, please email: HHealFeedback@gmail.com.
-</string>
+ 
+HiHeal provides a clean and user-friendly interface to help you keeping track of your local flu risk that derived from CDC weekly flu report. More importantly, HiHeal develops an effective algorithm to estimate your personal flu risk, and helps you to boost your personal immune system to combat flu. This estimation algorithm is based on a crowdsourcing database that can identify flu symptom cases that happened around you. So, the app can estimate a transmission risk that will be added to your personal flu risk. In addition, the app provides six recommended trainings (proven to be effective by medical and epidemiological researches) that can help you strengthen your immune system and reduce the flu risk.
+ 
+Note:
+1) This app only collect location data when you open it, we do not find any significant battery life decreases from our tests.
+2) This app is not intended to be used as a medical device, but as a demonstration of user's potential flu risk.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1422,7 +1809,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="sor-1x-Kit" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3q6-Md-efH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="Rj6-ra-2at">
@@ -1447,7 +1834,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <tableViewController id="vsS-4s-9mD" customClass="RiskHistoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pkL-Eb-D6p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1543,7 +1930,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="ups-0P-GLA" customClass="LineChartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fl1-wL-ifF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1557,7 +1944,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
         <scene sceneID="hqX-ua-RSL">
             <objects>
                 <navigationController definesPresentationContext="YES" id="SQg-D8-D8P" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pLx-ZB-goW">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1574,7 +1960,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <tableViewController id="6ei-aG-vno" customClass="ProfileTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Qa-LL-90Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1735,7 +2121,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="JU6-y2-z9N" customClass="CardSelectViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ErU-gC-DRr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CU5-ui-31M">
@@ -1764,7 +2150,6 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
         <scene sceneID="fFR-7x-zxg">
             <objects>
                 <navigationController id="TH3-7T-uGa" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ase-tU-UOs">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1781,7 +2166,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController id="Ju8-1Y-u7a" customClass="TrainingHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Iy-7D-kkz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hog-Zv-Apm">
@@ -1810,7 +2195,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="mAU-PJ-YNf" customClass="ReportFluViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jVa-q4-pqy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rIG-Wd-dr4">
@@ -1847,7 +2232,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vJT-4E-D5O">
-                                <rect key="frame" x="25" y="404" width="271" height="56"/>
+                                <rect key="frame" x="25" y="441" width="271" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -1868,6 +2253,10 @@ layer.masksToBoundsayer.masksToBounds</string>
                                     <action selector="reportButtonClicked:" destination="mAU-PJ-YNf" eventType="touchUpInside" id="cUi-Rb-X2a"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-50.png" id="vbk-MK-dx5">
+                                <rect key="frame" x="21" y="447" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="60t-iw-L20">
                                 <rect key="frame" x="0.0" y="63" width="320" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1876,10 +2265,6 @@ layer.masksToBoundsayer.masksToBounds</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-50.png" id="vbk-MK-dx5">
-                                <rect key="frame" x="21" y="407" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1903,11 +2288,11 @@ layer.masksToBoundsayer.masksToBounds</string>
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="S3e-4c-V3b" customClass="BarChartViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Njx-tw-yoe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kpr-5y-4Kk">
-                                <rect key="frame" x="0.0" y="35" width="50" height="50"/>
+                                <rect key="frame" x="6" y="7" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="location-50.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1930,7 +2315,7 @@ layer.masksToBoundsayer.masksToBounds</string>
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="1nU-wO-STF" customClass="ScrollCardViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JKl-He-UaE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2021,6 +2406,7 @@ layer.masksToBoundsayer.masksToBounds</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Ebola-48.png" width="48" height="48"/>
         <image name="about-32.png" width="32" height="32"/>
         <image name="calculator-32.png" width="32" height="32"/>
         <image name="cover_effect.png" width="685" height="326"/>
