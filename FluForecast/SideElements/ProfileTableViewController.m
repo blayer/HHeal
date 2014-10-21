@@ -67,15 +67,15 @@
         NSString *ageGroup=[NSString stringWithFormat:@"%@",
                             [responseObject objectForKey:@"agegroup"]];
         
-        if ([ageGroup isEqualToString:@"1"])
+        if ([ageGroup isEqualToString:@"0"])
             [self.age setTitle:@"0~4" forState:UIControlStateNormal];
-        else if ([ageGroup isEqualToString:@"2"])
+        else if ([ageGroup isEqualToString:@"1"])
             [self.age setTitle:@"5~24" forState:UIControlStateNormal];
-        else if ([ageGroup isEqualToString:@"3"])
+        else if ([ageGroup isEqualToString:@"2"])
             [self.age setTitle:@"25~49" forState:UIControlStateNormal];
-        else if ([ageGroup isEqualToString:@"4"])
+        else if ([ageGroup isEqualToString:@"3"])
             [self.age setTitle:@"50~64" forState:UIControlStateNormal];
-        else if ([ageGroup isEqualToString:@"5"])
+        else if ([ageGroup isEqualToString:@"4"])
             [self.age setTitle:@"65 and up" forState:UIControlStateNormal];
         
         [self.state.titleLabel sizeToFit];
@@ -104,15 +104,15 @@
     NSString *ageGroup=[NSString stringWithFormat:@"%@",
                         [defaults objectForKey:@"agegroup"]];
     
-    if ([ageGroup isEqualToString:@"1"])
+    if ([ageGroup isEqualToString:@"0"])
         [self.age setTitle:@"0~4" forState:UIControlStateNormal];
-    else if ([ageGroup isEqualToString:@"2"])
+    else if ([ageGroup isEqualToString:@"1"])
         [self.age setTitle:@"5~24" forState:UIControlStateNormal];
-    else if ([ageGroup isEqualToString:@"3"])
+    else if ([ageGroup isEqualToString:@"2"])
         [self.age setTitle:@"25~49" forState:UIControlStateNormal];
-    else if ([ageGroup isEqualToString:@"4"])
+    else if ([ageGroup isEqualToString:@"3"])
         [self.age setTitle:@"50~64" forState:UIControlStateNormal];
-    else if ([ageGroup isEqualToString:@"5"])
+    else if ([ageGroup isEqualToString:@"4"])
         [self.age setTitle:@"65 and up" forState:UIControlStateNormal];
     
     [self.state.titleLabel sizeToFit];

@@ -1,5 +1,5 @@
 PODS:
-  - ActionSheetPicker-3.0 (1.1.10)
+  - ActionSheetPicker-3.0 (1.1.21)
   - AFNetworking (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
@@ -29,13 +29,13 @@ PODS:
   - UIImage+BlurredFrame (0.0.4)
 
 DEPENDENCIES:
-  - ActionSheetPicker-3.0 (~> 1.1.10)
+  - ActionSheetPicker-3.0 (~> 1.1.21)
   - AFNetworking (~> 2.0)
   - BlurryModalSegue
   - SVPullToRefresh
 
 SPEC CHECKSUMS:
-  ActionSheetPicker-3.0: bd085918c9d6d5a07eee337f209e67858a6f5605
+  ActionSheetPicker-3.0: 710a485097a467de2900e2a286c680bd49e4ce1e
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   BlurryModalSegue: 8f7d9d0ac4804520d86c48bbad37394232d0ac69
   MZAppearance: c88502c0c2345120630c34e09d5ff09e2969ba30

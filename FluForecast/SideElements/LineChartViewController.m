@@ -90,11 +90,12 @@
         NSString *personal=[log objectForKeyedSubscript:@"personalrate"];
         NSString *national=[log objectForKeyedSubscript:@"standardrate"];
         NSNumber *nationalFluRate = [NSNumber numberWithFloat:([national floatValue])*100-DifferenceOfLines ];
-        NSNumber *personalFluRate = [NSNumber numberWithFloat:([personal floatValue])*100 ];
-        
+        NSNumber *personalFluRate = [NSNumber numberWithFloat:([personal floatValue])*100 ] ;
         
         if (self.retriveDays==7){
-            [self.dateHistory addObject:date];
+            NSArray *subdate=[date componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            NSString *day= [subdate objectAtIndex:2]; //why at the third objects?
+            [self.dateHistory addObject:day];
         }
         
         if (self.retriveDays==30)

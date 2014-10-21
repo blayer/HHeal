@@ -36,6 +36,12 @@
     self.layer.cornerRadius = _barRadius;
 }
 
+-(void) setBarValue:(float)barValue
+{
+    _barValue=barValue;
+}
+
+
 
 - (void)setGrade:(float)grade
 {

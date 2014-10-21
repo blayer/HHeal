@@ -56,7 +56,6 @@
 		831C354719E23A8100BF5CB8 /* PNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C353C19E23A8100BF5CB8 /* PNPieChart.m */; };
 		831C354819E23A8100BF5CB8 /* PNPieChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C353E19E23A8100BF5CB8 /* PNPieChartDataItem.m */; };
 		831EF98619DF450F009F5FCA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831EF98519DF450F009F5FCA /* MainViewController.m */; };
-		832F3ACB19E9AAC9007E0845 /* MainBoard_4s.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832F3AC919E9AAC9007E0845 /* MainBoard_4s.storyboard */; };
 		8337BC0919C0DC340066C625 /* RiskHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */; };
 		8337BC0F19C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
 		8337BC1019C2A1D00066C625 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */; };
@@ -70,6 +69,9 @@
 		8376908F19E8CC9500332AAD /* cover_effect.png in Resources */ = {isa = PBXBuildFile; fileRef = 8376908E19E8CC9500332AAD /* cover_effect.png */; };
 		8377CF6619D0B90500F8BA9B /* ribbon_yellow-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8377CF6519D0B90500F8BA9B /* ribbon_yellow-48.png */; };
 		8377CF6819D0C44500F8BA9B /* ribbon_grey-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8377CF6719D0C44500F8BA9B /* ribbon_grey-48.png */; };
+		8382BCE019EB19AB00E9BFE5 /* EbolaRiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8382BCDF19EB19AB00E9BFE5 /* EbolaRiskViewController.m */; };
+		8382BCE219EB274700E9BFE5 /* Ebola-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8382BCE119EB274700E9BFE5 /* Ebola-48.png */; };
+		8382BCE519EC55A800E9BFE5 /* MainBoard_4s.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8382BCE319EC55A800E9BFE5 /* MainBoard_4s.storyboard */; };
 		8382C9EF197DAEFF008E125C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9EE197DAEFF008E125C /* Foundation.framework */; };
 		8382C9F1197DAEFF008E125C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9F0197DAEFF008E125C /* CoreGraphics.framework */; };
 		8382C9F3197DAEFF008E125C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8382C9F2197DAEFF008E125C /* UIKit.framework */; };
@@ -100,6 +102,7 @@
 		83B3220C19E35546004DD6B2 /* ActivityHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3220B19E35546004DD6B2 /* ActivityHub.m */; };
 		83B3220F19E367DC004DD6B2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3220E19E367DC004DD6B2 /* RootViewController.m */; };
 		83B72E9319BE142400584BA1 /* logout-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B72E9219BE142400584BA1 /* logout-32.png */; };
+		83C20D1819ED611600957E03 /* forward-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C20D1719ED611600957E03 /* forward-50.png */; };
 		83C5624C1980C9A100AFD2A3 /* MainBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C5624E1980C9A100AFD2A3 /* MainBoard.storyboard */; };
 		83C8C6BB19869AAD00E34228 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C8C6BA19869AAD00E34228 /* RegisterViewController.m */; };
 		83C8C6C01988359A00E34228 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C8C6BF1988359A00E34228 /* LoginViewController.m */; };
@@ -189,7 +192,6 @@
 		831C353E19E23A8100BF5CB8 /* PNPieChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNPieChartDataItem.m; sourceTree = "<group>"; };
 		831EF98419DF450F009F5FCA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		831EF98519DF450F009F5FCA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		832F3ACA19E9AAC9007E0845 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainBoard_4s.storyboard; sourceTree = "<group>"; };
 		8337BC0719C0DC340066C625 /* RiskHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskHistoryTableViewController.h; sourceTree = "<group>"; };
 		8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskHistoryTableViewController.m; sourceTree = "<group>"; };
 		8337BC0E19C2A1D00066C625 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -205,6 +207,10 @@
 		8376908E19E8CC9500332AAD /* cover_effect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover_effect.png; sourceTree = "<group>"; };
 		8377CF6519D0B90500F8BA9B /* ribbon_yellow-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_yellow-48.png"; sourceTree = "<group>"; };
 		8377CF6719D0C44500F8BA9B /* ribbon_grey-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon_grey-48.png"; sourceTree = "<group>"; };
+		8382BCDE19EB19AB00E9BFE5 /* EbolaRiskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EbolaRiskViewController.h; sourceTree = "<group>"; };
+		8382BCDF19EB19AB00E9BFE5 /* EbolaRiskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EbolaRiskViewController.m; sourceTree = "<group>"; };
+		8382BCE119EB274700E9BFE5 /* Ebola-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ebola-48.png"; sourceTree = "<group>"; };
+		8382BCE419EC55A800E9BFE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainBoard_4s.storyboard; sourceTree = "<group>"; };
 		8382C9EB197DAEFF008E125C /* HHeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8382C9EE197DAEFF008E125C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8382C9F0197DAEFF008E125C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -256,6 +262,7 @@
 		83B3220D19E367DC004DD6B2 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		83B3220E19E367DC004DD6B2 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		83B72E9219BE142400584BA1 /* logout-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-32.png"; sourceTree = "<group>"; };
+		83C20D1719ED611600957E03 /* forward-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-50.png"; sourceTree = "<group>"; };
 		83C5624D1980C9A100AFD2A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainBoard.storyboard; sourceTree = "<group>"; };
 		83C8C6B919869AAD00E34228 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		83C8C6BA19869AAD00E34228 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -307,6 +314,8 @@
 		8304DBC519957319006E7BD7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				83C20D1719ED611600957E03 /* forward-50.png */,
+				8382BCE119EB274700E9BFE5 /* Ebola-48.png */,
 				83FEE39319E3977600AB2028 /* report_card-48.png */,
 				83FEE39119E3973B00AB2028 /* report_card-50.png */,
 				83FEE38F19E36D4600AB2028 /* plus-50.png */,
@@ -480,7 +489,7 @@
 				835159A71982DCD20093E478 /* BarChartViewController.h */,
 				835159A81982DCD20093E478 /* BarChartViewController.m */,
 				83C5624E1980C9A100AFD2A3 /* MainBoard.storyboard */,
-				832F3AC919E9AAC9007E0845 /* MainBoard_4s.storyboard */,
+				8382BCE319EC55A800E9BFE5 /* MainBoard_4s.storyboard */,
 				83C8C6BE1988359A00E34228 /* LoginViewController.h */,
 				83C8C6BF1988359A00E34228 /* LoginViewController.m */,
 				83C8C6B919869AAD00E34228 /* RegisterViewController.h */,
@@ -555,6 +564,8 @@
 				83F23F0719BD587400F94DFD /* SettingTableViewController.m */,
 				8337BC0719C0DC340066C625 /* RiskHistoryTableViewController.h */,
 				8337BC0819C0DC340066C625 /* RiskHistoryTableViewController.m */,
+				8382BCDE19EB19AB00E9BFE5 /* EbolaRiskViewController.h */,
+				8382BCDF19EB19AB00E9BFE5 /* EbolaRiskViewController.m */,
 			);
 			path = SideElements;
 			sourceTree = "<group>";
@@ -666,6 +677,7 @@
 				834A61AB19A164EA00FC8753 /* user-32.png in Resources */,
 				83FEE39219E3973B00AB2028 /* report_card-50.png in Resources */,
 				8377CF6619D0B90500F8BA9B /* ribbon_yellow-48.png in Resources */,
+				8382BCE519EC55A800E9BFE5 /* MainBoard_4s.storyboard in Resources */,
 				83FEE39419E3977600AB2028 /* report_card-48.png in Resources */,
 				83FEE39019E36D4600AB2028 /* plus-50.png in Resources */,
 				8304DC18199B01C2006E7BD7 /* feedback-32.png in Resources */,
@@ -688,17 +700,18 @@
 				8304DC2E199B17B0006E7BD7 /* water-75.png in Resources */,
 				8304DC13199AFF7A006E7BD7 /* history-32.png in Resources */,
 				8304DC37199B2753006E7BD7 /* medal_grey-48.png in Resources */,
+				83C20D1819ED611600957E03 /* forward-50.png in Resources */,
 				834A61AA19A164EA00FC8753 /* password-32.png in Resources */,
 				8304DC12199AFF7A006E7BD7 /* calculator-32.png in Resources */,
 				83C5624C1980C9A100AFD2A3 /* MainBoard.storyboard in Resources */,
 				8304DC11199AFF7A006E7BD7 /* about-32.png in Resources */,
 				8304DBC819957319006E7BD7 /* edit-50.png in Resources */,
 				8304DC27199B17B0006E7BD7 /* bed-100.png in Resources */,
+				8382BCE219EB274700E9BFE5 /* Ebola-48.png in Resources */,
 				8304DC34199B1DFA006E7BD7 /* vegan_food-100.png in Resources */,
 				8304DBF8199AB4EE006E7BD7 /* medal-26.png in Resources */,
 				8304DC30199B17B0006E7BD7 /* yoga-100.png in Resources */,
 				8304DC0A199AFC22006E7BD7 /* yoga.jpg in Resources */,
-				832F3ACB19E9AAC9007E0845 /* MainBoard_4s.storyboard in Resources */,
 				8304DBE419980884006E7BD7 /* checkmarkgreen-25.png in Resources */,
 				8304DC08199AFA4E006E7BD7 /* HHeal-Info.plist in Resources */,
 				8304DC2C199B17B0006E7BD7 /* pill-64.png in Resources */,
@@ -763,6 +776,7 @@
 				83A2A94019AC1F920047E8D6 /* CalculatorViewController.m in Sources */,
 				83F23F0819BD587400F94DFD /* SettingTableViewController.m in Sources */,
 				8382C9FF197DAEFF008E125C /* AppDelegate.m in Sources */,
+				8382BCE019EB19AB00E9BFE5 /* EbolaRiskViewController.m in Sources */,
 				8304DC05199AFA39006E7BD7 /* main.m in Sources */,
 				831C354519E23A8100BF5CB8 /* PNLineChartData.m in Sources */,
 				8382CA86197F5F21008E125C /* AMSlideMenuContentSegue.m in Sources */,
@@ -816,10 +830,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		832F3AC919E9AAC9007E0845 /* MainBoard_4s.storyboard */ = {
+		8382BCE319EC55A800E9BFE5 /* MainBoard_4s.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				832F3ACA19E9AAC9007E0845 /* en */,
+				8382BCE419EC55A800E9BFE5 /* en */,
 			);
 			name = MainBoard_4s.storyboard;
 			sourceTree = "<group>";

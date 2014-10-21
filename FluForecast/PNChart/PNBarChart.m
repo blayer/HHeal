@@ -41,7 +41,7 @@
         _chartMargin         = 15.0;
         _barRadius           = 2.0;
         _showChartBorder     = NO;
-        _yChartLabelWidth    = 18;
+        _yChartLabelWidth    = 35;
     }
 
     return self;
@@ -57,9 +57,10 @@
 
 - (void)getYValueMax:(NSArray *)yLabels
 {
-    int max = [[yLabels valueForKeyPath:@"@max.intValue"] intValue];
     
-    _yValueMax = (int)max+2;
+    float max = [[yLabels valueForKeyPath:@"@max.floatValue"] floatValue];
+    
+    _yValueMax = max;
     
     if (_yValueMax == 0) {
         _yValueMax = _yMinValue;
@@ -115,17 +116,23 @@
                 
                 [_labels addObject:label];
                 [self addSubview:label];
+                
+                
+              
+                
             }
         }
         
         //Add y labels
         
         float yLabelSectionHeight = (self.frame.size.height - _chartMargin * 2 - xLabelHeight) / _yLabelSum;
-        
+        if((float)_yMaxValue>=5.0f){
         for (int index = 0; index < _yLabelSum; index++) {
 
+            
             NSString *labelText = _yLabelFormatter((float)_yValueMax * ( (_yLabelSum - index) / (float)_yLabelSum ));
             
+
             PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(0,
                                                                                   yLabelSectionHeight * index + _chartMargin - yLabelHeight/2.0,
                                                                                   _yChartLabelWidth,
@@ -134,13 +141,37 @@
             label.textColor = _labelTextColor;
             [label setTextAlignment:NSTextAlignmentRight];
             label.text = labelText;
-
             [_labels addObject:label];
             [self addSubview:label];
 
-        }
-    }
+        }}
     
+        else{
+            for (int index = 0; index < _yLabelSum; index++) {
+                
+                NSString *labelText=[NSString stringWithFormat:@"%.1f",(float)_yValueMax * ( (_yLabelSum - index) / (float)_yLabelSum ) ];
+                
+                PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(0,
+                                                                                      yLabelSectionHeight * index + _chartMargin - yLabelHeight/2.0,
+                                                                                      _yChartLabelWidth,
+                                                                                      yLabelHeight)];
+                label.font = _labelFont;
+                label.textColor = _labelTextColor;
+                [label setTextAlignment:NSTextAlignmentRight];
+                label.text = labelText;
+                [_labels addObject:label];
+                [self addSubview:label];
+                
+                
+                
+                
+                
+            }
+        }
+        
+        
+    }
+
 
     [self viewCleanupForCollection:_bars];
     
@@ -205,9 +236,19 @@
         //For Click Index
         bar.tag = index;
         
+        PNChartLabel * valueText = [[PNChartLabel alloc] initWithFrame:CGRectZero];
+        valueText.text=@"test";
+        valueText.font = _labelFont;
+        valueText.textColor = _labelTextColor;
+        valueText.center = CGPointMake(index *  _xLabelWidth + _chartMargin + _xLabelWidth /2.0,
+                                       100);
+       
+        
         
         [_bars addObject:bar];
         [self addSubview:bar];
+        
+     //    [self bringSubviewToFront:valueText];//?????????
 
         index += 1;
     }

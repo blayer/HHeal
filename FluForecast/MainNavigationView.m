@@ -41,21 +41,23 @@
         case 3:
             identifier=@"TrainingLogSegue";
             break;
-            
         case 4:
+            identifier=@"EbolaSegue";
+            break;
+        case 5:
             identifier=@"CalculatorSegue";
             break;
             
-        case 5:
+        case 6:
            identifier=@"ProfileSegue";
             break;
-         case 6:
+         case 7:
           identifier=@"FeedbackSegue";
            break;
-         case 7:
+         case 8:
             identifier=@"SettingSegue";
             break;
-        case 8:
+        case 9:
           identifier=@"AboutSegue";
            break;
  

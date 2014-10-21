@@ -200,15 +200,15 @@ else
     {   
         NSNumber *ageGroup=[[NSNumber alloc]init];
         if ([self.Age.text isEqualToString:@"0~4"])
-            ageGroup=@1;
+            ageGroup=@0;
         else if ([self.Age.text isEqualToString:@"5~24"])
-            ageGroup=@2;
+            ageGroup=@1;
         else if ([self.Age.text isEqualToString:@"25~49"])
-            ageGroup=@3;
+            ageGroup=@2;
         else if([self.Age.text isEqualToString:@"50~64"])
-            ageGroup=@4;
+            ageGroup=@3;
         else if([self.Age.text isEqualToString:@"65 and up"])
-            ageGroup=@5;
+            ageGroup=@4;
         
         NSDate *date= [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

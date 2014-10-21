@@ -141,11 +141,12 @@
     
     UILocalNotification *remindnotification = [[UILocalNotification alloc]init];
     [remindnotification setAlertBody:reminderMessage];
-    int timeInterval=3600*interval;
+    if(interval!=0)
+    { int timeInterval=3600*interval;
     [remindnotification setFireDate:[NSDate dateWithTimeIntervalSinceNow:timeInterval]];
     [remindnotification setTimeZone:[NSTimeZone defaultTimeZone]];
     [application setScheduledLocalNotifications:[NSArray arrayWithObject:remindnotification]];
-    
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

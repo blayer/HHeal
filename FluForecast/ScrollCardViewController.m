@@ -147,12 +147,15 @@
         myView.backgroundColor = [UIColor whiteColor];
         
         UIButton *butt=[UIButton buttonWithType:UIButtonTypeCustom ];
-        [butt setFrame:CGRectMake(100, 25, 220,60 )];
+        [butt setFrame:CGRectMake(290, 45 , 30,30 )];
+        
+        UIImage *disclosure = [UIImage imageNamed:@"forward-50.png"];
+        [butt setImage:disclosure forState:UIControlStateNormal];
         
         [butt setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)];
         [butt setTitle:title forState:UIControlStateNormal];
          butt.titleLabel.font =[UIFont boldSystemFontOfSize:18.0f];
-        [butt setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [butt setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
         butt.titleLabel.adjustsFontSizeToFitWidth = TRUE;
 
         [butt setBackgroundColor:[UIColor whiteColor]];
@@ -160,13 +163,21 @@
         [butt addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
         [myView addSubview:butt];
         
+        UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(70, 30 , 220,60 )];
+        [titleLabel setText:title];
+        titleLabel.adjustsFontSizeToFitWidth=YES;
+        [titleLabel setTextColor:[UIColor grayColor]];
+        [titleLabel setFont:[UIFont boldSystemFontOfSize:18.0f]];
+        titleLabel.textAlignment=NSTextAlignmentCenter;
+        [myView addSubview:titleLabel];
+        
+        
+        
         NSString *iconName=[self.icons objectForKey:title];
-        
-        
-        UIImageView *icon=[[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 70.0, 70.0)];
+        UIImageView *icon=[[UIImageView alloc]initWithFrame:CGRectMake(10, 30, 60.0, 60.0)];
         icon.image=[UIImage imageNamed:[NSString stringWithFormat:iconName, i] ];
         
-        UIImageView *ribbon=[[UIImageView alloc]initWithFrame:CGRectMake(50, 50, 40.0, 40.0)];
+        UIImageView *ribbon=[[UIImageView alloc]initWithFrame:CGRectMake(35, 50, 40.0, 40.0)];
         ribbon.image=[UIImage imageNamed:@"ribbon_yellow-48.png"];
         
         

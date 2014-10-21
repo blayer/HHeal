@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface EbolaRiskViewController : UIViewController
+#import "PNChartDelegate.h"
+#import "PNChart.h"
+@interface EbolaRiskViewController : UIViewController<PNChartDelegate>
+@property (nonatomic) PNBarChart *barChart;
+@property (weak, nonatomic) IBOutlet UILabel *regionalCase;
+@property (weak, nonatomic) IBOutlet UILabel *nationalCase;
 
 @end

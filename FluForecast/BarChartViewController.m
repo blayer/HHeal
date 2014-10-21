@@ -13,6 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ActivityHub.h"
 
+
 @interface BarChartViewController ()
 @property NSNumber *nationalFluRate;
 @property NSNumber *personalFluRate;
@@ -52,6 +53,8 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {   [self buildView];
+    [self.view setNeedsDisplay];
+
 }
 
 
@@ -95,11 +98,8 @@
         [defaults setObject:[self.dict objectForKey:@"personalrate"] forKey:@"personalrate"];
         [defaults setObject:[self.dict objectForKey:@"standardrate"] forKey:@"standardrate"];
         
-
-        
-        
-        self.nationalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"standardrate"] floatValue])*100 ];
-        self.personalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"personalrate"] floatValue])*100 ];
+        self.nationalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"standardrate"] floatValue])];
+        self.personalFluRate = [NSNumber numberWithFloat:([[self.dict valueForKey:@"personalrate"] floatValue])];
         
         [self buildBarChart];
         
@@ -146,7 +146,7 @@
         return labelText;
     };
     self.barChart.labelMarginTop = 5.0;
-    [self.barChart setXLabels:@[@"CDC local risk(‱)",@"Your risk(‱)"]];
+    [self.barChart setXLabels:@[@"CDC local risk(%)",@"Your risk(%)"]];
     
     
     
@@ -178,23 +178,7 @@
  //  PNBar * bar = [self.barChart.bars objectAtIndex:barIndex];
     
     CABasicAnimation *animation= [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    
-    animation.fromValue= @0.1;
-    
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    
-    animation.toValue= @1.1; 
-    
-    animation.duration= 0.2;
-    
-    animation.repeatCount = 0;
-    
-    animation.autoreverses = YES;
-    
-    animation.removedOnCompletion = YES;
-    
-    animation.fillMode=kCAFillModeForwards;
-    
+        
  // [bar.layer addAnimation:animation forKey:@"Float"];
 }
 
@@ -202,18 +186,23 @@
 
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasReportOnce"])
-    {
+    {   NSDate *date=[NSDate dateWithTimeIntervalSince1970:100];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasReportOnce"];
+        [[NSUserDefaults standardUserDefaults] setObject:date forKey:@"lastreportdate"];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks for your first location report."
-                                                            message:@"Frequently report your current location can help us to better estimate your potential flu risk."
+                                                            message:@"Frequently reporting your current location can help us to identify your location and potential flu risks around you.To get a better flu risk estimation, please report your location when you are at a new public place."
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
         [alert show];
     }
+    else
+    {
+    if([self isTimeUp])
     
-    [self.reportView showActivityView];
+    {
+        [self.reportView showActivityView];
     [self.view addSubview:self.reportView];
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
@@ -241,6 +230,8 @@
     AFHTTPRequestOperationManager *AFmanager = [AFHTTPRequestOperationManager manager];
     [AFmanager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        NSDate *date=[NSDate date];
+        [[NSUserDefaults standardUserDefaults] setObject:date forKey:@"lastreportdate"];
         
         [self.reportView dismissActivityView];
         [self.reportView removeFromSuperview];
@@ -268,7 +259,27 @@
         
     }];
     
-         });
+    });}
+        
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reporting location too often"
+                                                            message:@"Reporting location too often can decrease the accuracy of your flu risk.We only allow to report location at most every 5 mins."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];}
+    }
+}
 
+-(BOOL) isTimeUp {
+    
+    NSDate *currentdate=[NSDate date];
+    NSDate *lastdate=[[NSUserDefaults standardUserDefaults] objectForKey:@"lastreportdate"];
+    NSTimeInterval intervel=[currentdate timeIntervalSinceDate:lastdate];
+    if(intervel>300)
+     return YES;
+    else
+    return NO;
 }
 @end

@@ -56,11 +56,19 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j4l-p5-I26">
                                 <rect key="frame" x="282" y="409" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="plus-50.png">
+                                <state key="normal" image="plus-50.png"/>
+                                <connections>
+                                    <segue destination="JU6-y2-z9N" kind="push" id="7iU-6O-yxy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dRh-ZR-PnW">
+                                <rect key="frame" x="279" y="364" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="help-32.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JU6-y2-z9N" kind="push" id="7iU-6O-yxy"/>
+                                    <segue destination="VBk-1Z-oGD" kind="push" id="pgW-Ok-I9o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7M6-Mk-iS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="667"/>
+            <point key="canvasLocation" x="1870" y="731"/>
         </scene>
         <!--Card Complete Note View Controller-->
         <scene sceneID="qlR-Tz-NSA">
@@ -184,23 +192,32 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="Sdv-xR-vom">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">HHeal TERMS OF USE
 
 AGREEMENT
-These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal's Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
+These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
 
 PRIVACY POLICY
 By using the Services, You consent to the collection and use of certain information about You, as specified in the Privacy Policy. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.
 
-THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP IS PROVIDED OR ASSUMED
-HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and MyFitnessPal does not provide medical services or render medical advice.
+THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP
+HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and HHeal does not provide medical services or render medical advice.
 
 
 RISK ASSUMPTION
-YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, THAT MAY RESULT FROM YOUR USE OF THE SERVICES.</string>
+YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, WHICH MAY RESULT FROM YOUR USE OF THE SERVICES.
+
+DISCLAIMER
+
+You should consult a licensed physician prior to beginning or modifying your diet, nutrition intake, or sleep patterns. And you acknowledge that HHeal has advised you of the necessity for obtaining such consultation. HHeal is a source of imformation, but it does not provide any medical advices. In no event shall HHeal and its developers be liable for any death or bodily injury that you suffer, or that you cause to ay third party, in connection with your use of the app or any activity you undertake in connection with your use of the app. 
+Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
+
+SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
+
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -599,6 +616,26 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i0J-2z-e3Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i0J-2z-e3Z" id="sV9-40-aiw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ebola-48.png" id="f65-cE-UPE">
+                                                    <rect key="frame" x="10" y="5" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ebola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y6y-Tx-hBV">
+                                                    <rect key="frame" x="60" y="4" width="150" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="72F-Zm-MrS">
                                         <rect key="frame" x="0.0" y="279" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -716,6 +753,7 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                         <segue destination="kz0-fW-hKC" kind="custom" identifier="FeedbackSegue" customClass="AMSlideMenuContentSegue" id="D9i-H6-chf"/>
                         <segue destination="Ch9-Ym-GTK" kind="custom" identifier="AboutSegue" customClass="AMSlideMenuContentSegue" id="3X8-c3-03n"/>
                         <segue destination="Iwi-BY-WWA" kind="custom" identifier="SettingSegue" customClass="AMSlideMenuContentSegue" id="wtU-JC-5xs"/>
+                        <segue destination="Q6g-9C-8yu" kind="custom" identifier="EbolaSegue" customClass="AMSlideMenuContentSegue" id="4TA-ze-s9f"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCO-Oh-Vzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1073,7 +1111,7 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mL5-Ww-Wej">
-                                                    <rect key="frame" x="18" y="11" width="130" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="130" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
@@ -1206,6 +1244,365 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
             </objects>
             <point key="canvasLocation" x="1503" y="4991"/>
         </scene>
+        <!--Ebola-->
+        <scene sceneID="yu2-k5-PvL">
+            <objects>
+                <tableViewController id="AeF-p7-g4J" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sRg-6c-wPs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="nL4-o6-XqR">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="2n9-j5-5eD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2n9-j5-5eD" id="WLm-B0-LbZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Ebola protection" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G15-bH-tsZ">
+                                                    <rect key="frame" x="20" y="11" width="166" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gNu-9e-5Ea" kind="push" id="MFA-Nc-CXJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="hHd-6Z-Isf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hHd-6Z-Isf" id="5Z9-Ds-Y3r">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Ebola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xnK-Ij-gt1">
+                                                    <rect key="frame" x="20" y="11" width="95" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="odk-La-SVR" kind="push" id="Wdz-NB-VhA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="PC9-GQ-oAk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PC9-GQ-oAk" id="g7Y-4e-l0M">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ebola and influenza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v1H-D0-qUV">
+                                                    <rect key="frame" x="20" y="14" width="150" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="apC-O7-UFb" kind="push" id="Dpe-y0-vh6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="N78-Cq-LkS">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N78-Cq-LkS" id="zcF-74-pVy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can HHeal help you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XN3-UQ-I5S">
+                                                    <rect key="frame" x="20" y="11" width="200" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uc5-SN-eso" kind="push" id="YNc-gN-hLu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="AeF-p7-g4J" id="ig8-iK-QCE"/>
+                            <outlet property="delegate" destination="AeF-p7-g4J" id="fkw-RF-mqD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ebola" id="2qW-9P-cbW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8K3-ES-oF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1234" y="5746"/>
+        </scene>
+        <!--Ebola Risk View Controller-->
+        <scene sceneID="HnB-e7-gua">
+            <objects>
+                <viewController id="gNu-9e-5Ea" customClass="EbolaRiskViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D4f-TH-iyu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Protection against transmissible diseases" textAlignment="center" selectable="NO" id="uUR-ZH-CMc">
+                                <rect key="frame" x="20" y="0.0" width="280" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N8W-DR-bRd">
+                                <rect key="frame" x="284" y="12" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="help-32.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YXB-2p-HTq" kind="push" id="sTA-pt-cWY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OWJ-TK-wVw">
+                                <rect key="frame" x="0.0" y="390" width="320" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.8292905746" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regional  Ebola cases:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Im-Gm-ygg">
+                                <rect key="frame" x="11" y="408" width="175" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="National Ebola cases:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BGa-6g-6hG">
+                                <rect key="frame" x="20" y="463" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ljk-Ac-NsK">
+                                <rect key="frame" x="200" y="396" width="131" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="unl-HG-rmC">
+                                <rect key="frame" x="200" y="451" width="131" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="u7g-Y5-VRr"/>
+                    <connections>
+                        <outlet property="nationalCase" destination="unl-HG-rmC" id="EUK-Jh-7Lm"/>
+                        <outlet property="regionalCase" destination="ljk-Ac-NsK" id="jCC-Xm-Bef"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9g-ph-Rvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1935" y="6455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="s6N-CU-dKp">
+            <objects>
+                <viewController id="YXB-2p-HTq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Slt-lt-Zpu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0Se-ev-FNp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">The score against transmissible diseases is based on the strength of immune system  and the your exposure frequency to transmissible diseases. The algorithm that we calculate this score is the same as the algorithm we calculate your flu risk. 
+
+We assume an average person with no daily immune system improvement and no exposure to high risk transmissible diseases has a score of 100. Clearly, you can keep track of your personal score against transmissible diseases  that visualized on the right bar, and compare it with an average person's score that visualized on the left bar.
+
+*All score are presented as a resource of information, it is not intended to be a medical advice on your personal health condition. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WiF-OA-Wg5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wR3-8Q-iSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="6450"/>
+        </scene>
+        <!--About Ebola-->
+        <scene sceneID="wwJ-t5-pr5">
+            <objects>
+                <viewController id="odk-La-SVR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UPd-rw-wHa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5HM-o7-OE0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Ebola virus disease (EVD), Ebola hemorrhagic fever (EHF) or simply Ebola is a disease of humans and other mammals caused by an ebolavirus. Symptoms start two days to three weeks after contracting the virus, with a fever, sore throat, muscle pain and headaches. Typically, vomiting, diarrhea and rash follow, along with decreased function of the liver and kidneys. Around this time, affected people may begin to bleed both within the body and externally.
+
+
+Symptoms of Ebola include
+
+Fever (greater than 38.6°C or 101.5°F)
+Severe headache
+Muscle pain
+Weakness
+Diarrhea
+Vomiting
+Abdominal (stomach) pain
+Unexplained hemorrhage (bleeding or bruising)
+Symptoms may appear anywhere from 2 to 21 days after exposure to Ebola, but the average is 8 to 10 days.
+
+Recovery from Ebola depends on good supportive clinical care and the patient’s immune response. People who recover from Ebola infection develop antibodies that last for at least 10 years.
+
+
+Transmission
+
+Because the natural reservoir host of Ebola viruses has not yet been identified, the manner in which the virus first appears in a human at the start of an outbreak is unknown. However, researchers believe that the first patient becomes infected through contact with an infected animal.
+
+When an infection does occur in humans, the virus can be spread in several ways to others. Ebola is spread through direct contact (through broken skin or mucous membranes in, for example, the eyes, nose, or mouth) with
+
+blood or body fluids (including but not limited to urine, saliva, sweat, feces, vomit, breast milk, and semen) of a person who is sick with Ebola
+objects (like needles and syringes) that have been contaminated with the virus
+infected animals
+Ebola is not spread through the air or by water, or in general, by food. However, in Africa, Ebola may be spread as a result of handling bushmeat (wild animals hunted for food) and contact with infected bats. There is no evidence that mosquitos or other insects can transmit Ebola virus. Only mammals (for example, humans, bats, monkeys, and apes) have shown the ability to become infected with and spread Ebola virus.
+
+*note: all information above is provided by WHO and CDC. Please only take them as a source of information. They are not intended to be any medical purposes. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About Ebola" id="o93-yS-LqY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rND-YZ-5MD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="6455"/>
+        </scene>
+        <!--Ebola and influenza-->
+        <scene sceneID="ywK-1Q-1ey">
+            <objects>
+                <viewController id="apC-O7-UFb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DIt-ET-GOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hTO-Gz-dpY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Basically, Ebola and influenza are two different type of viruses, but they do share 
+some early symptoms: 
+
+Fever (greater than 38.6°C or 101.5°F)
+Muscle pain
+Headache
+Vomiting
+Malaise  
+
+But, Ebola may cause some further symptoms that are much severer. Such as:
+
+Weakness
+Internal bleeding 
+External bleeding (out of every orifice) 
+Very high fever (100º-106º) 
+Body aches 
+Blood red eyes 
+Lesions on the skin 
+"The Black Vomit" 
+Severe Pain 
+Liquifying of the organs 
+Blindingly painful headache behind the eyes 
+Seizures 
+and others. 
+
+In addition, there transmission method is different. Ebola is spread through direct contact (through broken skin or mucous membranes in, for example, the eyes, nose, or mouth) with
+blood or body fluids (including but not limited to urine, saliva, sweat, feces, vomit, breast milk, and semen) of a person who is sick with Ebola
+objects (like needles and syringes) that have been contaminated with the virus
+infected animals
+Ebola is not spread through the air or by water, or in general, by food. However, in Africa, Ebola may be spread as a result of handling bushmeat (wild animals hunted for food) and contact with infected bats. There is no evidence that mosquitos or other insects can transmit Ebola virus. Only mammals (for example, humans, bats, monkeys, and apes) have shown the ability to become infected with and spread Ebola virus.
+
+ * This information is provided by CDC and WHO, it can only be used for advisor information for your knowledge. It can not be used as a diagnose  advice. If you have any questions or concerns about your symptoms, call your doctor or local medical service directly. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ebola and influenza" id="236-mj-k4F"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwd-32-2ba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224" y="6455"/>
+        </scene>
+        <!--How can HHeal help?-->
+        <scene sceneID="uXq-Io-inf">
+            <objects>
+                <viewController id="uc5-SN-eso" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HWK-0m-mai">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1RT-E6-tsx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">So far, there is no FDA-approved vaccine available for Ebola. Two of important advices to prevent your self from Ebola are:
+
+1. As there is no approved vaccine for Ebola, and no clearly known medicine can effectively treat Ebola. The strength of your immune system will play a very critical role to prevent and fight again Ebola. HHeal provides six recommendations that boost your immune system and decrease your flu risk. Following these recommendations might help you to prevent Ebola. 
+
+2. HHeal uses a crowdsourcing database to estimate the risk of your exposure to influenza virus. Because Ebola has almost same symptoms as influenza at the very early stage, your estimated flu risk might indicate the risk of your exposure to Ebola as a side effect. This assumption is based on the outbreak of Ebola in US. Please do not worry about your exposure risk too much at this moment, because there are only a limited number of Ebola cases reported in US, and they are all carefully under control. 
+
+*All hypothesis above have not been proven by any researches or reports. Please only take them as a source of information. They are not intended to be any medical purposes. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="How can HHeal help?" id="g5g-st-YCz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNz-kK-wmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592" y="6455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5OK-mc-eD2">
+            <objects>
+                <navigationController id="Q6g-9C-8yu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fal-Ec-auO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AeF-p7-g4J" kind="relationship" relationship="rootViewController" id="Mu7-Pp-eGw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AAA-Yx-yil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="5760"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="80K-8z-ric">
             <objects>
@@ -1232,7 +1629,7 @@ You can change your location service settings: Settings--&gt;HHeal--&gt; Privacy
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuk-Bi-y7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="5827"/>
+            <point key="canvasLocation" x="1870" y="5199"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Eab-U1-xXK">
@@ -1246,20 +1643,29 @@ You can change your location service settings: Settings--&gt;HHeal--&gt; Privacy
                                 <rect key="frame" x="6" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">HHeal TERMS OF USE
+                                <string key="text">HHeal TERMS OF USE
 
 AGREEMENT
-These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal's Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
+These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
 
 PRIVACY POLICY
 By using the Services, You consent to the collection and use of certain information about You, as specified in the Privacy Policy. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.
 
-THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP IS PROVIDED OR ASSUMED
-HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and MyFitnessPal does not provide medical services or render medical advice.
+THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP
+HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and HHeal does not provide medical services or render medical advice.
 
 
 RISK ASSUMPTION
-YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, THAT MAY RESULT FROM YOUR USE OF THE SERVICES.</mutableString>
+YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. YOU, ON BEHALF OF YOURSELF, YOUR PERSONAL REPRESENTATIVES AND YOUR HEIRS, HEREBY VOLUNTARILY AGREE TO RELEASE, WAIVE, DISCHARGE, HOLD HARMLESS, DEFEND AND INDEMNIFY HHEAL AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AFFILIATES, REPRESENTATIVES, SUBLICENSEES, SUCCESSORS, AND ASSIGNS FROM ANY AND ALL CLAIMS, ACTIONS OR LOSSES FOR BODILY INJURY, PROPERTY DAMAGE, WRONGFUL DEATH, EMOTIONAL DISTRESS, LOSS OF SERVICES OR OTHER DAMAGES OR HARM, WHETHER TO YOU OR TO THIRD PARTIES, WHICH MAY RESULT FROM YOUR USE OF THE SERVICES.
+
+DISCLAIMER
+
+You should consult a licensed physician prior to beginning or modifying your diet, nutrition intake, or sleep patterns. And you acknowledge that HHeal has advised you of the necessity for obtaining such consultation. HHeal is a source of imformation, but it does not provide any medical advices. In no event shall HHeal and its developers be liable for any death or bodily injury that you suffer, or that you cause to ay third party, in connection with your use of the app or any activity you undertake in connection with your use of the app. 
+Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
+
+SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
+
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1387,13 +1793,13 @@ YOU KNOWINGLY AND FREELY ASSUME ALL RISK WHEN USING APPLICATIONS AND SERVICES. Y
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">How does this app work?
+                                <string key="text">How does this app work?
  
-HiHeal provides a clean and user-friendly interface to help you keeping track of your local flu risk that derived from CDC weekly flu report. More importantly, HiHeal develops an effective algorithm to estimate your personal flu risk, and helps you to boost your personal immune system to combat flu. This estimation algorithm is based on a crowdsourcing database that can identify flu symptom cases that happened around you. So, the app can estimate a transmission risk that will be added to your personal flu risk. In addition, the app provides six recommended trainings (proven to be effective by medical and epidemiological researches) that can help you strengthen your immune system and reduce the flu risk.
+HHeal provides a clean and user-friendly interface to help you keeping track of your local flu risk that derived from CDC weekly flu report. More importantly, HHeal develops an effective algorithm to estimate your personal flu risk, and helps you to boost your personal immune system to combat flu. This estimation algorithm is based on a crowdsourcing database that can identify flu symptom cases that happened around you. So, the app can estimate a transmission risk that will be added to your personal flu risk. In addition, the app provides six recommended trainings (proven to be effective by medical and epidemiological researches) that can help you strengthen your immune system and reduce the flu risk.
  
 Note:
 1) This app only collect location data when you open it, we do not find any significant battery life decreases from our tests.
-2) This app is not intended to be used as a medical device, but as a demonstration of user's potential flu risk.</mutableString>
+2) This app is not intended to be used as a medical device, but as a demonstration of user's potential flu risk.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1792,6 +2198,30 @@ Note:
             </objects>
             <point key="canvasLocation" x="1693" y="-982"/>
         </scene>
+        <!--How to use this app?-->
+        <scene sceneID="Vg0-c8-L4e">
+            <objects>
+                <viewController id="VBk-1Z-oGD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AH9-Hb-uJo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="To be added." id="tkH-CJ-8Ne">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="How to use this app?" id="rDD-BR-mfE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bxx-AB-jtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362" y="1635"/>
+        </scene>
         <!--Report Flu-->
         <scene sceneID="B0S-YY-7Ea">
             <objects>
@@ -1894,7 +2324,7 @@ layer.masksToBoundsayer.masksToBounds</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kpr-5y-4Kk">
-                                <rect key="frame" x="6" y="7" width="50" height="50"/>
+                                <rect key="frame" x="-2" y="2" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="location-50.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2008,6 +2438,7 @@ layer.masksToBoundsayer.masksToBounds</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Ebola-48.png" width="48" height="48"/>
         <image name="about-32.png" width="32" height="32"/>
         <image name="calculator-32.png" width="32" height="32"/>
         <image name="cover_effect.png" width="685" height="326"/>

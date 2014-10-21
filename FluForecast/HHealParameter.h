@@ -17,6 +17,7 @@
 #define ReportFlu       @"/flureport/"
 #define GetTrainingLogs @"/trainingcardhistory/"
 #define GetRiskLogs     @"/user_fluforecast/"
+#define Ebola           @"/ebola"
 
 
 

@@ -52,7 +52,7 @@
 #define COCOAPODS_POD_AVAILABLE_ActionSheetPicker_3_0
 #define COCOAPODS_VERSION_MAJOR_ActionSheetPicker_3_0 1
 #define COCOAPODS_VERSION_MINOR_ActionSheetPicker_3_0 1
-#define COCOAPODS_VERSION_PATCH_ActionSheetPicker_3_0 10
+#define COCOAPODS_VERSION_PATCH_ActionSheetPicker_3_0 21
 
 // BlurryModalSegue
 #define COCOAPODS_POD_AVAILABLE_BlurryModalSegue
