@@ -58,11 +58,12 @@
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"RiskLogs: %@", responseObject);
-        
         self.riskHistory=responseObject;
+        NSInteger length=[responseObject count];
+        if(length==0)
+        {[self.view setUserInteractionEnabled:NO];}
         [self setXLabels];
         self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 190.0, SCREEN_WIDTH, 300.0)];
-        
         [self buildLineChart];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -180,42 +181,7 @@
 
 }
 
--(void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex{
-    NSLog(@"Click Key on line %f, %f line index is %d and point index is %d",point.x, point.y,(int)lineIndex, (int)pointIndex);
-}
 
--(void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex{
-    NSLog(@"Click on line %f, %f, line index is %d",point.x, point.y, (int)lineIndex);
-}
-
-- (void)userClickedOnBarCharIndex:(NSInteger)barIndex
-{
-    
-    NSLog(@"Click on bar %@", @(barIndex));
-    
-    
-    //  PNBar * bar = [self.barChart.bars objectAtIndex:barIndex];
-    
-    CABasicAnimation *animation= [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    
-    animation.fromValue= @1.0;
-    
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    
-    animation.toValue= @1.1;
-    
-    animation.duration= 0.2;
-    
-    animation.repeatCount = 0;
-    
-    animation.autoreverses = YES;
-    
-    animation.removedOnCompletion = YES;
-    
-    animation.fillMode=kCAFillModeForwards;
-    
-    // [bar.layer addAnimation:animation forKey:@"Float"];
-}
 
 
 @end
