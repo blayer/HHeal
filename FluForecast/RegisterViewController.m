@@ -88,7 +88,7 @@ if([self.Password.text isEqualToString:self.ReEnterPassword.text])
 
 
 -(BOOL) isBlankText{
-    if (self.UserName.text.length>0&&self.Email.text.length>0&&self.Password.text.length>0&&self.ReEnterPassword.text.length>0)
+   if (self.UserName.text.length>0&&self.Password.text.length>0&&self.ReEnterPassword.text.length>0&&self.State.text.length>0&&self.Age.text.length>0)
         return NO;
     else return YES;
 
@@ -135,25 +135,18 @@ else
         else {
         if(![self isPasswordMatch])
             [self.PasswordNotMatch show];
-            
         }
-       
     }
     
     }
 }
 
-
-
 - (IBAction)SelectAge:(id)sender {
-    
-    
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         if ([sender respondsToSelector:@selector(setText:)]) {
             [sender performSelector:@selector(setText:) withObject:selectedValue];
         }
     };
-    
     ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
         NSLog(@"Block Picker Canceled");
     };
@@ -161,22 +154,6 @@ else
     [ActionSheetStringPicker showPickerWithTitle:@"Select Your Age" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
 }
 
-- (IBAction)SelectGender:(id)sender {
-    
-    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-        if ([sender respondsToSelector:@selector(setText:)]) {
-            [sender performSelector:@selector(setText:) withObject:selectedValue];
-        }
-    };
-    
-    ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
-        NSLog(@"Block Picker Canceled");
-    };
-    NSArray *colors = @[@"Male", @"Female"];
-    [ActionSheetStringPicker showPickerWithTitle:@"Select Your Gender" rows:colors initialSelection:0 doneBlock:done cancelBlock:cancel origin:sender];
-    
-    
-}
 
 - (IBAction)SelectState:(id)sender {
     
@@ -217,7 +194,7 @@ else
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
         NSString *dateString = [dateFormatter stringFromDate:date];
         
-        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"state":self.State.text,@"date":dateString,@"gender":self.Gender.text,@"email":self.Email.text};
+        NSDictionary *parameters = @{@"username":self.UserName.text,@"password":self.Password.text,@"agegroup":ageGroup,@"state":self.State.text,@"date":dateString};
         
         NSString *url=HHealURL @"/user_profile";
         

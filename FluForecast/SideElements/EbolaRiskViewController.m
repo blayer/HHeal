@@ -126,22 +126,6 @@ AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager]
 }
 
 
--(void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex{
-    NSLog(@"Click Key on line %f, %f line index is %d and point index is %d",point.x, point.y,(int)lineIndex, (int)pointIndex);
-}
-
--(void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex{
-    NSLog(@"Click on line %f, %f, line index is %d",point.x, point.y, (int)lineIndex);
-}
-
-- (void)userClickedOnBarCharIndex:(NSInteger)barIndex
-{
-    
-    NSLog(@"Click on bar %@", @(barIndex));
-    PNBar * bar = [self.barChart.bars objectAtIndex:barIndex];
-   
-  // [bar.layer addAnimation:animation forKey:@"Float"];
-}
 
 /*
 #pragma mark - Navigation

@@ -42,8 +42,8 @@
     self.completeView=[[ActivityHub alloc]initWithFrame:CGRectMake(75, 155, 170, 170)];
     [self.completeView setLabelText:@"Reporting Completed"];
     [self.completeView setImage:[UIImage imageNamed:@"checked_checkbox-48.png"]];
-    
     self.mylocationManager = [[CLLocationManager alloc] init];
+    [self.mylocationManager requestWhenInUseAuthorization];
     self.mylocationManager.delegate = self;
     self.mylocationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.mylocationManager startUpdatingLocation];
@@ -64,7 +64,21 @@
 
 
 - (IBAction)reportButtonClicked:(id)sender {
-  if  ([self.coughSwitch isOn]||[self.feverSwitch isOn]||[self.sourSwitch isOn])
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    if (status == kCLAuthorizationStatusDenied) {
+        
+        UIAlertView *locationAlert = [[UIAlertView alloc] initWithTitle:@"Location service disabled!"
+                                                        message:@"Please enable location service in the Settings to report location."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        
+        [locationAlert show];
+
+        
+    }
+    else {
+    if  ([self.coughSwitch isOn]||[self.feverSwitch isOn]||[self.sourSwitch isOn])
     { [self.reportAlert show];}
   else {
       UIAlertView *Alert = [[UIAlertView alloc] initWithTitle:@"Report Error!"
@@ -74,7 +88,7 @@
                                                  otherButtonTitles:nil];
       
       [Alert show];
-  }
+  }}
 }
 
 

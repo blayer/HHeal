@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tK6-Mp-VMH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tK6-Mp-VMH">
     <dependencies>
-        <deployment version="1792" defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--HHeal-->
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" id="gng-Pp-HYB">
-                                <rect key="frame" x="0.0" y="65" width="320" height="339"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15615186130567871" green="0.67452401956985608" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -22,7 +22,7 @@
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" id="bRj-Ib-L9k">
-                                <rect key="frame" x="0.0" y="448" width="320" height="120"/>
+                                <rect key="frame" x="0.0" y="467" width="320" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.10439738485560535" green="0.4509619230700983" blue="0.66856317934782616" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My training cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DTA-8h-y9Z">
-                                <rect key="frame" x="0.0" y="404" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="425" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.62465543045175398" green="0.78212887155142152" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -50,25 +50,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="report_card-48.png" id="7rF-Lb-u7e">
-                                <rect key="frame" x="49" y="409" width="35" height="35"/>
+                                <rect key="frame" x="49" y="429" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j4l-p5-I26">
-                                <rect key="frame" x="282" y="409" width="35" height="35"/>
+                                <rect key="frame" x="285" y="429" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="plus-50.png"/>
                                 <connections>
                                     <segue destination="JU6-y2-z9N" kind="push" id="7iU-6O-yxy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dRh-ZR-PnW">
-                                <rect key="frame" x="279" y="364" width="32" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flu Risk Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oYW-d6-zes">
+                                <rect key="frame" x="42" y="115" width="236" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <color key="textColor" red="0.26446204165859605" green="0.76177793560606055" blue="0.44677551126102749" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a0o-Dl-BQX">
+                                <rect key="frame" x="287" y="366" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="help-32.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VBk-1Z-oGD" kind="push" id="pgW-Ok-I9o"/>
+                                    <segue destination="HTj-Cd-lUF" kind="push" id="1MA-tj-Crm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,7 +92,7 @@
             <objects>
                 <viewController id="Huc-mM-0au" customClass="CardCompleteNoteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pnn-Sx-FGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -141,22 +148,14 @@
                                     <action selector="SignIn:" destination="wjq-nc-yLe" eventType="touchUpInside" id="Plx-xf-IbX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Uk1-I2-4Ix">
-                                <rect key="frame" x="152" y="508" width="187" height="42"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_effect.png" id="tXZ-jk-gvt">
+                                <rect key="frame" x="-1" y="42" width="330" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Forget Password?">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="HgT-wp-MnV" kind="custom" customClass="BlurryModalSegue" id="yrW-hg-2Wv"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xMZ-nn-81K">
-                                <rect key="frame" x="-14" y="514" width="115" height="30"/>
+                                <rect key="frame" x="103" y="518" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,10 +164,6 @@
                                     <segue destination="xcO-Jg-DXT" kind="push" identifier="Registeration" id="jdW-P4-3eL"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_effect.png" id="tXZ-jk-gvt">
-                                <rect key="frame" x="-1" y="42" width="330" height="176"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -195,13 +190,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">HHeal TERMS OF USE
+                                <mutableString key="text">HHeal TERMS OF USE
 
 AGREEMENT
 These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
 
 PRIVACY POLICY
 By using the Services, You consent to the collection and use of certain information about You, as specified in the Privacy Policy. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.
+
+BY USING THE WEBSITE AND/OR APPLICATIONS, YOU REPRESENT AND WARRANT THAT YOU HAVE READ AND UNDERSTOOD, AND AGREE TO THE TERMS OF, THIS PRIVACY POLICY. IF YOU DO NOT UNDERSTAND OR DO NOT AGREE TO BE BOUND BY THIS PRIVACY POLICY, YOU MAY NOT USE THE WEBSITE AND/OR APPLICATION.
+
+You will be asked to provide HHeal certain information related to You ("Personal Information"). Personal Information includes, without limitation: 1)("Demographic Data" (personal information about You (but doesn’t specifically identify You), such as Your gender,state; and 2) "Fitness Data" (information about Your use of the Services (but doesn’t specifically identify You), such as daily nitrogens use, life habit, and fitness activities . 3) "Geo-location Data" (information about your locations that collected by GPS chips on your device). The Personal Information you provide is used for such purposes as allowing you to set up a user account and profile, providing the Website and/or Applications and related services, monitoring and improving the content and usage of the Website and/or Applications, interacting with the Website and/or Applications and with your friends and other members, to find and connect with Your friends and other members (when instructed by You),e, communicating with you about new features and other news, and any other purpose for which the information was collected. We may also draw upon this Personal Information in order to adapt the Website and/or Applications to your needs, to research the effectiveness of our Website and/or Applications, and to develop new tools for our members.
 
 THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP
 HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and HHeal does not provide medical services or render medical advice.
@@ -216,8 +215,7 @@ You should consult a licensed physician prior to beginning or modifying your die
 Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
 
 SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
-
-</string>
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -283,73 +281,53 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" minimumFontSize="17" id="73N-8C-bKG">
-                                <rect key="frame" x="120" y="100" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="email" minimumFontSize="17" id="MsY-7R-WEn">
-                                <rect key="frame" x="120" y="150" width="150" height="30"/>
+                                <rect key="frame" x="120" y="220" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="17" id="U9n-GE-V7V">
-                                <rect key="frame" x="120" y="200" width="150" height="30"/>
+                                <rect key="frame" x="120" y="269" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nlx-oe-m5b">
-                                <rect key="frame" x="25" y="104" width="79" height="21"/>
+                                <rect key="frame" x="22" y="224" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6c-jg-OBm">
-                                <rect key="frame" x="25" y="154" width="42" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xd0-bD-aqd">
-                                <rect key="frame" x="25" y="204" width="173" height="22"/>
+                                <rect key="frame" x="22" y="273" width="173" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="re-type password" minimumFontSize="17" id="7Mt-sB-PJ6">
-                                <rect key="frame" x="120" y="250" width="150" height="30"/>
+                                <rect key="frame" x="120" y="316" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kco-uL-DMs">
-                                <rect key="frame" x="25" y="254" width="179" height="22"/>
+                                <rect key="frame" x="22" y="320" width="179" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6u-tH-JDi">
-                                <rect key="frame" x="25" y="303" width="31" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cer-s5-Udv">
-                                <rect key="frame" x="25" y="354" width="57" height="21"/>
+                                <rect key="frame" x="25" y="364" width="31" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="selected your age group" minimumFontSize="17" id="OKn-as-qw4">
-                                <rect key="frame" x="120" y="300" width="150" height="30"/>
+                                <rect key="frame" x="120" y="360" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -361,21 +339,8 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                     <outlet property="delegate" destination="Bqd-Bv-Ta1" id="Fes-sj-v64"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="select your gender" minimumFontSize="17" id="pRa-nt-3ed">
-                                <rect key="frame" x="120" y="350" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="SelectGender:" destination="Bqd-Bv-Ta1" eventType="touchDown" id="82v-Vi-c4V"/>
-                                    <outlet property="delegate" destination="Bqd-Bv-Ta1" id="jl5-xJ-ETP"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="select your state" minimumFontSize="17" id="joO-n1-kwp">
-                                <rect key="frame" x="120" y="400" width="150" height="30"/>
+                                <rect key="frame" x="120" y="406" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
@@ -388,7 +353,7 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPd-O8-0dV">
-                                <rect key="frame" x="25" y="404" width="41" height="21"/>
+                                <rect key="frame" x="25" y="410" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -407,14 +372,21 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                     <segue destination="x5U-lJ-yNn" kind="unwind" unwindAction="unwindToThisViewController:" id="LsC-Jb-p0p"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="8GE-67-Goe">
+                                <rect key="frame" x="25" y="48" width="270" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Please register on this page with your age group and current locating state. Your age information is required because it can help us to estimate your flu risk and immune system scores.</string>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Registration" id="6UZ-Tn-2Ak"/>
                     <connections>
                         <outlet property="Age" destination="OKn-as-qw4" id="FQC-sq-JtZ"/>
-                        <outlet property="Email" destination="MsY-7R-WEn" id="SOD-7P-va0"/>
-                        <outlet property="Gender" destination="pRa-nt-3ed" id="laj-7w-znT"/>
                         <outlet property="Password" destination="U9n-GE-V7V" id="VaH-tL-kgQ"/>
                         <outlet property="ReEnterPassword" destination="7Mt-sB-PJ6" id="L9O-Gj-Rsb"/>
                         <outlet property="State" destination="joO-n1-kwp" id="JFT-G2-d1B"/>
@@ -441,64 +413,6 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYq-WD-KEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-935" y="967"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="4ut-fH-boi">
-            <objects>
-                <viewController id="HgT-wp-MnV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="r1F-yW-9AO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yPK-2H-Ado">
-                                <rect key="frame" x="0.0" y="20" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jRu-CX-4Ki" kind="unwind" unwindAction="unwindToThisViewController:" id="pCc-O9-7ha"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XKI-Hl-WzG">
-                                <rect key="frame" x="16" y="300" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1090575759" green="1" blue="0.28774762500000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Send">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please enter your registered email address. We will send your username and password to that email address." selectable="NO" id="5XH-9E-GaN">
-                                <rect key="frame" x="16" y="71" width="288" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="enter your email here" minimumFontSize="17" id="VRU-IX-35u">
-                                <rect key="frame" x="16" y="213" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CBS-z7-jvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="jRu-CX-4Ki" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="402" y="1682"/>
         </scene>
         <!--HHeal-->
         <scene sceneID="E5G-0C-oUk">
@@ -867,7 +781,7 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="diI-3X-laR">
-                                <rect key="frame" x="281" y="397" width="32" height="32"/>
+                                <rect key="frame" x="281" y="416" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="help-32.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1543,7 +1457,7 @@ objects (like needles and syringes) that have been contaminated with the virus
 infected animals
 Ebola is not spread through the air or by water, or in general, by food. However, in Africa, Ebola may be spread as a result of handling bushmeat (wild animals hunted for food) and contact with infected bats. There is no evidence that mosquitos or other insects can transmit Ebola virus. Only mammals (for example, humans, bats, monkeys, and apes) have shown the ability to become infected with and spread Ebola virus.
 
- * This information is provided by CDC and WHO, it can only be used for advisor information for your knowledge. It can not be used as a diagnose  advice. If you have any questions or concerns about your symptoms, call your doctor or local medical service directly. </string>
+ * This information is provided by CDC and WHO, it can only be used as a information resource. It can not be used as a diagnose  advice. If you have any questions or concerns about your symptoms, call your doctor or local medical service directly. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1643,13 +1557,17 @@ You can change your location service settings: Settings--&gt;HHeal--&gt; Privacy
                                 <rect key="frame" x="6" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">HHeal TERMS OF USE
+                                <mutableString key="text">HHeal TERMS OF USE
 
 AGREEMENT
 These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
 
 PRIVACY POLICY
 By using the Services, You consent to the collection and use of certain information about You, as specified in the Privacy Policy. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.
+
+BY USING THE WEBSITE AND/OR APPLICATIONS, YOU REPRESENT AND WARRANT THAT YOU HAVE READ AND UNDERSTOOD, AND AGREE TO THE TERMS OF, THIS PRIVACY POLICY. IF YOU DO NOT UNDERSTAND OR DO NOT AGREE TO BE BOUND BY THIS PRIVACY POLICY, YOU MAY NOT USE THE WEBSITE AND/OR APPLICATION.
+
+You will be asked to provide HHeal certain information related to You ("Personal Information"). Personal Information includes, without limitation: 1)("Demographic Data" (personal information about You (but doesn’t specifically identify You), such as Your gender,state; and 2) "Fitness Data" (information about Your use of the Services (but doesn’t specifically identify You), such as daily nitrogens use, life habit, and fitness activities . 3) "Geo-location Data" (information about your locations that collected by GPS chips on your device). The Personal Information you provide is used for such purposes as allowing you to set up a user account and profile, providing the Website and/or Applications and related services, monitoring and improving the content and usage of the Website and/or Applications, interacting with the Website and/or Applications and with your friends and other members, to find and connect with Your friends and other members (when instructed by You),e, communicating with you about new features and other news, and any other purpose for which the information was collected. We may also draw upon this Personal Information in order to adapt the Website and/or Applications to your needs, to research the effectiveness of our Website and/or Applications, and to develop new tools for our members.
 
 THE SERVICE DOES NOT PROVIDE PROFESSIONAL MEDICAL SERVICES OR ADVICE; NO DOCTOR-PATIENT RELATIONSHIP
 HHeal provides the Services for informational purposes only. HHeal is not a medical professional, and HHeal does not provide medical services or render medical advice.
@@ -1664,8 +1582,7 @@ You should consult a licensed physician prior to beginning or modifying your die
 Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
 
 SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
-
-</string>
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1753,25 +1670,6 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0cg-GJ-Kwp">
-                                <rect key="frame" x="32" y="316" width="256" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.097255757730000003" green="0.57528279959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Email us">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="showEmail:" destination="4eA-F7-bcb" eventType="touchUpInside" id="Gi7-MB-c3E"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2198,30 +2096,6 @@ Note:
             </objects>
             <point key="canvasLocation" x="1693" y="-982"/>
         </scene>
-        <!--How to use this app?-->
-        <scene sceneID="Vg0-c8-L4e">
-            <objects>
-                <viewController id="VBk-1Z-oGD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AH9-Hb-uJo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="To be added." id="tkH-CJ-8Ne">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="How to use this app?" id="rDD-BR-mfE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bxx-AB-jtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2362" y="1635"/>
-        </scene>
         <!--Report Flu-->
         <scene sceneID="B0S-YY-7Ea">
             <objects>
@@ -2320,7 +2194,7 @@ layer.masksToBoundsayer.masksToBounds</string>
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="S3e-4c-V3b" customClass="BarChartViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Njx-tw-yoe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kpr-5y-4Kk">
@@ -2342,12 +2216,53 @@ layer.masksToBoundsayer.masksToBounds</string>
             </objects>
             <point key="canvasLocation" x="2285" y="369.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="itF-yd-Ehu">
+            <objects>
+                <viewController id="HTj-Cd-lUF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gvT-KC-irl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="me4-HU-t7r">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">How to use it? 
+
+In the main interface, the upper part of interface visualizes your local average flu risk in the LEFT bar that is computed based on CDC weekly report and our crowdsourcing databased. The RIGHT bar visualizes your personal flu risk that is computed based on your personal lifestyles and exposure to potential flu virus. 
+
+The lower part of interface visualizes the training schedules that you selected today. You can scroll to check schedules, or press "&gt;" indicator to report  completion of a schedule, or press "+" button to select/unselect schedules for today.
+
+In the select/unselect page, press CHECKMARK to perform select/unselect actions.
+
+In the completion page, press RIBBON to report completion.  
+
+How does this app work?
+ 
+HHeal provides a clean and user-friendly interface to help you keeping track of your local flu risk that derived from CDC weekly flu report. More importantly, HHeal develops an effective algorithm to estimate your personal flu risk, and helps you to boost your personal immune system to combat flu. This estimation algorithm is based on a crowdsourcing database that can identify flu symptom cases that happened around you. So, the app can estimate a transmission risk that will be added to your personal flu risk. In addition, the app provides six recommended trainings (proven to be effective by medical and epidemiological researches) that can help you strengthen your immune system and reduce the flu risk.
+ 
+Note:
+1) This app only collect location data when you open it, we do not find any significant battery life decreases from our tests.
+2) This app is not intended to be used as a medical device, but as a demonstration of user's potential flu risk.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E99-3F-fhy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfq-aI-cFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285" y="861"/>
+        </scene>
         <!--Scroll Card View Controller-->
         <scene sceneID="aGP-29-5SO">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="1nU-wO-STF" customClass="ScrollCardViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JKl-He-UaE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2403,7 +2318,7 @@ layer.masksToBoundsayer.masksToBounds</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dcf-Or-90E">
-                                <rect key="frame" x="112" y="20" width="180" height="40"/>
+                                <rect key="frame" x="10" y="20" width="180" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>

@@ -52,9 +52,9 @@
 - (IBAction)showEmail:(id)sender {
     
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"hhealfeedback@gmail.com"];
+ /*   NSArray *toRecipents = [NSArray arrayWithObject:@"hhealfeedback@gmail.com"];
  
-    if ([MFMailComposeViewController canSendMail])
+  if ([MFMailComposeViewController canSendMail])
     {
         MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
         mail.mailComposeDelegate = self;
@@ -66,7 +66,7 @@
     else
     {
         NSLog(@"This device cannot send email");
-    }
+    }*/
 }
 
 
@@ -77,7 +77,7 @@
    
 }
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+/*- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result) {
         case MFMailComposeResultSent:
@@ -99,4 +99,5 @@
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+ */
 @end

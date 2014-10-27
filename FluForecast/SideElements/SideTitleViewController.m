@@ -98,16 +98,16 @@
     self.streakDays.text=@"15 days";
     self.finishedCards.text=[NSString stringWithFormat:@"%@/%@ cards",self.completed,self.selected];
     
-    self.photo=[[UIImageView alloc]initWithFrame:CGRectMake(10, 30, 60.0, 60.0)];
-    [self.photo.layer setBorderColor:[[UIColor whiteColor] CGColor] ];
-    [self.photo.layer setBorderWidth:2.0f];
-    [self.photo.layer setBackgroundColor:[[UIColor whiteColor] CGColor] ];
+  //  self.photo=[[UIImageView alloc]initWithFrame:CGRectMake(10, 30, 60.0, 60.0)];
+  //  [self.photo.layer setBorderColor:[[UIColor whiteColor] CGColor] ];
+  //  [self.photo.layer setBorderWidth:2.0f];
+  //  [self.photo.layer setBackgroundColor:[[UIColor whiteColor] CGColor] ];
     
     //   [self.photo setBackgroundColor:uic]
     
     
-    self.photo.image=[UIImage imageNamed:@"user-48.png"];
-    [self.view addSubview:self.photo];
+  //  self.photo.image=[UIImage imageNamed:@"user-48.png"];
+  //  [self.view addSubview:self.photo];
 
 }
 

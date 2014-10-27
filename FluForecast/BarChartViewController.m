@@ -103,7 +103,6 @@
         
         [self buildBarChart];
         
-        [self.view setNeedsDisplay];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [activityIndicator stopAnimating];
@@ -132,13 +131,13 @@
     [dateFormat setDateFormat:@"MMM dd, yyyy"];
     NSString *dateString = [dateFormat stringFromDate:date];
     
-    UILabel * barChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, 30)];
+    UILabel * barChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,80, SCREEN_WIDTH, 30)];
     barChartLabel.text = dateString;
-    barChartLabel.textColor = PNFreshGreen;
-    barChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:23.0];
+    barChartLabel.textColor = [UIColor grayColor];
+    barChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:13.0];
     barChartLabel.textAlignment = NSTextAlignmentCenter;
     
-    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 80.0, SCREEN_WIDTH, 240.0)];
+    self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 100.0, SCREEN_WIDTH, 240.0)];
     self.barChart.backgroundColor = [UIColor clearColor];
     self.barChart.yLabelFormatter = ^(CGFloat yValue){
         CGFloat yValueParsed = yValue;
@@ -158,29 +157,10 @@
     self.barChart.delegate = self;
     [self.view addSubview:barChartLabel];
     [self.view addSubview:self.barChart];
+    [self.view setNeedsDisplay];
 }
 
 
--(void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex andPointIndex:(NSInteger)pointIndex{
-    NSLog(@"Click Key on line %f, %f line index is %d and point index is %d",point.x, point.y,(int)lineIndex, (int)pointIndex);
-}
-
--(void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex{
-    NSLog(@"Click on line %f, %f, line index is %d",point.x, point.y, (int)lineIndex);
-}
-
-- (void)userClickedOnBarCharIndex:(NSInteger)barIndex
-{
-    
-    NSLog(@"Click on bar %@", @(barIndex));
-
-    
- //  PNBar * bar = [self.barChart.bars objectAtIndex:barIndex];
-    
-    CABasicAnimation *animation= [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-        
- // [bar.layer addAnimation:animation forKey:@"Float"];
-}
 
 - (IBAction)sendLocation:(id)sender {
 
@@ -202,6 +182,22 @@
     if([self isTimeUp])
     
     {
+        CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+        if (status == kCLAuthorizationStatusDenied) {
+            
+            UIAlertView *locationAlert = [[UIAlertView alloc] initWithTitle:@"Location service disabled!"
+                                                                    message:@"Please enable location service in the Settings to report location."
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"Ok"
+                                                          otherButtonTitles:nil];
+            
+            [locationAlert show];
+            
+            
+        }
+        
+        else {
+        
         [self.reportView showActivityView];
     [self.view addSubview:self.reportView];
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
@@ -259,7 +255,8 @@
         
     }];
     
-    });}
+    });
+        }}
         
         else
         {

@@ -147,7 +147,7 @@
         myView.backgroundColor = [UIColor whiteColor];
         
         UIButton *butt=[UIButton buttonWithType:UIButtonTypeCustom ];
-        [butt setFrame:CGRectMake(290, 45 , 30,30 )];
+        [butt setFrame:CGRectMake(290, 40 , 30,30 )];
         
         UIImage *disclosure = [UIImage imageNamed:@"forward-50.png"];
         [butt setImage:disclosure forState:UIControlStateNormal];
@@ -163,7 +163,7 @@
         [butt addTarget:self action:@selector(cardButton:)  forControlEvents:(UIControlEventTouchUpInside)];
         [myView addSubview:butt];
         
-        UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(70, 30 , 220,60 )];
+        UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(70, 25 , 220,60 )];
         [titleLabel setText:title];
         titleLabel.adjustsFontSizeToFitWidth=YES;
         [titleLabel setTextColor:[UIColor grayColor]];
@@ -174,10 +174,10 @@
         
         
         NSString *iconName=[self.icons objectForKey:title];
-        UIImageView *icon=[[UIImageView alloc]initWithFrame:CGRectMake(10, 30, 60.0, 60.0)];
+        UIImageView *icon=[[UIImageView alloc]initWithFrame:CGRectMake(10, 25, 60.0, 60.0)];
         icon.image=[UIImage imageNamed:[NSString stringWithFormat:iconName, i] ];
         
-        UIImageView *ribbon=[[UIImageView alloc]initWithFrame:CGRectMake(35, 50, 40.0, 40.0)];
+        UIImageView *ribbon=[[UIImageView alloc]initWithFrame:CGRectMake(35, 45, 40.0, 40.0)];
         ribbon.image=[UIImage imageNamed:@"ribbon_yellow-48.png"];
         
         

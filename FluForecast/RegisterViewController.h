@@ -11,15 +11,12 @@
 
 @interface RegisterViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *UserName;
-@property (weak, nonatomic) IBOutlet UITextField *Email;
 @property (weak, nonatomic) IBOutlet UITextField *Password;
 @property (weak, nonatomic) IBOutlet UITextField *ReEnterPassword;
 @property (weak, nonatomic) IBOutlet UITextField *Age;
-@property (weak, nonatomic) IBOutlet UITextField *Gender;
 @property (weak, nonatomic) IBOutlet UITextField *State;
 
 - (IBAction)SelectAge:(id)sender;
-- (IBAction)SelectGender:(id)sender;
 - (IBAction)SelectState:(id)sender;
 
 - (IBAction)RegisterProfile:(id)sender;

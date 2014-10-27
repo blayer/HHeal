@@ -51,12 +51,6 @@
         [self.window makeKeyAndVisible];
     }
     
-    
-    
-    
-    
-    
-    
     [[BlurryModalSegue appearance] setBackingImageBlurRadius:@(20)];
     [[BlurryModalSegue appearance] setBackingImageSaturationDeltaFactor:@(.45)];
 
@@ -90,6 +84,8 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -98,9 +94,7 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token =[defaults valueForKey:@"token"];
-    
     [self.locationManager requestAlwaysAuthorization]; // For background access
-
     self.locationManager.delegate = self;
     [self.locationManager stopUpdatingLocation];
     if(![token length]==0)
@@ -162,7 +156,8 @@
     
     self.locationManager.delegate=self;
     [self.locationManager stopMonitoringSignificantLocationChanges];
-    [self.locationManager requestWhenInUseAuthorization];  // For foreground access
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];// For foreground access
     self.locationManager.desiredAccuracy=kCLLocationAccuracyBestForNavigation;
     self.locationManager.distanceFilter=50;
     if(![token length]==0)

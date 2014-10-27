@@ -38,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.view setUserInteractionEnabled:NO];
     self.personalHistory=[NSMutableArray array];
     self.nationalHistory=[NSMutableArray array];
 
@@ -56,15 +56,13 @@
     NSDictionary *parameters=@{@"limit":[NSString stringWithFormat:@"%d",self.retriveDays]};
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
         NSLog(@"RiskLogs: %@", responseObject);
+        
         self.riskHistory=responseObject;
         NSInteger length=[responseObject count];
-        if(length==0)
-        {[self.view setUserInteractionEnabled:NO];}
-        [self setXLabels];
+       [self setXLabels];
         self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 190.0, SCREEN_WIDTH, 300.0)];
-        [self buildLineChart];
+           [self buildLineChart];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -90,8 +88,8 @@
         NSString *date=[substring objectAtIndex:1];
         NSString *personal=[log objectForKeyedSubscript:@"personalrate"];
         NSString *national=[log objectForKeyedSubscript:@"standardrate"];
-        NSNumber *nationalFluRate = [NSNumber numberWithFloat:([national floatValue])*100-DifferenceOfLines ];
-        NSNumber *personalFluRate = [NSNumber numberWithFloat:([personal floatValue])*100 ] ;
+        NSNumber *nationalFluRate = [NSNumber numberWithFloat:([national floatValue])-DifferenceOfLines ];
+        NSNumber *personalFluRate = [NSNumber numberWithFloat:([personal floatValue]) ] ;
         
         if (self.retriveDays==7){
             NSArray *subdate=[date componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
