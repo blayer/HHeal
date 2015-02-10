@@ -95,7 +95,6 @@
     NSString *title=[defaults objectForKey:@"username"];
     // Here send query to server and get users data like name
     self.userName.text=title;
-    self.streakDays.text=@"15 days";
     self.finishedCards.text=[NSString stringWithFormat:@"%@/%@ cards",self.completed,self.selected];
     
   //  self.photo=[[UIImageView alloc]initWithFrame:CGRectMake(10, 30, 60.0, 60.0)];

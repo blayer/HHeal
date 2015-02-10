@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tK6-Mp-VMH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tK6-Mp-VMH">
     <dependencies>
         <deployment version="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--HHeal-->
@@ -41,26 +41,6 @@
                                     <segue destination="mAU-PJ-YNf" kind="push" identifier="CompletedCard" id="dK8-8i-6UC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My training cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DTA-8h-y9Z">
-                                <rect key="frame" x="0.0" y="425" width="320" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62465543045175398" green="0.78212887155142152" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="report_card-48.png" id="7rF-Lb-u7e">
-                                <rect key="frame" x="49" y="429" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j4l-p5-I26">
-                                <rect key="frame" x="285" y="429" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="plus-50.png"/>
-                                <connections>
-                                    <segue destination="JU6-y2-z9N" kind="push" id="7iU-6O-yxy"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flu Risk Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oYW-d6-zes">
                                 <rect key="frame" x="42" y="115" width="236" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,6 +58,27 @@
                                     <segue destination="HTj-Cd-lUF" kind="push" id="1MA-tj-Crm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gzo-N3-x34">
+                                <rect key="frame" x="0.0" y="422" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41781462864352348" green="0.82316256212217254" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="My training cards">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="JU6-y2-z9N" kind="push" id="E4C-BX-wkV"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="report_card-48.png" id="7rF-Lb-u7e">
+                                <rect key="frame" x="47" y="427" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus-50.png" id="3dY-Xo-cDn">
+                                <rect key="frame" x="285" y="430" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -164,6 +165,13 @@
                                     <segue destination="xcO-Jg-DXT" kind="push" identifier="Registeration" id="jdW-P4-3eL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="experiment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4mg-zg-kJT">
+                                <rect key="frame" x="60" y="197" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -190,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">HHeal TERMS OF USE
+                                <string key="text">HHeal TERMS OF USE
 
 AGREEMENT
 These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
@@ -215,7 +223,7 @@ You should consult a licensed physician prior to beginning or modifying your die
 Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
 
 SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -530,26 +538,6 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i0J-2z-e3Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i0J-2z-e3Z" id="sV9-40-aiw">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ebola-48.png" id="f65-cE-UPE">
-                                                    <rect key="frame" x="10" y="5" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ebola" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y6y-Tx-hBV">
-                                                    <rect key="frame" x="60" y="4" width="150" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="72F-Zm-MrS">
                                         <rect key="frame" x="0.0" y="279" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -712,7 +700,7 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="gC2-Wy-OT8" kind="relationship" relationship="rootViewController" id="ny0-eR-53S"/>
+                        <segue destination="3TS-id-y8V" kind="relationship" relationship="rootViewController" id="Suh-D9-5yr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwk-eL-bP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -738,7 +726,7 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aUv-tT-kRX">
                                 <rect key="frame" x="0.0" y="457" width="320" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.70671761499999997" blue="0.059966409130000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="Calculate VO2 Max">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -797,7 +785,7 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.91583625637755106" green="0.88717568910394629" blue="0.55259110236820286" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.98243266009999997" green="1" blue="0.58280487260000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="VO2 Max Calculator" id="kMV-64-V4Z"/>
                     <connections>
@@ -808,7 +796,7 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8AQ-2N-JQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="2713"/>
+            <point key="canvasLocation" x="1785" y="2626"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="faq-aB-a9H">
@@ -874,6 +862,120 @@ Age (years)	Poor	Fair	Good	Excellent	Superior
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hrq-Iv-bfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2187" y="2713"/>
+        </scene>
+        <!--Heart Rate Calculator-->
+        <scene sceneID="T7K-5e-VCR">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Uen-9x-Bgj" customClass="HeartRateCalculatorViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Cb-z4-uCj">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MBq-w0-QIQ">
+                                <rect key="frame" x="0.0" y="66" width="320" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bn8-yD-C8J">
+                                <rect key="frame" x="0.0" y="177" width="320" height="291"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98243266014607145" green="1" blue="0.58280487257513436" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Have you been exercising regularly (at least four times weekly) for up to two years?" selectable="NO" id="YTV-rN-FtM">
+                                <rect key="frame" x="10" y="383" width="220" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98243266009999997" green="1" blue="0.58280487260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Do you get more than two colds or bouts of flu per year, or have allergies?" selectable="NO" id="5c5-Kf-h5H">
+                                <rect key="frame" x="10" y="316" width="220" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98243266009999997" green="1" blue="0.58280487260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jwo-fb-dEz">
+                                <rect key="frame" x="262" y="267" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="HZP-4A-bQk">
+                                <rect key="frame" x="262" y="335" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="ab5-dq-cd6">
+                                <rect key="frame" x="262" y="401" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="RQx-Yu-jaP">
+                                <rect key="frame" x="190" y="199" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UHz-fa-3lw">
+                                <rect key="frame" x="46" y="203" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="plus/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DNq-0S-hc8">
+                                <rect key="frame" x="253" y="155" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yrc-GA-vrR">
+                                <rect key="frame" x="0.0" y="469" width="320" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.70671761499999997" blue="0.059966409130000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Calculate Heart Rate">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateClick:" destination="Uen-9x-Bgj" eventType="touchUpInside" id="eEG-F5-4Yp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Do you have, or are recovering from, a major illness or you are taking medication?" selectable="NO" id="DQk-pz-9Yl">
+                                <rect key="frame" x="10" y="255" width="220" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98243266009999997" green="1" blue="0.58280487260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your moderate exercise heart rate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bEu-jF-1qk">
+                                <rect key="frame" x="0.0" y="73" width="264" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Heart Rate Calculator" id="CxJ-Fi-GgR"/>
+                    <connections>
+                        <outlet property="age" destination="RQx-Yu-jaP" id="p3c-JI-DQJ"/>
+                        <outlet property="heartRate" destination="MBq-w0-QIQ" id="tuB-ve-W6E"/>
+                        <outlet property="switchValue1" destination="jwo-fb-dEz" id="Uxh-th-Sdg"/>
+                        <outlet property="switchValue2" destination="HZP-4A-bQk" id="rvd-Tj-EGL"/>
+                        <outlet property="switchValue3" destination="ab5-dq-cd6" id="pIR-f8-LPM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDL-De-LeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618" y="2703"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZeL-rt-eon">
@@ -1482,7 +1584,7 @@ Ebola is not spread through the air or by water, or in general, by food. However
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">So far, there is no FDA-approved vaccine available for Ebola. Two of important advices to prevent your self from Ebola are:
+                                <string key="text">So far, there is no FDA-approved vaccine available for Ebola. Two important pieces of advice to protect your self from Ebola are:
 
 1. As there is no approved vaccine for Ebola, and no clearly known medicine can effectively treat Ebola. The strength of your immune system will play a very critical role to prevent and fight again Ebola. HHeal provides six recommendations that boost your immune system and decrease your flu risk. Following these recommendations might help you to prevent Ebola. 
 
@@ -1529,7 +1631,7 @@ Ebola is not spread through the air or by water, or in general, by food. However
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">From iOS 6 on, users can manage their permission to each app in the general settings. 
+                                <string key="text">For iOS 6 and above, users can manage their permission to each app in the general settings. 
 You can change your location service settings: Settings--&gt;HHeal--&gt; Privacy--&gt;Location Service.
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1557,7 +1659,7 @@ You can change your location service settings: Settings--&gt;HHeal--&gt; Privacy
                                 <rect key="frame" x="6" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">HHeal TERMS OF USE
+                                <string key="text">HHeal TERMS OF USE
 
 AGREEMENT
 These Terms of Use (the "Agreement") constitute a legally binding agreement by and between HHeal and you ("You" or "Your") concerning Your use of HHeal mobile phone applications (the "Applications") and the services available through the Website and Applications (the "Services"). By using the Services, You represent and warrant that You have read and understand, and agree to be bound by, this Agreement and HHeal’s Privacy Policy, which is incorporated herein by reference and made part of this Agreement. IF YOU DO NOT UNDERSTAND THIS AGREEMENT, OR DO NOT AGREE TO BE BOUND BY THESE TERMS, YOU MAY NOT USE THE SERVICES.
@@ -1582,7 +1684,7 @@ You should consult a licensed physician prior to beginning or modifying your die
 Without limitation of the foregoing, HHeal and its developers make no representations or warranties of any kind regarding the Service. HHeal is provided in “AS IS ” condition. HHeal and its developers EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING: ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ANY AND ALL WARRANTIES ARISING FROM COURSE OF DEALING AND USAGE OF TRADE; THAT THE SERVICE WILL MEET YOUR REQUIREMENTS, WILL ALWAYS BE AVAILABLE, SECURE OR OPERATE WITHOUT ERROR, AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE OPERATION, USE OR OTHER EXPLOITATION OF THE SERVICE,  AND AS TO THE ACCURACY OR RELIABILITY OF ANY INFORMATION OBTAINED FROM THE SERVICE. No advice or information, whether oral or written, obtained by you from HHeal will create any warranty not expressly stated herein.
 
 SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF LIABILITY, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU.
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1666,7 +1768,7 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                 <rect key="frame" x="0.0" y="66" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Your opinion is very important to us. We appreciate your feedback and bug reports. They will use it to evaluate changes and make improvements in our app.(In app email is not supported by iOS right now, please email: HHealFeedback@gmail.com)</string>
+                                <string key="text">Your opinion is very important to us. We appreciate your feedback and bug reports. We will use it to evaluate changes and make improvements in our app.(In app email is not supported by iOS right now, please email: HHealFeedback@gmail.com)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1693,11 +1795,11 @@ SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF WARRANTIES OR OF 
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">How does this app work?
  
-HHeal provides a clean and user-friendly interface to help you keeping track of your local flu risk that derived from CDC weekly flu report. More importantly, HHeal develops an effective algorithm to estimate your personal flu risk, and helps you to boost your personal immune system to combat flu. This estimation algorithm is based on a crowdsourcing database that can identify flu symptom cases that happened around you. So, the app can estimate a transmission risk that will be added to your personal flu risk. In addition, the app provides six recommended trainings (proven to be effective by medical and epidemiological researches) that can help you strengthen your immune system and reduce the flu risk.
+HHeal provides a clean and user-friendly interface to help you keep track of your local flu risk that derived from CDC weekly flu reports. More importantly, HHeal develops an effective algorithm to estimate your personal flu risk, and helps you to boost your personal immune system to combat flu. This estimation algorithm is based on a crowdsourcing database that can identify flu symptom cases that happened around you. So, the app can estimate a transmission risk that will be added to your personal flu risk. In addition, the app provides six recommended trainings (proven to be effective by medical and epidemiological researches) that can help you strengthen your immune system and reduce the flu risk.
  
 Note:
-1) This app only collect location data when you open it, we do not find any significant battery life decreases from our tests.
-2) This app is not intended to be used as a medical device, but as a demonstration of user's potential flu risk.</string>
+1) This app only collects location data when you open it, we do not find any significant battery life decreases from our tests.
+2) This app is not intended to be used as a medical device, but as a demonstration of a user's potential flu risk.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1757,7 +1859,6 @@ Note:
                                                     <rect key="frame" x="30" y="10" width="107" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.097255757730000003" green="0.57528279959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1774,7 +1875,6 @@ Note:
                                                     <rect key="frame" x="30" y="10" width="122" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.097255757730000003" green="0.57528279959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1791,7 +1891,6 @@ Note:
                                                     <rect key="frame" x="30" y="10" width="137" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.097255757730000003" green="0.57528279959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1808,7 +1907,6 @@ Note:
                                                     <rect key="frame" x="30" y="10" width="131" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.097255757730000003" green="0.57528279959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1872,26 +1970,6 @@ Note:
                         <sections>
                             <tableViewSection id="UNA-Dv-Ynh">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OyB-5i-WPH">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OyB-5i-WPH" id="j5q-E6-0fl">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Photo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cZE-pK-grS">
-                                                    <rect key="frame" x="20" y="11" width="99" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-32.png" id="nfh-VT-K7I">
-                                                    <rect key="frame" x="264" y="4" width="36" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="syM-tz-6cy">
                                         <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1908,7 +1986,7 @@ Note:
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qUr-G0-0K1">
                                                     <rect key="frame" x="97" y="7" width="203" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal">
+                                                    <state key="normal" title="select gender">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1934,7 +2012,7 @@ Note:
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BnA-dK-kwJ">
                                                     <rect key="frame" x="80" y="7" width="220" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal">
+                                                    <state key="normal" title="seect age">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1960,7 +2038,7 @@ Note:
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kJ6-eE-gz0">
                                                     <rect key="frame" x="79" y="7" width="221" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="State">
+                                                    <state key="normal" title="select state">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1991,7 +2069,7 @@ Note:
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y3d-ta-cHi">
                                                     <rect key="frame" x="64" y="7" width="236" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal">
+                                                    <state key="normal" title="input email">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -2014,13 +2092,12 @@ Note:
                         <outlet property="age" destination="BnA-dK-kwJ" id="2BZ-Wj-67i"/>
                         <outlet property="email" destination="y3d-ta-cHi" id="siV-UR-vMX"/>
                         <outlet property="gender" destination="qUr-G0-0K1" id="BYI-bH-KBZ"/>
-                        <outlet property="photo" destination="nfh-VT-K7I" id="nDW-xX-KSZ"/>
                         <outlet property="state" destination="kJ6-eE-gz0" id="gsY-4p-bA3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xld-PZ-EUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="1259"/>
+            <point key="canvasLocation" x="1536" y="1259"/>
         </scene>
         <!--Select today's trainings-->
         <scene sceneID="0lU-RQ-kvU">
@@ -2130,8 +2207,8 @@ Note:
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sour throat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wDe-5w-7qh">
-                                <rect key="frame" x="20" y="344" width="148" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sore throat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wDe-5w-7qh">
+                                <rect key="frame" x="20" y="344" width="148" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2142,7 +2219,8 @@ Note:
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Reprot my flu">
+                                <state key="normal" title="Report my flu">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -2159,18 +2237,18 @@ layer.masksToBoundsayer.masksToBounds</string>
                                     <action selector="reportButtonClicked:" destination="mAU-PJ-YNf" eventType="touchUpInside" id="cUi-Rb-X2a"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="60t-iw-L20">
+                                <rect key="frame" x="5" y="74" width="310" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Do you have any of following symptoms? If you do, please report your symptoms. Your report will be totally anonymous, and it will help us to calculate your local flu risk.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-50.png" id="vbk-MK-dx5">
                                 <rect key="frame" x="21" y="447" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="60t-iw-L20">
-                                <rect key="frame" x="0.0" y="63" width="320" height="176"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Do you have any following symptoms? If you do, please report your symptoms to us. Your report will be totally anonymous, and it will help us to calculate your local flu risk.   </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2200,7 +2278,7 @@ layer.masksToBoundsayer.masksToBounds</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kpr-5y-4Kk">
                                 <rect key="frame" x="-2" y="2" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="location-50.png">
+                                <state key="normal" image="location-50-blue.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2214,7 +2292,7 @@ layer.masksToBoundsayer.masksToBounds</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPg-uP-1if" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2285" y="369.5"/>
+            <point key="canvasLocation" x="2279" y="292"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="itF-yd-Ehu">
@@ -2232,7 +2310,7 @@ layer.masksToBoundsayer.masksToBounds</string>
 
 In the main interface, the upper part of interface visualizes your local average flu risk in the LEFT bar that is computed based on CDC weekly report and our crowdsourcing databased. The RIGHT bar visualizes your personal flu risk that is computed based on your personal lifestyles and exposure to potential flu virus. 
 
-The lower part of interface visualizes the training schedules that you selected today. You can scroll to check schedules, or press "&gt;" indicator to report  completion of a schedule, or press "+" button to select/unselect schedules for today.
+The lower part of interface visualizes the training schedules that you selected today. You can scroll to check schedules, or press "&gt;" indicator to report  completion of a schedule, or press the blue bar to select/unselect schedules for today.
 
 In the select/unselect page, press CHECKMARK to perform select/unselect actions.
 
@@ -2324,26 +2402,11 @@ Note:
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p36-eJ-BAO">
-                                <rect key="frame" x="10" y="100" width="60" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Kd-qh-e3m">
-                                <rect key="frame" x="10" y="120" width="77" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="finishedCards" destination="9Kd-qh-e3m" id="grR-Qq-3yt"/>
                         <outlet property="userName" destination="dcf-Or-90E" id="3lq-gk-rz3"/>
                     </connections>
                 </viewController>
@@ -2351,9 +2414,76 @@ Note:
             </objects>
             <point key="canvasLocation" x="796" y="-72"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="pBI-4i-epJ">
+            <objects>
+                <tableViewController id="3TS-id-y8V" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gA8-zT-afH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="i84-Ma-WyQ">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="xSi-j4-mbI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xSi-j4-mbI" id="uwQ-sQ-snl">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VO2 Max calculator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZtC-C4-4pD">
+                                                    <rect key="frame" x="15" y="11" width="151" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gC2-Wy-OT8" kind="push" id="lEi-x3-tJX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="o8A-cm-qly">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8A-cm-qly" id="pwI-0s-s9M">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moderate excercise heart rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XmL-07-osO">
+                                                    <rect key="frame" x="16" y="11" width="230" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Uen-9x-Bgj" kind="push" id="Lyo-nv-dt9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dUG-Hy-ZCc">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dUG-Hy-ZCc" id="xx4-x9-Zcr">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="3TS-id-y8V" id="A31-Va-ftx"/>
+                            <outlet property="delegate" destination="3TS-id-y8V" id="kRB-e4-5TG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="tQE-uL-Jyh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apZ-mq-GFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
-        <image name="Ebola-48.png" width="48" height="48"/>
         <image name="about-32.png" width="32" height="32"/>
         <image name="calculator-32.png" width="32" height="32"/>
         <image name="cover_effect.png" width="685" height="326"/>
@@ -2362,6 +2492,7 @@ Note:
         <image name="history-32.png" width="32" height="32"/>
         <image name="home-32.png" width="32" height="32"/>
         <image name="line_chart-32.png" width="32" height="32"/>
+        <image name="location-50-blue.png" width="50" height="50"/>
         <image name="location-50.png" width="50" height="50"/>
         <image name="logout-32.png" width="32" height="32"/>
         <image name="plus-50.png" width="50" height="50"/>

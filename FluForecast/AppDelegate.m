@@ -13,6 +13,12 @@
 #import "AFNetworking.h"
 #import "BlurryModalSegue/BlurryModalSegue.h"
 
+#define IS_OS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+#define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
+
 
 @implementation AppDelegate
 
@@ -94,7 +100,6 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token =[defaults valueForKey:@"token"];
-    [self.locationManager requestAlwaysAuthorization]; // For background access
     self.locationManager.delegate = self;
     [self.locationManager stopUpdatingLocation];
     if(![token length]==0)
@@ -156,12 +161,13 @@
     
     self.locationManager.delegate=self;
     [self.locationManager stopMonitoringSignificantLocationChanges];
+    if(IS_OS_8_OR_LATER){
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager requestAlwaysAuthorization];// For foreground access
+    }
     self.locationManager.desiredAccuracy=kCLLocationAccuracyBestForNavigation;
     self.locationManager.distanceFilter=50;
-    if(![token length]==0)
-    {[self.locationManager startUpdatingLocation];}
+    [self.locationManager startUpdatingLocation];
     
 }
 

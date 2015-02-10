@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileTableViewController : UITableViewController<UIAlertViewDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UIButton *gender;
 @property (weak, nonatomic) IBOutlet UIButton *age;
 @property (weak, nonatomic) IBOutlet UIButton *state;

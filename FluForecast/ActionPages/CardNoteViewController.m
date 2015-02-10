@@ -58,13 +58,13 @@
     self.progress=self.receivedProgress;
     
     self.selectAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Selected"
-                                                    message:@"Are you sure you want to select this training card?"
+                                                    message:@"Please comfirm your selection."
                                                    delegate:self
                                           cancelButtonTitle:@"Yes"
                                           otherButtonTitles:@"No", nil];
     
     self.unselectAlert = [[UIAlertView alloc] initWithTitle:@"Training Card Unselected"
-                                                  message:@"Are you sure you want to unselect this training card?"
+                                                  message:@"Please confirm your unselection."
                                                  delegate:self
                                         cancelButtonTitle:@"Yes"
                                         otherButtonTitles:@"No", nil];

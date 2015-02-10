@@ -72,7 +72,7 @@
 
 - (IBAction)rateApp:(id)sender {
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.com/apps/Self-flu-risk-tracker-&-Immune-system-training-by-HHeal"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/self-flu-risk-tracker-immune/id928120616?mt=8"]];
 
    
 }

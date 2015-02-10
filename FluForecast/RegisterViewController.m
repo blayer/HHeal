@@ -234,7 +234,7 @@ else
             //after successful registration, go back to the Login page automatically
                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                [defaults setObject:token forKey:@"token"];
-               
+        
                [self performSegueWithIdentifier: @"BacktoLogin" sender: self];}
 
             

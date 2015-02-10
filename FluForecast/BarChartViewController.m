@@ -134,7 +134,7 @@
     UILabel * barChartLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,80, SCREEN_WIDTH, 30)];
     barChartLabel.text = dateString;
     barChartLabel.textColor = [UIColor grayColor];
-    barChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:13.0];
+    barChartLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:15.0];
     barChartLabel.textAlignment = NSTextAlignmentCenter;
     
     self.barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 100.0, SCREEN_WIDTH, 240.0)];
@@ -171,7 +171,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:date forKey:@"lastreportdate"];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks for your first location report."
-                                                            message:@"Frequently reporting your current location can help us to identify your location and potential flu risks around you.To get a better flu risk estimation, please report your location when you are at a new public place."
+                                                            message:@"Frequently reporting your current location can help us to identify potential flu risks around you and others. To get a better flu risk estimate, please report your location when you are at a new public place."
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
@@ -261,7 +261,7 @@
         else
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reporting location too often"
-                                                            message:@"Reporting location too often can decrease the accuracy of your flu risk.We only allow to report location at most every 5 mins."
+                                                            message:@"Reporting location too often can decrease the accuracy of your flu risk. We only allow reporting location every 5 mins.Please only report your location when you are at a new public place."
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];

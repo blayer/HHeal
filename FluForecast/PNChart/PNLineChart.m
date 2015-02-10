@@ -62,7 +62,7 @@
 {
     CGFloat yStep = (_yValueMax - _yValueMin) / _yLabelNum;
     CGFloat yStepHeight = _chartCavanHeight / _yLabelNum;
-    NSString *yLabelFormat = self.yLabelFormat ? : @"%1.f";
+    NSString *yLabelFormat = self.yLabelFormat ? : @"%.1f";
 
     if (yStep == 0.0) {
         PNChartLabel *minLabel = [[PNChartLabel alloc] initWithFrame:CGRectMake(0.0, (NSInteger)_chartCavanHeight, (NSInteger)_chartMargin, (NSInteger)_yLabelHeight)];
@@ -447,14 +447,7 @@
         }
 
         // Min value for Y label
-        if (yMax < 1) {
-            yMax = 1.0f;
-        }
-
-        if (yMin < 0) {
-            yMin = 0.0f;
-        }
-
+      
         _yValueMin = yMin;
         _yValueMax = yMax;
 
@@ -555,7 +548,7 @@
     _pathPoints = [[NSMutableArray alloc] init];
     self.userInteractionEnabled = YES;
 
-    _yLabelNum = 5.0;
+    _yLabelNum = 3.0;
     _yLabelHeight = [[[[PNChartLabel alloc] init] font] pointSize];
 
     _chartMargin = 40;

@@ -12,6 +12,11 @@
 #import "AFNetworking.h"
 #import "ActivityHub.h"
 
+#define IS_OS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+#define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 @interface ReportFluViewController ()
 @property UIAlertView *reportAlert;
 @property CLLocationManager *mylocationManager;
@@ -43,13 +48,15 @@
     [self.completeView setLabelText:@"Reporting Completed"];
     [self.completeView setImage:[UIImage imageNamed:@"checked_checkbox-48.png"]];
     self.mylocationManager = [[CLLocationManager alloc] init];
-    [self.mylocationManager requestWhenInUseAuthorization];
+    if(IS_OS_8_OR_LATER)
+    {[self.mylocationManager requestWhenInUseAuthorization];}
+    
     self.mylocationManager.delegate = self;
     self.mylocationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.mylocationManager startUpdatingLocation];
     
     self.reportAlert=[[UIAlertView alloc]initWithTitle:@"Report Confirmation"
-                                               message:@"Are you sure you want to confirm you flu symtom report? This report will change your risk score significantly"
+                                               message:@"Sorry to hear about that. Confirm your flu symptom report? This report will change your risk score significantly."
                                               delegate:self
                                      cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     // Do any additional setup after loading the view.
@@ -74,8 +81,6 @@
                                               otherButtonTitles:nil];
         
         [locationAlert show];
-
-        
     }
     else {
     if  ([self.coughSwitch isOn]||[self.feverSwitch isOn]||[self.sourSwitch isOn])
