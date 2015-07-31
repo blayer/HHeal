@@ -17,7 +17,6 @@
 		8304DBE419980884006E7BD7 /* checkmarkgreen-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBE319980884006E7BD7 /* checkmarkgreen-25.png */; };
 		8304DBF8199AB4EE006E7BD7 /* medal-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DBF7199AB4EE006E7BD7 /* medal-26.png */; };
 		8304DC05199AFA39006E7BD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8304DC04199AFA39006E7BD7 /* main.m */; };
-		8304DC08199AFA4E006E7BD7 /* HHeal-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC06199AFA4E006E7BD7 /* HHeal-Info.plist */; };
 		8304DC0A199AFC22006E7BD7 /* yoga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC09199AFC22006E7BD7 /* yoga.jpg */; };
 		8304DC11199AFF7A006E7BD7 /* about-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC0B199AFF7A006E7BD7 /* about-32.png */; };
 		8304DC12199AFF7A006E7BD7 /* calculator-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304DC0C199AFF7A006E7BD7 /* calculator-32.png */; };
@@ -634,7 +633,7 @@
 		8382C9E3197DAEFF008E125C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Changkun Zhao";
 				TargetAttributes = {
 					8382C9EA197DAEFF008E125C = {
@@ -732,7 +731,6 @@
 				8304DC30199B17B0006E7BD7 /* yoga-100.png in Resources */,
 				8304DC0A199AFC22006E7BD7 /* yoga.jpg in Resources */,
 				8304DBE419980884006E7BD7 /* checkmarkgreen-25.png in Resources */,
-				8304DC08199AFA4E006E7BD7 /* HHeal-Info.plist in Resources */,
 				8304DC2C199B17B0006E7BD7 /* pill-64.png in Resources */,
 				8382CA01197DAF00008E125C /* Images.xcassets in Resources */,
 				8304DC1A199B0C2F006E7BD7 /* virus-48.png in Resources */,
@@ -970,6 +968,7 @@
 				);
 				PRODUCT_NAME = HHeal;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -996,6 +995,7 @@
 				);
 				PRODUCT_NAME = HHeal;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

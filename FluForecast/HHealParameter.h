@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 //#define HHealURL      @"http://localhost:3000"
+// for official app
 #define HHealURL        @"http://ec2-54-68-139-241.us-west-2.compute.amazonaws.com"
+//for test
 //#define HHealURL        @"http://ec2-54-84-82-23.compute-1.amazonaws.com"
 #define GetTrainingCard @"/trainingcard/"
 #define UserProfile     @"/user_profile/"

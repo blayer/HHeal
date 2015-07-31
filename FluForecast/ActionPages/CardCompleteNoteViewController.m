@@ -141,17 +141,13 @@
     [self.view addSubview:direction];
     // create a button to report training completion
     
-    CGRect reportFrame =CGRectMake(60.0f, startPositionY-30.0, 200.0f, 50.0f);
+    CGRect reportFrame =CGRectMake(220.0f, startPositionY-30.0, 100.0f, 50.0f);
     self.reportButton =[[UIButton alloc]initWithFrame:reportFrame];
-    [self.reportButton setBackgroundColor:[UIColor blueColor]];
     if (self.progress==nil)
         NSLog(@"progress is nil");
     if([self.progress isEqualToString:@"selected"]){
         [self.reportButton setImage:[UIImage imageNamed:@"ribbon_grey-48.png"] forState:UIControlStateNormal];
         self.reportButton.imageView.frame=CGRectMake(0.0f, 0.0f, 50.0f, 50.0f);
-        UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(100.0f, 0.0f, 100.0f, 50.0f)];
-        label.text=@"uncompleted";
-        [self.reportButton addSubview:label];
         [self.reportButton addTarget:self action:@selector(ButtonClicked:) forControlEvents:(UIControlEventTouchUpInside)];}
     if([self.progress isEqualToString:@"completed"])
     {
